@@ -1,0 +1,44 @@
+import { Link } from "@/i18n/navigation";
+
+export function FinalCta() {
+  return (
+    <section id="cta" style={{ background: "var(--cs-grad-135)" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(72px,9vw,120px) 24px", textAlign: "center" }}>
+        <h2
+          style={{
+            margin: "0 auto",
+            maxWidth: 760,
+            fontFamily: "var(--font-geist), Inter, sans-serif",
+            fontWeight: 600,
+            fontSize: "clamp(32px,5.4vw,60px)",
+            lineHeight: 1.04,
+            letterSpacing: "-.04em",
+            color: "#fff",
+          }}
+        >
+          A clean slate for your documents.
+        </h2>
+        <Link
+          data-press
+          href="/signup"
+          className="hover-cta"
+          style={{
+            marginTop: 34,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "15px 26px",
+            borderRadius: 10,
+            background: "#fff",
+            color: "var(--cs-accent)",
+            fontSize: 15.5,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          Get started — it&apos;s free
+        </Link>
+      </div>
+    </section>
+  );
+}

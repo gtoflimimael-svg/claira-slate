@@ -1,0 +1,257 @@
+{
+  "navbar": {
+    "tools": "Outils",
+    "ai": "IA",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "login": "Connexion",
+    "getStarted": "Commencer gratuitement"
+  },
+  "hero": {
+    "headline": "Tous les outils PDF. Maintenant avec l''{ai}.",
+    "ai": "IA",
+    "subheadline": "Fusionnez, compressez, convertissez et comprenez vos PDF — le tout au même endroit. Gratuit pour commencer.",
+    "ctaPrimary": "Commencer gratuitement",
+    "ctaSecondary": "Voir tous les outils",
+    "proof1": "Aucun compte requis",
+    "proof2": "Sans publicité",
+    "proof3": "IA incluse"
+  },
+  "footer": {
+    "tagline": "Une page blanche pour vos documents.",
+    "colTools": "Outils",
+    "colCompany": "Entreprise",
+    "colLegal": "Mentions légales",
+    "colConnect": "Suivez-nous",
+    "mergePdf": "Fusionner un PDF",
+    "compressPdf": "Compresser un PDF",
+    "pdfToWord": "PDF vers Word",
+    "aiTools": "Outils IA",
+    "about": "À propos",
+    "blog": "Blog",
+    "pricing": "Tarifs",
+    "careers": "Carrières",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "security": "Sécurité",
+    "gdpr": "RGPD",
+    "twitter": "X / Twitter",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "support": "Support",
+    "copyright": "© 2026 Claira Slate, Inc. Tous droits réservés.",
+    "madeFor": "Conçu pour les gens qui ont mieux à faire."
+  },
+  "common": {
+    "upload": "Importer",
+    "download": "Télécharger",
+    "processing": "Traitement en cours",
+    "error": "Une erreur est survenue.",
+    "success": "Réussi",
+    "tryAgain": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "dragDrop": "Glissez-déposez ou cliquez pour parcourir",
+    "fileTooLarge": "Fichier trop volumineux pour votre offre.",
+    "couldntReachServer": "Impossible de joindre le serveur. Réessayez."
+  },
+  "tools": {
+    "merge": {
+      "name": "Fusionner un PDF",
+      "desc": "Combinez plusieurs fichiers en un seul."
+    },
+    "split": {
+      "name": "Diviser un PDF",
+      "desc": "Séparez-le en plusieurs parties."
+    },
+    "reorder": {
+      "name": "Organiser les pages",
+      "desc": "Réordonnez les pages par glisser-déposer."
+    },
+    "rotate": {
+      "name": "Pivoter un PDF",
+      "desc": "Corrigez l'orientation des pages."
+    },
+    "extract-pages": {
+      "name": "Extraire des pages",
+      "desc": "Récupérez seulement ce qu'il vous faut."
+    },
+    "delete-pages": {
+      "name": "Supprimer des pages",
+      "desc": "Retirez ce dont vous n'avez pas besoin."
+    },
+    "compress": {
+      "name": "Compresser un PDF",
+      "desc": "Fichier plus léger, qualité identique."
+    },
+    "repair": {
+      "name": "Réparer un PDF",
+      "desc": "Récupérez des fichiers endommagés."
+    },
+    "optimize": {
+      "name": "Optimiser pour le web",
+      "desc": "Des documents qui se chargent vite."
+    },
+    "flatten": {
+      "name": "Aplatir un PDF",
+      "desc": "Figez formulaires et calques."
+    },
+    "pdf-to-word": {
+      "name": "PDF vers Word",
+      "desc": "Un .docx entièrement modifiable."
+    },
+    "pdf-to-excel": {
+      "name": "PDF vers Excel",
+      "desc": "Vos tableaux dans un tableur."
+    },
+    "pdf-to-ppt": {
+      "name": "PDF vers PowerPoint",
+      "desc": "Des diapositives modifiables."
+    },
+    "pdf-to-jpg": {
+      "name": "PDF vers JPG",
+      "desc": "Chaque page devient une image."
+    },
+    "jpg-to-pdf": {
+      "name": "JPG vers PDF",
+      "desc": "Vos images réunies en un fichier."
+    },
+    "html-to-pdf": {
+      "name": "HTML vers PDF",
+      "desc": "Capturez n'importe quelle page web."
+    },
+    "protect": {
+      "name": "Protéger un PDF",
+      "desc": "Verrouillez-le avec un mot de passe."
+    },
+    "unlock": {
+      "name": "Déverrouiller un PDF",
+      "desc": "Retirez un mot de passe connu."
+    },
+    "sign": {
+      "name": "Signer un PDF",
+      "desc": "Signature électronique juridiquement valable."
+    },
+    "redact": {
+      "name": "Caviarder un PDF",
+      "desc": "Masquez du contenu, définitivement."
+    },
+    "watermark": {
+      "name": "Filigrane",
+      "desc": "Apposez un texte ou un logo."
+    },
+    "edit-text": {
+      "name": "Modifier un PDF",
+      "desc": "Texte, images et formes."
+    },
+    "number-pages": {
+      "name": "Numéroter les pages",
+      "desc": "Où vous voulez, comme vous voulez."
+    },
+    "crop": {
+      "name": "Rogner un PDF",
+      "desc": "Réduisez les marges."
+    },
+    "ocr": {
+      "name": "OCR PDF",
+      "desc": "Rendez les scans consultables."
+    },
+    "annotate": {
+      "name": "Annoter",
+      "desc": "Commentez et surlignez."
+    }
+  },
+  "ai": {
+    "summarize": {
+      "name": "Résumer",
+      "desc": "Obtenez l'essentiel en quelques secondes."
+    },
+    "chat": {
+      "name": "Poser une question",
+      "desc": "Discutez avec votre document."
+    },
+    "translate": {
+      "name": "Traduire",
+      "desc": "Plus de 50 langues, mise en page préservée."
+    },
+    "ocr": {
+      "name": "OCR",
+      "desc": "Rendez vos PDF scannés consultables."
+    }
+  },
+  "pricing": {
+    "free": {
+      "name": "Gratuit",
+      "unit": "à vie",
+      "tagline": "Pour un usage occasionnel.",
+      "features": [
+        "26 outils, sans filigrane",
+        "2 actions IA par jour",
+        "Fichiers jusqu'à 25 Mo",
+        "Aucun compte requis"
+      ],
+      "cta": "Commencer gratuitement"
+    },
+    "pro": {
+      "name": "Pro",
+      "badge": "Le plus populaire",
+      "unit": "/mois",
+      "tagline": "Pour qui travaille au quotidien avec des documents.",
+      "features": [
+        "Outils et actions IA illimités",
+        "Fichiers jusqu'à 2 Go, mode par lot",
+        "Applications bureau et mobile",
+        "Stockage cloud et historique"
+      ],
+      "cta": "Passer à Pro"
+    },
+    "business": {
+      "name": "Business",
+      "unit": "/utilisateur/mois",
+      "tagline": "Pour les équipes soumises à des exigences de conformité.",
+      "features": [
+        "Tout ce qui est inclus dans Pro",
+        "Espaces partagés et SSO",
+        "Journal d'audit et support prioritaire",
+        "Durées de conservation personnalisées"
+      ],
+      "cta": "Contacter les ventes"
+    },
+    "manageSubscription": "Gérer l'abonnement"
+  },
+  "auth": {
+    "loginTitle": "Bon retour parmi nous",
+    "loginSubtitle": "Connectez-vous pour retrouver vos fichiers, votre historique et vos avantages Pro.",
+    "signupTitle": "Commencez gratuitement. Sans carte, sans piège.",
+    "email": "E-mail",
+    "workEmail": "E-mail professionnel",
+    "password": "Mot de passe",
+    "forgotPassword": "Oublié ?",
+    "rememberMe": "Rester connecté",
+    "continueWithGoogle": "Continuer avec Google",
+    "logIn": "Se connecter",
+    "createAccount": "Créer un compte gratuit",
+    "newHere": "Nouveau ici ?",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "checkEmail": "Consultez votre e-mail",
+    "resetPasswordTitle": "Réinitialiser votre mot de passe",
+    "resetPasswordSubtitle": "Nous vous enverrons un lien pour en choisir un nouveau.",
+    "sendResetLink": "Envoyer le lien",
+    "setNewPasswordTitle": "Définir un nouveau mot de passe",
+    "updatePassword": "Mettre à jour le mot de passe"
+  },
+  "dashboard": {
+    "home": "Accueil",
+    "history": "Historique",
+    "files": "Fichiers",
+    "aiUsage": "Usage IA",
+    "billing": "Facturation",
+    "settings": "Paramètres",
+    "team": "Équipe",
+    "logout": "Déconnexion",
+    "documentsThisMonth": "Documents ce mois-ci",
+    "aiActions": "Actions IA",
+    "storageUsed": "Stockage utilisé",
+    "timeSaved": "Temps économisé"
+  }
+}

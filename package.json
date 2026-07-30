@@ -6,12 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stripe:setup-products": "node --env-file=.env.local scripts/setup-stripe-products.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
+    "@aws-sdk/client-s3": "^3.1098.0",
+    "@aws-sdk/s3-request-presigner": "^3.1098.0",
+    "@google/generative-ai": "^0.24.1",
+    "@react-email/components": "^1.0.12",
+    "@stripe/stripe-js": "^9.12.1",
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.111.0",
+    "jszip": "^3.10.1",
     "next": "16.2.12",
+    "next-intl": "^4.13.4",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "posthog-js": "^1.408.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "resend": "^6.18.1",
+    "sharp": "^0.35.3",
+    "stripe": "^22.4.0",
+    "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +38,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
+    "react-email": "^6.9.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
