@@ -1076,5 +1076,89 @@
         "reduction": "Réduction attendue : ~20% plus petit"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate tente de récupérer :",
+    "infoCorruptedStructure": "Structure de fichier corrompue",
+    "infoMissingXref": "Tables de références croisées manquantes",
+    "infoBrokenStreams": "Flux d'objets corrompus",
+    "infoTruncatedFiles": "Fichiers tronqués",
+    "warningSevereDamage": "Les fichiers gravement endommagés peuvent ne pas être entièrement récupérables.",
+    "partialRecovery": "Récupération partielle : {recovered} pages récupérées sur {total}",
+    "repairButton": "Réparer le PDF",
+    "resultHeadline": "PDF réparé avec succès",
+    "processAnother": "Réparer un autre fichier"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "Ce que fait l'optimisation",
+    "infoLinearize": "Linéarise le PDF pour un chargement web rapide",
+    "infoStreaming": "Permet le streaming page par page",
+    "infoUnusedObjects": "Supprime les objets et métadonnées inutilisés",
+    "infoFontEmbedding": "Optimise l'intégration des polices",
+    "infoRedundantStreams": "Nettoie les flux redondants",
+    "optionsHeading": "Options",
+    "removeMetadataLabel": "Supprimer les métadonnées (auteur, date de création)",
+    "removeThumbnailsLabel": "Supprimer les miniatures intégrées",
+    "flattenFormsLabel": "Aplatir les champs de formulaire",
+    "removeJSLabel": "Supprimer le JavaScript",
+    "removeAnnotationsLabel": "Supprimer les annotations",
+    "targetHeading": "Cas d'usage cible",
+    "beforeAfter": "Avant : {before} → Après : {after}",
+    "linearizedNote": "Linéarisé : prêt pour le streaming web",
+    "optimizeButton": "Optimiser le PDF",
+    "resultHeadline": "PDF optimisé pour le web",
+    "processAnother": "Optimiser un autre fichier",
+    "target": {
+      "web": "Affichage web",
+      "email": "Pièce jointe e-mail",
+      "archive": "Archivage long terme (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "Ce que fait l'aplatissement",
+    "infoFormFields": "Rend les champs de formulaire non modifiables",
+    "infoAnnotations": "Intègre les annotations dans la page",
+    "infoLayers": "Fusionne tous les calques en un seul",
+    "infoPreventEditing": "Empêche toute modification ultérieure",
+    "infoReduceSize": "Réduit la taille du fichier",
+    "optionsHeading": "Options",
+    "flattenFormsLabel": "Aplatir les champs de formulaire",
+    "flattenAnnotationsLabel": "Aplatir les annotations",
+    "flattenLayersLabel": "Aplatir les calques",
+    "removeHiddenLayersLabel": "Supprimer les calques masqués",
+    "useCaseHint": "Idéal avant de partager des contrats, formulaires ou documents signés",
+    "fieldsBakedIn": "Formulaires : {count} champs intégrés",
+    "annotationsBakedIn": "Annotations : {count} annotations intégrées",
+    "beforeAfter": "Avant : {before} → Après : {after}",
+    "flattenButton": "Aplatir le PDF",
+    "resultHeadline": "PDF aplati avec succès",
+    "processAnother": "Aplatir un autre fichier"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Mode niveaux de gris",
+    "optionsHeading": "Options",
+    "keepTextBlackLabel": "Garder le texte coloré en noir (recommandé)",
+    "preserveImageQualityLabel": "Préserver la qualité d'image",
+    "optimizeForPrintLabel": "Optimiser pour l'impression",
+    "previewHeading": "Aperçu",
+    "colorsRemoved": "Couleurs supprimées : {count} images converties",
+    "beforeAfter": "Avant : {before} → Après : {after}",
+    "grayscaleButton": "Convertir en niveaux de gris",
+    "resultHeadline": "PDF converti en niveaux de gris",
+    "processAnother": "Convertir un autre fichier",
+    "mode": {
+      "grayscale": {
+        "name": "Niveaux de gris purs",
+        "desc": "Convertir toutes les couleurs en nuances de gris"
+      },
+      "blackwhite": {
+        "name": "Noir et blanc",
+        "desc": "Contraste élevé, adapté à l'impression"
+      },
+      "sepia": {
+        "name": "Ton sépia",
+        "desc": "Look vintage chaleureux"
+      }
+    }
   }
 }

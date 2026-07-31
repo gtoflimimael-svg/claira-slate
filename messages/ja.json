@@ -1076,5 +1076,89 @@
         "reduction": "予想削減率: 約20%小さく"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slateが復旧を試みる項目：",
+    "infoCorruptedStructure": "破損したファイル構造",
+    "infoMissingXref": "欠落した相互参照テーブル",
+    "infoBrokenStreams": "破損したオブジェクトストリーム",
+    "infoTruncatedFiles": "切り詰められたファイル",
+    "warningSevereDamage": "深刻に破損したファイルは完全には復旧できない場合があります。",
+    "partialRecovery": "部分的な復旧: {total}ページ中{recovered}ページを復旧",
+    "repairButton": "PDFを修復",
+    "resultHeadline": "PDFの修復に成功しました",
+    "processAnother": "別のファイルを修復"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "最適化の内容",
+    "infoLinearize": "高速なWeb読み込みのためにPDFをリニアライズ",
+    "infoStreaming": "ページ単位のストリーミングを有効化",
+    "infoUnusedObjects": "未使用のオブジェクトとメタデータを削除",
+    "infoFontEmbedding": "フォント埋め込みを最適化",
+    "infoRedundantStreams": "冗長なストリームをクリーンアップ",
+    "optionsHeading": "オプション",
+    "removeMetadataLabel": "メタデータを削除（作成者、作成日）",
+    "removeThumbnailsLabel": "埋め込みサムネイルを削除",
+    "flattenFormsLabel": "フォームフィールドをフラット化",
+    "removeJSLabel": "JavaScriptを削除",
+    "removeAnnotationsLabel": "注釈を削除",
+    "targetHeading": "対象の用途",
+    "beforeAfter": "変更前: {before} → 変更後: {after}",
+    "linearizedNote": "リニアライズ済み：Webストリーミング対応",
+    "optimizeButton": "PDFを最適化",
+    "resultHeadline": "PDFがWeb用に最適化されました",
+    "processAnother": "別のファイルを最適化",
+    "target": {
+      "web": "Web表示",
+      "email": "メール添付",
+      "archive": "長期保存（PDF/A）"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "フラット化の内容",
+    "infoFormFields": "フォームフィールドを編集不可にする",
+    "infoAnnotations": "注釈をページに焼き込む",
+    "infoLayers": "すべてのレイヤーを1つに統合",
+    "infoPreventEditing": "それ以上の編集を防止",
+    "infoReduceSize": "ファイルサイズを削減",
+    "optionsHeading": "オプション",
+    "flattenFormsLabel": "フォームフィールドをフラット化",
+    "flattenAnnotationsLabel": "注釈をフラット化",
+    "flattenLayersLabel": "レイヤーをフラット化",
+    "removeHiddenLayersLabel": "非表示レイヤーを削除",
+    "useCaseHint": "契約書、フォーム、署名済み文書を共有する前に最適",
+    "fieldsBakedIn": "フォーム：{count}個のフィールドを焼き込みました",
+    "annotationsBakedIn": "注釈：{count}個の注釈を焼き込みました",
+    "beforeAfter": "変更前: {before} → 変更後: {after}",
+    "flattenButton": "PDFをフラット化",
+    "resultHeadline": "PDFのフラット化に成功しました",
+    "processAnother": "別のファイルをフラット化"
+  },
+  "grayscaleTool": {
+    "modeHeading": "グレースケールモード",
+    "optionsHeading": "オプション",
+    "keepTextBlackLabel": "色付きテキストを黒のまま保持（推奨）",
+    "preserveImageQualityLabel": "画質を保持",
+    "optimizeForPrintLabel": "印刷用に最適化",
+    "previewHeading": "プレビュー",
+    "colorsRemoved": "色を削除：{count}枚の画像を変換",
+    "beforeAfter": "変更前: {before} → 変更後: {after}",
+    "grayscaleButton": "グレースケールに変換",
+    "resultHeadline": "PDFがグレースケールに変換されました",
+    "processAnother": "別のファイルを変換",
+    "mode": {
+      "grayscale": {
+        "name": "純粋なグレースケール",
+        "desc": "すべての色をグレーの濃淡に変換"
+      },
+      "blackwhite": {
+        "name": "白黒",
+        "desc": "高コントラストで印刷に最適"
+      },
+      "sepia": {
+        "name": "セピア調",
+        "desc": "温かみのあるヴィンテージ風"
+      }
+    }
   }
 }

@@ -1076,5 +1076,89 @@
         "reduction": "Ожидаемое уменьшение: ~20%"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate пытается восстановить:",
+    "infoCorruptedStructure": "Повреждённую структуру файла",
+    "infoMissingXref": "Отсутствующие таблицы перекрёстных ссылок",
+    "infoBrokenStreams": "Повреждённые потоки объектов",
+    "infoTruncatedFiles": "Усечённые файлы",
+    "warningSevereDamage": "Сильно повреждённые файлы могут восстановиться не полностью.",
+    "partialRecovery": "Частичное восстановление: {recovered} из {total} страниц восстановлено",
+    "repairButton": "Восстановить PDF",
+    "resultHeadline": "PDF успешно восстановлен",
+    "processAnother": "Восстановить другой файл"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "Что делает оптимизация",
+    "infoLinearize": "Линеаризует PDF для быстрой загрузки в вебе",
+    "infoStreaming": "Включает постраничную потоковую загрузку",
+    "infoUnusedObjects": "Удаляет неиспользуемые объекты и метаданные",
+    "infoFontEmbedding": "Оптимизирует встраивание шрифтов",
+    "infoRedundantStreams": "Очищает избыточные потоки",
+    "optionsHeading": "Параметры",
+    "removeMetadataLabel": "Удалить метаданные (автор, дата создания)",
+    "removeThumbnailsLabel": "Удалить встроенные миниатюры",
+    "flattenFormsLabel": "Свести поля форм",
+    "removeJSLabel": "Удалить JavaScript",
+    "removeAnnotationsLabel": "Удалить аннотации",
+    "targetHeading": "Целевой сценарий",
+    "beforeAfter": "До: {before} → После: {after}",
+    "linearizedNote": "Линеаризовано: готово к веб-стримингу",
+    "optimizeButton": "Оптимизировать PDF",
+    "resultHeadline": "PDF оптимизирован для веба",
+    "processAnother": "Оптимизировать другой файл",
+    "target": {
+      "web": "Веб-отображение",
+      "email": "Вложение в письмо",
+      "archive": "Долгосрочное архивирование (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "Что делает сведение",
+    "infoFormFields": "Делает поля форм нередактируемыми",
+    "infoAnnotations": "Впечатывает аннотации в страницу",
+    "infoLayers": "Объединяет все слои в один",
+    "infoPreventEditing": "Предотвращает дальнейшее редактирование",
+    "infoReduceSize": "Уменьшает размер файла",
+    "optionsHeading": "Параметры",
+    "flattenFormsLabel": "Свести поля форм",
+    "flattenAnnotationsLabel": "Свести аннотации",
+    "flattenLayersLabel": "Свести слои",
+    "removeHiddenLayersLabel": "Удалить скрытые слои",
+    "useCaseHint": "Идеально перед отправкой договоров, форм или подписанных документов",
+    "fieldsBakedIn": "Формы: впечатано полей — {count}",
+    "annotationsBakedIn": "Аннотации: впечатано аннотаций — {count}",
+    "beforeAfter": "До: {before} → После: {after}",
+    "flattenButton": "Свести PDF",
+    "resultHeadline": "PDF успешно сведён",
+    "processAnother": "Свести другой файл"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Режим оттенков серого",
+    "optionsHeading": "Параметры",
+    "keepTextBlackLabel": "Оставить цветной текст чёрным (рекомендуется)",
+    "preserveImageQualityLabel": "Сохранить качество изображений",
+    "optimizeForPrintLabel": "Оптимизировать для печати",
+    "previewHeading": "Предпросмотр",
+    "colorsRemoved": "Цвета удалены: преобразовано изображений — {count}",
+    "beforeAfter": "До: {before} → После: {after}",
+    "grayscaleButton": "Преобразовать в оттенки серого",
+    "resultHeadline": "PDF преобразован в оттенки серого",
+    "processAnother": "Преобразовать другой файл",
+    "mode": {
+      "grayscale": {
+        "name": "Чистые оттенки серого",
+        "desc": "Преобразовать все цвета в оттенки серого"
+      },
+      "blackwhite": {
+        "name": "Чёрно-белый",
+        "desc": "Высокая контрастность, подходит для печати"
+      },
+      "sepia": {
+        "name": "Сепия",
+        "desc": "Тёплый винтажный вид"
+      }
+    }
   }
 }

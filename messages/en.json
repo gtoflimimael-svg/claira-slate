@@ -1076,5 +1076,89 @@
         "reduction": "Expected reduction: ~20% smaller"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate attempts to recover:",
+    "infoCorruptedStructure": "Corrupted file structure",
+    "infoMissingXref": "Missing cross-reference tables",
+    "infoBrokenStreams": "Broken object streams",
+    "infoTruncatedFiles": "Truncated files",
+    "warningSevereDamage": "Severely damaged files may not be fully recoverable.",
+    "partialRecovery": "Partial recovery: {recovered} of {total} pages recovered",
+    "repairButton": "Repair PDF",
+    "resultHeadline": "PDF repaired successfully",
+    "processAnother": "Repair another file"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "What optimization does",
+    "infoLinearize": "Linearizes PDF for fast web loading",
+    "infoStreaming": "Enables page-by-page streaming",
+    "infoUnusedObjects": "Removes unused objects and metadata",
+    "infoFontEmbedding": "Optimizes font embedding",
+    "infoRedundantStreams": "Cleans up redundant streams",
+    "optionsHeading": "Options",
+    "removeMetadataLabel": "Remove metadata (author, creation date)",
+    "removeThumbnailsLabel": "Remove embedded thumbnails",
+    "flattenFormsLabel": "Flatten form fields",
+    "removeJSLabel": "Remove JavaScript",
+    "removeAnnotationsLabel": "Remove annotations",
+    "targetHeading": "Target use case",
+    "beforeAfter": "Before: {before} → After: {after}",
+    "linearizedNote": "Linearized: ready for web streaming",
+    "optimizeButton": "Optimize PDF",
+    "resultHeadline": "PDF optimized for web",
+    "processAnother": "Optimize another file",
+    "target": {
+      "web": "Web display",
+      "email": "Email attachment",
+      "archive": "Long-term archiving (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "What flattening does",
+    "infoFormFields": "Makes form fields non-editable",
+    "infoAnnotations": "Bakes annotations into the page",
+    "infoLayers": "Merges all layers into one",
+    "infoPreventEditing": "Prevents further editing",
+    "infoReduceSize": "Reduces file size",
+    "optionsHeading": "Options",
+    "flattenFormsLabel": "Flatten form fields",
+    "flattenAnnotationsLabel": "Flatten annotations",
+    "flattenLayersLabel": "Flatten layers",
+    "removeHiddenLayersLabel": "Remove hidden layers",
+    "useCaseHint": "Perfect before sharing contracts, forms, or signed documents",
+    "fieldsBakedIn": "Forms: {count} fields baked in",
+    "annotationsBakedIn": "Annotations: {count} annotations baked in",
+    "beforeAfter": "Before: {before} → After: {after}",
+    "flattenButton": "Flatten PDF",
+    "resultHeadline": "PDF flattened successfully",
+    "processAnother": "Flatten another file"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Grayscale mode",
+    "optionsHeading": "Options",
+    "keepTextBlackLabel": "Keep colored text as black (recommended)",
+    "preserveImageQualityLabel": "Preserve image quality",
+    "optimizeForPrintLabel": "Optimize for printing",
+    "previewHeading": "Preview",
+    "colorsRemoved": "Colors removed: {count} images converted",
+    "beforeAfter": "Before: {before} → After: {after}",
+    "grayscaleButton": "Convert to grayscale",
+    "resultHeadline": "PDF converted to grayscale",
+    "processAnother": "Convert another file",
+    "mode": {
+      "grayscale": {
+        "name": "Pure grayscale",
+        "desc": "Convert all colors to shades of gray"
+      },
+      "blackwhite": {
+        "name": "Black & white",
+        "desc": "High contrast, printer-friendly"
+      },
+      "sepia": {
+        "name": "Sepia tone",
+        "desc": "Warm vintage look"
+      }
+    }
   }
 }

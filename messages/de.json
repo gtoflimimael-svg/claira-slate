@@ -1076,5 +1076,89 @@
         "reduction": "Erwartete Reduzierung: ~20% kleiner"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate versucht Folgendes wiederherzustellen:",
+    "infoCorruptedStructure": "Beschädigte Dateistruktur",
+    "infoMissingXref": "Fehlende Querverweistabellen",
+    "infoBrokenStreams": "Beschädigte Objekt-Streams",
+    "infoTruncatedFiles": "Abgeschnittene Dateien",
+    "warningSevereDamage": "Stark beschädigte Dateien lassen sich möglicherweise nicht vollständig wiederherstellen.",
+    "partialRecovery": "Teilweise Wiederherstellung: {recovered} von {total} Seiten wiederhergestellt",
+    "repairButton": "PDF reparieren",
+    "resultHeadline": "PDF erfolgreich repariert",
+    "processAnother": "Weitere Datei reparieren"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "Was die Optimierung bewirkt",
+    "infoLinearize": "Linearisiert das PDF für schnelles Laden im Web",
+    "infoStreaming": "Ermöglicht seitenweises Streaming",
+    "infoUnusedObjects": "Entfernt ungenutzte Objekte und Metadaten",
+    "infoFontEmbedding": "Optimiert die Schrifteinbettung",
+    "infoRedundantStreams": "Bereinigt redundante Streams",
+    "optionsHeading": "Optionen",
+    "removeMetadataLabel": "Metadaten entfernen (Autor, Erstellungsdatum)",
+    "removeThumbnailsLabel": "Eingebettete Vorschaubilder entfernen",
+    "flattenFormsLabel": "Formularfelder glätten",
+    "removeJSLabel": "JavaScript entfernen",
+    "removeAnnotationsLabel": "Anmerkungen entfernen",
+    "targetHeading": "Verwendungszweck",
+    "beforeAfter": "Vorher: {before} → Nachher: {after}",
+    "linearizedNote": "Linearisiert: bereit für Web-Streaming",
+    "optimizeButton": "PDF optimieren",
+    "resultHeadline": "PDF für das Web optimiert",
+    "processAnother": "Weitere Datei optimieren",
+    "target": {
+      "web": "Webanzeige",
+      "email": "E-Mail-Anhang",
+      "archive": "Langzeitarchivierung (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "Was das Glätten bewirkt",
+    "infoFormFields": "Macht Formularfelder nicht bearbeitbar",
+    "infoAnnotations": "Bäckt Anmerkungen in die Seite ein",
+    "infoLayers": "Führt alle Ebenen zu einer zusammen",
+    "infoPreventEditing": "Verhindert weitere Bearbeitung",
+    "infoReduceSize": "Reduziert die Dateigröße",
+    "optionsHeading": "Optionen",
+    "flattenFormsLabel": "Formularfelder glätten",
+    "flattenAnnotationsLabel": "Anmerkungen glätten",
+    "flattenLayersLabel": "Ebenen glätten",
+    "removeHiddenLayersLabel": "Versteckte Ebenen entfernen",
+    "useCaseHint": "Ideal vor dem Teilen von Verträgen, Formularen oder unterschriebenen Dokumenten",
+    "fieldsBakedIn": "Formulare: {count} Felder eingebacken",
+    "annotationsBakedIn": "Anmerkungen: {count} Anmerkungen eingebacken",
+    "beforeAfter": "Vorher: {before} → Nachher: {after}",
+    "flattenButton": "PDF glätten",
+    "resultHeadline": "PDF erfolgreich geglättet",
+    "processAnother": "Weitere Datei glätten"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Graustufenmodus",
+    "optionsHeading": "Optionen",
+    "keepTextBlackLabel": "Farbigen Text schwarz belassen (empfohlen)",
+    "preserveImageQualityLabel": "Bildqualität beibehalten",
+    "optimizeForPrintLabel": "Für den Druck optimieren",
+    "previewHeading": "Vorschau",
+    "colorsRemoved": "Farben entfernt: {count} Bilder konvertiert",
+    "beforeAfter": "Vorher: {before} → Nachher: {after}",
+    "grayscaleButton": "In Graustufen umwandeln",
+    "resultHeadline": "PDF in Graustufen umgewandelt",
+    "processAnother": "Weitere Datei umwandeln",
+    "mode": {
+      "grayscale": {
+        "name": "Reine Graustufen",
+        "desc": "Alle Farben in Grautöne umwandeln"
+      },
+      "blackwhite": {
+        "name": "Schwarz-Weiß",
+        "desc": "Hoher Kontrast, druckerfreundlich"
+      },
+      "sepia": {
+        "name": "Sepia-Ton",
+        "desc": "Warmer Vintage-Look"
+      }
+    }
   }
 }

@@ -1076,5 +1076,89 @@
         "reduction": "Riduzione prevista: ~20% più piccolo"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate tenta di recuperare:",
+    "infoCorruptedStructure": "Struttura del file danneggiata",
+    "infoMissingXref": "Tabelle di riferimento incrociato mancanti",
+    "infoBrokenStreams": "Stream di oggetti danneggiati",
+    "infoTruncatedFiles": "File troncati",
+    "warningSevereDamage": "I file gravemente danneggiati potrebbero non essere recuperabili del tutto.",
+    "partialRecovery": "Recupero parziale: {recovered} di {total} pagine recuperate",
+    "repairButton": "Ripara PDF",
+    "resultHeadline": "PDF riparato con successo",
+    "processAnother": "Ripara un altro file"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "Cosa fa l'ottimizzazione",
+    "infoLinearize": "Linearizza il PDF per un caricamento web rapido",
+    "infoStreaming": "Abilita lo streaming pagina per pagina",
+    "infoUnusedObjects": "Rimuove oggetti e metadati inutilizzati",
+    "infoFontEmbedding": "Ottimizza l'incorporamento dei font",
+    "infoRedundantStreams": "Ripulisce gli stream ridondanti",
+    "optionsHeading": "Opzioni",
+    "removeMetadataLabel": "Rimuovi metadati (autore, data di creazione)",
+    "removeThumbnailsLabel": "Rimuovi miniature incorporate",
+    "flattenFormsLabel": "Appiattisci campi modulo",
+    "removeJSLabel": "Rimuovi JavaScript",
+    "removeAnnotationsLabel": "Rimuovi annotazioni",
+    "targetHeading": "Caso d'uso di destinazione",
+    "beforeAfter": "Prima: {before} → Dopo: {after}",
+    "linearizedNote": "Linearizzato: pronto per lo streaming web",
+    "optimizeButton": "Ottimizza PDF",
+    "resultHeadline": "PDF ottimizzato per il web",
+    "processAnother": "Ottimizza un altro file",
+    "target": {
+      "web": "Visualizzazione web",
+      "email": "Allegato e-mail",
+      "archive": "Archiviazione a lungo termine (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "Cosa fa l'appiattimento",
+    "infoFormFields": "Rende i campi modulo non modificabili",
+    "infoAnnotations": "Incorpora le annotazioni nella pagina",
+    "infoLayers": "Unisce tutti i livelli in uno",
+    "infoPreventEditing": "Impedisce ulteriori modifiche",
+    "infoReduceSize": "Riduce la dimensione del file",
+    "optionsHeading": "Opzioni",
+    "flattenFormsLabel": "Appiattisci campi modulo",
+    "flattenAnnotationsLabel": "Appiattisci annotazioni",
+    "flattenLayersLabel": "Appiattisci livelli",
+    "removeHiddenLayersLabel": "Rimuovi livelli nascosti",
+    "useCaseHint": "Perfetto prima di condividere contratti, moduli o documenti firmati",
+    "fieldsBakedIn": "Moduli: {count} campi incorporati",
+    "annotationsBakedIn": "Annotazioni: {count} annotazioni incorporate",
+    "beforeAfter": "Prima: {before} → Dopo: {after}",
+    "flattenButton": "Appiattisci PDF",
+    "resultHeadline": "PDF appiattito con successo",
+    "processAnother": "Appiattisci un altro file"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Modalità scala di grigi",
+    "optionsHeading": "Opzioni",
+    "keepTextBlackLabel": "Mantieni il testo colorato in nero (consigliato)",
+    "preserveImageQualityLabel": "Preserva la qualità dell'immagine",
+    "optimizeForPrintLabel": "Ottimizza per la stampa",
+    "previewHeading": "Anteprima",
+    "colorsRemoved": "Colori rimossi: {count} immagini convertite",
+    "beforeAfter": "Prima: {before} → Dopo: {after}",
+    "grayscaleButton": "Converti in scala di grigi",
+    "resultHeadline": "PDF convertito in scala di grigi",
+    "processAnother": "Converti un altro file",
+    "mode": {
+      "grayscale": {
+        "name": "Scala di grigi pura",
+        "desc": "Converti tutti i colori in tonalità di grigio"
+      },
+      "blackwhite": {
+        "name": "Bianco e nero",
+        "desc": "Alto contrasto, adatto alla stampa"
+      },
+      "sepia": {
+        "name": "Tono seppia",
+        "desc": "Look vintage caldo"
+      }
+    }
   }
 }

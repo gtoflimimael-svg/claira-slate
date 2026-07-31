@@ -1076,5 +1076,89 @@
         "reduction": "अपेक्षित कमी: ~20% छोटा"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate इन्हें पुनर्प्राप्त करने का प्रयास करता है:",
+    "infoCorruptedStructure": "दूषित फ़ाइल संरचना",
+    "infoMissingXref": "गुम क्रॉस-रेफरेंस तालिकाएं",
+    "infoBrokenStreams": "टूटी ऑब्जेक्ट स्ट्रीम्स",
+    "infoTruncatedFiles": "अधूरी फ़ाइलें",
+    "warningSevereDamage": "गंभीर रूप से क्षतिग्रस्त फ़ाइलें पूरी तरह से पुनर्प्राप्त नहीं हो सकतीं।",
+    "partialRecovery": "आंशिक पुनर्प्राप्ति: {total} में से {recovered} पृष्ठ पुनर्प्राप्त",
+    "repairButton": "PDF ठीक करें",
+    "resultHeadline": "PDF सफलतापूर्वक ठीक हो गई",
+    "processAnother": "दूसरी फ़ाइल ठीक करें"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "ऑप्टिमाइज़ेशन क्या करता है",
+    "infoLinearize": "तेज़ वेब लोडिंग के लिए PDF को लीनियराइज़ करता है",
+    "infoStreaming": "पृष्ठ-दर-पृष्ठ स्ट्रीमिंग सक्षम करता है",
+    "infoUnusedObjects": "अप्रयुक्त ऑब्जेक्ट और मेटाडेटा हटाता है",
+    "infoFontEmbedding": "फ़ॉन्ट एम्बेडिंग को अनुकूलित करता है",
+    "infoRedundantStreams": "अनावश्यक स्ट्रीम्स को साफ़ करता है",
+    "optionsHeading": "विकल्प",
+    "removeMetadataLabel": "मेटाडेटा हटाएं (लेखक, निर्माण तिथि)",
+    "removeThumbnailsLabel": "एम्बेडेड थंबनेल हटाएं",
+    "flattenFormsLabel": "फ़ॉर्म फ़ील्ड फ़्लैटन करें",
+    "removeJSLabel": "JavaScript हटाएं",
+    "removeAnnotationsLabel": "एनोटेशन हटाएं",
+    "targetHeading": "लक्षित उपयोग मामला",
+    "beforeAfter": "पहले: {before} → बाद में: {after}",
+    "linearizedNote": "लीनियराइज़्ड: वेब स्ट्रीमिंग के लिए तैयार",
+    "optimizeButton": "PDF ऑप्टिमाइज़ करें",
+    "resultHeadline": "PDF वेब के लिए ऑप्टिमाइज़ हो गई",
+    "processAnother": "दूसरी फ़ाइल ऑप्टिमाइज़ करें",
+    "target": {
+      "web": "वेब डिस्प्ले",
+      "email": "ईमेल अटैचमेंट",
+      "archive": "दीर्घकालिक संग्रहण (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "फ़्लैटनिंग क्या करता है",
+    "infoFormFields": "फ़ॉर्म फ़ील्ड को गैर-संपादन योग्य बनाता है",
+    "infoAnnotations": "एनोटेशन को पृष्ठ में स्थायी रूप से जोड़ता है",
+    "infoLayers": "सभी परतों को एक में मिलाता है",
+    "infoPreventEditing": "आगे संपादन रोकता है",
+    "infoReduceSize": "फ़ाइल का आकार घटाता है",
+    "optionsHeading": "विकल्प",
+    "flattenFormsLabel": "फ़ॉर्म फ़ील्ड फ़्लैटन करें",
+    "flattenAnnotationsLabel": "एनोटेशन फ़्लैटन करें",
+    "flattenLayersLabel": "परतें फ़्लैटन करें",
+    "removeHiddenLayersLabel": "छिपी परतें हटाएं",
+    "useCaseHint": "अनुबंध, फ़ॉर्म या हस्ताक्षरित दस्तावेज़ साझा करने से पहले एकदम सही",
+    "fieldsBakedIn": "फ़ॉर्म: {count} फ़ील्ड जोड़ी गईं",
+    "annotationsBakedIn": "एनोटेशन: {count} एनोटेशन जोड़े गए",
+    "beforeAfter": "पहले: {before} → बाद में: {after}",
+    "flattenButton": "PDF फ़्लैटन करें",
+    "resultHeadline": "PDF सफलतापूर्वक फ़्लैटन हो गई",
+    "processAnother": "दूसरी फ़ाइल फ़्लैटन करें"
+  },
+  "grayscaleTool": {
+    "modeHeading": "ग्रेस्केल मोड",
+    "optionsHeading": "विकल्प",
+    "keepTextBlackLabel": "रंगीन टेक्स्ट को काला रखें (अनुशंसित)",
+    "preserveImageQualityLabel": "छवि गुणवत्ता बनाए रखें",
+    "optimizeForPrintLabel": "प्रिंटिंग के लिए अनुकूलित करें",
+    "previewHeading": "पूर्वावलोकन",
+    "colorsRemoved": "रंग हटाए गए: {count} छवियां परिवर्तित",
+    "beforeAfter": "पहले: {before} → बाद में: {after}",
+    "grayscaleButton": "ग्रेस्केल में बदलें",
+    "resultHeadline": "PDF ग्रेस्केल में परिवर्तित हो गई",
+    "processAnother": "दूसरी फ़ाइल बदलें",
+    "mode": {
+      "grayscale": {
+        "name": "शुद्ध ग्रेस्केल",
+        "desc": "सभी रंगों को ग्रे शेड्स में बदलें"
+      },
+      "blackwhite": {
+        "name": "काला और सफ़ेद",
+        "desc": "उच्च कंट्रास्ट, प्रिंटर के अनुकूल"
+      },
+      "sepia": {
+        "name": "सीपिया टोन",
+        "desc": "गर्म विंटेज लुक"
+      }
+    }
   }
 }

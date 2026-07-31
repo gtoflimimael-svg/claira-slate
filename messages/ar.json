@@ -1076,5 +1076,89 @@
         "reduction": "التخفيض المتوقع: ~20% أصغر"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "تحاول Claira Slate استرداد:",
+    "infoCorruptedStructure": "بنية ملف تالفة",
+    "infoMissingXref": "جداول مرجعية مفقودة",
+    "infoBrokenStreams": "تدفقات كائنات معطوبة",
+    "infoTruncatedFiles": "ملفات مبتورة",
+    "warningSevereDamage": "قد لا يتم استرداد الملفات التالفة بشدة بالكامل.",
+    "partialRecovery": "استرداد جزئي: تم استرداد {recovered} من {total} صفحة",
+    "repairButton": "إصلاح PDF",
+    "resultHeadline": "تم إصلاح ملف PDF بنجاح",
+    "processAnother": "إصلاح ملف آخر"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "ما الذي يفعله التحسين",
+    "infoLinearize": "يُرتّب PDF خطيًا لتحميل ويب أسرع",
+    "infoStreaming": "يتيح البث صفحة بصفحة",
+    "infoUnusedObjects": "يزيل الكائنات والبيانات الوصفية غير المستخدمة",
+    "infoFontEmbedding": "يحسّن تضمين الخطوط",
+    "infoRedundantStreams": "ينظّف التدفقات الزائدة",
+    "optionsHeading": "خيارات",
+    "removeMetadataLabel": "إزالة البيانات الوصفية (المؤلف، تاريخ الإنشاء)",
+    "removeThumbnailsLabel": "إزالة الصور المصغرة المضمنة",
+    "flattenFormsLabel": "تسطيح حقول النموذج",
+    "removeJSLabel": "إزالة JavaScript",
+    "removeAnnotationsLabel": "إزالة التعليقات التوضيحية",
+    "targetHeading": "حالة الاستخدام المستهدفة",
+    "beforeAfter": "قبل: {before} ← بعد: {after}",
+    "linearizedNote": "تم الترتيب الخطي: جاهز للبث عبر الويب",
+    "optimizeButton": "تحسين PDF",
+    "resultHeadline": "تم تحسين PDF للويب",
+    "processAnother": "تحسين ملف آخر",
+    "target": {
+      "web": "عرض الويب",
+      "email": "مرفق بريد إلكتروني",
+      "archive": "الأرشفة طويلة الأمد (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "ما الذي يفعله التسطيح",
+    "infoFormFields": "يجعل حقول النموذج غير قابلة للتحرير",
+    "infoAnnotations": "يدمج التعليقات التوضيحية في الصفحة",
+    "infoLayers": "يدمج جميع الطبقات في طبقة واحدة",
+    "infoPreventEditing": "يمنع أي تعديل لاحق",
+    "infoReduceSize": "يقلل حجم الملف",
+    "optionsHeading": "خيارات",
+    "flattenFormsLabel": "تسطيح حقول النموذج",
+    "flattenAnnotationsLabel": "تسطيح التعليقات التوضيحية",
+    "flattenLayersLabel": "تسطيح الطبقات",
+    "removeHiddenLayersLabel": "إزالة الطبقات المخفية",
+    "useCaseHint": "مثالي قبل مشاركة العقود أو النماذج أو المستندات الموقعة",
+    "fieldsBakedIn": "النماذج: تم دمج {count} حقل",
+    "annotationsBakedIn": "التعليقات: تم دمج {count} تعليق توضيحي",
+    "beforeAfter": "قبل: {before} ← بعد: {after}",
+    "flattenButton": "تسطيح PDF",
+    "resultHeadline": "تم تسطيح PDF بنجاح",
+    "processAnother": "تسطيح ملف آخر"
+  },
+  "grayscaleTool": {
+    "modeHeading": "وضع التدرج الرمادي",
+    "optionsHeading": "خيارات",
+    "keepTextBlackLabel": "إبقاء النص الملون أسود (موصى به)",
+    "preserveImageQualityLabel": "الحفاظ على جودة الصورة",
+    "optimizeForPrintLabel": "تحسين للطباعة",
+    "previewHeading": "معاينة",
+    "colorsRemoved": "تمت إزالة الألوان: تم تحويل {count} صورة",
+    "beforeAfter": "قبل: {before} ← بعد: {after}",
+    "grayscaleButton": "تحويل إلى تدرج رمادي",
+    "resultHeadline": "تم تحويل PDF إلى تدرج رمادي",
+    "processAnother": "تحويل ملف آخر",
+    "mode": {
+      "grayscale": {
+        "name": "تدرج رمادي خالص",
+        "desc": "تحويل جميع الألوان إلى درجات الرمادي"
+      },
+      "blackwhite": {
+        "name": "أبيض وأسود",
+        "desc": "تباين عالٍ، مناسب للطباعة"
+      },
+      "sepia": {
+        "name": "درجة السيبيا",
+        "desc": "مظهر عتيق دافئ"
+      }
+    }
   }
 }

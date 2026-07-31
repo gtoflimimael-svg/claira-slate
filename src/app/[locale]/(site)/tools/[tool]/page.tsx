@@ -10,6 +10,10 @@ import { RotateTool } from "@/components/tools/rotate/rotate-tool";
 import { ExtractTool } from "@/components/tools/extract/extract-tool";
 import { DeleteTool } from "@/components/tools/delete/delete-tool";
 import { CompressTool } from "@/components/tools/compress/compress-tool";
+import { RepairTool } from "@/components/tools/repair/repair-tool";
+import { OptimizeTool } from "@/components/tools/optimize/optimize-tool";
+import { FlattenTool } from "@/components/tools/flatten/flatten-tool";
+import { GrayscaleTool } from "@/components/tools/grayscale/grayscale-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -77,10 +81,15 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isExtract = tool === "extract-pages";
   const isDelete = tool === "delete-pages";
   const isCompress = tool === "compress";
+  const isRepair = tool === "repair";
+  const isOptimize = tool === "optimize";
+  const isFlatten = tool === "flatten";
+  const isGrayscale = tool === "grayscale";
+  const usesWideLayout = isSplit || isOrganize || isRotate || isExtract || isDelete || isCompress || isRepair || isOptimize || isFlatten || isGrayscale;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
-      <div style={{ maxWidth: isSplit || isOrganize || isRotate || isExtract || isDelete || isCompress ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
+      <div style={{ maxWidth: usesWideLayout ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
@@ -119,6 +128,14 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             <DeleteTool />
           ) : isCompress ? (
             <CompressTool />
+          ) : isRepair ? (
+            <RepairTool />
+          ) : isOptimize ? (
+            <OptimizeTool />
+          ) : isFlatten ? (
+            <FlattenTool />
+          ) : isGrayscale ? (
+            <GrayscaleTool />
           ) : (
             <div className="tool-workspace">
               <GenericTool config={config} />

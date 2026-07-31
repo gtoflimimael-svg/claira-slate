@@ -1076,5 +1076,89 @@
         "reduction": "Redução esperada: ~20% menor"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "O Claira Slate tenta recuperar:",
+    "infoCorruptedStructure": "Estrutura de arquivo corrompida",
+    "infoMissingXref": "Tabelas de referência cruzada ausentes",
+    "infoBrokenStreams": "Fluxos de objetos corrompidos",
+    "infoTruncatedFiles": "Arquivos truncados",
+    "warningSevereDamage": "Arquivos gravemente danificados podem não ser totalmente recuperáveis.",
+    "partialRecovery": "Recuperação parcial: {recovered} de {total} páginas recuperadas",
+    "repairButton": "Reparar PDF",
+    "resultHeadline": "PDF reparado com sucesso",
+    "processAnother": "Reparar outro arquivo"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "O que a otimização faz",
+    "infoLinearize": "Lineariza o PDF para carregamento web rápido",
+    "infoStreaming": "Permite streaming página por página",
+    "infoUnusedObjects": "Remove objetos e metadados não utilizados",
+    "infoFontEmbedding": "Otimiza a incorporação de fontes",
+    "infoRedundantStreams": "Limpa fluxos redundantes",
+    "optionsHeading": "Opções",
+    "removeMetadataLabel": "Remover metadados (autor, data de criação)",
+    "removeThumbnailsLabel": "Remover miniaturas incorporadas",
+    "flattenFormsLabel": "Achatar campos de formulário",
+    "removeJSLabel": "Remover JavaScript",
+    "removeAnnotationsLabel": "Remover anotações",
+    "targetHeading": "Caso de uso",
+    "beforeAfter": "Antes: {before} → Depois: {after}",
+    "linearizedNote": "Linearizado: pronto para streaming web",
+    "optimizeButton": "Otimizar PDF",
+    "resultHeadline": "PDF otimizado para a web",
+    "processAnother": "Otimizar outro arquivo",
+    "target": {
+      "web": "Exibição web",
+      "email": "Anexo de e-mail",
+      "archive": "Arquivamento de longo prazo (PDF/A)"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "O que o achatamento faz",
+    "infoFormFields": "Torna os campos de formulário não editáveis",
+    "infoAnnotations": "Incorpora anotações na página",
+    "infoLayers": "Mescla todas as camadas em uma",
+    "infoPreventEditing": "Impede edições futuras",
+    "infoReduceSize": "Reduz o tamanho do arquivo",
+    "optionsHeading": "Opções",
+    "flattenFormsLabel": "Achatar campos de formulário",
+    "flattenAnnotationsLabel": "Achatar anotações",
+    "flattenLayersLabel": "Achatar camadas",
+    "removeHiddenLayersLabel": "Remover camadas ocultas",
+    "useCaseHint": "Perfeito antes de compartilhar contratos, formulários ou documentos assinados",
+    "fieldsBakedIn": "Formulários: {count} campos incorporados",
+    "annotationsBakedIn": "Anotações: {count} anotações incorporadas",
+    "beforeAfter": "Antes: {before} → Depois: {after}",
+    "flattenButton": "Achatar PDF",
+    "resultHeadline": "PDF achatado com sucesso",
+    "processAnother": "Achatar outro arquivo"
+  },
+  "grayscaleTool": {
+    "modeHeading": "Modo de escala de cinza",
+    "optionsHeading": "Opções",
+    "keepTextBlackLabel": "Manter texto colorido em preto (recomendado)",
+    "preserveImageQualityLabel": "Preservar qualidade da imagem",
+    "optimizeForPrintLabel": "Otimizar para impressão",
+    "previewHeading": "Prévia",
+    "colorsRemoved": "Cores removidas: {count} imagens convertidas",
+    "beforeAfter": "Antes: {before} → Depois: {after}",
+    "grayscaleButton": "Converter para escala de cinza",
+    "resultHeadline": "PDF convertido para escala de cinza",
+    "processAnother": "Converter outro arquivo",
+    "mode": {
+      "grayscale": {
+        "name": "Escala de cinza pura",
+        "desc": "Converter todas as cores em tons de cinza"
+      },
+      "blackwhite": {
+        "name": "Preto e branco",
+        "desc": "Alto contraste, adequado para impressão"
+      },
+      "sepia": {
+        "name": "Tom sépia",
+        "desc": "Visual vintage caloroso"
+      }
+    }
   }
 }

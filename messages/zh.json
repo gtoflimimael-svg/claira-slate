@@ -1076,5 +1076,89 @@
         "reduction": "预计缩减：约 20%"
       }
     }
+  },
+  "repairTool": {
+    "infoHeading": "Claira Slate 尝试恢复：",
+    "infoCorruptedStructure": "损坏的文件结构",
+    "infoMissingXref": "缺失的交叉引用表",
+    "infoBrokenStreams": "损坏的对象流",
+    "infoTruncatedFiles": "截断的文件",
+    "warningSevereDamage": "严重损坏的文件可能无法完全恢复。",
+    "partialRecovery": "部分恢复：已恢复 {total} 页中的 {recovered} 页",
+    "repairButton": "修复 PDF",
+    "resultHeadline": "PDF 修复成功",
+    "processAnother": "修复另一个文件"
+  },
+  "optimizeTool": {
+    "whatItDoesHeading": "优化功能说明",
+    "infoLinearize": "线性化 PDF 以加快网页加载",
+    "infoStreaming": "支持逐页流式加载",
+    "infoUnusedObjects": "移除未使用的对象和元数据",
+    "infoFontEmbedding": "优化字体嵌入",
+    "infoRedundantStreams": "清理冗余流",
+    "optionsHeading": "选项",
+    "removeMetadataLabel": "移除元数据（作者、创建日期）",
+    "removeThumbnailsLabel": "移除嵌入的缩略图",
+    "flattenFormsLabel": "展平表单字段",
+    "removeJSLabel": "移除 JavaScript",
+    "removeAnnotationsLabel": "移除注释",
+    "targetHeading": "目标用途",
+    "beforeAfter": "之前：{before} → 之后：{after}",
+    "linearizedNote": "已线性化：可用于网页流式传输",
+    "optimizeButton": "优化 PDF",
+    "resultHeadline": "PDF 已针对网页优化",
+    "processAnother": "优化另一个文件",
+    "target": {
+      "web": "网页显示",
+      "email": "邮件附件",
+      "archive": "长期存档（PDF/A）"
+    }
+  },
+  "flattenTool": {
+    "whatItDoesHeading": "展平功能说明",
+    "infoFormFields": "使表单字段不可编辑",
+    "infoAnnotations": "将注释固化到页面中",
+    "infoLayers": "将所有图层合并为一个",
+    "infoPreventEditing": "阻止进一步编辑",
+    "infoReduceSize": "减小文件大小",
+    "optionsHeading": "选项",
+    "flattenFormsLabel": "展平表单字段",
+    "flattenAnnotationsLabel": "展平注释",
+    "flattenLayersLabel": "展平图层",
+    "removeHiddenLayersLabel": "移除隐藏图层",
+    "useCaseHint": "非常适合在分享合同、表单或已签署文件之前使用",
+    "fieldsBakedIn": "表单：已固化 {count} 个字段",
+    "annotationsBakedIn": "注释：已固化 {count} 条注释",
+    "beforeAfter": "之前：{before} → 之后：{after}",
+    "flattenButton": "展平 PDF",
+    "resultHeadline": "PDF 展平成功",
+    "processAnother": "展平另一个文件"
+  },
+  "grayscaleTool": {
+    "modeHeading": "灰度模式",
+    "optionsHeading": "选项",
+    "keepTextBlackLabel": "将彩色文字保留为黑色（推荐）",
+    "preserveImageQualityLabel": "保留图像质量",
+    "optimizeForPrintLabel": "针对打印优化",
+    "previewHeading": "预览",
+    "colorsRemoved": "已移除颜色：转换了 {count} 张图像",
+    "beforeAfter": "之前：{before} → 之后：{after}",
+    "grayscaleButton": "转换为灰度",
+    "resultHeadline": "PDF 已转换为灰度",
+    "processAnother": "转换另一个文件",
+    "mode": {
+      "grayscale": {
+        "name": "纯灰度",
+        "desc": "将所有颜色转换为灰色阴影"
+      },
+      "blackwhite": {
+        "name": "黑白",
+        "desc": "高对比度，适合打印"
+      },
+      "sepia": {
+        "name": "复古棕褐色",
+        "desc": "温暖的复古效果"
+      }
+    }
   }
 }
