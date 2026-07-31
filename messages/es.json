@@ -998,5 +998,36 @@
       "single": "Un solo PDF",
       "perPage": "Un PDF por página"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "Acciones rápidas",
+    "deleteBlankPages": "Eliminar páginas en blanco",
+    "scanning": "Escaneando…",
+    "deleteFirstPage": "Eliminar primera página",
+    "deleteLastPage": "Eliminar última página",
+    "clearSelection": "Borrar selección",
+    "markedCount": "{count} páginas marcadas para eliminar",
+    "cantDeleteAllWarning": "No puedes eliminar todas las páginas — al menos una debe quedar.",
+    "cantDeleteAllError": "No puedes eliminar todas las páginas — al menos una debe quedar.",
+    "markAll": "Marcar todo",
+    "undo": "Deshacer",
+    "redo": "Rehacer",
+    "shortcutsHint": "Clic marca una página · Ctrl+A marcar todo · Esc borrar · Enter eliminar",
+    "shortcutClick": "Clic — marcar para eliminar",
+    "aiDeleteHeading": "Eliminación con IA",
+    "aiQueryPlaceholder": "p. ej. páginas en blanco o duplicadas",
+    "aiDeleteButton": "Selección IA",
+    "aiAnalyzing": "Analizando…",
+    "aiQuotaMessage": "Has usado tus {limit} acciones de IA gratuitas este mes. Mejora a Pro para más.",
+    "upgrade": "Mejorar",
+    "confirmMarkAllTitle": "¿Marcar todas las páginas para eliminar?",
+    "confirmMarkAllBody": "Esto marca las {count} páginas. No podrás eliminar el documento completo — al menos una página debe quedar sin marcar.",
+    "confirmDeleteTitle": "¿Eliminar estas páginas?",
+    "confirmDeleteBody": "Esto eliminará permanentemente {count} páginas del PDF de salida, dejando {remaining} páginas. No se puede deshacer una vez descargado.",
+    "deleteButton": "Eliminar {count} páginas",
+    "resultHeadline": "¡Listo! {count} páginas eliminadas.",
+    "resultPageCount": "Tu PDF ahora tiene {count} páginas",
+    "sizeComparison": "Antes: {before} → Después: {after} ({pct}%)",
+    "deleteMore": "Eliminar más páginas"
   }
 }

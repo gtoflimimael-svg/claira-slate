@@ -1,6 +1,6 @@
 import type { Plan } from "@/lib/quota";
 
-export type AIFeature = "summarize" | "chat" | "translate" | "ocr" | "organize-suggest" | "extract-suggest";
+export type AIFeature = "summarize" | "chat" | "translate" | "ocr" | "organize-suggest" | "extract-suggest" | "delete-suggest";
 export type AIProvider = "gemini" | "claude";
 
 // Free plan is Gemini Flash-Lite only, across every feature. Pro/Business get

@@ -998,5 +998,36 @@
       "single": "단일 PDF",
       "perPage": "페이지당 하나의 PDF"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "빠른 작업",
+    "deleteBlankPages": "빈 페이지 삭제",
+    "scanning": "스캔 중…",
+    "deleteFirstPage": "첫 페이지 삭제",
+    "deleteLastPage": "마지막 페이지 삭제",
+    "clearSelection": "선택 지우기",
+    "markedCount": "삭제 대상으로 {count}페이지 표시됨",
+    "cantDeleteAllWarning": "모든 페이지를 삭제할 수 없습니다 — 최소 한 페이지는 남아야 합니다.",
+    "cantDeleteAllError": "모든 페이지를 삭제할 수 없습니다 — 최소 한 페이지는 남아야 합니다.",
+    "markAll": "전체 표시",
+    "undo": "실행 취소",
+    "redo": "다시 실행",
+    "shortcutsHint": "클릭으로 페이지 표시 · Ctrl+A 전체 표시 · Esc 지우기 · Enter 삭제",
+    "shortcutClick": "클릭 — 삭제 대상으로 표시",
+    "aiDeleteHeading": "AI 삭제",
+    "aiQueryPlaceholder": "예: 빈 페이지 또는 중복 페이지",
+    "aiDeleteButton": "AI 선택",
+    "aiAnalyzing": "분석 중…",
+    "aiQuotaMessage": "이번 달 무료 AI 작업 {limit}회를 모두 사용했습니다. 더 사용하려면 Pro로 업그레이드하세요.",
+    "upgrade": "업그레이드",
+    "confirmMarkAllTitle": "모든 페이지를 삭제 대상으로 표시할까요?",
+    "confirmMarkAllBody": "모든 {count}페이지가 표시됩니다. 전체 문서는 삭제할 수 없습니다 — 최소 한 페이지는 표시되지 않은 상태로 남아야 합니다.",
+    "confirmDeleteTitle": "이 페이지들을 삭제할까요?",
+    "confirmDeleteBody": "출력 PDF에서 {count}페이지가 영구적으로 제거되어 {remaining}페이지가 남습니다. 다운로드 후에는 되돌릴 수 없습니다.",
+    "deleteButton": "{count}페이지 삭제",
+    "resultHeadline": "완료! {count}페이지가 삭제되었습니다.",
+    "resultPageCount": "이제 PDF에 {count}페이지가 있습니다",
+    "sizeComparison": "이전: {before} → 이후: {after} ({pct}%)",
+    "deleteMore": "페이지 더 삭제"
   }
 }

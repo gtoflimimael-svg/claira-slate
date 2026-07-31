@@ -998,5 +998,36 @@
       "single": "PDF único",
       "perPage": "Um PDF por página"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "Ações rápidas",
+    "deleteBlankPages": "Excluir páginas em branco",
+    "scanning": "Analisando…",
+    "deleteFirstPage": "Excluir primeira página",
+    "deleteLastPage": "Excluir última página",
+    "clearSelection": "Limpar seleção",
+    "markedCount": "{count} páginas marcadas para exclusão",
+    "cantDeleteAllWarning": "Você não pode excluir todas as páginas — pelo menos uma deve permanecer.",
+    "cantDeleteAllError": "Você não pode excluir todas as páginas — pelo menos uma deve permanecer.",
+    "markAll": "Marcar tudo",
+    "undo": "Desfazer",
+    "redo": "Refazer",
+    "shortcutsHint": "Clique marca uma página · Ctrl+A marcar tudo · Esc limpar · Enter excluir",
+    "shortcutClick": "Clique — marcar para exclusão",
+    "aiDeleteHeading": "Exclusão com IA",
+    "aiQueryPlaceholder": "ex. páginas em branco ou duplicadas",
+    "aiDeleteButton": "Seleção IA",
+    "aiAnalyzing": "Analisando…",
+    "aiQuotaMessage": "Você usou todas as {limit} ações de IA gratuitas deste mês. Faça upgrade para o Pro para mais.",
+    "upgrade": "Fazer upgrade",
+    "confirmMarkAllTitle": "Marcar todas as páginas para exclusão?",
+    "confirmMarkAllBody": "Isso marca todas as {count} páginas. Você não poderá excluir o documento inteiro — pelo menos uma página deve permanecer desmarcada.",
+    "confirmDeleteTitle": "Excluir estas páginas?",
+    "confirmDeleteBody": "Isso removerá permanentemente {count} páginas do PDF de saída, deixando {remaining} páginas. Isso não pode ser desfeito após o download.",
+    "deleteButton": "Excluir {count} páginas",
+    "resultHeadline": "Pronto! {count} páginas excluídas.",
+    "resultPageCount": "Seu PDF agora tem {count} páginas",
+    "sizeComparison": "Antes: {before} → Depois: {after} ({pct}%)",
+    "deleteMore": "Excluir mais páginas"
   }
 }

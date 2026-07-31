@@ -998,5 +998,36 @@
       "single": "Einzelnes PDF",
       "perPage": "Ein PDF pro Seite"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "Schnellaktionen",
+    "deleteBlankPages": "Leere Seiten löschen",
+    "scanning": "Wird gescannt…",
+    "deleteFirstPage": "Erste Seite löschen",
+    "deleteLastPage": "Letzte Seite löschen",
+    "clearSelection": "Auswahl leeren",
+    "markedCount": "{count} Seiten zum Löschen markiert",
+    "cantDeleteAllWarning": "Du kannst nicht alle Seiten löschen — mindestens eine muss übrig bleiben.",
+    "cantDeleteAllError": "Du kannst nicht alle Seiten löschen — mindestens eine muss übrig bleiben.",
+    "markAll": "Alle markieren",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "shortcutsHint": "Klick markiert eine Seite · Strg+A alle markieren · Esc leeren · Enter löschen",
+    "shortcutClick": "Klick — zum Löschen markieren",
+    "aiDeleteHeading": "KI-Löschung",
+    "aiQueryPlaceholder": "z. B. leere Seiten oder doppelte Seiten",
+    "aiDeleteButton": "KI-Auswahl",
+    "aiAnalyzing": "Analysiere…",
+    "aiQuotaMessage": "Du hast alle {limit} kostenlosen KI-Aktionen diesen Monat aufgebraucht. Upgrade auf Pro für mehr.",
+    "upgrade": "Upgrade",
+    "confirmMarkAllTitle": "Alle Seiten zum Löschen markieren?",
+    "confirmMarkAllBody": "Dies markiert alle {count} Seiten. Du kannst nicht das gesamte Dokument löschen — mindestens eine Seite muss unmarkiert bleiben.",
+    "confirmDeleteTitle": "Diese Seiten löschen?",
+    "confirmDeleteBody": "Dadurch werden {count} Seiten dauerhaft aus dem Ausgabe-PDF entfernt, sodass {remaining} Seiten übrig bleiben. Dies kann nach dem Download nicht rückgängig gemacht werden.",
+    "deleteButton": "{count} Seiten löschen",
+    "resultHeadline": "Fertig! {count} Seiten gelöscht.",
+    "resultPageCount": "Dein PDF hat jetzt {count} Seiten",
+    "sizeComparison": "Vorher: {before} → Nachher: {after} ({pct}%)",
+    "deleteMore": "Weitere Seiten löschen"
   }
 }

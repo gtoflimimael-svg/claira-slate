@@ -998,5 +998,36 @@
       "single": "単一のPDF",
       "perPage": "ページごとに1つのPDF"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "クイックアクション",
+    "deleteBlankPages": "空白ページを削除",
+    "scanning": "スキャン中…",
+    "deleteFirstPage": "最初のページを削除",
+    "deleteLastPage": "最後のページを削除",
+    "clearSelection": "選択をクリア",
+    "markedCount": "{count}ページが削除対象としてマークされています",
+    "cantDeleteAllWarning": "すべてのページは削除できません — 少なくとも1ページは残す必要があります。",
+    "cantDeleteAllError": "すべてのページは削除できません — 少なくとも1ページは残す必要があります。",
+    "markAll": "すべてマーク",
+    "undo": "元に戻す",
+    "redo": "やり直す",
+    "shortcutsHint": "クリックでページをマーク・Ctrl+Aで全マーク・Escでクリア・Enterで削除",
+    "shortcutClick": "クリック — 削除対象としてマーク",
+    "aiDeleteHeading": "AI削除",
+    "aiQueryPlaceholder": "例: 空白ページや重複ページ",
+    "aiDeleteButton": "AI選択",
+    "aiAnalyzing": "分析中…",
+    "aiQuotaMessage": "今月の無料AIアクション{limit}回をすべて使用しました。Proにアップグレードするとさらに使えます。",
+    "upgrade": "アップグレード",
+    "confirmMarkAllTitle": "すべてのページを削除対象としてマークしますか？",
+    "confirmMarkAllBody": "{count}ページすべてがマークされます。文書全体は削除できません — 少なくとも1ページはマークなしで残す必要があります。",
+    "confirmDeleteTitle": "これらのページを削除しますか？",
+    "confirmDeleteBody": "出力PDFから{count}ページが完全に削除され、{remaining}ページが残ります。ダウンロード後は元に戻せません。",
+    "deleteButton": "{count}ページを削除",
+    "resultHeadline": "完了！{count}ページを削除しました。",
+    "resultPageCount": "PDFは現在{count}ページです",
+    "sizeComparison": "変更前: {before} → 変更後: {after} ({pct}%)",
+    "deleteMore": "さらにページを削除"
   }
 }

@@ -998,5 +998,36 @@
       "single": "PDF واحد",
       "perPage": "PDF واحد لكل صفحة"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "إجراءات سريعة",
+    "deleteBlankPages": "حذف الصفحات الفارغة",
+    "scanning": "جارٍ الفحص…",
+    "deleteFirstPage": "حذف الصفحة الأولى",
+    "deleteLastPage": "حذف الصفحة الأخيرة",
+    "clearSelection": "مسح التحديد",
+    "markedCount": "تم تحديد {count} صفحة للحذف",
+    "cantDeleteAllWarning": "لا يمكنك حذف جميع الصفحات — يجب أن تبقى صفحة واحدة على الأقل.",
+    "cantDeleteAllError": "لا يمكنك حذف جميع الصفحات — يجب أن تبقى صفحة واحدة على الأقل.",
+    "markAll": "تحديد الكل",
+    "undo": "تراجع",
+    "redo": "إعادة",
+    "shortcutsHint": "النقر يحدد صفحة · Ctrl+A تحديد الكل · Esc مسح · Enter حذف",
+    "shortcutClick": "النقر — تحديد للحذف",
+    "aiDeleteHeading": "حذف بالذكاء الاصطناعي",
+    "aiQueryPlaceholder": "مثال: الصفحات الفارغة أو المكررة",
+    "aiDeleteButton": "تحديد بالذكاء الاصطناعي",
+    "aiAnalyzing": "جارٍ التحليل…",
+    "aiQuotaMessage": "لقد استخدمت جميع إجراءات الذكاء الاصطناعي المجانية ({limit}) لهذا الشهر. قم بالترقية إلى Pro للمزيد.",
+    "upgrade": "ترقية",
+    "confirmMarkAllTitle": "تحديد جميع الصفحات للحذف؟",
+    "confirmMarkAllBody": "سيؤدي هذا إلى تحديد جميع الصفحات البالغ عددها {count}. لن تتمكن من حذف المستند بأكمله — يجب أن تبقى صفحة واحدة على الأقل غير محددة.",
+    "confirmDeleteTitle": "حذف هذه الصفحات؟",
+    "confirmDeleteBody": "سيؤدي هذا إلى إزالة {count} صفحة نهائيًا من ملف PDF الناتج، ليتبقى {remaining} صفحة. لا يمكن التراجع عن هذا بعد التنزيل.",
+    "deleteButton": "حذف {count} صفحة",
+    "resultHeadline": "تم! حذف {count} صفحة.",
+    "resultPageCount": "يحتوي ملف PDF الآن على {count} صفحة",
+    "sizeComparison": "قبل: {before} ← بعد: {after} ({pct}%)",
+    "deleteMore": "حذف المزيد من الصفحات"
   }
 }

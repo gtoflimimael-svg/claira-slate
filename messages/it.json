@@ -998,5 +998,36 @@
       "single": "PDF singolo",
       "perPage": "Un PDF per pagina"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "Azioni rapide",
+    "deleteBlankPages": "Elimina pagine vuote",
+    "scanning": "Scansione…",
+    "deleteFirstPage": "Elimina prima pagina",
+    "deleteLastPage": "Elimina ultima pagina",
+    "clearSelection": "Cancella selezione",
+    "markedCount": "{count} pagine contrassegnate per l'eliminazione",
+    "cantDeleteAllWarning": "Non puoi eliminare tutte le pagine — almeno una deve rimanere.",
+    "cantDeleteAllError": "Non puoi eliminare tutte le pagine — almeno una deve rimanere.",
+    "markAll": "Contrassegna tutto",
+    "undo": "Annulla",
+    "redo": "Ripeti",
+    "shortcutsHint": "Clic contrassegna una pagina · Ctrl+A contrassegna tutto · Esc cancella · Invio elimina",
+    "shortcutClick": "Clic — contrassegna per l'eliminazione",
+    "aiDeleteHeading": "Eliminazione IA",
+    "aiQueryPlaceholder": "es. pagine vuote o duplicate",
+    "aiDeleteButton": "Selezione IA",
+    "aiAnalyzing": "Analisi in corso…",
+    "aiQuotaMessage": "Hai usato tutte le {limit} azioni IA gratuite di questo mese. Passa a Pro per averne di più.",
+    "upgrade": "Passa a Pro",
+    "confirmMarkAllTitle": "Contrassegnare tutte le pagine per l'eliminazione?",
+    "confirmMarkAllBody": "Questo contrassegna tutte le {count} pagine. Non potrai eliminare l'intero documento — almeno una pagina deve rimanere non contrassegnata.",
+    "confirmDeleteTitle": "Eliminare queste pagine?",
+    "confirmDeleteBody": "Questo rimuoverà definitivamente {count} pagine dal PDF di output, lasciando {remaining} pagine. Non può essere annullato una volta scaricato.",
+    "deleteButton": "Elimina {count} pagine",
+    "resultHeadline": "Fatto! {count} pagine eliminate.",
+    "resultPageCount": "Il tuo PDF ora ha {count} pagine",
+    "sizeComparison": "Prima: {before} → Dopo: {after} ({pct}%)",
+    "deleteMore": "Elimina altre pagine"
   }
 }

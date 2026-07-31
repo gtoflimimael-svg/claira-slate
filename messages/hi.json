@@ -998,5 +998,36 @@
       "single": "एकल PDF",
       "perPage": "प्रति पृष्ठ एक PDF"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "त्वरित कार्रवाइयाँ",
+    "deleteBlankPages": "खाली पृष्ठ हटाएं",
+    "scanning": "स्कैन हो रहा है…",
+    "deleteFirstPage": "पहला पृष्ठ हटाएं",
+    "deleteLastPage": "अंतिम पृष्ठ हटाएं",
+    "clearSelection": "चयन साफ़ करें",
+    "markedCount": "हटाने के लिए {count} पृष्ठ चिह्नित",
+    "cantDeleteAllWarning": "आप सभी पृष्ठ नहीं हटा सकते — कम से कम एक बचना चाहिए।",
+    "cantDeleteAllError": "आप सभी पृष्ठ नहीं हटा सकते — कम से कम एक बचना चाहिए।",
+    "markAll": "सभी चिह्नित करें",
+    "undo": "पूर्ववत करें",
+    "redo": "फिर से करें",
+    "shortcutsHint": "क्लिक से पृष्ठ चिह्नित करें · Ctrl+A सभी चिह्नित करें · Esc साफ़ करें · Enter हटाएं",
+    "shortcutClick": "क्लिक — हटाने के लिए चिह्नित करें",
+    "aiDeleteHeading": "AI हटाना",
+    "aiQueryPlaceholder": "जैसे खाली या डुप्लिकेट पृष्ठ",
+    "aiDeleteButton": "AI चयन",
+    "aiAnalyzing": "विश्लेषण हो रहा है…",
+    "aiQuotaMessage": "आपने इस महीने की सभी {limit} मुफ़्त AI कार्रवाइयाँ उपयोग कर ली हैं। अधिक के लिए Pro में अपग्रेड करें।",
+    "upgrade": "अपग्रेड करें",
+    "confirmMarkAllTitle": "हटाने के लिए सभी पृष्ठ चिह्नित करें?",
+    "confirmMarkAllBody": "इससे सभी {count} पृष्ठ चिह्नित हो जाएंगे। आप पूरा दस्तावेज़ नहीं हटा सकेंगे — कम से कम एक पृष्ठ अचिह्नित रहना चाहिए।",
+    "confirmDeleteTitle": "क्या ये पृष्ठ हटाएं?",
+    "confirmDeleteBody": "इससे आउटपुट PDF से {count} पृष्ठ स्थायी रूप से हट जाएंगे, {remaining} पृष्ठ बचेंगे। डाउनलोड करने के बाद इसे पूर्ववत नहीं किया जा सकता।",
+    "deleteButton": "{count} पृष्ठ हटाएं",
+    "resultHeadline": "हो गया! {count} पृष्ठ हटाए गए।",
+    "resultPageCount": "आपकी PDF में अब {count} पृष्ठ हैं",
+    "sizeComparison": "पहले: {before} → बाद में: {after} ({pct}%)",
+    "deleteMore": "और पृष्ठ हटाएं"
   }
 }

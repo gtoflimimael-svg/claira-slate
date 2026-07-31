@@ -998,5 +998,36 @@
       "single": "PDF unique",
       "perPage": "Un PDF par page"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "Actions rapides",
+    "deleteBlankPages": "Supprimer les pages vides",
+    "scanning": "Analyse en cours…",
+    "deleteFirstPage": "Supprimer la première page",
+    "deleteLastPage": "Supprimer la dernière page",
+    "clearSelection": "Effacer la sélection",
+    "markedCount": "{count} pages marquées pour suppression",
+    "cantDeleteAllWarning": "Vous ne pouvez pas supprimer toutes les pages — au moins une doit rester.",
+    "cantDeleteAllError": "Vous ne pouvez pas supprimer toutes les pages — au moins une doit rester.",
+    "markAll": "Tout marquer",
+    "undo": "Annuler",
+    "redo": "Rétablir",
+    "shortcutsHint": "Clic marque une page · Ctrl+A tout marquer · Échap effacer · Entrée supprimer",
+    "shortcutClick": "Clic — marquer pour suppression",
+    "aiDeleteHeading": "Suppression IA",
+    "aiQueryPlaceholder": "ex. pages vides ou en double",
+    "aiDeleteButton": "Sélection IA",
+    "aiAnalyzing": "Analyse en cours…",
+    "aiQuotaMessage": "Vous avez utilisé vos {limit} actions IA gratuites ce mois-ci. Passez à Pro pour plus.",
+    "upgrade": "Passer à Pro",
+    "confirmMarkAllTitle": "Marquer toutes les pages pour suppression ?",
+    "confirmMarkAllBody": "Cela marque les {count} pages. Vous ne pourrez pas supprimer le document entier — au moins une page doit rester non marquée.",
+    "confirmDeleteTitle": "Supprimer ces pages ?",
+    "confirmDeleteBody": "Cela supprimera définitivement {count} pages du PDF de sortie, laissant {remaining} pages. Cette action est irréversible une fois téléchargée.",
+    "deleteButton": "Supprimer {count} pages",
+    "resultHeadline": "Terminé ! {count} pages supprimées.",
+    "resultPageCount": "Votre PDF compte maintenant {count} pages",
+    "sizeComparison": "Avant : {before} → Après : {after} ({pct}%)",
+    "deleteMore": "Supprimer d'autres pages"
   }
 }

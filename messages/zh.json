@@ -998,5 +998,36 @@
       "single": "单个 PDF",
       "perPage": "每页一个 PDF"
     }
+  },
+  "deleteTool": {
+    "quickActionsHeading": "快捷操作",
+    "deleteBlankPages": "删除空白页",
+    "scanning": "扫描中…",
+    "deleteFirstPage": "删除首页",
+    "deleteLastPage": "删除末页",
+    "clearSelection": "清除选择",
+    "markedCount": "已标记 {count} 页待删除",
+    "cantDeleteAllWarning": "无法删除所有页面 — 至少需保留一页。",
+    "cantDeleteAllError": "无法删除所有页面 — 至少需保留一页。",
+    "markAll": "全部标记",
+    "undo": "撤销",
+    "redo": "重做",
+    "shortcutsHint": "点击标记页面 · Ctrl+A 全部标记 · Esc 清除 · Enter 删除",
+    "shortcutClick": "点击 — 标记为删除",
+    "aiDeleteHeading": "AI 删除",
+    "aiQueryPlaceholder": "例如 空白页或重复页",
+    "aiDeleteButton": "AI 选择",
+    "aiAnalyzing": "分析中…",
+    "aiQuotaMessage": "您本月的 {limit} 次免费 AI 操作已用完。升级到 Pro 可获得更多次数。",
+    "upgrade": "升级",
+    "confirmMarkAllTitle": "标记所有页面以删除？",
+    "confirmMarkAllBody": "这将标记全部 {count} 页。您将无法删除整个文档 — 至少需保留一页不被标记。",
+    "confirmDeleteTitle": "删除这些页面？",
+    "confirmDeleteBody": "这将从输出 PDF 中永久删除 {count} 页，剩余 {remaining} 页。下载后无法撤销。",
+    "deleteButton": "删除 {count} 页",
+    "resultHeadline": "完成！已删除 {count} 页。",
+    "resultPageCount": "您的 PDF 现在有 {count} 页",
+    "sizeComparison": "之前: {before} → 之后: {after} ({pct}%)",
+    "deleteMore": "删除更多页面"
   }
 }
