@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from "react";
 
 const MAX_HISTORY = 50;
 
-export interface OrganizeHistory<T> {
+export interface ToolHistory<T> {
   state: T;
   commit: (next: T) => void;
   undo: () => void;
@@ -12,27 +12,31 @@ export interface OrganizeHistory<T> {
   reset: (next: T) => void;
   /** Updates state without touching the undo/redo stacks — for non-user-action
    *  data events (e.g. a newly-added source PDF's pages arriving once pdf.js
-   *  reports its page count), which the spec doesn't list as undoable. Accepts
-   *  an updater function (forwarded straight to the underlying setState) so
-   *  callers invoked from an async closure — e.g. two PDFs finishing their
-   *  pdf.js load back to back — always apply against the latest state rather
-   *  than whatever `state` looked like when that closure was created. */
+   *  reports its page count), which callers don't want in the undo stack.
+   *  Accepts an updater function (forwarded straight to the underlying
+   *  setState) so callers invoked from an async closure — e.g. two PDFs
+   *  finishing their pdf.js load back to back — always apply against the
+   *  latest state rather than whatever `state` looked like when that closure
+   *  was created. */
   setSilently: (next: T | ((prev: T) => T)) => void;
   canUndo: boolean;
   canRedo: boolean;
 }
 
-// Snapshot-stack undo/redo, capped at 50 steps. The stacks themselves live in
-// refs (mutating them doesn't need a re-render), but canUndo/canRedo are
-// mirrored into real state — reading `ref.current` during render to derive
-// them is a lint error (react-hooks/refs) and, more importantly, wouldn't
-// reliably trigger a re-render when the stacks change.
+// Snapshot-stack undo/redo, capped at 50 steps. Shared by every page-editing
+// tool (Organize, Rotate, ...) that needs undo/redo over an array of pages.
+//
+// The stacks themselves live in refs (mutating them doesn't need a
+// re-render), but canUndo/canRedo are mirrored into real state — reading
+// `ref.current` during render to derive them is a lint error
+// (react-hooks/refs) and, more importantly, wouldn't reliably trigger a
+// re-render when the stacks change.
 //
 // `commit`/`undo`/`redo` read `state` from the surrounding closure and call
 // setState with a plain value rather than the updater-function form: React
 // 19 invokes updater functions twice in dev to check purity, which would
 // double-push onto the ref-based history stacks.
-export function useOrganizeHistory<T>(initial: T): OrganizeHistory<T> {
+export function useToolHistory<T>(initial: T): ToolHistory<T> {
   const [state, setState] = useState<T>(initial);
   const past = useRef<T[]>([]);
   const future = useRef<T[]>([]);

@@ -7,15 +7,15 @@ import { motion } from "framer-motion";
 import { formatBytes } from "@/lib/format";
 import { track, type Plan } from "@/lib/analytics";
 import { FileThumbnail } from "@/components/tools/file-thumbnail";
-import { OrganizePageGrid, type OrganizePageGridHandle } from "./organize-page-grid";
-import { OrganizePanel } from "./organize-panel";
 import { useToolHistory } from "@/components/tools/shared/use-tool-history";
-import { SOURCE_COLORS, sourceLabelForIndex, genId, markMoved, isModified, type SourceFile, type OrganizePage } from "./types";
+import { RotatePageGrid } from "./rotate-page-grid";
+import { RotatePanel } from "./rotate-panel";
+import { SOURCE_COLORS, sourceLabelForIndex, genId, normalizeAngle, type SourceFile, type RotatePage, type PageDims } from "./types";
 
 type Phase = "idle" | "uploading" | "processing" | "success";
 type View = "grid" | "list";
 
-interface OrganizeResult {
+interface RotateResult {
   downloadUrl: string;
   filename: string;
   r2Key: string;
@@ -71,46 +71,34 @@ function formatCountdown(seconds: number): string {
   return `${m}:${s}`;
 }
 
-function newPagesForSource(sourceId: string, pageCount: number): OrganizePage[] {
-  return Array.from({ length: pageCount }, (_, i) => ({
-    id: genId("pg"),
-    sourceId,
-    originalIndex: i,
-    rotation: 0,
-  }));
+function newPagesForSource(sourceId: string, pageCount: number): RotatePage[] {
+  return Array.from({ length: pageCount }, (_, i) => ({ id: genId("pg"), sourceId, originalIndex: i, rotation: 0 }));
 }
 
-export function OrganizeTool() {
-  const t = useTranslations("organizeTool");
+export function RotateTool() {
+  const t = useTranslations("rotateTool");
   const tp = useTranslations("toolPage");
   const tc = useTranslations("common");
   const router = useRouter();
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const gridRef = useRef<OrganizePageGridHandle>(null);
   const startTimeRef = useRef(0);
   const lastClickedRef = useRef<string | null>(null);
-  const sortDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pageDimsRef = useRef<Map<string, PageDims>>(new Map());
 
   const [sources, setSources] = useState<SourceFile[]>([]);
-  const history = useToolHistory<OrganizePage[]>([]);
+  const history = useToolHistory<RotatePage[]>([]);
   const pages = history.state;
 
   const [view, setView] = useState<View>("grid");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [focusedId, setFocusedId] = useState<string | null>(null);
-  const [spacePreview, setSpacePreview] = useState<{ dataUrl: string; rotation: number } | null>(null);
-
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiError, setAiError] = useState<string | null>(null);
-  const [aiUpgradeLimit, setAiUpgradeLimit] = useState<number | null>(null);
-  const [aiBanner, setAiBanner] = useState<string | null>(null);
 
   const [phase, setPhase] = useState<Phase>("idle");
   const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState("");
   const [limit, setLimit] = useState<number | null>(null);
-  const [result, setResult] = useState<OrganizeResult | null>(null);
+  const [result, setResult] = useState<RotateResult | null>(null);
   const [previewFile, setPreviewFile] = useState<File | null>(null);
   const [processingSeconds, setProcessingSeconds] = useState<number | null>(null);
   const [downloaded, setDownloaded] = useState(false);
@@ -119,7 +107,7 @@ export function OrganizeTool() {
   const secondsLeft = resultDeadline ? Math.max(0, Math.round((resultDeadline - now) / 1000)) : 3600;
 
   const disabled = phase !== "idle";
-  const modifiedCount = pages.filter(isModified).length;
+  const rotatedCount = pages.filter((p) => p.rotation !== 0).length;
 
   useEffect(() => {
     if (!resultDeadline) return;
@@ -127,8 +115,6 @@ export function OrganizeTool() {
     return () => clearInterval(id);
   }, [resultDeadline]);
 
-  // Same same-origin-proxy workaround as every other tool's result thumbnail:
-  // the R2 bucket has no browser-fetch CORS policy on its presigned URL.
   useEffect(() => {
     if (!result) return;
     let cancelled = false;
@@ -147,7 +133,6 @@ export function OrganizeTool() {
     };
   }, [result]);
 
-  // --- File intake ----------------------------------------------------------
   function pickFiles(fileList: FileList | null) {
     if (!fileList || fileList.length === 0) return;
     const incoming = Array.from(fileList).filter((f) => f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf"));
@@ -177,14 +162,13 @@ export function OrganizeTool() {
     return () => document.removeEventListener("paste", onPaste);
   }, [sources.length]);
 
-  // This fires from inside an async pdf.js-load closure that may resolve
-  // long after it was created (e.g. two PDFs added in one picker selection,
-  // finishing their loads back to back) — using the functional-update form
-  // means each call applies against whatever pages exist *at that moment*,
-  // instead of racing on a `pages` value captured when the closure was made.
   function handleSourceLoaded(sourceId: string, pageCount: number) {
     setSources((prev) => prev.map((s) => (s.id === sourceId ? { ...s, pageCount } : s)));
     history.setSilently((prev) => [...prev, ...newPagesForSource(sourceId, pageCount)]);
+  }
+
+  function handlePageDims(sourceId: string, pageIndex: number, dims: PageDims) {
+    pageDimsRef.current.set(`${sourceId}:${pageIndex}`, dims);
   }
 
   function handleRemoveSource(sourceId: string) {
@@ -192,12 +176,6 @@ export function OrganizeTool() {
     const next = pages.filter((p) => p.sourceId !== sourceId);
     history.setSilently(next);
     setSelectedIds((prev) => new Set([...prev].filter((id) => next.some((p) => p.id === id))));
-  }
-
-  function handleReorderSources(next: SourceFile[]) {
-    setSources(next);
-    const grouped = next.flatMap((src) => pages.filter((p) => p.sourceId === src.id));
-    history.commit(markMoved(pages, grouped));
   }
 
   function resetAll() {
@@ -212,13 +190,9 @@ export function OrganizeTool() {
     setDownloaded(false);
     setError("");
     setPhase("idle");
-    setAiBanner(null);
-    setAiError(null);
-    setAiUpgradeLimit(null);
     if (inputRef.current) inputRef.current.value = "";
   }
 
-  // --- Selection --------------------------------------------------------
   // Reads `pages`/`selectedIds` from the surrounding closure rather than the
   // updater-function form of setState — same reasoning as split-tool.tsx's
   // handlePageClick: an impure updater would see its own lastClickedRef
@@ -247,94 +221,36 @@ export function OrganizeTool() {
     setSelectedIds(next);
   }
 
-  // --- Page mutations -----------------------------------------------------
-  function deletePage(id: string) {
-    history.commit(pages.filter((p) => p.id !== id));
-    setSelectedIds((prev) => {
-      const next = new Set(prev);
-      next.delete(id);
-      return next;
-    });
-  }
-
-  function deleteSelection() {
-    const targets = selectedIds.size > 0 ? selectedIds : focusedId ? new Set([focusedId]) : new Set<string>();
-    if (targets.size === 0) return;
-    history.commit(pages.filter((p) => !targets.has(p.id)));
-    setSelectedIds(new Set());
-  }
-
   function rotatePage(id: string, delta: number) {
-    history.commit(pages.map((p) => (p.id === id ? { ...p, rotation: (((p.rotation + delta) % 360) + 360) % 360 } : p)));
+    history.commit(pages.map((p) => (p.id === id ? { ...p, rotation: normalizeAngle(p.rotation + delta) } : p)));
   }
 
   function rotateSelection(delta: number) {
     const targets = selectedIds.size > 0 ? selectedIds : focusedId ? new Set([focusedId]) : new Set<string>();
     if (targets.size === 0) return;
-    history.commit(pages.map((p) => (targets.has(p.id) ? { ...p, rotation: (((p.rotation + delta) % 360) + 360) % 360 } : p)));
+    history.commit(pages.map((p) => (targets.has(p.id) ? { ...p, rotation: normalizeAngle(p.rotation + delta) } : p)));
   }
 
-  function duplicatePage(afterId: string) {
-    const idx = pages.findIndex((p) => p.id === afterId);
-    if (idx === -1) return;
-    const original = pages[idx];
-    const copy: OrganizePage = { ...original, id: genId("pg"), duplicatedFrom: original.id, moved: false };
-    const next = [...pages.slice(0, idx + 1), copy, ...pages.slice(idx + 1)];
-    history.commit(next);
+  function rotateAll(delta: number) {
+    if (pages.length === 0) return;
+    history.commit(pages.map((p) => ({ ...p, rotation: normalizeAngle(p.rotation + delta) })));
   }
 
-  function duplicateSelection() {
-    const targets = selectedIds.size > 0 ? selectedIds : focusedId ? new Set([focusedId]) : new Set<string>();
-    if (targets.size === 0) return;
-    const next = pages.flatMap((p) =>
-      targets.has(p.id) ? [p, { ...p, id: genId("pg"), duplicatedFrom: p.id, moved: false }] : [p]
+  function rotateByOrientation(delta: number, wantPortrait: boolean) {
+    if (pages.length === 0) return;
+    history.commit(
+      pages.map((p) => {
+        const dims = pageDimsRef.current.get(`${p.sourceId}:${p.originalIndex}`);
+        if (!dims) return p;
+        const isPortrait = dims.height >= dims.width;
+        if (isPortrait !== wantPortrait) return p;
+        return { ...p, rotation: normalizeAngle(p.rotation + delta) };
+      })
     );
-    history.commit(next);
   }
 
-  function handleReorder(next: OrganizePage[]) {
-    history.commit(markMoved(pages, next));
-  }
-
-  // --- Sort -----------------------------------------------------------------
-  function debouncedCommit(next: OrganizePage[]) {
-    if (sortDebounceRef.current) clearTimeout(sortDebounceRef.current);
-    sortDebounceRef.current = setTimeout(() => history.commit(markMoved(pages, next)), 300);
-  }
-
-  function sortAZ() {
-    const orderedSources = [...sources].sort((a, b) => a.file.name.localeCompare(b.file.name));
-    debouncedCommit(orderedSources.flatMap((src) => pages.filter((p) => p.sourceId === src.id)));
-  }
-
-  function sortNumeric() {
-    const seenOrder: string[] = [];
-    for (const p of pages) if (!seenOrder.includes(p.sourceId)) seenOrder.push(p.sourceId);
-    const next = seenOrder.flatMap((sourceId) =>
-      pages.filter((p) => p.sourceId === sourceId).sort((a, b) => a.originalIndex - b.originalIndex)
-    );
-    debouncedCommit(next);
-  }
-
-  function interleave() {
-    if (sources.length !== 2) return;
-    const [a, b] = sources;
-    const aPages = pages.filter((p) => p.sourceId === a.id);
-    const bPages = pages.filter((p) => p.sourceId === b.id);
-    const next: OrganizePage[] = [];
-    const max = Math.max(aPages.length, bPages.length);
-    for (let i = 0; i < max; i++) {
-      if (aPages[i]) next.push(aPages[i]);
-      if (bPages[i]) next.push(bPages[i]);
-    }
-    debouncedCommit(next);
-  }
-
-  function resetToOriginal() {
-    const next = sources.flatMap((src) => newPagesForSource(src.id, src.pageCount ?? 0));
-    history.reset(next);
-    setSelectedIds(new Set());
-    setFocusedId(null);
+  function resetRotations() {
+    history.commit(pages.map((p) => ({ ...p, rotation: 0 })));
   }
 
   // --- Keyboard shortcuts -----------------------------------------------
@@ -345,7 +261,6 @@ export function OrganizeTool() {
       const target = e.target as HTMLElement | null;
       if (target && ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
 
-      const ids = pages.map((p) => p.id);
       const mod = e.ctrlKey || e.metaKey;
 
       if (mod && e.key.toLowerCase() === "z" && e.shiftKey) {
@@ -359,30 +274,13 @@ export function OrganizeTool() {
         history.undo();
       } else if (mod && e.key.toLowerCase() === "a") {
         e.preventDefault();
-        setSelectedIds(new Set(ids));
+        setSelectedIds(new Set(pages.map((p) => p.id)));
       } else if (e.key === "Escape") {
         setSelectedIds(new Set());
-        setSpacePreview(null);
-      } else if (e.key === "Delete" || e.key === "Backspace") {
-        e.preventDefault();
-        deleteSelection();
       } else if (e.key.toLowerCase() === "r") {
-        rotateSelection(e.shiftKey ? -90 : 90);
-      } else if (e.key.toLowerCase() === "d") {
-        duplicateSelection();
-      } else if (e.key === " ") {
-        e.preventDefault();
-        const page = pages.find((p) => p.id === focusedId);
-        if (!page) return;
-        const dataUrl = gridRef.current?.getThumbDataUrl(page.sourceId, page.originalIndex);
-        setSpacePreview((prev) => (prev ? null : dataUrl ? { dataUrl, rotation: page.rotation } : null));
-      } else if (e.key.startsWith("Arrow")) {
-        e.preventDefault();
-        if (ids.length === 0) return;
-        const current = focusedId ? ids.indexOf(focusedId) : -1;
-        const delta = e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 1;
-        const nextIndex = current === -1 ? 0 : Math.min(ids.length - 1, Math.max(0, current + delta));
-        setFocusedId(ids[nextIndex]);
+        rotateSelection(90);
+      } else if (e.key.toLowerCase() === "l") {
+        rotateSelection(-90);
       }
     }
 
@@ -390,55 +288,6 @@ export function OrganizeTool() {
     return () => document.removeEventListener("keydown", onKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, sources.length, pages, selectedIds, focusedId]);
-
-  // --- AI Organize ------------------------------------------------------
-  async function handleAiOrganize() {
-    if (pages.length === 0) return;
-    setAiLoading(true);
-    setAiError(null);
-    setAiUpgradeLimit(null);
-    setAiBanner(null);
-    try {
-      const sourceById = new Map(sources.map((s) => [s.id, s]));
-      const snippets = await Promise.all(
-        pages.map(async (p) => ({
-          id: p.id,
-          label: `${sourceById.get(p.sourceId)?.label ?? "?"} · p.${p.originalIndex + 1}`,
-          snippet: (await gridRef.current?.getPageText(p.sourceId, p.originalIndex)) ?? "",
-        }))
-      );
-
-      const res = await fetch("/api/ai/organize-suggest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pages: snippets }),
-      });
-      const json = await res.json();
-
-      if (res.status === 429) {
-        setAiUpgradeLimit(json.limit ?? 5);
-        return;
-      }
-      if (!res.ok) {
-        setAiError(json.error || tc("error"));
-        return;
-      }
-
-      const byId = new Map(pages.map((p) => [p.id, p]));
-      const reordered = (json.order as string[]).map((id) => byId.get(id)).filter((p): p is OrganizePage => !!p);
-      if (reordered.length !== pages.length) {
-        setAiError(t("aiInvalidOrder"));
-        return;
-      }
-      history.commit(markMoved(pages, reordered));
-      setAiBanner(json.reasoning as string);
-      track("tool_used", { tool_name: "organize-ai", user_plan: (json.plan as Plan) ?? "free", file_size: 0, success: true });
-    } catch {
-      setAiError(tc("couldntReachServer"));
-    } finally {
-      setAiLoading(false);
-    }
-  }
 
   // --- Submit -------------------------------------------------------------
   async function handleSubmit() {
@@ -450,10 +299,10 @@ export function OrganizeTool() {
 
     const fileIndexById = new Map(sources.map((s, i) => [s.id, i]));
     const config = {
-      pageOrder: pages.map((p) => ({
+      rotations: pages.map((p) => ({
         fileIndex: fileIndexById.get(p.sourceId)!,
         pageIndex: p.originalIndex,
-        rotation: p.rotation,
+        angle: p.rotation,
       })),
     };
 
@@ -464,7 +313,7 @@ export function OrganizeTool() {
 
       const { status, json } = await new Promise<{ status: number; json: Record<string, unknown> }>((resolve, reject) => {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "/api/tools/organize");
+        xhr.open("POST", "/api/tools/rotate");
         xhr.upload.onprogress = (e) => {
           if (e.lengthComputable) {
             const pct = Math.round((e.loaded / e.total) * 100);
@@ -486,13 +335,13 @@ export function OrganizeTool() {
       });
 
       if (status === 401) {
-        router.push("/login?redirect=/tools/reorder");
+        router.push("/login?redirect=/tools/rotate");
         return;
       }
       if (status === 429) {
         setLimit((json.limit as number) ?? 5);
         setPhase("idle");
-        track("quota_limit_reached", { feature: "reorder", plan: (json.plan as Plan) ?? "free" });
+        track("quota_limit_reached", { feature: "rotate", plan: (json.plan as Plan) ?? "free" });
         return;
       }
       if (status < 200 || status >= 300) {
@@ -514,7 +363,7 @@ export function OrganizeTool() {
       setResultDeadline(Date.now() + 3600_000);
       setPhase("success");
       track("tool_used", {
-        tool_name: "reorder",
+        tool_name: "rotate",
         user_plan: (json.plan as Plan) ?? "free",
         file_size: sources.reduce((sum, s) => sum + s.file.size, 0),
         success: true,
@@ -529,7 +378,7 @@ export function OrganizeTool() {
     if (!result) return;
     window.location.href = result.downloadUrl;
     setDownloaded(true);
-    track("file_downloaded", { tool_name: "reorder" });
+    track("file_downloaded", { tool_name: "rotate" });
     fetch("/api/files/consumed", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -537,13 +386,12 @@ export function OrganizeTool() {
     }).catch(() => {});
   }
 
-  const canInterleave = sources.length === 2;
   const allPagesLoaded = sources.length > 0 && sources.every((s) => s.pageCount !== null);
 
   const submitLabel = useMemo(() => {
     if (phase === "uploading") return tp("uploadingFiles", { count: sources.length });
     if (phase === "processing") return tp("processingHeadline");
-    return t("organizeButton");
+    return t("rotateButton");
   }, [phase, sources.length, t, tp]);
 
   // --- Empty state ----------------------------------------------------------
@@ -606,10 +454,10 @@ export function OrganizeTool() {
           ↪
         </button>
         <span style={{ marginLeft: "auto", fontSize: 12.5, color: "var(--cs-text-2)", display: "flex", alignItems: "center", gap: 10 }}>
-          {t("summaryLine", { pages: pages.length, changes: modifiedCount })}
-          {modifiedCount > 0 && (
-            <button type="button" className="hover-text" style={{ border: "none", background: "none", color: "var(--cs-accent)", cursor: "pointer", fontFamily: "inherit", fontSize: 12.5, padding: 0 }} onClick={resetToOriginal}>
-              {t("resetToOriginal")}
+          {t("summaryLine", { pages: pages.length, rotated: rotatedCount })}
+          {rotatedCount > 0 && (
+            <button type="button" className="hover-text" style={{ border: "none", background: "none", color: "var(--cs-accent)", cursor: "pointer", fontFamily: "inherit", fontSize: 12.5, padding: 0 }} onClick={resetRotations}>
+              {t("resetRotations")}
             </button>
           )}
         </span>
@@ -618,14 +466,11 @@ export function OrganizeTool() {
       {selectedIds.size > 0 && (
         <div className="organize-selection-bar">
           <span>{t("pagesSelected", { count: selectedIds.size })}</span>
-          <button type="button" style={toolbarBtn} onClick={deleteSelection}>
-            {t("deletePage")}
+          <button type="button" style={toolbarBtn} onClick={() => rotateSelection(-90)}>
+            {t("rotateLeft")}
           </button>
           <button type="button" style={toolbarBtn} onClick={() => rotateSelection(90)}>
-            {t("rotatePage")}
-          </button>
-          <button type="button" style={toolbarBtn} onClick={duplicateSelection}>
-            {t("duplicatePage")}
+            {t("rotateRight")}
           </button>
           <button type="button" style={toolbarBtn} onClick={() => setSelectedIds(new Set())}>
             {t("deselect")}
@@ -633,23 +478,10 @@ export function OrganizeTool() {
         </div>
       )}
 
-      {aiBanner && (
-        <div className="organize-ai-banner">
-          <span>✨ {aiBanner}</span>
-          <button type="button" style={{ ...toolbarBtn, flex: "none" }} onClick={() => { history.undo(); setAiBanner(null); }}>
-            {t("undo")}
-          </button>
-          <button type="button" style={{ ...toolbarBtn, flex: "none" }} onClick={() => setAiBanner(null)}>
-            {t("keep")}
-          </button>
-        </div>
-      )}
-
       <div className="organize-columns">
         <div className="organize-grid-panel">
           {!allPagesLoaded && <div className="organize-loading-hint">{t("loadingPages")}</div>}
-          <OrganizePageGrid
-            ref={gridRef}
+          <RotatePageGrid
             sources={sources}
             pages={pages}
             view={view}
@@ -658,13 +490,11 @@ export function OrganizeTool() {
             disabled={disabled}
             onFocus={setFocusedId}
             onSelect={handleSelect}
-            onReorder={handleReorder}
-            onDelete={deletePage}
             onRotate={rotatePage}
-            onDuplicate={duplicatePage}
             onSourceLoaded={handleSourceLoaded}
+            onPageDims={handlePageDims}
           />
-          {sources.length > 0 && t("shortcutsHint") && <div style={{ marginTop: 14, fontSize: 12, color: "var(--cs-text-2)", textAlign: "center" }}>{t("shortcutsHint")}</div>}
+          <div style={{ marginTop: 14, fontSize: 12, color: "var(--cs-text-2)", textAlign: "center" }}>{t("shortcutsHint")}</div>
         </div>
 
         <div>
@@ -679,29 +509,23 @@ export function OrganizeTool() {
               onReset={resetAll}
             />
           ) : (
-            <OrganizePanel
+            <RotatePanel
               sources={sources}
               onAddFiles={() => inputRef.current?.click()}
               onRemoveSource={handleRemoveSource}
-              onReorderSources={handleReorderSources}
               onResetAll={resetAll}
               view={view}
               onSetView={setView}
-              onSortAZ={sortAZ}
-              onSortNumeric={sortNumeric}
-              onInterleave={interleave}
-              canInterleave={canInterleave}
+              onRotateAll={rotateAll}
+              onRotatePortrait={(delta) => rotateByOrientation(delta, true)}
+              onRotateLandscape={(delta) => rotateByOrientation(delta, false)}
               onUndo={history.undo}
               onRedo={history.redo}
               canUndo={history.canUndo}
               canRedo={history.canRedo}
-              onAiOrganize={handleAiOrganize}
-              aiLoading={aiLoading}
-              aiError={aiError}
-              aiUpgradeLimit={aiUpgradeLimit}
               totalPages={pages.length}
-              modifiedCount={modifiedCount}
-              onResetToOriginal={resetToOriginal}
+              rotatedCount={rotatedCount}
+              onResetRotations={resetRotations}
               onSubmit={handleSubmit}
               submitDisabled={disabled || pages.length === 0 || !allPagesLoaded}
               submitLabel={submitLabel}
@@ -742,17 +566,6 @@ export function OrganizeTool() {
         </div>
       </div>
 
-      {spacePreview && (
-        <div className="organize-space-preview" onClick={() => setSpacePreview(null)}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={spacePreview.dataUrl}
-            alt=""
-            style={{ transform: `rotate(${spacePreview.rotation}deg)`, maxWidth: "80vw", maxHeight: "80vh", objectFit: "contain", borderRadius: 8 }}
-          />
-        </div>
-      )}
-
       <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: "10px 22px", justifyContent: "center", fontSize: 12.5, color: "var(--cs-text-2)" }}>
         <span>🔒 {tp("trustDeleted")}</span>
         <span>✓ {tp("trustNoAccount")}</span>
@@ -771,7 +584,7 @@ function ResultPanel({
   onDownload,
   onReset,
 }: {
-  result: OrganizeResult;
+  result: RotateResult;
   previewFile: File | null;
   secondsLeft: number;
   processingSeconds: number | null;
@@ -779,7 +592,7 @@ function ResultPanel({
   onDownload: () => void;
   onReset: () => void;
 }) {
-  const t = useTranslations("organizeTool");
+  const t = useTranslations("rotateTool");
   const tp = useTranslations("toolPage");
   const tc = useTranslations("common");
   const tai = useTranslations("ai");
@@ -817,7 +630,7 @@ function ResultPanel({
         {downloaded ? tc("downloaded") : tc("download")} &darr;
       </button>
       <button type="button" style={ghostButton} onClick={onReset}>
-        {t("organizeAgain")}
+        {t("rotateAgain")}
       </button>
 
       <div style={{ fontSize: 12, color: "var(--cs-text-2)" }}>🕐 {tp("fileDeletedIn", { time: formatCountdown(secondsLeft) })}</div>
