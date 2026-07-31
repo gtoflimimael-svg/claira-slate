@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { AIUsageLimitModal } from "@/components/billing/ai-usage-limit-modal";
 import { track } from "@/lib/analytics";
 
@@ -30,7 +30,8 @@ const secondaryButton: React.CSSProperties = {
 };
 
 export function SummarizeTool() {
-  const router = useRouter();
+  const t = useTranslations("aiTool.summarize");
+  const tc = useTranslations("common");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [file, setFile] = useState<File | null>(null);
@@ -58,24 +59,20 @@ export function SummarizeTool() {
       const res = await fetch("/api/ai/summarize", { method: "POST", body: formData });
       const data = await res.json();
 
-      if (res.status === 401) {
-        router.push("/login?redirect=/ai/summarize");
-        return;
-      }
       if (res.status === 429) {
         setLimit(data.limit ?? 5);
         track("quota_limit_reached", { feature: "summarize", plan: data.plan ?? "free" });
         return;
       }
       if (!res.ok) {
-        setError(data.error || "Something went wrong.");
+        setError(data.error || tc("error"));
         return;
       }
 
       setResult({ summary: data.summary, pages: data.pages });
       track("ai_feature_used", { feature: "summarize", user_plan: data.plan ?? "free", tokens_used: data.tokensUsed ?? 0 });
     } catch {
-      setError("Couldn't reach the server. Try again.");
+      setError(tc("couldntReachServer"));
     } finally {
       setLoading(false);
     }
@@ -122,19 +119,19 @@ export function SummarizeTool() {
           </svg>
         </div>
         <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 20, fontWeight: 600, letterSpacing: "-.025em", overflowWrap: "anywhere" }}>
-          {file ? file.name : "Drop a PDF to summarize"}
+          {file ? file.name : t("dropHeading")}
         </div>
         <div style={{ maxWidth: 260, fontSize: 13.5, lineHeight: 1.5, color: "var(--cs-text-2)" }}>
-          {file ? `${(file.size / (1024 * 1024)).toFixed(1)} MB` : "Up to 300 pages"}
+          {file ? `${(file.size / (1024 * 1024)).toFixed(1)} MB` : t("idleSubtext")}
         </div>
         <input ref={inputRef} type="file" accept="application/pdf" style={{ display: "none" }} onChange={(e) => pickFile(e.target.files?.[0] ?? null)} />
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
           <button type="button" className="hover-text" style={file ? secondaryButton : primaryButton} onClick={() => inputRef.current?.click()}>
-            {file ? "Choose a different file" : "Select file"}
+            {file ? tc("chooseAnotherFile") : tc("selectFile")}
           </button>
           {file && (
             <button type="button" style={{ ...primaryButton, opacity: loading ? 0.7 : 1 }} disabled={loading} onClick={handleSummarize}>
-              {loading ? "Summarizing…" : "Summarize"}
+              {loading ? t("runningButton") : t("runButton")}
             </button>
           )}
         </div>
@@ -143,15 +140,15 @@ export function SummarizeTool() {
       <div style={{ border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", padding: 22, minHeight: 200 }}>
         {!result && !error && (
           <div style={{ fontSize: 13.5, color: "var(--cs-text-2)", lineHeight: 1.6 }}>
-            {loading ? "Reading your document and pulling out the key points…" : "Upload a PDF and click Summarize to see results here."}
+            {loading ? t("loadingResult") : t("emptyResult")}
           </div>
         )}
         {error && <div style={{ fontSize: 13.5, color: "var(--cs-bad)", lineHeight: 1.6 }}>{error}</div>}
         {result && (
           <>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-              <div style={{ fontSize: 12.5, fontWeight: 600 }}>Summary &middot; {file?.name}</div>
-              <div style={{ fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{result.pages} pages</div>
+              <div style={{ fontSize: 12.5, fontWeight: 600 }}>{t("resultHeading")} &middot; {file?.name}</div>
+              <div style={{ fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{tc("pagesCount", { count: result.pages })}</div>
             </div>
             <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 13 }}>
               {result.summary.map((point, i) => (
@@ -178,7 +175,7 @@ export function SummarizeTool() {
             </div>
             <div style={{ marginTop: 22, display: "flex", flexWrap: "wrap", gap: 8 }}>
               <button type="button" className="hover-text" style={primaryButton} onClick={copySummary}>
-                {copied ? "Copied!" : "Copy summary"}
+                {copied ? tc("copied") : tc("copyText")}
               </button>
               <button
                 type="button"
@@ -188,7 +185,7 @@ export function SummarizeTool() {
                   if (inputRef.current) inputRef.current.value = "";
                 }}
               >
-                Summarize another
+                {t("resetButton")}
               </button>
             </div>
           </>

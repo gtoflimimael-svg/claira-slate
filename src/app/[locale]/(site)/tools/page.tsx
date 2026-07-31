@@ -12,6 +12,7 @@ function toolHref(slug: string): string {
 
 export default function ToolsIndexPage() {
   const t = useTranslations("tools");
+  const tc = useTranslations("common");
   const [cat, setCat] = useState("All");
   const shownTools = cat === "All" ? TOOLS : TOOLS.filter((tool) => tool.cat === cat);
 
@@ -19,9 +20,9 @@ export default function ToolsIndexPage() {
     <div style={{ animation: "csFade .28s ease both" }}>
       <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px clamp(28px,4vw,44px)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-          <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>Home</Link>
+          <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
-          <span style={{ color: "var(--cs-text)" }}>Tools</span>
+          <span style={{ color: "var(--cs-text)" }}>{tc("breadcrumb.tools")}</span>
         </div>
         <h1
           style={{
@@ -35,10 +36,10 @@ export default function ToolsIndexPage() {
             textWrap: "balance",
           }}
         >
-          26 tools. Zero friction.
+          {t("headline")}
         </h1>
         <p style={{ margin: "20px 0 0", maxWidth: 520, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
-          Everything a PDF needs, in the browser. Free to try, no account, nothing to install.
+          {t("subheadline")}
         </p>
         <div style={{ marginTop: 30, display: "flex", flexWrap: "wrap", gap: 7 }}>
           {CATS.map((c) => {
@@ -60,7 +61,7 @@ export default function ToolsIndexPage() {
                   borderColor: active ? "var(--cs-accent)" : "var(--cs-line)",
                 }}
               >
-                {c}
+                {t(`filters.${c}`)}
               </button>
             );
           })}
@@ -115,8 +116,8 @@ export default function ToolsIndexPage() {
           }}
         >
           <div style={{ maxWidth: 520 }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: "-.025em" }}>Can&apos;t find the right tool?</div>
-            <div style={{ marginTop: 6, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>Describe the job and Claira picks the tool for you.</div>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: "-.025em" }}>{t("cantFind")}</div>
+            <div style={{ marginTop: 6, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("aiSuggestion")}</div>
           </div>
           <Link
             href="/ai"
@@ -135,7 +136,7 @@ export default function ToolsIndexPage() {
               whiteSpace: "nowrap",
             }}
           >
-            Ask AI instead &rarr;
+            {t("askAI")} &rarr;
           </Link>
         </div>
       </section>

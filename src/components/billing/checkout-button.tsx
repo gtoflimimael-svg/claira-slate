@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { track, type Plan } from "@/lib/analytics";
 
@@ -19,6 +20,8 @@ export function CheckoutButton({
   source?: string;
   userPlan?: Plan;
 }) {
+  const t = useTranslations("billingShared");
+  const tc = useTranslations("common");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -42,14 +45,14 @@ export function CheckoutButton({
         return;
       }
       if (!res.ok || !data.url) {
-        setError(data.error || "Something went wrong starting checkout.");
+        setError(data.error || t("checkoutError"));
         setLoading(false);
         return;
       }
 
       window.location.href = data.url;
     } catch {
-      setError("Couldn't reach the server. Try again.");
+      setError(tc("couldntReachServer"));
       setLoading(false);
     }
   }
@@ -63,7 +66,7 @@ export function CheckoutButton({
         className={className}
         style={{ ...style, cursor: loading ? "default" : style?.cursor ?? "pointer", opacity: loading ? 0.7 : 1 }}
       >
-        {loading ? "Redirecting…" : children}
+        {loading ? t("redirecting") : children}
       </button>
       {error && <div style={{ marginTop: 8, fontSize: 12.5, color: "var(--cs-bad)" }}>{error}</div>}
     </>

@@ -187,12 +187,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     source="app_sidebar"
                     style={{ padding: 0, border: 0, background: "none", color: "var(--cs-accent)", fontFamily: "inherit", fontSize: 11.5, fontWeight: 600 }}
                   >
-                    Upgrade to Pro &rarr;
+                    {t("upgradeToPro")} &rarr;
                   </CheckoutButton>
                 ) : (
                   <>
                     <span style={{ padding: "2px 7px", borderRadius: 5, background: "var(--cs-accent)", color: "#fff", fontSize: 9.5, fontWeight: 600, letterSpacing: ".04em" }}>
-                      {plan === "business" ? "BUSINESS" : "PRO"}
+                      {(plan === "business" ? t("billing_.planBusiness") : t("billing_.planPro")).toUpperCase()}
                     </span>
                     <span style={{ fontSize: 11, color: "var(--cs-text-2)" }}>{plan === "business" ? "$12/user/mo" : "$5/mo"}</span>
                   </>

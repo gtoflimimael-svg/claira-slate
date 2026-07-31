@@ -37,8 +37,21 @@ export async function buildPdfFromImages(pages: { width: number; height: number;
   return doc.save();
 }
 
+// pdf-lib's JpegEmbedder does `new DataView(buf.buffer)`, which reads from
+// byte 0 of the Buffer's *underlying* ArrayBuffer rather than its byteOffset.
+// Small buffers (ours are ~1-2KB) are routinely slices of Node's shared
+// Buffer pool, so that misreads garbage and throws "SOI not found in JPEG"
+// even though the buffer's own bytes are a valid JPEG. Copying into a
+// freshly allocated, exclusively-owned ArrayBuffer guarantees byteOffset 0.
+function standaloneBuffer(buf: Buffer): Buffer {
+  const copy = new ArrayBuffer(buf.byteLength);
+  new Uint8Array(copy).set(buf);
+  return Buffer.from(copy);
+}
+
 export async function recompressJpeg(png: Buffer, quality: number, grayscale = false): Promise<Buffer> {
   let pipeline = sharp(png);
   if (grayscale) pipeline = pipeline.grayscale();
-  return pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
+  const jpeg = await pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
+  return standaloneBuffer(jpeg);
 }

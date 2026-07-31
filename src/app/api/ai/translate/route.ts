@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { checkFileSize } from "@/lib/quota";
-import { enforceAIQuota, logAIUsage } from "@/lib/ai/quota-check";
+import { resolveAIQuota, applyAnonQuotaCookie, logAIUsage } from "@/lib/ai/quota-check";
 import { extractTextFromPDF } from "@/lib/ai/extract-text";
 import { generateWithGemini } from "@/lib/ai/gemini";
 import { generateWithClaude } from "@/lib/ai/claude";
@@ -36,10 +36,6 @@ export async function POST(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
-  }
-
   const formData = await request.formData();
   const file = formData.get("file");
   const targetLanguage = formData.get("targetLanguage");
@@ -48,7 +44,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing 'file' or 'targetLanguage' in form data." }, { status: 400 });
   }
 
-  const quota = await enforceAIQuota(user.id);
+  const quota = await resolveAIQuota(request, user?.id ?? null);
   if (!quota.ok) {
     return NextResponse.json({ error: quota.error, limit: quota.limit, plan: quota.plan }, { status: quota.status });
   }
@@ -80,7 +76,7 @@ export async function POST(request: NextRequest) {
       ? await generateWithClaude(system, documentText, 8192)
       : await generateWithGemini(`${system}\n\n${documentText}`);
 
-  await logAIUsage(user.id, "translate", result.tokensUsed);
+  if (quota.userId) await logAIUsage(quota.userId, "translate", result.tokensUsed);
 
   const { translatedText, originalLanguage } = parseResponse(result.text);
 
@@ -94,11 +90,14 @@ export async function POST(request: NextRequest) {
     // to returning the translated text without a PDF.
   }
 
-  return NextResponse.json({
+  const response = NextResponse.json({
     translatedText,
     originalLanguage,
     pdfBase64,
     plan: quota.plan,
+    loggedIn: !!quota.userId,
     tokensUsed: result.tokensUsed,
   });
+  if (quota.anonState) applyAnonQuotaCookie(response, quota.anonState);
+  return response;
 }

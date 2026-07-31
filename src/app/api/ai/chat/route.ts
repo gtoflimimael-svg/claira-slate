@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { enforceAIQuota, logAIUsage } from "@/lib/ai/quota-check";
+import { resolveAIQuota, applyAnonQuotaCookie, logAIUsage } from "@/lib/ai/quota-check";
 import { generateWithGemini } from "@/lib/ai/gemini";
 import { chatWithClaude, type ChatTurn } from "@/lib/ai/claude";
 import { pickProvider } from "@/lib/ai/model-router";
@@ -33,10 +33,6 @@ export async function POST(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
-  }
-
   const body = await request.json().catch(() => null);
   const question: string | undefined = body?.question;
   const pdfText: string | undefined = body?.pdfText;
@@ -46,7 +42,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing 'question' or 'pdfText'." }, { status: 400 });
   }
 
-  const quota = await enforceAIQuota(user.id);
+  const quota = await resolveAIQuota(request, user?.id ?? null);
   if (!quota.ok) {
     return NextResponse.json({ error: quota.error, limit: quota.limit, plan: quota.plan }, { status: quota.status });
   }
@@ -62,8 +58,10 @@ export async function POST(request: NextRequest) {
           `${SYSTEM_PROMPT}\n\n${turns.map((t) => `${t.role === "user" ? "User" : "Assistant"}: ${t.content}`).join("\n\n")}`
         );
 
-  await logAIUsage(user.id, "chat", result.tokensUsed);
+  if (quota.userId) await logAIUsage(quota.userId, "chat", result.tokensUsed);
 
   const { answer, citations } = parseResponse(result.text);
-  return NextResponse.json({ answer, citations, plan: quota.plan, tokensUsed: result.tokensUsed });
+  const response = NextResponse.json({ answer, citations, plan: quota.plan, loggedIn: !!quota.userId, tokensUsed: result.tokensUsed });
+  if (quota.anonState) applyAnonQuotaCookie(response, quota.anonState);
+  return response;
 }

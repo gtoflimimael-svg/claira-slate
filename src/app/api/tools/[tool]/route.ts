@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { PDFDocument } from "pdf-lib";
 import { createClient } from "@/lib/supabase/server";
 import { checkFileSize } from "@/lib/quota";
 import { enforceTaskQuota, logToolUsage } from "@/lib/tools/quota";
@@ -18,9 +19,6 @@ export async function POST(request: NextRequest, context: RouteContext<"/api/too
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) {
-    return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
-  }
 
   const formData = await request.formData();
   const fileEntries = formData.getAll("file").filter((f): f is File => f instanceof File);
@@ -28,13 +26,20 @@ export async function POST(request: NextRequest, context: RouteContext<"/api/too
     return NextResponse.json({ error: "Missing 'file' in form data." }, { status: 400 });
   }
 
-  const quota = await enforceTaskQuota(user.id);
-  if (!quota.ok) {
-    return NextResponse.json({ error: quota.error, limit: quota.limit, plan: quota.plan }, { status: quota.status });
+  // The 26 PDF tools are free for everyone, logged in or not — only AI
+  // actions and cloud history are account-gated. A signed-in free plan still
+  // has its daily task quota enforced; anonymous requests skip it entirely.
+  let plan: "free" | "pro" | "business" = "free";
+  if (user) {
+    const quota = await enforceTaskQuota(user.id);
+    if (!quota.ok) {
+      return NextResponse.json({ error: quota.error, limit: quota.limit, plan: quota.plan }, { status: quota.status });
+    }
+    plan = quota.plan;
   }
 
   for (const file of fileEntries) {
-    const sizeCheck = checkFileSize({ size: file.size }, quota.plan);
+    const sizeCheck = checkFileSize({ size: file.size }, plan);
     if (!sizeCheck.allowed) {
       return NextResponse.json(
         { error: `File too large for your plan (max ${(sizeCheck.limit / (1024 * 1024)).toFixed(0)} MB).` },
@@ -54,19 +59,32 @@ export async function POST(request: NextRequest, context: RouteContext<"/api/too
   const result = await runTool(tool, { files, filenames, params });
 
   if (isComingSoon(result)) {
-    return NextResponse.json({ comingSoon: true, message: result.message, plan: quota.plan });
+    return NextResponse.json({ comingSoon: true, message: result.message, plan });
   }
 
-  const r2Key = `processed/${user.id}/${crypto.randomUUID()}-${result.filename}`;
+  const r2Key = `processed/${user ? user.id : "anonymous"}/${crypto.randomUUID()}-${result.filename}`;
   await uploadToR2(r2Key, result.buffer, result.mimeType);
-  await logToolUsage(user.id, tool, result.filename, result.buffer.byteLength, r2Key);
+  if (user) await logToolUsage(user.id, tool, result.filename, result.buffer.byteLength, r2Key);
   const downloadUrl = await getSignedDownloadUrl(r2Key, result.filename, 3600);
+
+  let pages: number | null = null;
+  if (result.mimeType === "application/pdf") {
+    try {
+      const doc = await PDFDocument.load(result.buffer, { ignoreEncryption: true });
+      pages = doc.getPageCount();
+    } catch {
+      pages = null;
+    }
+  }
 
   return NextResponse.json({
     downloadUrl,
     filename: result.filename,
     r2Key,
+    size: result.buffer.byteLength,
+    pages,
     expiresAt: new Date(Date.now() + 3600_000).toISOString(),
-    plan: quota.plan,
+    plan,
+    loggedIn: !!user,
   });
 }

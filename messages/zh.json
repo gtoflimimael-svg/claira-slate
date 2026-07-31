@@ -45,6 +45,7 @@
   "common": {
     "upload": "上传",
     "download": "下载",
+    "downloaded": "已下载",
     "processing": "处理中",
     "error": "出了点问题。",
     "success": "成功",
@@ -53,48 +54,329 @@
     "save": "保存",
     "dragDrop": "拖放文件，或点击浏览",
     "fileTooLarge": "文件大小超出了你当前套餐的限制。",
-    "couldntReachServer": "无法连接服务器，请重试。"
+    "couldntReachServer": "无法连接服务器，请重试。",
+    "selectFile": "选择文件",
+    "chooseAnotherFile": "更换文件",
+    "copyText": "复制文本",
+    "copied": "已复制！",
+    "startOver": "重新开始",
+    "or": "或",
+    "close": "关闭",
+    "comingSoon": "即将推出",
+    "pagesCount": "{count} 页",
+    "breadcrumb": {
+      "home": "首页",
+      "tools": "工具",
+      "ai": "AI",
+      "blog": "博客"
+    }
   },
   "tools": {
-    "merge": { "name": "合并 PDF", "desc": "将多个文件合并为一个。" },
-    "split": { "name": "拆分 PDF", "desc": "拆分成多个部分。" },
-    "reorder": { "name": "整理页面", "desc": "拖动页面调整顺序。" },
-    "rotate": { "name": "旋转 PDF", "desc": "修正页面方向。" },
-    "extract-pages": { "name": "提取页面", "desc": "提取你需要的页面。" },
-    "delete-pages": { "name": "删除页面", "desc": "移除不需要的页面。" },
-    "compress": { "name": "压缩 PDF", "desc": "体积更小，质量不变。" },
-    "repair": { "name": "修复 PDF", "desc": "恢复损坏的文件。" },
-    "optimize": { "name": "网页优化", "desc": "加载更快的文档。" },
-    "flatten": { "name": "展平 PDF", "desc": "固化表单与图层。" },
-    "pdf-to-word": { "name": "PDF 转 Word", "desc": "生成可完全编辑的 .docx。" },
-    "pdf-to-excel": { "name": "PDF 转 Excel", "desc": "将表格转为电子表格。" },
-    "pdf-to-ppt": { "name": "PDF 转 PowerPoint", "desc": "生成可编辑的幻灯片。" },
-    "pdf-to-jpg": { "name": "PDF 转 JPG", "desc": "每一页都转为图片。" },
-    "jpg-to-pdf": { "name": "JPG 转 PDF", "desc": "将图片合并为一个文件。" },
-    "html-to-pdf": { "name": "HTML 转 PDF", "desc": "抓取任意网页内容。" },
-    "protect": { "name": "加密 PDF", "desc": "用密码锁定文件。" },
-    "unlock": { "name": "解锁 PDF", "desc": "移除已知密码。" },
-    "sign": { "name": "签署 PDF", "desc": "具有法律效力的电子签名。" },
-    "redact": { "name": "涂黑 PDF", "desc": "永久隐藏敏感内容。" },
-    "watermark": { "name": "水印", "desc": "添加文字或 Logo 水印。" },
-    "edit-text": { "name": "编辑 PDF", "desc": "编辑文字、图片和形状。" },
-    "number-pages": { "name": "添加页码", "desc": "任意位置，任意样式。" },
-    "crop": { "name": "裁剪 PDF", "desc": "裁掉多余的边距。" },
-    "ocr": { "name": "PDF OCR 识别", "desc": "让扫描件变为可搜索文本。" },
-    "annotate": { "name": "批注", "desc": "添加评论与高亮。" }
+    "merge": {
+      "name": "合并 PDF",
+      "desc": "将多个文件合并为一个。"
+    },
+    "split": {
+      "name": "拆分 PDF",
+      "desc": "拆分成多个部分。"
+    },
+    "reorder": {
+      "name": "整理页面",
+      "desc": "拖动页面调整顺序。"
+    },
+    "rotate": {
+      "name": "旋转 PDF",
+      "desc": "修正页面方向。"
+    },
+    "extract-pages": {
+      "name": "提取页面",
+      "desc": "提取你需要的页面。"
+    },
+    "delete-pages": {
+      "name": "删除页面",
+      "desc": "移除不需要的页面。"
+    },
+    "compress": {
+      "name": "压缩 PDF",
+      "desc": "体积更小，质量不变。"
+    },
+    "repair": {
+      "name": "修复 PDF",
+      "desc": "恢复损坏的文件。"
+    },
+    "optimize": {
+      "name": "网页优化",
+      "desc": "加载更快的文档。"
+    },
+    "flatten": {
+      "name": "展平 PDF",
+      "desc": "固化表单与图层。"
+    },
+    "pdf-to-word": {
+      "name": "PDF 转 Word",
+      "desc": "生成可完全编辑的 .docx。"
+    },
+    "pdf-to-excel": {
+      "name": "PDF 转 Excel",
+      "desc": "将表格转为电子表格。"
+    },
+    "pdf-to-ppt": {
+      "name": "PDF 转 PowerPoint",
+      "desc": "生成可编辑的幻灯片。"
+    },
+    "pdf-to-jpg": {
+      "name": "PDF 转 JPG",
+      "desc": "每一页都转为图片。"
+    },
+    "jpg-to-pdf": {
+      "name": "JPG 转 PDF",
+      "desc": "将图片合并为一个文件。"
+    },
+    "html-to-pdf": {
+      "name": "HTML 转 PDF",
+      "desc": "抓取任意网页内容。"
+    },
+    "protect": {
+      "name": "加密 PDF",
+      "desc": "用密码锁定文件。"
+    },
+    "unlock": {
+      "name": "解锁 PDF",
+      "desc": "移除已知密码。"
+    },
+    "sign": {
+      "name": "签署 PDF",
+      "desc": "具有法律效力的电子签名。"
+    },
+    "redact": {
+      "name": "涂黑 PDF",
+      "desc": "永久隐藏敏感内容。"
+    },
+    "watermark": {
+      "name": "水印",
+      "desc": "添加文字或 Logo 水印。"
+    },
+    "edit-text": {
+      "name": "编辑 PDF",
+      "desc": "编辑文字、图片和形状。"
+    },
+    "number-pages": {
+      "name": "添加页码",
+      "desc": "任意位置，任意样式。"
+    },
+    "crop": {
+      "name": "裁剪 PDF",
+      "desc": "裁掉多余的边距。"
+    },
+    "ocr": {
+      "name": "PDF OCR 识别",
+      "desc": "让扫描件变为可搜索文本。"
+    },
+    "annotate": {
+      "name": "批注",
+      "desc": "添加评论与高亮。"
+    },
+    "headline": "26 项工具，零阻力。",
+    "subheadline": "PDF 所需的一切，都在浏览器中完成。免费试用，无需账号，无需安装。",
+    "homeSubheadline": "PDF 所需的一切，都在浏览器中完成。无需安装，无需排队等待。",
+    "cantFind": "没找到合适的工具？",
+    "aiSuggestion": "描述你的需求，让 Claira 为你挑选合适的工具。",
+    "askAI": "改用 AI 试试",
+    "viewAll": "查看所有工具",
+    "filters": {
+      "All": "全部",
+      "Organize": "整理",
+      "Optimize": "优化",
+      "Convert": "转换",
+      "Secure": "安全",
+      "Edit": "编辑"
+    }
+  },
+  "toolPage": {
+    "dropFileHere": "将文件拖放到此处",
+    "filesSelected": "已选择 {count} 个文件",
+    "fileSelected": "已选择 1 个文件",
+    "addAnotherFile": "添加更多文件",
+    "run": "运行{tool}",
+    "processing": "处理中…",
+    "workingOnIt": "正在处理…",
+    "uploadToStart": "上传文件即可开始。",
+    "comingSoonMessage": "此工具即将推出。",
+    "isReady": "已准备就绪。",
+    "quotaMessage": "你今天的 {limit} 次免费工具使用次数已用完。升级到专业版即可无限使用。",
+    "upgrade": "升级",
+    "processingHeadline": "正在处理您的PDF…",
+    "processingHint": "通常只需几秒钟。",
+    "successHeadline": "您的PDF已准备就绪！",
+    "continueTo": "继续使用",
+    "fileDeletedIn": "文件将在{time}后删除",
+    "trustDeleted": "文件在1小时后删除",
+    "trustNoAccount": "无需注册账户",
+    "trustFast": "几秒内处理完成",
+    "uploadingFiles": "正在上传{count}个文件",
+    "removeFile": "删除文件",
+    "reorderFile": "重新排序文件",
+    "summarizeWithAi": "使用AI摘要",
+    "processedIn": "{time}内处理完成",
+    "trustEncrypted": "传输过程中加密",
+    "resultPlaceholder": "您的文件将显示在这里",
+    "pasteHint": "或按 Ctrl+V 粘贴PDF文件",
+    "contactSupport": "联系支持",
+    "loginNudge": "创建免费账户以保存文件并访问历史记录"
   },
   "ai": {
-    "summarize": { "name": "摘要", "desc": "几秒钟提炼要点。" },
-    "chat": { "name": "智能问答", "desc": "与你的文档对话。" },
-    "translate": { "name": "翻译", "desc": "支持 50 多种语言，保留原始排版。" },
-    "ocr": { "name": "OCR 识别", "desc": "让扫描版 PDF 可被搜索。" }
+    "summarize": {
+      "name": "摘要",
+      "desc": "几秒钟提炼要点。"
+    },
+    "chat": {
+      "name": "智能问答",
+      "desc": "与你的文档对话。"
+    },
+    "translate": {
+      "name": "翻译",
+      "desc": "支持 50 多种语言，保留原始排版。"
+    },
+    "ocr": {
+      "name": "OCR 识别",
+      "desc": "让扫描版 PDF 可被搜索。"
+    },
+    "badge": "AI 驱动",
+    "toolBadge": "AI 工具",
+    "hubTitle": "你的 PDF，终于被读懂了。",
+    "hubSubhead": "四大模型，一份文档。为它生成摘要、向它提问、翻译内容，或让扫描件可被搜索 —— 之后还能继续使用其余 26 项工具。",
+    "tryFree": "免费试用 AI",
+    "seeHowItWorks": "了解工作原理",
+    "openTool": "打开工具",
+    "answersTitle": "每个答案都标注了页码出处。",
+    "answersSubhead": "每条回答都会注明来源章节，一键即可核对。",
+    "mockDocumentLabel": "文档",
+    "mockDocumentCaption": "supplier-agreement.pdf · 共 64 页",
+    "mockChatLabel": "Claira AI",
+    "mockQuestion": "我们可以提前终止合同吗？需要支付什么费用？",
+    "mockAnswer": "可以 —— 在第 12 个月之后提前 60 天书面通知即可。提前终止需支付相当于两个月约定费用的违约金。",
+    "mockChatPlaceholder": "继续追问…",
+    "trustNeverTraining": "从不用于模型训练",
+    "trustDeletedAfterHour": "1 小时后自动删除",
+    "trustEuResidency": "数据存储于欧盟境内",
+    "bottomCtaTitle": "每天 2 次免费 AI 操作，无需绑卡。",
+    "bottomCtaButton": "开始使用 AI",
+    "otherAiTools": "其他 AI 工具",
+    "summarizePage": {
+      "title": "为 PDF 生成摘要",
+      "subhead": "上传报告、合同或演示文稿，获取要点摘要 —— 并标注每条要点的出处页码。每天可免费处理两份文档。",
+      "howItWorks": "摘要功能如何运作",
+      "step1Title": "上传文档",
+      "step1Desc": "文字版或扫描版均可 —— 需要时会自动运行 OCR 识别。",
+      "step2Title": "选择摘要长度",
+      "step2Desc": "四条要点、单页摘要，或按章节生成简报。",
+      "step3Title": "复制、导出或继续提问",
+      "step3Desc": "保存摘要，或直接就同一文件展开对话。"
+    },
+    "chatPage": {
+      "title": "智能问答",
+      "subhead": "上传文档并直接与它对话 —— 每个答案都会标注来源章节或页码。",
+      "howItWorks": "工作原理",
+      "step1Title": "上传文档",
+      "step1Desc": "我们会完整读取一次全文，之后的每个问题都能即时回答。",
+      "step2Title": "随意提问",
+      "step2Desc": "所有回答严格依据文档本身的内容。",
+      "step3Title": "核对来源",
+      "step3Desc": "每个答案都会链接回其出处的页码或章节。"
+    },
+    "translatePage": {
+      "title": "翻译 PDF",
+      "subhead": "将合同、报告和演示文稿翻译成 50 多种语言 —— 分段与排版结构保持不变。",
+      "howItWorks": "翻译功能如何运作",
+      "step1Title": "上传文档",
+      "step1Desc": "文字版或扫描版均可 —— 需要时会自动运行 OCR 识别。",
+      "step2Title": "选择目标语言",
+      "step2Desc": "支持 50 多种语言，保留原始格式与分段。",
+      "step3Title": "下载结果",
+      "step3Desc": "获取翻译后的 PDF，或直接复制纯文本。"
+    },
+    "ocrPage": {
+      "title": "让扫描件可被搜索",
+      "subhead": "上传扫描版 PDF，获取一份内容一致、但文字可选中、可搜索的新文档。",
+      "howItWorks": "OCR 识别如何运作",
+      "step1Title": "上传扫描件",
+      "step1Desc": "每一页都会被单独渲染并识别。",
+      "step2Title": "提取并清理文本",
+      "step2Desc": "每一页都会运行 OCR，随后由 AI 修正明显的错误与间距问题。",
+      "step3Title": "下载可搜索的 PDF",
+      "step3Desc": "外观不变，但现在每个字都可以被选中和搜索。"
+    },
+    "typewriterPrefix": "你的 PDF，终于",
+    "typewriterSuffix": "。",
+    "typewriterWords": [
+      "理解了",
+      "摘要了",
+      "翻译了",
+      "可搜索",
+      "受保护"
+    ]
+  },
+  "aiTool": {
+    "summarize": {
+      "dropHeading": "拖放 PDF 以生成摘要",
+      "idleSubtext": "最多支持 300 页",
+      "loadingSubtext": "正在生成摘要…",
+      "runButton": "生成摘要",
+      "runningButton": "正在生成摘要…",
+      "loadingResult": "正在阅读你的文档并提炼要点…",
+      "emptyResult": "上传 PDF 并点击「生成摘要」即可在此查看结果。",
+      "resultHeading": "摘要",
+      "resetButton": "再摘要一份"
+    },
+    "chat": {
+      "dropHeading": "拖放 PDF 即可开始对话",
+      "idleSubtext": "最多支持 300 页",
+      "extractingSubtext": "正在阅读你的文档…",
+      "readingButton": "阅读中…",
+      "emptyResult": "上传 PDF 即可开始提问。",
+      "extractError": "无法读取该 PDF。",
+      "newFile": "更换文件",
+      "emptyChat": "就这份文档随意提问 —— 所有回答仅依据其内容作答。",
+      "thinking": "思考中…",
+      "inputPlaceholder": "就这份文档提出你的问题…",
+      "send": "发送"
+    },
+    "translate": {
+      "dropHeading": "拖放 PDF 以进行翻译",
+      "translateToLabel": "翻译为",
+      "runButton": "翻译",
+      "runningButton": "翻译中…",
+      "loadingResult": "正在翻译你的文档，同时保留排版与结构…",
+      "emptyResult": "上传 PDF、选择语言，然后点击「翻译」。",
+      "noPdfNotice": "{language} 暂不支持生成可下载的 PDF —— 请改为复制文本。",
+      "downloadPdf": "下载 PDF",
+      "resetButton": "再翻译一份"
+    },
+    "ocr": {
+      "dropHeading": "拖放扫描版 PDF",
+      "idleSubtext": "清晰、方向正确的扫描件效果最佳",
+      "loadingSubtext": "正在对每一页运行 OCR —— 可能需要一点时间…",
+      "runButton": "运行 OCR",
+      "runningButton": "正在运行 OCR…",
+      "loadingResult": "正在读取每一页并清理文本…",
+      "emptyResult": "上传扫描版 PDF 并点击「运行 OCR」，即可使其可被搜索。",
+      "resultHeading": "提取的文本",
+      "downloadPdf": "下载可搜索的 PDF"
+    }
   },
   "pricing": {
+    "headline": "价格简单透明，没有意外。",
+    "subheadline": "所有工具均可永久免费试用。当用量或团队协作有需求时再升级。",
     "free": {
       "name": "免费版",
       "unit": "永久免费",
       "tagline": "适合偶尔处理 PDF 的用户。",
-      "features": ["全部 26 项工具，无水印", "每天 2 次 AI 操作", "文件大小上限 25 MB", "无需注册账号"],
+      "features": [
+        "全部 26 项工具，无水印",
+        "每天 2 次 AI 操作",
+        "文件大小上限 25 MB",
+        "无需注册账号"
+      ],
       "cta": "免费开始"
     },
     "pro": {
@@ -102,17 +384,76 @@
       "badge": "最受欢迎",
       "unit": "/月",
       "tagline": "适合日常与文档打交道的用户。",
-      "features": ["无限次工具与 AI 操作", "文件大小上限 2 GB，支持批量处理", "桌面端与移动端应用", "云存储与历史记录"],
+      "features": [
+        "无限次工具与 AI 操作",
+        "文件大小上限 2 GB，支持批量处理",
+        "桌面端与移动端应用",
+        "云存储与历史记录"
+      ],
       "cta": "升级到专业版"
     },
     "business": {
       "name": "商业版",
       "unit": "/用户/月",
       "tagline": "适合有合规需求的团队。",
-      "features": ["专业版的全部功能", "共享工作区与 SSO 单点登录", "审计日志与优先支持", "自定义数据保留周期"],
+      "features": [
+        "专业版的全部功能",
+        "共享工作区与 SSO 单点登录",
+        "审计日志与优先支持",
+        "自定义数据保留周期"
+      ],
       "cta": "联系销售"
     },
-    "manageSubscription": "管理订阅"
+    "manageSubscription": "管理订阅",
+    "compareTitle": "对比各个套餐",
+    "compareHeaders": {
+      "feature": "功能",
+      "free": "免费版",
+      "pro": "专业版",
+      "business": "商业版"
+    },
+    "compareRows": {
+      "tools": {
+        "feature": "工具",
+        "free": "全部 26 项",
+        "pro": "全部 26 项",
+        "business": "全部 26 项"
+      },
+      "aiActions": {
+        "feature": "AI 操作次数",
+        "free": "每天 2 次",
+        "pro": "无限次",
+        "business": "无限次"
+      },
+      "maxFileSize": {
+        "feature": "文件大小上限",
+        "free": "25 MB",
+        "pro": "2 GB",
+        "business": "2 GB"
+      },
+      "filesPerBatch": {
+        "feature": "每批次文件数",
+        "free": "5",
+        "pro": "20",
+        "business": "无限"
+      },
+      "fileHistory": {
+        "feature": "文件历史记录"
+      },
+      "ssoAuditLog": {
+        "feature": "SSO 与审计日志"
+      },
+      "support": {
+        "feature": "客户支持",
+        "free": "帮助中心",
+        "pro": "邮件支持，1 个工作日",
+        "business": "优先支持，4 小时内"
+      }
+    },
+    "notSureTitle": "还没决定？",
+    "notSureBody": "无需账号即可免费使用所有工具。仅在触及限额时再考虑升级。",
+    "browseTools": "浏览所有工具",
+    "talkToSales": "联系销售团队"
   },
   "auth": {
     "loginTitle": "欢迎回来",
@@ -121,9 +462,12 @@
     "email": "邮箱",
     "workEmail": "工作邮箱",
     "password": "密码",
+    "passwordPlaceholder": "至少10个字符",
     "forgotPassword": "忘记密码？",
     "rememberMe": "保持登录状态",
     "continueWithGoogle": "使用 Google 继续",
+    "continueWithSso": "使用 SSO 继续",
+    "ssoComingSoon": "即将推出",
     "logIn": "登录",
     "createAccount": "创建免费账号",
     "newHere": "第一次来？",
@@ -133,7 +477,141 @@
     "resetPasswordSubtitle": "我们会给你发送一个用于设置新密码的链接。",
     "sendResetLink": "发送重置链接",
     "setNewPasswordTitle": "设置新密码",
-    "updatePassword": "更新密码"
+    "updatePassword": "更新密码",
+    "loggingIn": "登录中…",
+    "sending": "发送中…",
+    "saving": "保存中…",
+    "creatingAccount": "创建账号中…",
+    "errorWrongLoginAttempt": "登录失败 —— 请重新登录。",
+    "errorEnterEmailPassword": "请输入邮箱和密码。",
+    "errorEnterEmail": "请输入邮箱地址。",
+    "errorSignupFields": "请输入工作邮箱和至少 10 位的密码。",
+    "errorGeneric": "出了点问题，请重试。",
+    "errorPasswordTooShort": "密码长度至少为 10 位。",
+    "errorPasswordsDontMatch": "两次输入的密码不一致。",
+    "confirmationSentEmail": "我们已向 {email} 发送了确认链接。点击链接以验证账号并开始使用。",
+    "resetSentEmail": "如果 {email} 对应的账号存在，重置链接即将发出。",
+    "backToLogin": "返回登录",
+    "confirmPassword": "确认密码",
+    "choosePasswordHint": "请设置一个此前未使用过的密码。",
+    "createAccountHeading": "创建你的账号",
+    "comparePlans": "对比套餐",
+    "freePlanSelected": "已选择免费套餐。",
+    "termsNotice": "继续即表示你同意我们的条款。文件将在一小时后删除。",
+    "perk1": "全部 26 项工具，无水印",
+    "perk2": "每天 2 次 AI 操作",
+    "perk3": "随时可查的文件历史记录",
+    "perk4": "随时升级或取消",
+    "testimonialQuote": "我们用 Claira Slate 取代了原来的三款工具。",
+    "testimonialAttribution": "Maya Rendel · 运营主管，Northwind"
+  },
+  "about": {
+    "title": "关于我们 — Claira Slate",
+    "description": "Claira Slate 于 2024 年起源于一个周末修复合并工具的小项目。如今，它每月处理数百万份文档。",
+    "heroTitle": "让文档处理重新变得平淡无奇。",
+    "heroSubhead": "Claira Slate 于 2024 年起源于一个周末修复合并工具的小项目。如今，它每月为不想再为 PDF 操心的用户处理数百万份文档。",
+    "statDocuments": "已处理文档数",
+    "statRetention": "最长数据保留时长",
+    "statPeople": "名员工，遍布 7 个国家",
+    "statAds": "条广告，一个都没有",
+    "valuesTitle": "我们坚持的原则",
+    "value1Title": "上手无门槛",
+    "value1Body": "没有注册墙，没有邮箱验证关卡，也不会以水印相要挟。工具即用即走，之后再由你决定。",
+    "value2Title": "你的文档属于你",
+    "value2Body": "传输过程加密，处理环境隔离，一小时内自动删除。绝不用于训练模型。",
+    "value3Title": "答案有据可查",
+    "value3Body": "每条 AI 回答都会标注出处页码。如果无法说明来源，我们就不会上线该功能。",
+    "trustTitle": "信任与隐私",
+    "trust1Title": "隐私",
+    "trust1Body": "我们只收集运营服务所需的最少信息，且绝不出售。政策语言通俗易懂，没有任何暗箱操作。",
+    "trust2Title": "安全",
+    "trust2Body": "传输过程采用 TLS 1.3 加密，静态数据采用 AES-256 加密，处理环境相互隔离，并每年接受第三方渗透测试。",
+    "trust3Title": "GDPR 与条款",
+    "trust3Body": "数据存储于欧盟境内，可应要求提供 DPA，默认一小时数据保留期，商业版可自定义保留周期。",
+    "requestDpa": "申请 DPA",
+    "readEngineeringNotes": "阅读工程笔记",
+    "hiringTitle": "我们正在寻找沉稳、细致的建造者。",
+    "hiringBody": "全员远程办公，团队遍布欧洲。目前基础设施与设计岗位各有职位空缺。",
+    "hiringCta": "查看招聘职位"
+  },
+  "contact": {
+    "supportTitle": "支持",
+    "supportDetail": "help@clairaslate.com · 一个工作日内回复",
+    "salesTitle": "销售与商业版套餐",
+    "salesDetail": "sales@clairaslate.com · SSO、DPA、发票开具",
+    "securityTitle": "安全问题上报",
+    "securityDetail": "security@clairaslate.com · 可索取 PGP 密钥",
+    "heroTitle": "与真人对话。",
+    "heroSubhead": "无论是销售咨询、安全审查、发票问题，还是想反馈的 bug —— 都会由同一支精简团队来处理。",
+    "errorFillFields": "请填写姓名、邮箱和留言内容。",
+    "errorInvalidEmail": "该邮箱地址格式不正确。",
+    "sentTitle": "消息已发送",
+    "sentBody": "谢谢你，{name} —— 我们会用真实邮箱回复你，通常在一个工作日内。",
+    "formTitle": "发送消息",
+    "nameLabel": "姓名",
+    "emailLabel": "工作邮箱",
+    "topicLabel": "你需要什么帮助？",
+    "topicQuote": "商业版套餐报价",
+    "topicSecurity": "安全审查 / DPA",
+    "topicHelp": "文件相关问题",
+    "topicOther": "其他问题",
+    "messageLabel": "留言",
+    "messagePlaceholder": "简单介绍一下你平时处理的文档类型。",
+    "sendMessage": "发送消息",
+    "noDripCampaigns": "我们会用真实邮箱回复你，不会有自动化邮件序列或营销推送。"
+  },
+  "blog": {
+    "headline": "关于文档的一些思考。",
+    "subheadline": "我们如何构建 Claira Slate，以及关于这个世界上最奇特的文件格式，我们学到了什么。",
+    "readPost": "阅读全文",
+    "minRead": "{count} 分钟阅读",
+    "teamFallbackAuthor": "Claira Slate 团队",
+    "trySummarizing": "试试为一份 PDF 生成摘要",
+    "backToBlog": "返回博客",
+    "keepReading": "继续阅读",
+    "categories": {
+      "All": "全部",
+      "Product": "产品",
+      "Engineering": "工程技术",
+      "Guides": "指南",
+      "Company": "公司动态"
+    },
+    "posts": {
+      "the-pdf-turns-33-time-it-learned-to-read-itself": {
+        "title": "PDF 迎来 33 岁。是时候学会自己阅读了。",
+        "excerpt": "每种格式迟早都会拥有一个大脑。这是我们如何思考,把它装进一个谁都不想打开的文件里。"
+      },
+      "how-we-delete-your-files-and-prove-it": {
+        "title": "我们如何删除您的文件 — 并证明这一点",
+        "excerpt": "一小时保留承诺说起来容易,做起来难。带你了解队列、密钥和审计日志。"
+      },
+      "merging-20-contracts-without-losing-the-order": {
+        "title": "合并 20 份合同而不打乱顺序",
+        "excerpt": "顺序是大家最容易搞砸的地方。三个习惯,让 400 页的合并变得从容不迫。"
+      },
+      "ocr-quality-what-actually-moves-the-needle": {
+        "title": "OCR 质量:真正起作用的因素",
+        "excerpt": "分辨率的影响比你想的要小。图像纠偏更重要。"
+      },
+      "why-we-priced-pro-at-5": {
+        "title": "我们为什么将 Pro 定价为 5 美元",
+        "excerpt": "定价就是定位。我们想要一个容易被遗忘的数字。"
+      },
+      "a-field-guide-to-compressing-scans": {
+        "title": "压缩扫描件实用指南",
+        "excerpt": "何时降低分辨率、何时重新编码、何时干脆不要动文件。"
+      }
+    }
+  },
+  "billingShared": {
+    "checkoutError": "启动结账流程时出错。",
+    "portalError": "无法打开账单管理页面。",
+    "redirecting": "跳转中…",
+    "opening": "打开中…",
+    "usageLimitTitle": "你本月的 {limit} 次 AI 操作已用完",
+    "usageLimitBody": "升级到专业版，即可获得更多 AI 操作次数，以及无限工具使用与更大文件支持。",
+    "upgradeToProCta": "升级到专业版",
+    "maybeLater": "以后再说"
   },
   "dashboard": {
     "home": "首页",
@@ -147,6 +625,264 @@
     "documentsThisMonth": "本月文档数",
     "aiActions": "AI 操作次数",
     "storageUsed": "已用存储空间",
-    "timeSaved": "节省的时间"
+    "timeSaved": "节省的时间",
+    "upgradeToPro": "升级到专业版",
+    "available": "可用",
+    "expired": "已过期",
+    "home_": {
+      "quickToolMerge": "合并",
+      "quickToolCompress": "压缩",
+      "quickToolSummarize": "生成摘要",
+      "quickToolAskAi": "AI 问答",
+      "noteVsLastMonth": "较 6 月增长 18%",
+      "noteUnlimitedPro": "专业版可无限使用",
+      "noteEstimated": "本月预估值",
+      "greeting": "早上好，{name}",
+      "newFile": "新建文件",
+      "quickTools": "快捷工具",
+      "recentActivity": "最近活动",
+      "viewAll": "查看全部",
+      "teamPromoTitle": "正在与团队协作？",
+      "teamPromoBody": "商业版新增共享工作区、SSO 单点登录与审计日志，每位用户每月仅需 $12。",
+      "teamPromoCta": "管理团队"
+    },
+    "history_": {
+      "title": "历史记录",
+      "subtitle": "你运行过的所有任务。文件保留一小时，记录保留 90 天。",
+      "searchPlaceholder": "搜索你的文件…",
+      "colFileName": "文件名",
+      "colTool": "工具",
+      "colDate": "日期",
+      "colSize": "大小",
+      "colStatus": "状态",
+      "colActions": "操作",
+      "download": "下载",
+      "rerun": "重新运行",
+      "delete": "删除",
+      "showing": "显示 {total} 项任务中的 {count} 项",
+      "emptyTitle": "暂无文件",
+      "emptyBody": "没有符合条件的搜索结果。请清除筛选条件，或运行你的第一个工具。",
+      "tryFirstTool": "试试你的第一个工具",
+      "clearFilters": "清除筛选条件",
+      "filterAll": "全部任务",
+      "filterMerged": "已合并",
+      "filterCompressed": "已压缩",
+      "filterConverted": "已转换",
+      "filterAiProcessed": "AI 已处理"
+    },
+    "billing_": {
+      "title": "账单",
+      "subtitle": "更改套餐、更新银行卡、下载发票，随时可取消。",
+      "currentPlan": "当前套餐",
+      "renews": "将于 {date} 续订 ·",
+      "renewalPending": "续订日期待定 ·",
+      "freeLimits": "每天 2 次 AI 操作，文件大小上限 25 MB",
+      "paidLimits": "无限工具与 AI 使用",
+      "manageSubscription": "管理订阅",
+      "upgradePlan": "升级套餐",
+      "aiUsageThisMonth": "本月 AI 使用情况",
+      "unlimited": "无限",
+      "actionsSuffix": "次操作",
+      "billingDetails": "账单信息",
+      "colDate": "日期",
+      "colDescription": "描述",
+      "colAmount": "金额",
+      "colInvoice": "发票",
+      "noInvoices": "暂无发票。",
+      "freeNothingToBill": "你当前使用的是免费套餐 —— 无需付费。",
+      "invoicesNote": "发票由 Stripe 自动生成并通过邮件发送。",
+      "planFree": "免费版",
+      "planPro": "专业版",
+      "planBusiness": "商业版",
+      "unitForever": "永久免费",
+      "unitMonth": "/月",
+      "unitUserMonth": "/用户/月"
+    },
+    "settings_": {
+      "title": "设置",
+      "subtitle": "你的个人资料、默认设置与隐私控制。",
+      "profile": "个人资料",
+      "changePhoto": "更换头像",
+      "fullName": "全名",
+      "email": "邮箱",
+      "defaultOcrLanguage": "默认 OCR 识别语言",
+      "saveChanges": "保存更改",
+      "preferences": "偏好设置",
+      "darkMode": "深色模式",
+      "darkModeDesc": "跟随此开关，而非系统设置。",
+      "on": "开启",
+      "off": "关闭",
+      "keepFiles": "保留已完成的文件",
+      "keepFilesDesc": "仅限专业版。关闭状态下文件将在一小时后删除。",
+      "emailReceipts": "邮件收据",
+      "emailReceiptsDesc": "每月账单将发送至你的账单邮箱。",
+      "productEmails": "产品动态邮件",
+      "productEmailsDesc": "大约每季度一封。",
+      "dangerZone": "高危操作区",
+      "dangerZoneBody": "删除账号将立即移除所有已存储文件及账单历史，且无法恢复。",
+      "deleteAccount": "删除账号"
+    },
+    "team_": {
+      "title": "团队",
+      "subtitle": "商业版 · 已使用 10 个席位中的 5 个 · 每位用户每月 $12",
+      "inviteMember": "邀请成员",
+      "colMember": "成员",
+      "colEmail": "邮箱",
+      "colRole": "角色",
+      "colStatus": "状态",
+      "active": "已激活",
+      "invited": "已邀请",
+      "permissionsNote": "所有者与管理员可邀请新成员。普通成员只能查看自己的文件。",
+      "rolePermissions": "角色权限说明",
+      "teamBilling": "团队账单",
+      "billingSummary": "5 个席位 × $12 = $60/月 · 下次扣款日为 8 月 1 日",
+      "manageBilling": "管理账单",
+      "inviteModalTitle": "邀请成员",
+      "inviteModalBody": "对方将收到一个 7 天内有效的邮件邀请链接。当前为第 6 / 10 个席位。",
+      "emailAddress": "邮箱地址",
+      "role": "角色",
+      "roleMember": "成员 — 仅可查看自己的文件",
+      "roleAdmin": "管理员 — 可邀请并管理成员",
+      "roleViewer": "查看者 — 仅可查看，无法编辑",
+      "sendInvite": "发送邀请",
+      "seatsUsed": "已用席位",
+      "documentsTeam": "团队文档数",
+      "thisMonth": "本月",
+      "pendingInvites": "待处理邀请",
+      "expiresInDays": "{days} 天后过期",
+      "sso": "SSO 单点登录",
+      "ssoDetail": "Okta · 已强制启用"
+    },
+    "files_": {
+      "title": "文件",
+      "subtitle": "专业版会将你已完成的文件保存在云存储中，直到你手动删除。",
+      "uploadFile": "上传文件",
+      "dropHere": "将文件拖放到此处",
+      "upTo2gb": "专业版支持最大 2 GB"
+    },
+    "usage_": {
+      "title": "AI 使用情况",
+      "subtitle": "专业版无使用上限 —— 此处仅展示用量分布，供你参考。",
+      "actionsThisMonth": "本月 AI 操作次数 · 本周 {count} 次",
+      "byFeature": "按功能划分",
+      "limits": "使用限额",
+      "managePlan": "管理套餐",
+      "featureSummarize": "生成摘要",
+      "featureChat": "智能问答",
+      "featureOcr": "OCR 识别",
+      "featureTranslate": "翻译",
+      "limitAiActions": "AI 操作次数",
+      "limitPagesPerDoc": "每份文档页数",
+      "limitFileSize": "文件大小",
+      "limitRetention": "数据保留时长"
+    }
+  },
+  "home": {
+    "aiTeaser": {
+      "badge": "由 AI 驱动",
+      "headline": "你的 PDF,终于被理解了。",
+      "subhead": "Claira 替你读文档,你不必再自己读。所有模型都在一小时后即被删除的文件上运行。",
+      "cta": "免费试用 AI"
+    },
+    "howItWorks": {
+      "title": "三步搞定。",
+      "step1Title": "上传你的 PDF",
+      "step1Desc": "从桌面、Drive 或 Dropbox 拖入即可。最大 2 GB。",
+      "step2Title": "选择工具或直接问 AI",
+      "step2Desc": "从 26 种工具中选择,或直接输入你想做的事。",
+      "step3Title": "即时下载",
+      "step3Desc": "没有水印,不需要留邮箱。文件会在一小时后被删除。"
+    },
+    "pricingTeaser": {
+      "subhead": "每个工具都可免费试用。需要更大用量时再升级。",
+      "seeFullPricing": "查看完整价格"
+    },
+    "socialProof": {
+      "title": "深受数千用户信赖。",
+      "docsCaption": "份文档已处理,数量持续增长",
+      "testimonial1Quote": "我们用 Claira Slate 替换了三款不同的工具。仅摘要功能就为我的团队每周节省了一个上午的时间。",
+      "testimonial1Role": "运营主管,Northwind",
+      "testimonial2Quote": "它就是好用。上传,完成。不需要账号,没有广告,没有诱导订阅的套路。",
+      "testimonial2Role": "独立设计师",
+      "testimonial3Quote": "向一份 200 页的合同提问,并得到带引用的答案,这真的是全新的体验。",
+      "testimonial3Role": "法律顾问,Harbor Legal",
+      "badgeGdpr": "符合 GDPR",
+      "badgeDeleted": "文件在 1 小时后删除",
+      "badgeNoAccount": "无需账号"
+    },
+    "finalCta": {
+      "title": "为你的文档,焕然一新。",
+      "cta": "立即开始 — 完全免费"
+    }
+  },
+  "splitTool": {
+    "addRange": "添加范围",
+    "bookmarksFoundInfo": "找到{count}个书签",
+    "checkingBookmarks": "正在检查书签…",
+    "chooseOption": "选择一个选项",
+    "compressedBadge": "已压缩",
+    "compressOutputLabel": "压缩输出文件",
+    "documentCategoryLabel": "文档类别",
+    "downloadAllZip": "全部下载为ZIP",
+    "estimatedTime": "大约还需{time}",
+    "extractAllInfo": "将创建{count}个PDF文件",
+    "fixedSplitInfo": "此PDF将被拆分为{count}个文件，每个{n}页",
+    "maxSizePerFileLabel": "每个文件的最大大小",
+    "mergedFileLabel": "合并文件",
+    "mergePagesLabel": "将提取的页面合并为一个PDF",
+    "mergeRangesLabel": "将所有范围合并为一个PDF",
+    "noBookmarksFound": "此PDF中未找到书签。",
+    "noChunksError": "拆分前请至少设置一个范围或页面。",
+    "originalInfo": "原始文件：{size} · {pages}页",
+    "pageFileLabel": "第{n}页",
+    "pagesSelectedCount": "已选择{count}页",
+    "pagesToExtractLabel": "要提取的页面",
+    "pagesToExtractPlaceholder": "例如 1,3,5-8",
+    "pagesUnit": "页",
+    "previewSummary": "{pages}页 → {files}个文件",
+    "previewTitle": "拆分预览",
+    "processingPages": "正在处理{total}页…",
+    "proFeatureNudge": "AI智能拆分是Pro功能。升级后可让Claude为您找到最佳拆分点。",
+    "rangeFileLabel": "文件{n}",
+    "rangeLabel": "范围{n}：",
+    "removeRange": "删除范围",
+    "resultsTitle": "{count}个文件已就绪",
+    "shortcutsHint": "Ctrl+A 全选 · Shift+点击 范围选择 · Esc 取消选择",
+    "sizeSplitInfo": "此PDF将被拆分为每个不超过{size}的文件",
+    "splitAgain": "再次拆分",
+    "splitButton": "拆分PDF",
+    "splitIntoRangesOf": "按以下页数拆分：",
+    "toLabel": "至第",
+    "upgradeToPro": "升级到Pro",
+    "tab": {
+      "range": "范围",
+      "pages": "页面",
+      "size": "大小",
+      "bookmarks": "书签",
+      "smart": "智能"
+    },
+    "rangeSubMode": {
+      "custom": "自定义",
+      "fixed": "固定"
+    },
+    "pagesSubMode": {
+      "extractAll": "提取所有页面",
+      "select": "选择页面"
+    },
+    "category": {
+      "invoices": "发票与账单文档",
+      "contracts": "合同与法律文档",
+      "bankStatements": "银行对账单与财务报告",
+      "academic": "学术与教育文档",
+      "medical": "医疗与健康记录",
+      "hr": "人力资源与员工文档",
+      "insurance": "保险文档",
+      "shipping": "运输与物流文档",
+      "government": "政府与行政表格",
+      "scanned": "扫描文档批次",
+      "marketing": "营销与创意文档",
+      "books": "书籍与阅读文档",
+      "custom": "自定义提示"
+    }
   }
 }

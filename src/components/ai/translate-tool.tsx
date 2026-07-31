@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { AIUsageLimitModal } from "@/components/billing/ai-usage-limit-modal";
 import { TRANSLATE_LANGUAGES } from "@/lib/languages";
 import { track } from "@/lib/analytics";
@@ -48,7 +48,8 @@ const secondaryButton: React.CSSProperties = {
 };
 
 export function TranslateTool() {
-  const router = useRouter();
+  const t = useTranslations("aiTool.translate");
+  const tc = useTranslations("common");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [file, setFile] = useState<File | null>(null);
@@ -78,24 +79,20 @@ export function TranslateTool() {
       const res = await fetch("/api/ai/translate", { method: "POST", body: formData });
       const data = await res.json();
 
-      if (res.status === 401) {
-        router.push("/login?redirect=/ai/translate");
-        return;
-      }
       if (res.status === 429) {
         setLimit(data.limit ?? 5);
         track("quota_limit_reached", { feature: "translate", plan: data.plan ?? "free" });
         return;
       }
       if (!res.ok) {
-        setError(data.error || "Something went wrong.");
+        setError(data.error || tc("error"));
         return;
       }
 
       setResult(data);
       track("ai_feature_used", { feature: "translate", user_plan: data.plan ?? "free", tokens_used: data.tokensUsed ?? 0 });
     } catch {
-      setError("Couldn't reach the server. Try again.");
+      setError(tc("couldntReachServer"));
     } finally {
       setLoading(false);
     }
@@ -152,11 +149,11 @@ export function TranslateTool() {
           </svg>
         </div>
         <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 20, fontWeight: 600, letterSpacing: "-.025em", overflowWrap: "anywhere" }}>
-          {file ? file.name : "Drop a PDF to translate"}
+          {file ? file.name : t("dropHeading")}
         </div>
 
         <label style={{ display: "flex", flexDirection: "column", gap: 6, width: "100%", maxWidth: 240, textAlign: "left", fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-          Translate to
+          {t("translateToLabel")}
           <select className="cs-field" style={fieldInput} value={targetLanguage} onChange={(e) => setTargetLanguage(e.target.value)}>
             {TRANSLATE_LANGUAGES.map((lang) => (
               <option key={lang} value={lang}>
@@ -169,11 +166,11 @@ export function TranslateTool() {
         <input ref={inputRef} type="file" accept="application/pdf" style={{ display: "none" }} onChange={(e) => pickFile(e.target.files?.[0] ?? null)} />
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
           <button type="button" className="hover-text" style={file ? secondaryButton : primaryButton} onClick={() => inputRef.current?.click()}>
-            {file ? "Choose a different file" : "Select file"}
+            {file ? tc("chooseAnotherFile") : tc("selectFile")}
           </button>
           {file && (
             <button type="button" style={{ ...primaryButton, opacity: loading ? 0.7 : 1 }} disabled={loading} onClick={handleTranslate}>
-              {loading ? "Translating…" : "Translate"}
+              {loading ? t("runningButton") : t("runButton")}
             </button>
           )}
         </div>
@@ -182,7 +179,7 @@ export function TranslateTool() {
       <div style={{ border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", padding: 22, minHeight: 200 }}>
         {!result && !error && (
           <div style={{ fontSize: 13.5, color: "var(--cs-text-2)", lineHeight: 1.6 }}>
-            {loading ? "Translating your document, preserving layout and structure…" : "Upload a PDF, pick a language, and click Translate."}
+            {loading ? t("loadingResult") : t("emptyResult")}
           </div>
         )}
         {error && <div style={{ fontSize: 13.5, color: "var(--cs-bad)", lineHeight: 1.6 }}>{error}</div>}
@@ -212,17 +209,17 @@ export function TranslateTool() {
             </div>
             {!result.pdfBase64 && (
               <div style={{ marginTop: 12, fontSize: 12, color: "var(--cs-text-2)", lineHeight: 1.5 }}>
-                A downloadable PDF isn&apos;t available for {targetLanguage} yet — copy the text instead.
+                {t("noPdfNotice", { language: targetLanguage })}
               </div>
             )}
             <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 8 }}>
               {result.pdfBase64 ? (
                 <button type="button" className="hover-text" style={primaryButton} onClick={downloadPdf}>
-                  Download PDF
+                  {t("downloadPdf")}
                 </button>
               ) : (
                 <button type="button" className="hover-text" style={primaryButton} onClick={copyText}>
-                  {copied ? "Copied!" : "Copy text"}
+                  {copied ? tc("copied") : tc("copyText")}
                 </button>
               )}
               <button
@@ -233,7 +230,7 @@ export function TranslateTool() {
                   if (inputRef.current) inputRef.current.value = "";
                 }}
               >
-                Translate another
+                {t("resetButton")}
               </button>
             </div>
           </>

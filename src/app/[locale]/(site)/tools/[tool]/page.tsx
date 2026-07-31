@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { TOOL_REGISTRY, getToolConfig } from "@/lib/tools/registry";
+import { TOOL_REGISTRY, getToolConfig, getRelatedTools } from "@/lib/tools/registry";
 import { GenericTool } from "@/components/tools/generic-tool";
+import { SplitTool } from "@/components/tools/split/split-tool";
+import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
   merge: {
@@ -51,16 +53,28 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   if (!config) notFound();
 
   const t = await getTranslations("tools");
+  const tc = await getTranslations("common");
+  const tp = await getTranslations("toolPage");
   const name = config.fallback?.name ?? t(`${tool}.name`);
   const desc = config.fallback?.desc ?? t(`${tool}.desc`);
 
+  const related = getRelatedTools(tool, 4);
+  const relatedWithIcons = related.map((r) => ({
+    ...r,
+    name: r.fallback?.name ?? t(`${r.slug}.name`),
+    desc: r.fallback?.desc ?? t(`${r.slug}.desc`),
+    d: TOOLS.find((x) => x.slug === r.slug)?.d,
+  }));
+
+  const isSplit = tool === "split";
+
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
+      <div style={{ maxWidth: isSplit ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-          <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>Home</Link>
+          <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
-          <Link href="/tools" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>Tools</Link>
+          <Link href="/tools" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.tools")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
           <span style={{ color: "var(--cs-text)" }}>{name}</span>
         </div>
@@ -82,9 +96,30 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
           </p>
         </div>
 
-        <div style={{ marginTop: 36, display: "grid", gridTemplateColumns: "1fr", gap: 18, maxWidth: 640 }}>
-          <GenericTool config={config} />
+        <div style={{ marginTop: 36 }}>
+          {isSplit ? <SplitTool /> : <div className="tool-workspace"><GenericTool config={config} /></div>}
         </div>
+
+        {relatedWithIcons.length > 0 && (
+          <div style={{ marginTop: "clamp(48px,6vw,72px)" }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--cs-text-2)", marginBottom: 16 }}>{tp("continueTo")}</div>
+            <div className="tool-related-grid">
+              {relatedWithIcons.map((r) => (
+                <Link key={r.slug} href={`/tools/${r.slug}`} className="tool-related-card">
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", display: "grid", placeItems: "center", color: "var(--cs-accent)", flex: "none" }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      {r.d && <path d={r.d}></path>}
+                    </svg>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600 }}>{r.name}</div>
+                    <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)", lineHeight: 1.4 }}>{r.desc}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

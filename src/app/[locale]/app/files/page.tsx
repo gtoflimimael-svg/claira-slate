@@ -1,24 +1,28 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HISTORY } from "@/lib/data";
 
-function statusStyle(available: boolean) {
-  return {
-    fg: available ? "var(--cs-ok)" : "var(--cs-text-2)",
-    bg: available ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-bg-2)",
-    label: available ? "Available" : "Expired",
-  };
-}
-
 export default function FilesPage() {
+  const t = useTranslations("dashboard.files_");
+  const td = useTranslations("dashboard");
+
+  function statusStyle(available: boolean) {
+    return {
+      fg: available ? "var(--cs-ok)" : "var(--cs-text-2)",
+      bg: available ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-bg-2)",
+      label: available ? td("available") : td("expired"),
+    };
+  }
+
   return (
     <div>
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 16 }}>
         <div>
-          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>Files</h1>
-          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>Pro keeps your finished files in cloud storage until you remove them.</p>
+          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
         </div>
         <Link href="/tools/merge" style={{ padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, cursor: "pointer" }}>
-          Upload file
+          {t("uploadFile")}
         </Link>
       </div>
 
@@ -47,8 +51,8 @@ export default function FilesPage() {
             <path d="M12 21v-8"></path>
             <path d="M8 17l4-4 4 4"></path>
           </svg>
-          <div style={{ fontSize: 13.5, fontWeight: 500 }}>Drop a file here</div>
-          <div style={{ fontSize: 12, color: "var(--cs-text-2)" }}>Up to 2 GB on Pro</div>
+          <div style={{ fontSize: 13.5, fontWeight: 500 }}>{t("dropHere")}</div>
+          <div style={{ fontSize: 12, color: "var(--cs-text-2)" }}>{t("upTo2gb")}</div>
         </Link>
 
         {HISTORY.map((h) => {

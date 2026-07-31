@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export function FinalCta() {
+  const t = useTranslations("home.finalCta");
   return (
     <section id="cta" style={{ background: "var(--cs-grad-135)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(72px,9vw,120px) 24px", textAlign: "center" }}>
@@ -16,7 +18,7 @@ export function FinalCta() {
             color: "#fff",
           }}
         >
-          A clean slate for your documents.
+          {t("title")}
         </h2>
         <Link
           data-press
@@ -36,7 +38,7 @@ export function FinalCta() {
             cursor: "pointer",
           }}
         >
-          Get started — it&apos;s free
+          {t("cta")}
         </Link>
       </div>
     </section>

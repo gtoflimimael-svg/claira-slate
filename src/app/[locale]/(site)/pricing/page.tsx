@@ -32,15 +32,11 @@ const rowStyle: React.CSSProperties = {
   fontSize: 14,
 };
 
-const COMPARE_ROWS: { feature: string; free: React.ReactNode; pro: React.ReactNode; business: React.ReactNode }[] = [
-  { feature: "Tools", free: "All 26", pro: "All 26", business: "All 26" },
-  { feature: "AI actions", free: "2 / day", pro: "Unlimited", business: "Unlimited" },
-  { feature: "Max file size", free: "25 MB", pro: "2 GB", business: "2 GB" },
-  { feature: "Files per batch", free: "5", pro: "20", business: "Unlimited" },
-  { feature: "File history", free: "—", pro: TICK, business: TICK },
-  { feature: "SSO & audit log", free: "—", pro: "—", business: TICK },
-  { feature: "Support", free: "Help centre", pro: "Email, 1 day", business: "Priority, 4 h" },
-];
+const COMPARE_ROW_KEYS = ["tools", "aiActions", "maxFileSize", "filesPerBatch", "fileHistory", "ssoAuditLog", "support"] as const;
+const COMPARE_OVERRIDES: Partial<Record<(typeof COMPARE_ROW_KEYS)[number], { free: React.ReactNode; pro: React.ReactNode; business: React.ReactNode }>> = {
+  fileHistory: { free: "—", pro: TICK, business: TICK },
+  ssoAuditLog: { free: "—", pro: "—", business: TICK },
+};
 
 export default async function PricingPage() {
   const t = await getTranslations("pricing");
@@ -65,10 +61,10 @@ export default async function PricingPage() {
             letterSpacing: "-.042em",
           }}
         >
-          Simple pricing. No surprises.
+          {t("headline")}
         </h1>
         <p style={{ margin: "20px 0 0", maxWidth: 500, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
-          Every tool is free to try, forever. Upgrade when volume or teamwork gets in the way.
+          {t("subheadline")}
         </p>
 
         <div style={{ marginTop: "clamp(36px,5vw,56px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(268px,100%),1fr))", gap: 14, alignItems: "start" }}>
@@ -166,7 +162,7 @@ export default async function PricingPage() {
           as="h2"
           style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
         >
-          Compare the plans
+          {t("compareTitle")}
         </Reveal>
         <div style={{ marginTop: 24, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", overflowX: "auto" }}>
           <div style={{ minWidth: 560 }}>
@@ -183,19 +179,22 @@ export default async function PricingPage() {
                 color: "var(--cs-text-2)",
               }}
             >
-              <div>Feature</div>
-              <div>Free</div>
-              <div style={{ color: "var(--cs-accent)" }}>Pro</div>
-              <div>Business</div>
+              <div>{t("compareHeaders.feature")}</div>
+              <div>{t("compareHeaders.free")}</div>
+              <div style={{ color: "var(--cs-accent)" }}>{t("compareHeaders.pro")}</div>
+              <div>{t("compareHeaders.business")}</div>
             </div>
-            {COMPARE_ROWS.map((r, i) => (
-              <div key={r.feature} style={i === COMPARE_ROWS.length - 1 ? { ...rowStyle, borderBottom: "none" } : { ...rowStyle, alignItems: "center" }}>
-                <div>{r.feature}</div>
-                <div style={{ color: "var(--cs-text-2)" }}>{r.free}</div>
-                <div style={{ color: "var(--cs-text-2)" }}>{r.pro}</div>
-                <div style={{ color: "var(--cs-text-2)" }}>{r.business}</div>
-              </div>
-            ))}
+            {COMPARE_ROW_KEYS.map((key, i) => {
+              const override = COMPARE_OVERRIDES[key];
+              return (
+                <div key={key} style={i === COMPARE_ROW_KEYS.length - 1 ? { ...rowStyle, borderBottom: "none" } : { ...rowStyle, alignItems: "center" }}>
+                  <div>{t(`compareRows.${key}.feature`)}</div>
+                  <div style={{ color: "var(--cs-text-2)" }}>{override?.free ?? t(`compareRows.${key}.free`)}</div>
+                  <div style={{ color: "var(--cs-text-2)" }}>{override?.pro ?? t(`compareRows.${key}.pro`)}</div>
+                  <div style={{ color: "var(--cs-text-2)" }}>{override?.business ?? t(`compareRows.${key}.business`)}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -215,9 +214,9 @@ export default async function PricingPage() {
           }}
         >
           <div style={{ maxWidth: 560 }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>Not sure yet?</div>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("notSureTitle")}</div>
             <div style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>
-              Use every tool free, with no account. Upgrade only when a limit gets in your way.
+              {t("notSureBody")}
             </div>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
@@ -226,10 +225,10 @@ export default async function PricingPage() {
               className="hover-border hover-text"
               style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
             >
-              Browse tools
+              {t("browseTools")}
             </Link>
             <Link href="/contact" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
-              Talk to sales
+              {t("talkToSales")}
             </Link>
           </div>
         </div>

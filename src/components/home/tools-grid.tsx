@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { TOOLS, CATS } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
-import { CountUp } from "@/components/count-up";
 
 function toolHref(slug: string): string {
   return slug === "ocr" ? "/ai/ocr" : `/tools/${slug}`;
@@ -14,7 +13,7 @@ function toolHref(slug: string): string {
 export function ToolsGrid() {
   const t = useTranslations("tools");
   const [cat, setCat] = useState("All");
-  const shownTools = cat === "All" ? TOOLS : TOOLS.filter((t) => t.cat === cat);
+  const shownTools = cat === "All" ? TOOLS : TOOLS.filter((tool) => tool.cat === cat);
 
   return (
     <section id="tools" style={{ borderTop: "1px solid var(--cs-line)", background: "var(--cs-bg-2)" }}>
@@ -22,10 +21,10 @@ export function ToolsGrid() {
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 24 }}>
           <div>
             <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
-              <CountUp value={26} /> tools. Zero friction.
+              {t("headline")}
             </Reveal>
             <p style={{ margin: "14px 0 0", maxWidth: 460, fontSize: 16, color: "var(--cs-text-2)" }}>
-              Everything you need for a PDF, in the browser. No installs, no queues.
+              {t("homeSubheadline")}
             </p>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
@@ -48,7 +47,7 @@ export function ToolsGrid() {
                     borderColor: active ? "var(--cs-accent)" : "var(--cs-line)",
                   }}
                 >
-                  {c}
+                  {t(`filters.${c}`)}
                 </button>
               );
             })}
@@ -88,7 +87,7 @@ export function ToolsGrid() {
         </div>
         <div style={{ marginTop: 32 }}>
           <Link href="/tools" style={{ fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
-            View all tools &rarr;
+            {t("viewAll")} &rarr;
           </Link>
         </div>
       </div>

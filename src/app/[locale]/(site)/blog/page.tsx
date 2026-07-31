@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { POSTS } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
 
 const CATS = ["All", "Product", "Engineering", "Guides", "Company"];
 
+function minReadCount(read: string): number {
+  return parseInt(read, 10) || 0;
+}
+
 export default function BlogPage() {
+  const t = useTranslations("blog");
   const [cat, setCat] = useState("All");
   const featured = POSTS[0];
   const rest = POSTS.slice(1);
@@ -27,10 +33,10 @@ export default function BlogPage() {
             letterSpacing: "-.042em",
           }}
         >
-          Notes on documents.
+          {t("headline")}
         </h1>
         <p style={{ margin: "20px 0 0", maxWidth: 480, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
-          How we build Claira Slate, and what we learn about the strangest file format in the world.
+          {t("subheadline")}
         </p>
 
         <div style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 7 }}>
@@ -53,7 +59,7 @@ export default function BlogPage() {
                   fontFamily: "inherit",
                 }}
               >
-                {c}
+                {t(`categories.${c}`)}
               </button>
             );
           })}
@@ -77,10 +83,10 @@ export default function BlogPage() {
           className="hover-border hover-text"
         >
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, fontSize: 12, fontWeight: 500, color: "var(--cs-text-2)" }}>
-            <span style={{ padding: "4px 10px", borderRadius: 6, background: "var(--cs-grad)", color: "#fff", fontWeight: 600 }}>{featured.cat}</span>
+            <span style={{ padding: "4px 10px", borderRadius: 6, background: "var(--cs-grad)", color: "#fff", fontWeight: 600 }}>{t(`categories.${featured.cat}`)}</span>
             <span>{featured.date}</span>
             <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--cs-text-2)" }}></span>
-            <span>{featured.read}</span>
+            <span>{t("minRead", { count: minReadCount(featured.read) })}</span>
           </div>
           <div
             style={{
@@ -93,11 +99,11 @@ export default function BlogPage() {
               letterSpacing: "-.035em",
             }}
           >
-            {featured.title}
+            {t(`posts.${featured.slug}.title`)}
           </div>
-          <div style={{ marginTop: 14, maxWidth: 600, fontSize: 15.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{featured.excerpt}</div>
+          <div style={{ marginTop: 14, maxWidth: 600, fontSize: 15.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`posts.${featured.slug}.excerpt`)}</div>
           <div style={{ marginTop: 22, fontSize: 14, fontWeight: 500, color: "var(--cs-accent)" }}>
-            Read the post <span data-tip>&rarr;</span>
+            {t("readPost")} <span data-tip>&rarr;</span>
           </div>
         </Reveal>
       </section>
@@ -127,14 +133,14 @@ export default function BlogPage() {
               className="hover-border hover-text"
             >
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 9, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-                <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{p.cat}</span>
+                <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{t(`categories.${p.cat}`)}</span>
                 <span>{p.date}</span>
               </div>
               <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
-                {p.title}
+                {t(`posts.${p.slug}.title`)}
               </div>
-              <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{p.excerpt}</div>
-              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{p.read}</div>
+              <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t(`posts.${p.slug}.excerpt`)}</div>
+              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
             </Reveal>
           ))}
         </div>

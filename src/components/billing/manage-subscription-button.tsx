@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 
 export function ManageSubscriptionButton({
@@ -12,6 +13,8 @@ export function ManageSubscriptionButton({
   className?: string;
   style?: CSSProperties;
 }) {
+  const t = useTranslations("billingShared");
+  const tc = useTranslations("common");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -29,14 +32,14 @@ export function ManageSubscriptionButton({
         return;
       }
       if (!res.ok || !data.url) {
-        setError(data.error || "Couldn't open the billing portal.");
+        setError(data.error || t("portalError"));
         setLoading(false);
         return;
       }
 
       window.location.href = data.url;
     } catch {
-      setError("Couldn't reach the server. Try again.");
+      setError(tc("couldntReachServer"));
       setLoading(false);
     }
   }
@@ -50,7 +53,7 @@ export function ManageSubscriptionButton({
         className={className}
         style={{ ...style, cursor: loading ? "default" : style?.cursor ?? "pointer", opacity: loading ? 0.7 : 1 }}
       >
-        {loading ? "Opening…" : children}
+        {loading ? t("opening") : children}
       </button>
       {error && <div style={{ marginTop: 8, fontSize: 12.5, color: "var(--cs-bad)" }}>{error}</div>}
     </>

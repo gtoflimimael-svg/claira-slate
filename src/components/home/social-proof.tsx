@@ -1,52 +1,30 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/reveal";
 import { useDocsCounter } from "@/lib/use-docs-counter";
 
 const TESTIMONIALS = [
-  {
-    quote: "We replaced three separate tools with Claira Slate. The summaries alone save my team a morning a week.",
-    initials: "MR",
-    name: "Maya Rendel",
-    role: "Ops Lead, Northwind",
-  },
-  {
-    quote: "It just works. Upload, done. No account, no ads, no dark patterns trying to sell me a subscription.",
-    initials: "TB",
-    name: "Tomas Beck",
-    role: "Independent designer",
-  },
-  {
-    quote: "Asking a 200-page contract a question and getting a cited answer back is genuinely new.",
-    initials: "PA",
-    name: "Priya Anand",
-    role: "Counsel, Harbor Legal",
-  },
+  { key: "testimonial1", initials: "MR", name: "Maya Rendel" },
+  { key: "testimonial2", initials: "TB", name: "Tomas Beck" },
+  { key: "testimonial3", initials: "PA", name: "Priya Anand" },
 ];
 
 const BADGES = [
-  {
-    icon: <path d="M12 3l8 3v6c0 5-3.5 7.7-8 9-4.5-1.3-8-4-8-9V6z"></path>,
-    label: "GDPR compliant",
-  },
-  {
-    icon: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path>,
-    label: "Files deleted after 1 hour",
-  },
-  {
-    icon: <path d="M4 12.5l5 5L20 6.5"></path>,
-    label: "No account required",
-  },
+  { icon: <path d="M12 3l8 3v6c0 5-3.5 7.7-8 9-4.5-1.3-8-4-8-9V6z"></path>, key: "badgeGdpr" },
+  { icon: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path>, key: "badgeDeleted" },
+  { icon: <path d="M4 12.5l5 5L20 6.5"></path>, key: "badgeNoAccount" },
 ];
 
 export function SocialProof() {
+  const t = useTranslations("home.socialProof");
   const docs = useDocsCounter();
   return (
     <section id="trust" style={{ borderTop: "1px solid var(--cs-line)", background: "var(--cs-bg)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 28 }}>
           <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
-            Trusted by thousands.
+            {t("title")}
           </Reveal>
           <div>
             <div
@@ -65,21 +43,21 @@ export function SocialProof() {
             >
               {docs}
             </div>
-            <div style={{ marginTop: 4, fontSize: 13.5, fontWeight: 500, color: "var(--cs-text-2)" }}>documents processed and counting</div>
+            <div style={{ marginTop: 4, fontSize: 13.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("docsCaption")}</div>
           </div>
         </div>
 
         <div style={{ marginTop: "clamp(36px,5vw,52px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(272px,1fr))", gap: 14 }}>
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name} index={i} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
-              <p style={{ margin: 0, fontSize: 15.5, lineHeight: 1.6, letterSpacing: "-.012em" }}>&ldquo;{t.quote}&rdquo;</p>
+          {TESTIMONIALS.map((item, i) => (
+            <Reveal key={item.key} index={i} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
+              <p style={{ margin: 0, fontSize: 15.5, lineHeight: 1.6, letterSpacing: "-.012em" }}>&ldquo;{t(`${item.key}Quote`)}&rdquo;</p>
               <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 11 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", display: "grid", placeItems: "center", fontSize: 12.5, fontWeight: 600, color: "var(--cs-accent)" }}>
-                  {t.initials}
+                  {item.initials}
                 </div>
                 <div>
-                  <div style={{ fontSize: 13.5, fontWeight: 600 }}>{t.name}</div>
-                  <div style={{ fontSize: 12.5, color: "var(--cs-text-2)" }}>{t.role}</div>
+                  <div style={{ fontSize: 13.5, fontWeight: 600 }}>{item.name}</div>
+                  <div style={{ fontSize: 12.5, color: "var(--cs-text-2)" }}>{t(`${item.key}Role`)}</div>
                 </div>
               </div>
             </Reveal>
@@ -88,11 +66,11 @@ export function SocialProof() {
 
         <div style={{ marginTop: 34, display: "flex", flexWrap: "wrap", gap: 10 }}>
           {BADGES.map((b) => (
-            <div key={b.label} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <div key={b.key} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cs-ok)" strokeWidth="2" strokeLinecap="round">
                 {b.icon}
               </svg>
-              {b.label}
+              {t(b.key)}
             </div>
           ))}
         </div>

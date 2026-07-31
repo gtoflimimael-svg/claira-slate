@@ -1,47 +1,50 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HISTORY, type HistoryItem } from "@/lib/data";
 
-const FILTERS = ["All jobs", "Merged", "Compressed", "Converted", "AI processed"] as const;
-type Filter = (typeof FILTERS)[number];
+const FILTER_KEYS = ["filterAll", "filterMerged", "filterCompressed", "filterConverted", "filterAiProcessed"] as const;
+type Filter = (typeof FILTER_KEYS)[number];
 
-const GROUPS: Record<Exclude<Filter, "All jobs">, string[]> = {
-  Merged: ["Merge"],
-  Compressed: ["Compress"],
-  Converted: ["PDF to Word", "Split"],
-  "AI processed": ["Summarize (AI)", "OCR"],
+const GROUPS: Record<Exclude<Filter, "filterAll">, string[]> = {
+  filterMerged: ["Merge"],
+  filterCompressed: ["Compress"],
+  filterConverted: ["PDF to Word", "Split"],
+  filterAiProcessed: ["Summarize (AI)", "OCR"],
 };
-
-function statusStyle(available: boolean) {
-  return {
-    fg: available ? "var(--cs-ok)" : "var(--cs-text-2)",
-    bg: available ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-bg-2)",
-    label: available ? "Available" : "Expired",
-  };
-}
 
 function filterHistory(rows: HistoryItem[], filter: Filter, query: string) {
   const q = query.trim().toLowerCase();
   return rows.filter((h) => {
-    const okFilter = filter === "All jobs" || GROUPS[filter as Exclude<Filter, "All jobs">].includes(h.tool);
+    const okFilter = filter === "filterAll" || GROUPS[filter as Exclude<Filter, "filterAll">].includes(h.tool);
     const okQuery = !q || h.name.toLowerCase().includes(q) || h.tool.toLowerCase().includes(q);
     return okFilter && okQuery;
   });
 }
 
 export default function HistoryPage() {
-  const [filter, setFilter] = useState<Filter>("All jobs");
+  const t = useTranslations("dashboard.history_");
+  const td = useTranslations("dashboard");
+  const [filter, setFilter] = useState<Filter>("filterAll");
   const [query, setQuery] = useState("");
+
+  function statusStyle(available: boolean) {
+    return {
+      fg: available ? "var(--cs-ok)" : "var(--cs-text-2)",
+      bg: available ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-bg-2)",
+      label: available ? td("available") : td("expired"),
+    };
+  }
 
   const rows = useMemo(() => filterHistory(HISTORY, filter, query), [filter, query]);
   const hasRows = rows.length > 0;
 
   return (
     <div>
-      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>History</h1>
-      <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>Every job you have run. Files stay available for one hour, the record stays for 90 days.</p>
+      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+      <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
 
       <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 10, maxWidth: 420, padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg)" }}>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cs-text-2)" strokeWidth="1.9" strokeLinecap="round" style={{ flex: "none" }}>
@@ -50,7 +53,7 @@ export default function HistoryPage() {
         </svg>
         <input
           type="text"
-          placeholder="Search your files..."
+          placeholder={t("searchPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           style={{ flex: "1 1 auto", minWidth: 0, border: 0, background: "transparent", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}
@@ -58,7 +61,7 @@ export default function HistoryPage() {
       </div>
 
       <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 7 }}>
-        {FILTERS.map((f) => {
+        {FILTER_KEYS.map((f) => {
           const on = f === filter;
           return (
             <button
@@ -77,7 +80,7 @@ export default function HistoryPage() {
                 borderColor: on ? "var(--cs-accent)" : "var(--cs-line)",
               }}
             >
-              {f}
+              {t(f)}
             </button>
           );
         })}
@@ -99,12 +102,12 @@ export default function HistoryPage() {
                 color: "var(--cs-text-2)",
               }}
             >
-              <div>File name</div>
-              <div>Tool</div>
-              <div>Date</div>
-              <div>Size</div>
-              <div>Status</div>
-              <div>Actions</div>
+              <div>{t("colFileName")}</div>
+              <div>{t("colTool")}</div>
+              <div>{t("colDate")}</div>
+              <div>{t("colSize")}</div>
+              <div>{t("colStatus")}</div>
+              <div>{t("colActions")}</div>
             </div>
             {rows.map((h) => {
               const s = statusStyle(h.available);
@@ -127,24 +130,24 @@ export default function HistoryPage() {
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 12.5, fontWeight: 500 }}>
                     <Link href="/app/files" style={{ cursor: "pointer" }}>
-                      Download
+                      {t("download")}
                     </Link>
                     <Link href="/tools/merge" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>
-                      Re-run
+                      {t("rerun")}
                     </Link>
                     <button
                       onClick={() => setQuery(query)}
                       className="hover-text"
                       style={{ cursor: "pointer", color: "var(--cs-text-2)", background: "none", border: 0, padding: 0, font: "inherit" }}
                     >
-                      Delete
+                      {t("delete")}
                     </button>
                   </div>
                 </div>
               );
             })}
             <div style={{ padding: "14px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 12.5, color: "var(--cs-text-2)" }}>
-              <span>Showing {rows.length} of 128 jobs</span>
+              <span>{t("showing", { count: rows.length, total: 128 })}</span>
             </div>
           </div>
         </div>
@@ -168,21 +171,21 @@ export default function HistoryPage() {
             <div style={{ width: 44, height: 58, borderRadius: 6, border: "1.5px solid var(--cs-accent-line)", background: "var(--cs-accent-soft)" }}></div>
             <div style={{ width: 38, height: 48, borderRadius: 6, border: "1.5px solid var(--cs-line)", background: "var(--cs-bg-2)" }}></div>
           </div>
-          <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>No files yet</div>
-          <div style={{ maxWidth: 320, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>Nothing matches that search. Clear the filters, or run your first tool.</div>
+          <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("emptyTitle")}</div>
+          <div style={{ maxWidth: 320, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("emptyBody")}</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 9, justifyContent: "center" }}>
             <Link href="/tools/merge" style={{ padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, cursor: "pointer" }}>
-              Try your first tool &rarr;
+              {t("tryFirstTool")} &rarr;
             </Link>
             <button
               onClick={() => {
                 setQuery("");
-                setFilter("All jobs");
+                setFilter("filterAll");
               }}
               className="hover-border"
               style={{ padding: "11px 18px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer", background: "none" }}
             >
-              Clear filters
+              {t("clearFilters")}
             </button>
           </div>
         </div>

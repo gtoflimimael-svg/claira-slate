@@ -8,19 +8,19 @@ export async function POST(request: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) {
-    return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
-  }
 
+  const owner = user ? user.id : "anonymous";
   const body = await request.json().catch(() => null);
   const r2Key: string | undefined = body?.r2Key;
-  if (!r2Key || !r2Key.startsWith(`processed/${user.id}/`)) {
+  if (!r2Key || !r2Key.startsWith(`processed/${owner}/`)) {
     return NextResponse.json({ error: "Invalid file reference." }, { status: 400 });
   }
 
   await deleteFromR2(r2Key);
-  const admin = createAdminClient();
-  await admin.from("files").update({ status: "expired" }).eq("r2_key", r2Key).eq("user_id", user.id);
+  if (user) {
+    const admin = createAdminClient();
+    await admin.from("files").update({ status: "expired" }).eq("r2_key", r2Key).eq("user_id", user.id);
+  }
 
   return NextResponse.json({ ok: true });
 }

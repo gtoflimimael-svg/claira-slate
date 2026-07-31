@@ -509,6 +509,273 @@ nav[data-navdark] [data-logo] path:first-of-type {
   color: #fff !important;
 }
 
+.ai-typewriter-headline {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+}
+@media (min-width: 640px) {
+  .ai-typewriter-headline {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+@media (min-width: 1024px) {
+  .ai-typewriter-headline {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+.typewriter-word {
+  display: inline;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.tool-workspace {
+  max-width: 960px;
+}
+
+.tool-columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .tool-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-file-card {
+  width: 160px;
+  height: 200px;
+  border: 1px solid var(--cs-line);
+}
+@media (max-width: 768px) {
+  .tool-file-card {
+    width: 120px;
+    height: 150px;
+  }
+}
+
+html[data-theme="dark"] .tool-file-card {
+  border-color: var(--cs-accent-line);
+}
+
+/* Split tool — needs more width than the standard tool workspace to fit a
+   5-column page grid comfortably alongside the config panel. */
+.split-workspace {
+  max-width: 1400px;
+}
+.split-columns {
+  display: grid;
+  grid-template-columns: 13fr 7fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .split-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-page-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1024px) {
+  .split-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .split-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.split-page-card {
+  position: relative;
+  width: 140px;
+  max-width: 100%;
+  aspect-ratio: 140 / 180;
+  border: 2px solid var(--cs-line);
+  border-radius: 10px;
+  background: var(--cs-card);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.split-page-card:hover {
+  transform: scale(1.03);
+  border-color: var(--cs-accent);
+  box-shadow: 0 6px 18px rgba(20, 20, 40, 0.12);
+  z-index: 1;
+}
+.split-page-thumb {
+  flex: 1 1 auto;
+  display: grid;
+  place-items: center;
+  background: var(--cs-bg-2);
+  overflow: hidden;
+}
+.split-page-label {
+  flex: none;
+  padding: 4px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cs-text-2);
+  background: var(--cs-card);
+  border-top: 1px solid var(--cs-line);
+}
+.split-page-check {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.split-page-skeleton {
+  width: 140px;
+  max-width: 100%;
+  aspect-ratio: 140 / 180;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--cs-bg-2) 25%, var(--cs-line) 50%, var(--cs-bg-2) 75%);
+  background-size: 200% 100%;
+  animation: csShimmer 1.4s ease-in-out infinite;
+}
+
+.tool-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 860px) {
+  .tool-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .tool-related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.tool-related-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid var(--cs-line);
+  border-radius: 12px;
+  background: var(--cs-card);
+  color: var(--cs-text);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.tool-related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(20, 20, 40, 0.1);
+  border-color: var(--cs-accent-line);
+}
+
+.ai-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+@media (max-width: 860px) {
+  .ai-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .ai-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ai-feature-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  padding: 24px;
+  border: 1.5px solid transparent;
+  border-radius: var(--cs-r);
+  background: var(--cs-ink-2);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.ai-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+  border-color: #6c63ff;
+}
+.ai-feature-card .ai-card-open {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.ai-feature-card:hover .ai-card-open {
+  transform: translateX(4px);
+}
+
+.cs-tw-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: csBlink 1s step-end infinite;
+}
+
+.cs-spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3.5px solid var(--cs-accent-line);
+  border-top-color: var(--cs-accent);
+  animation: csRotate 0.8s linear infinite;
+}
+@keyframes csRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cs-progress-fill {
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes csBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,16 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { TEAM } from "@/lib/data";
-
-function statusStyle(active: boolean) {
-  return {
-    fg: active ? "var(--cs-ok)" : "var(--cs-accent)",
-    bg: active ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-accent-soft)",
-    label: active ? "Active" : "Invited",
-  };
-}
 
 function initials(name: string) {
   return name
@@ -19,35 +12,45 @@ function initials(name: string) {
     .join("");
 }
 
-const STATS = [
-  { label: "Seats used", value: "5 / 10", bar: 50 },
-  { label: "Documents, team", value: "1,842", note: "This month" },
-  { label: "Pending invites", value: "1", note: "Expires in 6 days" },
-  { label: "SSO", value: "Active", note: "Okta · enforced", valueColor: "var(--cs-ok)" },
-];
-
 export default function TeamPage() {
+  const t = useTranslations("dashboard.team_");
+  const tc = useTranslations("common");
   const [inviteOpen, setInviteOpen] = useState(false);
+
+  function statusStyle(active: boolean) {
+    return {
+      fg: active ? "var(--cs-ok)" : "var(--cs-accent)",
+      bg: active ? "color-mix(in oklab, var(--cs-ok) 12%, var(--cs-bg))" : "var(--cs-accent-soft)",
+      label: active ? t("active") : t("invited"),
+    };
+  }
+
+  const STATS = [
+    { key: "seatsUsed", value: "5 / 10", bar: 50 },
+    { key: "documentsTeam", value: "1,842", note: t("thisMonth") },
+    { key: "pendingInvites", value: "1", note: t("expiresInDays", { days: 6 }) },
+    { key: "sso", value: t("active"), note: t("ssoDetail"), valueColor: "var(--cs-ok)" },
+  ];
 
   return (
     <div>
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 16 }}>
         <div>
-          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>Team</h1>
-          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>Business plan · 5 of 10 seats used · $12 per user / month</p>
+          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
         </div>
         <button
           onClick={() => setInviteOpen(true)}
           style={{ padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, cursor: "pointer", border: 0 }}
         >
-          Invite member
+          {t("inviteMember")}
         </button>
       </div>
 
       <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(200px,100%),1fr))", gap: 12 }}>
         {STATS.map((s) => (
-          <div key={s.label} style={{ padding: 20, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-bg)" }}>
-            <div style={{ fontSize: 12, fontWeight: 500, color: "var(--cs-text-2)" }}>{s.label}</div>
+          <div key={s.key} style={{ padding: 20, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-bg)" }}>
+            <div style={{ fontSize: 12, fontWeight: 500, color: "var(--cs-text-2)" }}>{t(s.key)}</div>
             <div style={{ marginTop: 10, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 28, fontWeight: 600, letterSpacing: "-.04em", color: s.valueColor }}>{s.value}</div>
             {s.bar !== undefined ? (
               <div style={{ marginTop: 10, height: 5, borderRadius: 99, background: "var(--cs-line)", overflow: "hidden" }}>
@@ -75,10 +78,10 @@ export default function TeamPage() {
               color: "var(--cs-text-2)",
             }}
           >
-            <div>Member</div>
-            <div>Email</div>
-            <div>Role</div>
-            <div>Status</div>
+            <div>{t("colMember")}</div>
+            <div>{t("colEmail")}</div>
+            <div>{t("colRole")}</div>
+            <div>{t("colStatus")}</div>
             <div></div>
           </div>
           {TEAM.map((m) => {
@@ -117,9 +120,9 @@ export default function TeamPage() {
             );
           })}
           <div style={{ padding: "16px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 12.5, color: "var(--cs-text-2)" }}>
-            <span>Owners and admins can invite. Members can only see their own files.</span>
+            <span>{t("permissionsNote")}</span>
             <Link href="/app/settings" style={{ fontWeight: 500, cursor: "pointer" }}>
-              Role permissions &rarr;
+              {t("rolePermissions")} &rarr;
             </Link>
           </div>
         </div>
@@ -140,13 +143,13 @@ export default function TeamPage() {
         }}
       >
         <div>
-          <div style={{ fontSize: 13, fontWeight: 600 }}>Team billing</div>
+          <div style={{ fontSize: 13, fontWeight: 600 }}>{t("teamBilling")}</div>
           <div style={{ marginTop: 7, fontSize: 14, color: "var(--cs-text-2)" }}>
-            5 seats &times; $12 = <span style={{ color: "var(--cs-text)", fontWeight: 600 }}>$60/month</span> · next charge 1 August
+            {t("billingSummary")}
           </div>
         </div>
         <Link href="/app/billing" className="hover-border" style={{ padding: "11px 18px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer", whiteSpace: "nowrap" }}>
-          Manage billing &rarr;
+          {t("manageBilling")} &rarr;
         </Link>
       </div>
 
@@ -156,12 +159,12 @@ export default function TeamPage() {
           <div style={{ position: "relative", width: "100%", maxWidth: 420, padding: "clamp(22px,3vw,28px)", border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-bg)" }}>
             <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 14 }}>
               <div>
-                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>Invite a member</div>
-                <div style={{ marginTop: 7, fontSize: 13.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>They get an email link that expires in 7 days. Seat 6 of 10.</div>
+                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("inviteModalTitle")}</div>
+                <div style={{ marginTop: 7, fontSize: 13.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("inviteModalBody")}</div>
               </div>
               <button
                 onClick={() => setInviteOpen(false)}
-                aria-label="Close"
+                aria-label={tc("close")}
                 className="hover-bg"
                 style={{ flex: "none", width: 28, height: 28, display: "grid", placeItems: "center", border: 0, borderRadius: 8, background: "transparent", color: "var(--cs-text-2)", fontSize: 17, lineHeight: 1, cursor: "pointer", padding: 0 }}
               >
@@ -170,7 +173,7 @@ export default function TeamPage() {
             </div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 15 }}>
               <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
-                Email address
+                {t("emailAddress")}
                 <input
                   type="email"
                   placeholder="name@northwind.co"
@@ -178,11 +181,11 @@ export default function TeamPage() {
                 />
               </label>
               <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
-                Role
+                {t("role")}
                 <select style={{ padding: "12px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}>
-                  <option>Member — own files only</option>
-                  <option>Admin — can invite and manage</option>
-                  <option>Viewer — read-only access</option>
+                  <option>{t("roleMember")}</option>
+                  <option>{t("roleAdmin")}</option>
+                  <option>{t("roleViewer")}</option>
                 </select>
               </label>
               <div style={{ display: "flex", gap: 9, marginTop: 4 }}>
@@ -190,14 +193,14 @@ export default function TeamPage() {
                   onClick={() => setInviteOpen(false)}
                   style={{ flex: "1 1 0", textAlign: "center", padding: 12, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 600, cursor: "pointer", border: 0 }}
                 >
-                  Send invite
+                  {t("sendInvite")}
                 </button>
                 <button
                   onClick={() => setInviteOpen(false)}
                   className="hover-border"
                   style={{ flex: "0 0 auto", padding: "12px 18px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer", background: "none" }}
                 >
-                  Cancel
+                  {tc("cancel")}
                 </button>
               </div>
             </div>

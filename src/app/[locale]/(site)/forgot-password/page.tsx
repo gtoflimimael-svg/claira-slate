@@ -26,7 +26,7 @@ export default function ForgotPasswordPage() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email.trim()) {
-      setError("Enter your email address.");
+      setError(t("errorEnterEmail"));
       return;
     }
     setError("");
@@ -40,7 +40,7 @@ export default function ForgotPasswordPage() {
 
     setLoading(false);
     if (!res.ok) {
-      setError("Something went wrong. Try again.");
+      setError(t("errorGeneric"));
       return;
     }
     setSent(true);
@@ -81,7 +81,7 @@ export default function ForgotPasswordPage() {
           <div style={{ padding: "8px 0", textAlign: "center" }}>
             <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "-.025em" }}>{t("checkEmail")}</div>
             <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
-              If an account exists for <strong>{email}</strong>, a reset link is on its way.
+              {t("resetSentEmail", { email })}
             </p>
           </div>
         ) : (
@@ -97,14 +97,14 @@ export default function ForgotPasswordPage() {
               disabled={loading}
               style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
             >
-              {loading ? "Sending…" : t("sendResetLink")}
+              {loading ? t("sending") : t("sendResetLink")}
             </button>
           </form>
         )}
       </div>
 
       <p style={{ margin: "22px 0 0", textAlign: "center", fontSize: 13.5, color: "var(--cs-text-2)" }}>
-        <Link href="/login" style={{ fontWeight: 500, cursor: "pointer" }}>Back to log in</Link>
+        <Link href="/login" style={{ fontWeight: 500, cursor: "pointer" }}>{t("backToLogin")}</Link>
       </p>
     </section>
   );

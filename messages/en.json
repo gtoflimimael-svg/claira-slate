@@ -45,6 +45,7 @@
   "common": {
     "upload": "Upload",
     "download": "Download",
+    "downloaded": "Downloaded",
     "processing": "Processing",
     "error": "Something went wrong.",
     "success": "Success",
@@ -53,48 +54,329 @@
     "save": "Save",
     "dragDrop": "Drag & drop or click to browse",
     "fileTooLarge": "File is too large for your plan.",
-    "couldntReachServer": "Couldn't reach the server. Try again."
+    "couldntReachServer": "Couldn't reach the server. Try again.",
+    "selectFile": "Select file",
+    "chooseAnotherFile": "Choose a different file",
+    "copyText": "Copy text",
+    "copied": "Copied!",
+    "startOver": "Start over",
+    "or": "OR",
+    "close": "Close",
+    "comingSoon": "Coming soon",
+    "pagesCount": "{count} pages",
+    "breadcrumb": {
+      "home": "Home",
+      "tools": "Tools",
+      "ai": "AI",
+      "blog": "Blog"
+    }
   },
   "tools": {
-    "merge": { "name": "Merge PDF", "desc": "Combine files into one." },
-    "split": { "name": "Split PDF", "desc": "Separate into parts." },
-    "reorder": { "name": "Organize pages", "desc": "Drag pages into order." },
-    "rotate": { "name": "Rotate PDF", "desc": "Fix page orientation." },
-    "extract-pages": { "name": "Extract pages", "desc": "Pull out what you need." },
-    "delete-pages": { "name": "Delete pages", "desc": "Remove what you don't." },
-    "compress": { "name": "Compress PDF", "desc": "Smaller file, same quality." },
-    "repair": { "name": "Repair PDF", "desc": "Recover damaged files." },
-    "optimize": { "name": "Optimize for web", "desc": "Fast-loading documents." },
-    "flatten": { "name": "Flatten PDF", "desc": "Bake in forms and layers." },
-    "pdf-to-word": { "name": "PDF to Word", "desc": "Fully editable .docx." },
-    "pdf-to-excel": { "name": "PDF to Excel", "desc": "Tables into spreadsheets." },
-    "pdf-to-ppt": { "name": "PDF to PowerPoint", "desc": "Slides you can edit." },
-    "pdf-to-jpg": { "name": "PDF to JPG", "desc": "Every page an image." },
-    "jpg-to-pdf": { "name": "JPG to PDF", "desc": "Images into one file." },
-    "html-to-pdf": { "name": "HTML to PDF", "desc": "Capture any web page." },
-    "protect": { "name": "Protect PDF", "desc": "Lock it with a password." },
-    "unlock": { "name": "Unlock PDF", "desc": "Remove known passwords." },
-    "sign": { "name": "Sign PDF", "desc": "Legally binding e-signature." },
-    "redact": { "name": "Redact PDF", "desc": "Black out for good." },
-    "watermark": { "name": "Watermark", "desc": "Stamp text or a logo." },
-    "edit-text": { "name": "Edit PDF", "desc": "Text, images and shapes." },
-    "number-pages": { "name": "Add page numbers", "desc": "Any position, any style." },
-    "crop": { "name": "Crop PDF", "desc": "Trim the margins." },
-    "ocr": { "name": "OCR PDF", "desc": "Make scans searchable." },
-    "annotate": { "name": "Annotate", "desc": "Comment and highlight." }
+    "merge": {
+      "name": "Merge PDF",
+      "desc": "Combine files into one."
+    },
+    "split": {
+      "name": "Split PDF",
+      "desc": "Separate into parts."
+    },
+    "reorder": {
+      "name": "Organize pages",
+      "desc": "Drag pages into order."
+    },
+    "rotate": {
+      "name": "Rotate PDF",
+      "desc": "Fix page orientation."
+    },
+    "extract-pages": {
+      "name": "Extract pages",
+      "desc": "Pull out what you need."
+    },
+    "delete-pages": {
+      "name": "Delete pages",
+      "desc": "Remove what you don't."
+    },
+    "compress": {
+      "name": "Compress PDF",
+      "desc": "Smaller file, same quality."
+    },
+    "repair": {
+      "name": "Repair PDF",
+      "desc": "Recover damaged files."
+    },
+    "optimize": {
+      "name": "Optimize for web",
+      "desc": "Fast-loading documents."
+    },
+    "flatten": {
+      "name": "Flatten PDF",
+      "desc": "Bake in forms and layers."
+    },
+    "pdf-to-word": {
+      "name": "PDF to Word",
+      "desc": "Fully editable .docx."
+    },
+    "pdf-to-excel": {
+      "name": "PDF to Excel",
+      "desc": "Tables into spreadsheets."
+    },
+    "pdf-to-ppt": {
+      "name": "PDF to PowerPoint",
+      "desc": "Slides you can edit."
+    },
+    "pdf-to-jpg": {
+      "name": "PDF to JPG",
+      "desc": "Every page an image."
+    },
+    "jpg-to-pdf": {
+      "name": "JPG to PDF",
+      "desc": "Images into one file."
+    },
+    "html-to-pdf": {
+      "name": "HTML to PDF",
+      "desc": "Capture any web page."
+    },
+    "protect": {
+      "name": "Protect PDF",
+      "desc": "Lock it with a password."
+    },
+    "unlock": {
+      "name": "Unlock PDF",
+      "desc": "Remove known passwords."
+    },
+    "sign": {
+      "name": "Sign PDF",
+      "desc": "Legally binding e-signature."
+    },
+    "redact": {
+      "name": "Redact PDF",
+      "desc": "Black out for good."
+    },
+    "watermark": {
+      "name": "Watermark",
+      "desc": "Stamp text or a logo."
+    },
+    "edit-text": {
+      "name": "Edit PDF",
+      "desc": "Text, images and shapes."
+    },
+    "number-pages": {
+      "name": "Add page numbers",
+      "desc": "Any position, any style."
+    },
+    "crop": {
+      "name": "Crop PDF",
+      "desc": "Trim the margins."
+    },
+    "ocr": {
+      "name": "OCR PDF",
+      "desc": "Make scans searchable."
+    },
+    "annotate": {
+      "name": "Annotate",
+      "desc": "Comment and highlight."
+    },
+    "headline": "26 tools. Zero friction.",
+    "subheadline": "Everything a PDF needs, in the browser. Free to try, no account, nothing to install.",
+    "homeSubheadline": "Everything you need for a PDF, in the browser. No installs, no queues.",
+    "cantFind": "Can't find the right tool?",
+    "aiSuggestion": "Describe the job and Claira picks the tool for you.",
+    "askAI": "Ask AI instead",
+    "viewAll": "View all tools",
+    "filters": {
+      "All": "All",
+      "Organize": "Organize",
+      "Optimize": "Optimize",
+      "Convert": "Convert",
+      "Secure": "Secure",
+      "Edit": "Edit"
+    }
+  },
+  "toolPage": {
+    "dropFileHere": "Drop a file here",
+    "filesSelected": "{count} files selected",
+    "fileSelected": "1 file selected",
+    "addAnotherFile": "Add another file",
+    "run": "Run {tool}",
+    "processing": "Processing…",
+    "workingOnIt": "Working on it…",
+    "uploadToStart": "Upload a file to get started.",
+    "comingSoonMessage": "This tool is coming soon.",
+    "isReady": "is ready.",
+    "quotaMessage": "You've used all {limit} free tool runs today. Upgrade to Pro for unlimited use.",
+    "upgrade": "Upgrade",
+    "processingHeadline": "Processing your PDF…",
+    "processingHint": "This usually takes just a few seconds.",
+    "successHeadline": "Your PDF is ready!",
+    "continueTo": "Continue to",
+    "fileDeletedIn": "File deleted in {time}",
+    "trustDeleted": "Files deleted after 1 hour",
+    "trustNoAccount": "No account required",
+    "trustFast": "Processed in seconds",
+    "uploadingFiles": "Uploading {count} file(s)",
+    "removeFile": "Remove file",
+    "reorderFile": "Reorder file",
+    "summarizeWithAi": "Summarize with AI",
+    "processedIn": "Processed in {time}",
+    "trustEncrypted": "Encrypted in transit",
+    "resultPlaceholder": "Your file will appear here",
+    "pasteHint": "Or press Ctrl+V to paste a PDF file",
+    "contactSupport": "Contact support",
+    "loginNudge": "Create a free account to save your files and access your history"
   },
   "ai": {
-    "summarize": { "name": "Summarize", "desc": "Get the key points in seconds." },
-    "chat": { "name": "Ask anything", "desc": "Chat with your document." },
-    "translate": { "name": "Translate", "desc": "50+ languages, layout preserved." },
-    "ocr": { "name": "OCR", "desc": "Make scanned PDFs searchable." }
+    "summarize": {
+      "name": "Summarize",
+      "desc": "Get the key points in seconds."
+    },
+    "chat": {
+      "name": "Ask anything",
+      "desc": "Chat with your document."
+    },
+    "translate": {
+      "name": "Translate",
+      "desc": "50+ languages, layout preserved."
+    },
+    "ocr": {
+      "name": "OCR",
+      "desc": "Make scanned PDFs searchable."
+    },
+    "badge": "Powered by AI",
+    "toolBadge": "AI tool",
+    "hubTitle": "Your PDF, finally understood.",
+    "hubSubhead": "Four models, one document. Summarize it, question it, translate it, or make a scan searchable — then keep working with the other 26 tools.",
+    "tryFree": "Try AI free",
+    "seeHowItWorks": "See how it works",
+    "openTool": "Open tool",
+    "answersTitle": "Answers with a page number attached.",
+    "answersSubhead": "Every response cites the section it came from, so you can check it in one click.",
+    "mockDocumentLabel": "Document",
+    "mockDocumentCaption": "supplier-agreement.pdf · 64 pages",
+    "mockChatLabel": "Claira AI",
+    "mockQuestion": "Can we terminate early, and what does it cost?",
+    "mockAnswer": "Yes — with 60 days' written notice after month 12. Exiting earlier carries a fee equal to two months of committed spend.",
+    "mockChatPlaceholder": "Ask a follow-up…",
+    "trustNeverTraining": "Never used for training",
+    "trustDeletedAfterHour": "Deleted after 1 hour",
+    "trustEuResidency": "EU data residency",
+    "bottomCtaTitle": "Two free AI actions a day. No card.",
+    "bottomCtaButton": "Start with AI",
+    "otherAiTools": "Other AI tools",
+    "summarizePage": {
+      "title": "Summarize a PDF",
+      "subhead": "Drop in a report, contract or deck and get the key points — with the page each one came from. Free for two documents a day.",
+      "howItWorks": "How summarizing works",
+      "step1Title": "Upload the document",
+      "step1Desc": "Text or scanned — OCR runs automatically when needed.",
+      "step2Title": "Pick a summary length",
+      "step2Desc": "Four bullets, one page, or a section-by-section brief.",
+      "step3Title": "Copy, export or ask more",
+      "step3Desc": "Keep the summary, or start a chat with the same file."
+    },
+    "chatPage": {
+      "title": "Ask anything",
+      "subhead": "Upload a document and chat with it directly — every answer cites the section or page it came from.",
+      "howItWorks": "How it works",
+      "step1Title": "Upload the document",
+      "step1Desc": "We read the whole thing once, so every question after that is instant.",
+      "step2Title": "Ask anything",
+      "step2Desc": "Questions are answered strictly from the document's own content.",
+      "step3Title": "Check the source",
+      "step3Desc": "Every answer links back to the page or section it came from."
+    },
+    "translatePage": {
+      "title": "Translate a PDF",
+      "subhead": "Translate contracts, reports and decks into 50+ languages — paragraph breaks and structure stay intact.",
+      "howItWorks": "How translating works",
+      "step1Title": "Upload the document",
+      "step1Desc": "Text or scanned — OCR runs automatically when needed.",
+      "step2Title": "Pick a language",
+      "step2Desc": "50+ languages, with formatting and paragraph breaks preserved.",
+      "step3Title": "Download the result",
+      "step3Desc": "Get a translated PDF, or copy the plain text."
+    },
+    "ocrPage": {
+      "title": "Make a scan searchable",
+      "subhead": "Drop in a scanned PDF and get back the same document with selectable, searchable text.",
+      "howItWorks": "How OCR works",
+      "step1Title": "Upload the scan",
+      "step1Desc": "Each page is rendered and read individually.",
+      "step2Title": "Text is extracted and cleaned",
+      "step2Desc": "OCR runs on every page, then AI fixes obvious errors and spacing.",
+      "step3Title": "Download a searchable PDF",
+      "step3Desc": "Looks the same, but every word is now selectable and searchable."
+    },
+    "typewriterPrefix": "Your PDF, finally ",
+    "typewriterSuffix": ".",
+    "typewriterWords": [
+      "understood",
+      "summarized",
+      "translated",
+      "searchable",
+      "protected"
+    ]
+  },
+  "aiTool": {
+    "summarize": {
+      "dropHeading": "Drop a PDF to summarize",
+      "idleSubtext": "Up to 300 pages",
+      "loadingSubtext": "Summarizing…",
+      "runButton": "Summarize",
+      "runningButton": "Summarizing…",
+      "loadingResult": "Reading your document and pulling out the key points…",
+      "emptyResult": "Upload a PDF and click Summarize to see results here.",
+      "resultHeading": "Summary",
+      "resetButton": "Summarize another"
+    },
+    "chat": {
+      "dropHeading": "Drop a PDF to chat with it",
+      "idleSubtext": "Up to 300 pages",
+      "extractingSubtext": "Reading your document…",
+      "readingButton": "Reading…",
+      "emptyResult": "Upload a PDF to start asking it questions.",
+      "extractError": "Couldn't read that PDF.",
+      "newFile": "New file",
+      "emptyChat": "Ask anything about this document — answers are grounded only in its content.",
+      "thinking": "Thinking…",
+      "inputPlaceholder": "Ask a question about this document…",
+      "send": "Send"
+    },
+    "translate": {
+      "dropHeading": "Drop a PDF to translate",
+      "translateToLabel": "Translate to",
+      "runButton": "Translate",
+      "runningButton": "Translating…",
+      "loadingResult": "Translating your document, preserving layout and structure…",
+      "emptyResult": "Upload a PDF, pick a language, and click Translate.",
+      "noPdfNotice": "A downloadable PDF isn't available for {language} yet — copy the text instead.",
+      "downloadPdf": "Download PDF",
+      "resetButton": "Translate another"
+    },
+    "ocr": {
+      "dropHeading": "Drop a scanned PDF",
+      "idleSubtext": "Works best on clear, upright scans",
+      "loadingSubtext": "Running OCR on every page — this can take a moment…",
+      "runButton": "Run OCR",
+      "runningButton": "Running OCR…",
+      "loadingResult": "Reading each page and cleaning up the text…",
+      "emptyResult": "Upload a scanned PDF and click Run OCR to make it searchable.",
+      "resultHeading": "Extracted text",
+      "downloadPdf": "Download searchable PDF"
+    }
   },
   "pricing": {
+    "headline": "Simple pricing. No surprises.",
+    "subheadline": "Every tool is free to try, forever. Upgrade when volume or teamwork gets in the way.",
     "free": {
       "name": "Free",
       "unit": "forever",
       "tagline": "For the occasional PDF.",
-      "features": ["All 26 tools, no watermarks", "2 AI actions per day", "Files up to 25 MB", "No account required"],
+      "features": [
+        "All 26 tools, no watermarks",
+        "2 AI actions per day",
+        "Files up to 25 MB",
+        "No account required"
+      ],
       "cta": "Start free"
     },
     "pro": {
@@ -102,17 +384,76 @@
       "badge": "Most popular",
       "unit": "/month",
       "tagline": "For people whose work is documents.",
-      "features": ["Unlimited tools & AI actions", "Files up to 2 GB, batch mode", "Desktop & mobile apps", "Cloud storage & history"],
+      "features": [
+        "Unlimited tools & AI actions",
+        "Files up to 2 GB, batch mode",
+        "Desktop & mobile apps",
+        "Cloud storage & history"
+      ],
       "cta": "Get Pro"
     },
     "business": {
       "name": "Business",
       "unit": "/user/month",
       "tagline": "For teams with a compliance team.",
-      "features": ["Everything in Pro", "Shared workspaces & SSO", "Audit log & priority support", "Custom retention windows"],
+      "features": [
+        "Everything in Pro",
+        "Shared workspaces & SSO",
+        "Audit log & priority support",
+        "Custom retention windows"
+      ],
       "cta": "Contact sales"
     },
-    "manageSubscription": "Manage subscription"
+    "manageSubscription": "Manage subscription",
+    "compareTitle": "Compare the plans",
+    "compareHeaders": {
+      "feature": "Feature",
+      "free": "Free",
+      "pro": "Pro",
+      "business": "Business"
+    },
+    "compareRows": {
+      "tools": {
+        "feature": "Tools",
+        "free": "All 26",
+        "pro": "All 26",
+        "business": "All 26"
+      },
+      "aiActions": {
+        "feature": "AI actions",
+        "free": "2 / day",
+        "pro": "Unlimited",
+        "business": "Unlimited"
+      },
+      "maxFileSize": {
+        "feature": "Max file size",
+        "free": "25 MB",
+        "pro": "2 GB",
+        "business": "2 GB"
+      },
+      "filesPerBatch": {
+        "feature": "Files per batch",
+        "free": "5",
+        "pro": "20",
+        "business": "Unlimited"
+      },
+      "fileHistory": {
+        "feature": "File history"
+      },
+      "ssoAuditLog": {
+        "feature": "SSO & audit log"
+      },
+      "support": {
+        "feature": "Support",
+        "free": "Help centre",
+        "pro": "Email, 1 day",
+        "business": "Priority, 4 h"
+      }
+    },
+    "notSureTitle": "Not sure yet?",
+    "notSureBody": "Use every tool free, with no account. Upgrade only when a limit gets in your way.",
+    "browseTools": "Browse tools",
+    "talkToSales": "Talk to sales"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -121,9 +462,12 @@
     "email": "Email",
     "workEmail": "Work email",
     "password": "Password",
-    "forgotPassword": "Forgot?",
+    "passwordPlaceholder": "At least 10 characters",
+    "forgotPassword": "Forgot password?",
     "rememberMe": "Keep me signed in",
     "continueWithGoogle": "Continue with Google",
+    "continueWithSso": "Continue with SSO",
+    "ssoComingSoon": "Coming soon",
     "logIn": "Log in",
     "createAccount": "Create free account",
     "newHere": "New here?",
@@ -133,7 +477,141 @@
     "resetPasswordSubtitle": "We'll email you a link to set a new one.",
     "sendResetLink": "Send reset link",
     "setNewPasswordTitle": "Set a new password",
-    "updatePassword": "Update password"
+    "updatePassword": "Update password",
+    "loggingIn": "Logging in…",
+    "sending": "Sending…",
+    "saving": "Saving…",
+    "creatingAccount": "Creating account…",
+    "errorWrongLoginAttempt": "That didn't work — please sign in again.",
+    "errorEnterEmailPassword": "Enter your email and password.",
+    "errorEnterEmail": "Enter your email address.",
+    "errorSignupFields": "Enter a work email and a password of at least 10 characters.",
+    "errorGeneric": "Something went wrong. Try again.",
+    "errorPasswordTooShort": "Password must be at least 10 characters.",
+    "errorPasswordsDontMatch": "Passwords don't match.",
+    "confirmationSentEmail": "We sent a confirmation link to {email}. Click it to verify your account and get started.",
+    "resetSentEmail": "If an account exists for {email}, a reset link is on its way.",
+    "backToLogin": "Back to log in",
+    "confirmPassword": "Confirm password",
+    "choosePasswordHint": "Choose something you haven't used before.",
+    "createAccountHeading": "Create your account",
+    "comparePlans": "Compare plans",
+    "freePlanSelected": "Free plan selected.",
+    "termsNotice": "By continuing you agree to our terms. Files are deleted after one hour.",
+    "perk1": "All 26 tools, no watermarks",
+    "perk2": "Two AI actions every day",
+    "perk3": "File history you can actually find",
+    "perk4": "Upgrade or leave whenever",
+    "testimonialQuote": "We replaced three separate tools with Claira Slate.",
+    "testimonialAttribution": "Maya Rendel · Ops Lead, Northwind"
+  },
+  "about": {
+    "title": "About — Claira Slate",
+    "description": "Claira Slate started in 2024 as a weekend fix for a broken merge tool. Today it processes millions of documents a month.",
+    "heroTitle": "We make document work boring again.",
+    "heroSubhead": "Claira Slate started in 2024 as a weekend fix for a broken merge tool. Today it processes millions of documents a month for people who never want to think about PDFs at all.",
+    "statDocuments": "documents processed",
+    "statRetention": "maximum retention",
+    "statPeople": "people, 7 countries",
+    "statAds": "ads, ever",
+    "valuesTitle": "What we hold to",
+    "value1Title": "Nothing before the first file",
+    "value1Body": "No signup wall, no email gate, no watermark held hostage. The tool works, then you decide.",
+    "value2Title": "Your document is yours",
+    "value2Body": "Encrypted in transit, isolated in processing, deleted within the hour. Never used to train a model.",
+    "value3Title": "Answers you can check",
+    "value3Body": "Every AI response cites its page. If we cannot show you where it came from, we do not ship it.",
+    "trustTitle": "Trust & privacy",
+    "trust1Title": "Privacy",
+    "trust1Body": "We collect the minimum needed to run the service, and we never sell it. Plain-language policy, no dark patterns.",
+    "trust2Title": "Security",
+    "trust2Body": "TLS 1.3 in transit, AES-256 at rest, isolated processing containers, annual third-party pen test.",
+    "trust3Title": "GDPR & terms",
+    "trust3Body": "EU data residency, DPA on request, one-hour retention by default and custom windows on Business.",
+    "requestDpa": "Request a DPA",
+    "readEngineeringNotes": "Read the engineering notes",
+    "hiringTitle": "We are hiring quiet, careful builders.",
+    "hiringBody": "Remote-first across Europe. Three open roles in infrastructure and design.",
+    "hiringCta": "See open roles"
+  },
+  "contact": {
+    "supportTitle": "Support",
+    "supportDetail": "help@clairaslate.com · replies within a day",
+    "salesTitle": "Sales & Business plans",
+    "salesDetail": "sales@clairaslate.com · SSO, DPA, invoicing",
+    "securityTitle": "Security disclosure",
+    "securityDetail": "security@clairaslate.com · PGP key on request",
+    "heroTitle": "Talk to a human.",
+    "heroSubhead": "Sales, security reviews, invoicing or a bug you want fixed — it all reaches the same small team.",
+    "errorFillFields": "Please fill in your name, email and a message.",
+    "errorInvalidEmail": "That email address doesn't look right.",
+    "sentTitle": "Message sent",
+    "sentBody": "Thanks, {name} — we reply from a real address, usually within a day.",
+    "formTitle": "Send a message",
+    "nameLabel": "Name",
+    "emailLabel": "Work email",
+    "topicLabel": "What do you need?",
+    "topicQuote": "A Business plan quote",
+    "topicSecurity": "Security review / DPA",
+    "topicHelp": "Help with a file",
+    "topicOther": "Something else",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us a little about the documents you work with.",
+    "sendMessage": "Send message",
+    "noDripCampaigns": "We reply from a real address. No sequences, no drip campaigns."
+  },
+  "blog": {
+    "headline": "Notes on documents.",
+    "subheadline": "How we build Claira Slate, and what we learn about the strangest file format in the world.",
+    "readPost": "Read the post",
+    "minRead": "{count} min read",
+    "teamFallbackAuthor": "Claira Slate Team",
+    "trySummarizing": "Try summarizing a PDF",
+    "backToBlog": "Back to blog",
+    "keepReading": "Keep reading",
+    "categories": {
+      "All": "All",
+      "Product": "Product",
+      "Engineering": "Engineering",
+      "Guides": "Guides",
+      "Company": "Company"
+    },
+    "posts": {
+      "the-pdf-turns-33-time-it-learned-to-read-itself": {
+        "title": "The PDF turns 33. Time it learned to read itself.",
+        "excerpt": "Every format eventually gets a brain. Here is how we thought about putting one inside a file nobody wanted to open."
+      },
+      "how-we-delete-your-files-and-prove-it": {
+        "title": "How we delete your files — and prove it",
+        "excerpt": "A one-hour retention promise is easy to write and hard to build. A walk through the queue, the keys and the audit trail."
+      },
+      "merging-20-contracts-without-losing-the-order": {
+        "title": "Merging 20 contracts without losing the order",
+        "excerpt": "Ordering is the part everyone gets wrong. Three habits that make a 400-page merge boring."
+      },
+      "ocr-quality-what-actually-moves-the-needle": {
+        "title": "OCR quality: what actually moves the needle",
+        "excerpt": "Resolution matters less than you think. Deskewing matters more."
+      },
+      "why-we-priced-pro-at-5": {
+        "title": "Why we priced Pro at $5",
+        "excerpt": "Pricing is positioning. We wanted the number to be forgettable."
+      },
+      "a-field-guide-to-compressing-scans": {
+        "title": "A field guide to compressing scans",
+        "excerpt": "When to downsample, when to re-encode, and when to leave the file alone."
+      }
+    }
+  },
+  "billingShared": {
+    "checkoutError": "Something went wrong starting checkout.",
+    "portalError": "Couldn't open the billing portal.",
+    "redirecting": "Redirecting…",
+    "opening": "Opening…",
+    "usageLimitTitle": "You've used all {limit} AI actions this month",
+    "usageLimitBody": "Upgrade to Pro for more AI actions every month, plus unlimited tools and larger files.",
+    "upgradeToProCta": "Upgrade to Pro",
+    "maybeLater": "Maybe later"
   },
   "dashboard": {
     "home": "Home",
@@ -147,6 +625,264 @@
     "documentsThisMonth": "Documents this month",
     "aiActions": "AI actions",
     "storageUsed": "Storage used",
-    "timeSaved": "Time saved"
+    "timeSaved": "Time saved",
+    "upgradeToPro": "Upgrade to Pro",
+    "available": "Available",
+    "expired": "Expired",
+    "home_": {
+      "quickToolMerge": "Merge",
+      "quickToolCompress": "Compress",
+      "quickToolSummarize": "Summarize",
+      "quickToolAskAi": "Ask AI",
+      "noteVsLastMonth": "+18% vs June",
+      "noteUnlimitedPro": "Unlimited on Pro",
+      "noteEstimated": "Estimated, this month",
+      "greeting": "Good morning, {name}",
+      "newFile": "New file",
+      "quickTools": "Quick tools",
+      "recentActivity": "Recent activity",
+      "viewAll": "View all",
+      "teamPromoTitle": "Working with a team?",
+      "teamPromoBody": "Business adds shared workspaces, SSO and an audit log for $12 per user.",
+      "teamPromoCta": "Manage team"
+    },
+    "history_": {
+      "title": "History",
+      "subtitle": "Every job you have run. Files stay available for one hour, the record stays for 90 days.",
+      "searchPlaceholder": "Search your files...",
+      "colFileName": "File name",
+      "colTool": "Tool",
+      "colDate": "Date",
+      "colSize": "Size",
+      "colStatus": "Status",
+      "colActions": "Actions",
+      "download": "Download",
+      "rerun": "Re-run",
+      "delete": "Delete",
+      "showing": "Showing {count} of {total} jobs",
+      "emptyTitle": "No files yet",
+      "emptyBody": "Nothing matches that search. Clear the filters, or run your first tool.",
+      "tryFirstTool": "Try your first tool",
+      "clearFilters": "Clear filters",
+      "filterAll": "All jobs",
+      "filterMerged": "Merged",
+      "filterCompressed": "Compressed",
+      "filterConverted": "Converted",
+      "filterAiProcessed": "AI processed"
+    },
+    "billing_": {
+      "title": "Billing",
+      "subtitle": "Change plan, update your card, download invoices. Cancel any time.",
+      "currentPlan": "Current plan",
+      "renews": "Renews {date} ·",
+      "renewalPending": "Renewal date pending ·",
+      "freeLimits": "2 AI actions/day, files up to 25 MB",
+      "paidLimits": "unlimited tools and AI",
+      "manageSubscription": "Manage subscription",
+      "upgradePlan": "Upgrade plan",
+      "aiUsageThisMonth": "AI usage this month",
+      "unlimited": "unlimited",
+      "actionsSuffix": "actions",
+      "billingDetails": "Billing details",
+      "colDate": "Date",
+      "colDescription": "Description",
+      "colAmount": "Amount",
+      "colInvoice": "Invoice",
+      "noInvoices": "No invoices yet.",
+      "freeNothingToBill": "You're on the free plan — nothing to bill.",
+      "invoicesNote": "Invoices are generated automatically and emailed by Stripe.",
+      "planFree": "Free",
+      "planPro": "Pro",
+      "planBusiness": "Business",
+      "unitForever": "forever",
+      "unitMonth": "/month",
+      "unitUserMonth": "/user/month"
+    },
+    "settings_": {
+      "title": "Settings",
+      "subtitle": "Your profile, defaults and privacy controls.",
+      "profile": "Profile",
+      "changePhoto": "Change photo",
+      "fullName": "Full name",
+      "email": "Email",
+      "defaultOcrLanguage": "Default OCR language",
+      "saveChanges": "Save changes",
+      "preferences": "Preferences",
+      "darkMode": "Dark mode",
+      "darkModeDesc": "Follows this switch, not your system.",
+      "on": "On",
+      "off": "Off",
+      "keepFiles": "Keep finished files",
+      "keepFilesDesc": "Pro only. Off means deleted after one hour.",
+      "emailReceipts": "Email receipts",
+      "emailReceiptsDesc": "Monthly invoice to your billing address.",
+      "productEmails": "Product emails",
+      "productEmailsDesc": "Roughly one message a quarter.",
+      "dangerZone": "Danger zone",
+      "dangerZoneBody": "Deleting your account removes every stored file and the billing history immediately. This cannot be undone.",
+      "deleteAccount": "Delete account"
+    },
+    "team_": {
+      "title": "Team",
+      "subtitle": "Business plan · 5 of 10 seats used · $12 per user / month",
+      "inviteMember": "Invite member",
+      "colMember": "Member",
+      "colEmail": "Email",
+      "colRole": "Role",
+      "colStatus": "Status",
+      "active": "Active",
+      "invited": "Invited",
+      "permissionsNote": "Owners and admins can invite. Members can only see their own files.",
+      "rolePermissions": "Role permissions",
+      "teamBilling": "Team billing",
+      "billingSummary": "5 seats × $12 = $60/month · next charge 1 August",
+      "manageBilling": "Manage billing",
+      "inviteModalTitle": "Invite a member",
+      "inviteModalBody": "They get an email link that expires in 7 days. Seat 6 of 10.",
+      "emailAddress": "Email address",
+      "role": "Role",
+      "roleMember": "Member — own files only",
+      "roleAdmin": "Admin — can invite and manage",
+      "roleViewer": "Viewer — read-only access",
+      "sendInvite": "Send invite",
+      "seatsUsed": "Seats used",
+      "documentsTeam": "Documents, team",
+      "thisMonth": "This month",
+      "pendingInvites": "Pending invites",
+      "expiresInDays": "Expires in {days} days",
+      "sso": "SSO",
+      "ssoDetail": "Okta · enforced"
+    },
+    "files_": {
+      "title": "Files",
+      "subtitle": "Pro keeps your finished files in cloud storage until you remove them.",
+      "uploadFile": "Upload file",
+      "dropHere": "Drop a file here",
+      "upTo2gb": "Up to 2 GB on Pro"
+    },
+    "usage_": {
+      "title": "AI usage",
+      "subtitle": "Unlimited on Pro — shown so you can see where the time goes.",
+      "actionsThisMonth": "AI actions this month · {count} this week",
+      "byFeature": "By feature",
+      "limits": "Limits",
+      "managePlan": "Manage plan",
+      "featureSummarize": "Summarize",
+      "featureChat": "Ask anything",
+      "featureOcr": "OCR",
+      "featureTranslate": "Translate",
+      "limitAiActions": "AI actions",
+      "limitPagesPerDoc": "Pages per document",
+      "limitFileSize": "File size",
+      "limitRetention": "Retention"
+    }
+  },
+  "home": {
+    "aiTeaser": {
+      "badge": "Powered by AI",
+      "headline": "Your PDF, finally understood.",
+      "subhead": "Claira reads the document so you don't have to. Every model runs on files that are deleted an hour later.",
+      "cta": "Try AI free"
+    },
+    "howItWorks": {
+      "title": "Three steps. Done.",
+      "step1Title": "Upload your PDF",
+      "step1Desc": "Drag it in from your desktop, Drive or Dropbox. Up to 2 GB.",
+      "step2Title": "Choose a tool or ask AI",
+      "step2Desc": "Pick from 26 tools — or just type what you want done.",
+      "step3Title": "Download instantly",
+      "step3Desc": "No watermarks, no email gate. Your file is deleted after an hour."
+    },
+    "pricingTeaser": {
+      "subhead": "Every tool is free to try. Upgrade when you need volume.",
+      "seeFullPricing": "See full pricing"
+    },
+    "socialProof": {
+      "title": "Trusted by thousands.",
+      "docsCaption": "documents processed and counting",
+      "testimonial1Quote": "We replaced three separate tools with Claira Slate. The summaries alone save my team a morning a week.",
+      "testimonial1Role": "Ops Lead, Northwind",
+      "testimonial2Quote": "It just works. Upload, done. No account, no ads, no dark patterns trying to sell me a subscription.",
+      "testimonial2Role": "Independent designer",
+      "testimonial3Quote": "Asking a 200-page contract a question and getting a cited answer back is genuinely new.",
+      "testimonial3Role": "Counsel, Harbor Legal",
+      "badgeGdpr": "GDPR compliant",
+      "badgeDeleted": "Files deleted after 1 hour",
+      "badgeNoAccount": "No account required"
+    },
+    "finalCta": {
+      "title": "A clean slate for your documents.",
+      "cta": "Get started — it's free"
+    }
+  },
+  "splitTool": {
+    "addRange": "Add Range",
+    "bookmarksFoundInfo": "{count} bookmarks found",
+    "checkingBookmarks": "Checking for bookmarks…",
+    "chooseOption": "Choose an option",
+    "compressedBadge": "Compressed",
+    "compressOutputLabel": "Compress output files",
+    "documentCategoryLabel": "Document category",
+    "downloadAllZip": "Download all as ZIP",
+    "estimatedTime": "About {time} remaining",
+    "extractAllInfo": "{count} PDFs will be created",
+    "fixedSplitInfo": "This PDF will be split into {count} files of {n} pages each",
+    "maxSizePerFileLabel": "Maximum size per file",
+    "mergedFileLabel": "Merged file",
+    "mergePagesLabel": "Merge extracted pages into one PDF",
+    "mergeRangesLabel": "Merge all ranges into one PDF",
+    "noBookmarksFound": "No bookmarks found in this PDF.",
+    "noChunksError": "Configure at least one range or page before splitting.",
+    "originalInfo": "Original: {size} · {pages} pages",
+    "pageFileLabel": "Page {n}",
+    "pagesSelectedCount": "{count} pages selected",
+    "pagesToExtractLabel": "Pages to extract",
+    "pagesToExtractPlaceholder": "e.g. 1,3,5-8",
+    "pagesUnit": "pages",
+    "previewSummary": "{pages} pages → {files} files",
+    "previewTitle": "Split preview",
+    "processingPages": "Processing {total} pages…",
+    "proFeatureNudge": "Smart AI-powered splitting is a Pro feature. Upgrade to let Claude find the best split points for you.",
+    "rangeFileLabel": "File {n}",
+    "rangeLabel": "Range {n}:",
+    "removeRange": "Remove range",
+    "resultsTitle": "{count} files ready",
+    "shortcutsHint": "Ctrl+A select all · Shift+click range · Esc deselect",
+    "sizeSplitInfo": "This PDF will be split into files no larger than {size} each",
+    "splitAgain": "Split again",
+    "splitButton": "Split PDF",
+    "splitIntoRangesOf": "Split into ranges of",
+    "toLabel": "to page",
+    "upgradeToPro": "Upgrade to Pro",
+    "tab": {
+      "range": "Range",
+      "pages": "Pages",
+      "size": "Size",
+      "bookmarks": "Bookmarks",
+      "smart": "Smart"
+    },
+    "rangeSubMode": {
+      "custom": "Custom",
+      "fixed": "Fixed"
+    },
+    "pagesSubMode": {
+      "extractAll": "Extract all pages",
+      "select": "Select pages"
+    },
+    "category": {
+      "invoices": "Invoices and billing documents",
+      "contracts": "Contracts and legal documents",
+      "bankStatements": "Bank statements and financial reports",
+      "academic": "Academic and educational documents",
+      "medical": "Medical and healthcare records",
+      "hr": "HR and employee documents",
+      "insurance": "Insurance documents",
+      "shipping": "Shipping and logistics documents",
+      "government": "Government and administrative forms",
+      "scanned": "Scanned document batches",
+      "marketing": "Marketing and creative documents",
+      "books": "Books and reading documents",
+      "custom": "Custom prompt"
+    }
   }
 }

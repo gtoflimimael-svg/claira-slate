@@ -28,11 +28,11 @@ export default function ResetPasswordPage() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (password.length < 10) {
-      setError("Password must be at least 10 characters.");
+      setError(t("errorPasswordTooShort"));
       return;
     }
     if (password !== confirm) {
-      setError("Passwords don't match.");
+      setError(t("errorPasswordsDontMatch"));
       return;
     }
     setError("");
@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
       >
         {t("setNewPasswordTitle")}
       </h1>
-      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 14.5, color: "var(--cs-text-2)" }}>Choose something you haven&apos;t used before.</p>
+      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("choosePasswordHint")}</p>
 
       <form
         onSubmit={handleSubmit}
@@ -78,7 +78,7 @@ export default function ResetPasswordPage() {
           <input className="cs-field" type="password" placeholder="At least 10 characters" style={fieldInput} value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <label style={fieldLabel}>
-          Confirm password
+          {t("confirmPassword")}
           <input className="cs-field" type="password" placeholder="Repeat password" style={fieldInput} value={confirm} onChange={(e) => setConfirm(e.target.value)} />
         </label>
         {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
@@ -88,7 +88,7 @@ export default function ResetPasswordPage() {
           disabled={loading}
           style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
         >
-          {loading ? "Saving…" : t("updatePassword")}
+          {loading ? t("saving") : t("updatePassword")}
         </button>
       </form>
     </section>

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 
@@ -8,31 +9,37 @@ const CHECK = (
 );
 
 export function PricingTeaser() {
+  const tp = useTranslations("pricing");
+  const th = useTranslations("home.pricingTeaser");
+  const freeFeatures = tp.raw("free.features") as string[];
+  const proFeatures = tp.raw("pro.features") as string[];
+  const businessFeatures = tp.raw("business.features") as string[];
+
   return (
     <section id="pricing" style={{ borderTop: "1px solid var(--cs-line)", background: "var(--cs-bg-2)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
         <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
-          Simple pricing. No surprises.
+          {tp("headline")}
         </Reveal>
-        <p style={{ margin: "14px 0 0", maxWidth: 440, fontSize: 16, color: "var(--cs-text-2)" }}>Every tool is free to try. Upgrade when you need volume.</p>
+        <p style={{ margin: "14px 0 0", maxWidth: 440, fontSize: 16, color: "var(--cs-text-2)" }}>{th("subhead")}</p>
         <div style={{ marginTop: "clamp(36px,5vw,52px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(268px,1fr))", gap: 14, alignItems: "start" }}>
           <Reveal variant="scale" index={0} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
-            <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em" }}>Free</div>
+            <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em" }}>{tp("free.name")}</div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
               <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$0</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>forever</span>
+              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{tp("free.unit")}</span>
             </div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}All 26 tools, no watermarks</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}2 AI actions per day</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Files up to 25 MB</div>
+              {freeFeatures.slice(0, 3).map((f) => (
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+              ))}
             </div>
             <Link
               href="/signup"
               className="hover-border hover-text"
               style={{ marginTop: 24, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
             >
-              Start free
+              {tp("free.cta")}
             </Link>
           </Reveal>
 
@@ -50,49 +57,49 @@ export function PricingTeaser() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em", color: "var(--cs-accent)" }}>Pro</div>
-              <div style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-grad)", color: "#fff", fontSize: 11, fontWeight: 600 }}>Most popular</div>
+              <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em", color: "var(--cs-accent)" }}>{tp("pro.name")}</div>
+              <div style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-grad)", color: "#fff", fontSize: 11, fontWeight: 600 }}>{tp("pro.badge")}</div>
             </div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
               <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$5</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>/month</span>
+              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{tp("pro.unit")}</span>
             </div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Unlimited tools &amp; AI actions</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Files up to 2 GB, batch mode</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Desktop &amp; mobile apps</div>
+              {proFeatures.slice(0, 3).map((f) => (
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+              ))}
             </div>
             <Link
               href="/signup"
               style={{ marginTop: 24, display: "block", textAlign: "center", padding: 11, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
             >
-              Get Pro
+              {tp("pro.cta")}
             </Link>
           </Reveal>
 
           <Reveal variant="scale" index={2} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
-            <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em" }}>Business</div>
+            <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-.01em" }}>{tp("business.name")}</div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
               <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$12</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>/user/month</span>
+              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{tp("business.unit")}</span>
             </div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Everything in Pro</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Shared workspaces &amp; SSO</div>
-              <div style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}Audit log &amp; priority support</div>
+              {businessFeatures.slice(0, 3).map((f) => (
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+              ))}
             </div>
             <Link
               href="/contact"
               className="hover-border hover-text"
               style={{ marginTop: 24, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
             >
-              Contact sales
+              {tp("business.cta")}
             </Link>
           </Reveal>
         </div>
         <div style={{ marginTop: 30 }}>
           <Link href="/pricing" style={{ fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
-            See full pricing &rarr;
+            {th("seeFullPricing")} &rarr;
           </Link>
         </div>
       </div>

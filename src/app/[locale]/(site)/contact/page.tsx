@@ -1,24 +1,16 @@
 "use client";
 
 import { useState, type CSSProperties, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 
-const CHANNELS = [
-  {
-    icon: <path d="M3 6h18v12H3zM3 7l9 6 9-6"></path>,
-    title: "Support",
-    detail: "help@clairaslate.com · replies within a day",
-  },
-  {
-    icon: <path d="M16 20v-2a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v2M9.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM21 20v-2a3 3 0 0 0-2.3-2.9"></path>,
-    title: "Sales & Business plans",
-    detail: "sales@clairaslate.com · SSO, DPA, invoicing",
-  },
-  {
-    icon: <path d="M12 3l8 3v6c0 5-3.5 7.7-8 9-4.5-1.3-8-4-8-9V6z"></path>,
-    title: "Security disclosure",
-    detail: "security@clairaslate.com · PGP key on request",
-  },
+const CHANNEL_KEYS = ["support", "sales", "security"] as const;
+const CHANNEL_ICONS = [
+  <path key="support" d="M3 6h18v12H3zM3 7l9 6 9-6"></path>,
+  <path key="sales" d="M16 20v-2a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v2M9.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM21 20v-2a3 3 0 0 0-2.3-2.9"></path>,
+  <path key="security" d="M12 3l8 3v6c0 5-3.5 7.7-8 9-4.5-1.3-8-4-8-9V6z"></path>,
 ];
+
+const TOPIC_KEYS = ["quote", "security", "help", "other"] as const;
 
 const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
@@ -33,9 +25,10 @@ const fieldInput: CSSProperties = {
 };
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("A Business plan quote");
+  const [topic, setTopic] = useState<(typeof TOPIC_KEYS)[number]>("quote");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
@@ -43,11 +36,11 @@ export default function ContactPage() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setError("Please fill in your name, email and a message.");
+      setError(t("errorFillFields"));
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("That email address doesn't look right.");
+      setError(t("errorInvalidEmail"));
       return;
     }
     setError("");
@@ -70,14 +63,14 @@ export default function ContactPage() {
               letterSpacing: "-.042em",
             }}
           >
-            Talk to a human.
+            {t("heroTitle")}
           </h1>
           <p style={{ margin: "20px 0 0", maxWidth: 420, fontSize: 16, lineHeight: 1.65, color: "var(--cs-text-2)" }}>
-            Sales, security reviews, invoicing or a bug you want fixed — it all reaches the same small team.
+            {t("heroSubhead")}
           </p>
           <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 12 }}>
-            {CHANNELS.map((c) => (
-              <div key={c.title} style={{ display: "flex", gap: 13, padding: 18, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
+            {CHANNEL_KEYS.map((key, i) => (
+              <div key={key} style={{ display: "flex", gap: 13, padding: 18, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
                 <div
                   style={{
                     flex: "none",
@@ -92,12 +85,12 @@ export default function ContactPage() {
                   }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                    {c.icon}
+                    {CHANNEL_ICONS[i]}
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 600 }}>{c.title}</div>
-                  <div style={{ marginTop: 4, fontSize: 13.5, color: "var(--cs-text-2)" }}>{c.detail}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600 }}>{t(`${key}Title`)}</div>
+                  <div style={{ marginTop: 4, fontSize: 13.5, color: "var(--cs-text-2)" }}>{t(`${key}Detail`)}</div>
                 </div>
               </div>
             ))}
@@ -107,38 +100,39 @@ export default function ContactPage() {
         <div style={{ padding: "clamp(24px,3vw,32px)", border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
           {sent ? (
             <div style={{ padding: "20px 0", textAlign: "center" }}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>Message sent</div>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("sentTitle")}</div>
               <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
-                Thanks, {name.split(" ")[0] || "there"} — we reply from a real address, usually within a day.
+                {t("sentBody", { name: name.split(" ")[0] || "" })}
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>Send a message</div>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("formTitle")}</div>
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 16 }}>
                 <label style={fieldLabel}>
-                  Name
+                  {t("nameLabel")}
                   <input className="cs-field" type="text" placeholder="Maya Rendel" style={fieldInput} value={name} onChange={(e) => setName(e.target.value)} />
                 </label>
                 <label style={fieldLabel}>
-                  Work email
+                  {t("emailLabel")}
                   <input className="cs-field" type="email" placeholder="you@company.com" style={fieldInput} value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
                 <label style={fieldLabel}>
-                  What do you need?
-                  <select className="cs-field" style={fieldInput} value={topic} onChange={(e) => setTopic(e.target.value)}>
-                    <option>A Business plan quote</option>
-                    <option>Security review / DPA</option>
-                    <option>Help with a file</option>
-                    <option>Something else</option>
+                  {t("topicLabel")}
+                  <select className="cs-field" style={fieldInput} value={topic} onChange={(e) => setTopic(e.target.value as (typeof TOPIC_KEYS)[number])}>
+                    {TOPIC_KEYS.map((key) => (
+                      <option key={key} value={key}>
+                        {t(`topic${key.charAt(0).toUpperCase()}${key.slice(1)}`)}
+                      </option>
+                    ))}
                   </select>
                 </label>
                 <label style={fieldLabel}>
-                  Message
+                  {t("messageLabel")}
                   <textarea
                     className="cs-field"
                     rows={4}
-                    placeholder="Tell us a little about the documents you work with."
+                    placeholder={t("messagePlaceholder")}
                     style={{ ...fieldInput, resize: "vertical" }}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -150,9 +144,9 @@ export default function ContactPage() {
                   className="hover-bg"
                   style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: "pointer" }}
                 >
-                  Send message
+                  {t("sendMessage")}
                 </button>
-                <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--cs-text-2)" }}>We reply from a real address. No sequences, no drip campaigns.</div>
+                <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--cs-text-2)" }}>{t("noDripCampaigns")}</div>
               </div>
             </form>
           )}

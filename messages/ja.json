@@ -45,6 +45,7 @@
   "common": {
     "upload": "アップロード",
     "download": "ダウンロード",
+    "downloaded": "ダウンロード済み",
     "processing": "処理中",
     "error": "問題が発生しました。",
     "success": "完了しました",
@@ -53,48 +54,329 @@
     "save": "保存",
     "dragDrop": "ドラッグ&ドロップ、またはクリックしてファイルを選択",
     "fileTooLarge": "現在のプランではファイルサイズが大きすぎます。",
-    "couldntReachServer": "サーバーに接続できませんでした。もう一度お試しください。"
+    "couldntReachServer": "サーバーに接続できませんでした。もう一度お試しください。",
+    "selectFile": "ファイルを選択",
+    "chooseAnotherFile": "別のファイルを選択",
+    "copyText": "テキストをコピー",
+    "copied": "コピーしました！",
+    "startOver": "最初からやり直す",
+    "or": "または",
+    "close": "閉じる",
+    "comingSoon": "近日公開",
+    "pagesCount": "{count}ページ",
+    "breadcrumb": {
+      "home": "ホーム",
+      "tools": "ツール",
+      "ai": "AI",
+      "blog": "ブログ"
+    }
   },
   "tools": {
-    "merge": { "name": "PDF結合", "desc": "複数のファイルを1つにまとめます。" },
-    "split": { "name": "PDF分割", "desc": "複数のファイルに分割します。" },
-    "reorder": { "name": "ページ整理", "desc": "ドラッグしてページを並べ替えます。" },
-    "rotate": { "name": "PDF回転", "desc": "ページの向きを修正します。" },
-    "extract-pages": { "name": "ページ抽出", "desc": "必要なページだけを取り出します。" },
-    "delete-pages": { "name": "ページ削除", "desc": "不要なページを削除します。" },
-    "compress": { "name": "PDF圧縮", "desc": "画質そのままでファイルを軽量化。" },
-    "repair": { "name": "PDF修復", "desc": "破損したファイルを復元します。" },
-    "optimize": { "name": "Web用に最適化", "desc": "読み込みの速いドキュメントに。" },
-    "flatten": { "name": "PDFのフラット化", "desc": "フォームやレイヤーを固定します。" },
-    "pdf-to-word": { "name": "PDFをWordに変換", "desc": "完全編集可能な.docxに。" },
-    "pdf-to-excel": { "name": "PDFをExcelに変換", "desc": "表をスプレッドシートに変換します。" },
-    "pdf-to-ppt": { "name": "PDFをPowerPointに変換", "desc": "編集可能なスライドに。" },
-    "pdf-to-jpg": { "name": "PDFをJPGに変換", "desc": "各ページを画像として書き出します。" },
-    "jpg-to-pdf": { "name": "JPGをPDFに変換", "desc": "複数の画像を1つのファイルに。" },
-    "html-to-pdf": { "name": "HTMLをPDFに変換", "desc": "どんなWebページも取り込めます。" },
-    "protect": { "name": "PDF保護", "desc": "パスワードでロックします。" },
-    "unlock": { "name": "PDFロック解除", "desc": "既知のパスワードを解除します。" },
-    "sign": { "name": "PDF署名", "desc": "法的効力のある電子署名。" },
-    "redact": { "name": "PDF黒塗り", "desc": "内容を完全に非表示にします。" },
-    "watermark": { "name": "透かし", "desc": "テキストやロゴを重ねます。" },
-    "edit-text": { "name": "PDF編集", "desc": "テキスト、画像、図形を編集。" },
-    "number-pages": { "name": "ページ番号を追加", "desc": "位置もスタイルも自由自在。" },
-    "crop": { "name": "PDFトリミング", "desc": "余白をカットします。" },
-    "ocr": { "name": "PDF OCR", "desc": "スキャンPDFを検索可能にします。" },
-    "annotate": { "name": "注釈", "desc": "コメントとハイライトを追加。" }
+    "merge": {
+      "name": "PDF結合",
+      "desc": "複数のファイルを1つにまとめます。"
+    },
+    "split": {
+      "name": "PDF分割",
+      "desc": "複数のファイルに分割します。"
+    },
+    "reorder": {
+      "name": "ページ整理",
+      "desc": "ドラッグしてページを並べ替えます。"
+    },
+    "rotate": {
+      "name": "PDF回転",
+      "desc": "ページの向きを修正します。"
+    },
+    "extract-pages": {
+      "name": "ページ抽出",
+      "desc": "必要なページだけを取り出します。"
+    },
+    "delete-pages": {
+      "name": "ページ削除",
+      "desc": "不要なページを削除します。"
+    },
+    "compress": {
+      "name": "PDF圧縮",
+      "desc": "画質そのままでファイルを軽量化。"
+    },
+    "repair": {
+      "name": "PDF修復",
+      "desc": "破損したファイルを復元します。"
+    },
+    "optimize": {
+      "name": "Web用に最適化",
+      "desc": "読み込みの速いドキュメントに。"
+    },
+    "flatten": {
+      "name": "PDFのフラット化",
+      "desc": "フォームやレイヤーを固定します。"
+    },
+    "pdf-to-word": {
+      "name": "PDFをWordに変換",
+      "desc": "完全編集可能な.docxに。"
+    },
+    "pdf-to-excel": {
+      "name": "PDFをExcelに変換",
+      "desc": "表をスプレッドシートに変換します。"
+    },
+    "pdf-to-ppt": {
+      "name": "PDFをPowerPointに変換",
+      "desc": "編集可能なスライドに。"
+    },
+    "pdf-to-jpg": {
+      "name": "PDFをJPGに変換",
+      "desc": "各ページを画像として書き出します。"
+    },
+    "jpg-to-pdf": {
+      "name": "JPGをPDFに変換",
+      "desc": "複数の画像を1つのファイルに。"
+    },
+    "html-to-pdf": {
+      "name": "HTMLをPDFに変換",
+      "desc": "どんなWebページも取り込めます。"
+    },
+    "protect": {
+      "name": "PDF保護",
+      "desc": "パスワードでロックします。"
+    },
+    "unlock": {
+      "name": "PDFロック解除",
+      "desc": "既知のパスワードを解除します。"
+    },
+    "sign": {
+      "name": "PDF署名",
+      "desc": "法的効力のある電子署名。"
+    },
+    "redact": {
+      "name": "PDF黒塗り",
+      "desc": "内容を完全に非表示にします。"
+    },
+    "watermark": {
+      "name": "透かし",
+      "desc": "テキストやロゴを重ねます。"
+    },
+    "edit-text": {
+      "name": "PDF編集",
+      "desc": "テキスト、画像、図形を編集。"
+    },
+    "number-pages": {
+      "name": "ページ番号を追加",
+      "desc": "位置もスタイルも自由自在。"
+    },
+    "crop": {
+      "name": "PDFトリミング",
+      "desc": "余白をカットします。"
+    },
+    "ocr": {
+      "name": "PDF OCR",
+      "desc": "スキャンPDFを検索可能にします。"
+    },
+    "annotate": {
+      "name": "注釈",
+      "desc": "コメントとハイライトを追加。"
+    },
+    "headline": "26のツール、余計な手間ゼロ。",
+    "subheadline": "PDFに必要なすべてが、ブラウザの中に。無料で試せて、アカウント登録もインストールも不要です。",
+    "homeSubheadline": "PDFに必要なものはすべて、ブラウザの中に。インストールも待ち時間もありません。",
+    "cantFind": "お探しのツールが見つかりませんか？",
+    "aiSuggestion": "やりたいことを伝えるだけで、Clairaが最適なツールを選びます。",
+    "askAI": "AIに聞く",
+    "viewAll": "すべてのツールを見る",
+    "filters": {
+      "All": "すべて",
+      "Organize": "整理",
+      "Optimize": "最適化",
+      "Convert": "変換",
+      "Secure": "保護",
+      "Edit": "編集"
+    }
+  },
+  "toolPage": {
+    "dropFileHere": "ここにファイルをドロップ",
+    "filesSelected": "{count}件のファイルを選択中",
+    "fileSelected": "1件のファイルを選択中",
+    "addAnotherFile": "別のファイルを追加",
+    "run": "{tool}を実行",
+    "processing": "処理中…",
+    "workingOnIt": "処理を進めています…",
+    "uploadToStart": "ファイルをアップロードして始めましょう。",
+    "comingSoonMessage": "このツールは近日公開予定です。",
+    "isReady": "の準備ができました。",
+    "quotaMessage": "本日の無料実行回数（{limit}回）を使い切りました。無制限で使うにはProにアップグレードしてください。",
+    "upgrade": "アップグレード",
+    "processingHeadline": "PDFを処理しています…",
+    "processingHint": "通常、数秒で完了します。",
+    "successHeadline": "PDFの準備ができました！",
+    "continueTo": "次のツールへ",
+    "fileDeletedIn": "{time}後にファイルが削除されます",
+    "trustDeleted": "ファイルは1時間後に削除されます",
+    "trustNoAccount": "アカウント登録不要",
+    "trustFast": "数秒で処理完了",
+    "uploadingFiles": "{count}件のファイルをアップロード中",
+    "removeFile": "ファイルを削除",
+    "reorderFile": "ファイルを並べ替え",
+    "summarizeWithAi": "AIで要約",
+    "processedIn": "{time}で処理完了",
+    "trustEncrypted": "転送中は暗号化",
+    "resultPlaceholder": "ここにファイルが表示されます",
+    "pasteHint": "またはCtrl+VでPDFファイルを貼り付け",
+    "contactSupport": "サポートに問い合わせる",
+    "loginNudge": "無料アカウントを作成してファイルを保存し、履歴にアクセスしましょう"
   },
   "ai": {
-    "summarize": { "name": "要約", "desc": "数秒で要点を把握できます。" },
-    "chat": { "name": "何でも質問", "desc": "ドキュメントとチャットできます。" },
-    "translate": { "name": "翻訳", "desc": "50以上の言語に対応、レイアウトも維持。" },
-    "ocr": { "name": "OCR", "desc": "スキャンしたPDFを検索可能にします。" }
+    "summarize": {
+      "name": "要約",
+      "desc": "数秒で要点を把握できます。"
+    },
+    "chat": {
+      "name": "何でも質問",
+      "desc": "ドキュメントとチャットできます。"
+    },
+    "translate": {
+      "name": "翻訳",
+      "desc": "50以上の言語に対応、レイアウトも維持。"
+    },
+    "ocr": {
+      "name": "OCR",
+      "desc": "スキャンしたPDFを検索可能にします。"
+    },
+    "badge": "AI搭載",
+    "toolBadge": "AIツール",
+    "hubTitle": "あなたのPDFを、ついに理解する。",
+    "hubSubhead": "4つのモデルで、1つのドキュメントを。要約する、質問する、翻訳する、あるいはスキャンを検索可能にする — その後は、残り26種類のツールもそのまま使えます。",
+    "tryFree": "AIを無料で試す",
+    "seeHowItWorks": "使い方を見る",
+    "openTool": "ツールを開く",
+    "answersTitle": "回答には、ページ番号が添えられます。",
+    "answersSubhead": "すべての回答は、引用元のセクションを示すので、ワンクリックで確認できます。",
+    "mockDocumentLabel": "ドキュメント",
+    "mockDocumentCaption": "supplier-agreement.pdf · 64ページ",
+    "mockChatLabel": "Claira AI",
+    "mockQuestion": "早期解約はできますか？その場合の費用は？",
+    "mockAnswer": "はい — 12か月経過後は、60日前の書面通知で可能です。早期解約の場合、確定支出2か月分に相当する違約金がかかります。",
+    "mockChatPlaceholder": "さらに質問する…",
+    "trustNeverTraining": "学習データには一切使用しません",
+    "trustDeletedAfterHour": "1時間後に削除されます",
+    "trustEuResidency": "データはEU域内に保存",
+    "bottomCtaTitle": "1日2回まで無料でAIを利用可能。カード登録不要。",
+    "bottomCtaButton": "AIを試してみる",
+    "otherAiTools": "その他のAIツール",
+    "summarizePage": {
+      "title": "PDFを要約する",
+      "subhead": "レポート、契約書、プレゼン資料をアップロードするだけで、引用元のページ付きで要点を取得できます。1日2件まで無料。",
+      "howItWorks": "要約の仕組み",
+      "step1Title": "ドキュメントをアップロード",
+      "step1Desc": "テキストでもスキャンでも、必要な場合は自動でOCRが実行されます。",
+      "step2Title": "要約の長さを選ぶ",
+      "step2Desc": "箇条書き4つ、1ページ、またはセクションごとの要約から選べます。",
+      "step3Title": "コピー、書き出し、さらに質問",
+      "step3Desc": "要約を保存するか、同じファイルでチャットを始められます。"
+    },
+    "chatPage": {
+      "title": "何でも質問",
+      "subhead": "ドキュメントをアップロードして直接チャット — すべての回答は、引用元のセクションやページを示します。",
+      "howItWorks": "使い方",
+      "step1Title": "ドキュメントをアップロード",
+      "step1Desc": "最初に一度だけ全体を読み込むので、以降の質問には即座に回答します。",
+      "step2Title": "何でも質問する",
+      "step2Desc": "質問への回答は、ドキュメントの内容のみに基づきます。",
+      "step3Title": "根拠を確認する",
+      "step3Desc": "すべての回答は、引用元のページやセクションにリンクしています。"
+    },
+    "translatePage": {
+      "title": "PDFを翻訳する",
+      "subhead": "契約書、レポート、プレゼン資料を50以上の言語に翻訳 — 段落の区切りや構成はそのまま保たれます。",
+      "howItWorks": "翻訳の仕組み",
+      "step1Title": "ドキュメントをアップロード",
+      "step1Desc": "テキストでもスキャンでも、必要な場合は自動でOCRが実行されます。",
+      "step2Title": "言語を選ぶ",
+      "step2Desc": "50以上の言語に対応、書式や段落の区切りも維持されます。",
+      "step3Title": "結果をダウンロード",
+      "step3Desc": "翻訳されたPDFを取得するか、テキストをそのままコピーできます。"
+    },
+    "ocrPage": {
+      "title": "スキャンを検索可能にする",
+      "subhead": "スキャンしたPDFをアップロードすると、テキストを選択・検索できる同じ内容のドキュメントが手に入ります。",
+      "howItWorks": "OCRの仕組み",
+      "step1Title": "スキャンをアップロード",
+      "step1Desc": "各ページが個別にレンダリングされ、読み取られます。",
+      "step2Title": "テキストを抽出してクリーンアップ",
+      "step2Desc": "すべてのページでOCRを実行後、AIが明らかな誤りやスペースのずれを修正します。",
+      "step3Title": "検索可能なPDFをダウンロード",
+      "step3Desc": "見た目はそのままに、すべての単語が選択・検索可能になります。"
+    },
+    "typewriterPrefix": "あなたのPDFが、ついに",
+    "typewriterSuffix": "。",
+    "typewriterWords": [
+      "理解された",
+      "要約された",
+      "翻訳された",
+      "検索可能",
+      "保護された"
+    ]
+  },
+  "aiTool": {
+    "summarize": {
+      "dropHeading": "要約するPDFをドロップ",
+      "idleSubtext": "300ページまで対応",
+      "loadingSubtext": "要約中…",
+      "runButton": "要約する",
+      "runningButton": "要約中…",
+      "loadingResult": "ドキュメントを読み込み、要点を抽出しています…",
+      "emptyResult": "PDFをアップロードして「要約する」をクリックすると、ここに結果が表示されます。",
+      "resultHeading": "要約",
+      "resetButton": "別のファイルを要約する"
+    },
+    "chat": {
+      "dropHeading": "チャットするPDFをドロップ",
+      "idleSubtext": "300ページまで対応",
+      "extractingSubtext": "ドキュメントを読み込んでいます…",
+      "readingButton": "読み込み中…",
+      "emptyResult": "PDFをアップロードして質問を始めましょう。",
+      "extractError": "そのPDFを読み取れませんでした。",
+      "newFile": "新しいファイル",
+      "emptyChat": "このドキュメントについて何でも質問してください — 回答はドキュメントの内容のみに基づきます。",
+      "thinking": "考え中…",
+      "inputPlaceholder": "このドキュメントについて質問する…",
+      "send": "送信"
+    },
+    "translate": {
+      "dropHeading": "翻訳するPDFをドロップ",
+      "translateToLabel": "翻訳先の言語",
+      "runButton": "翻訳する",
+      "runningButton": "翻訳中…",
+      "loadingResult": "レイアウトと構成を維持しながらドキュメントを翻訳しています…",
+      "emptyResult": "PDFをアップロードし、言語を選んで「翻訳する」をクリックしてください。",
+      "noPdfNotice": "{language}へのダウンロード用PDFはまだ用意できません — 代わりにテキストをコピーしてください。",
+      "downloadPdf": "PDFをダウンロード",
+      "resetButton": "別のファイルを翻訳する"
+    },
+    "ocr": {
+      "dropHeading": "スキャンしたPDFをドロップ",
+      "idleSubtext": "鮮明でまっすぐなスキャンで最も効果を発揮します",
+      "loadingSubtext": "各ページでOCRを実行しています — 少々お時間をいただく場合があります…",
+      "runButton": "OCRを実行",
+      "runningButton": "OCR実行中…",
+      "loadingResult": "各ページを読み取り、テキストをクリーンアップしています…",
+      "emptyResult": "スキャンしたPDFをアップロードし、「OCRを実行」をクリックすると検索可能になります。",
+      "resultHeading": "抽出されたテキスト",
+      "downloadPdf": "検索可能なPDFをダウンロード"
+    }
   },
   "pricing": {
+    "headline": "わかりやすい料金。サプライズなし。",
+    "subheadline": "すべてのツールは、いつでも無料でお試しいただけます。利用量やチームでの利用が必要になったときにアップグレードしてください。",
     "free": {
       "name": "無料",
       "unit": "永年無料",
       "tagline": "たまにPDFを使う方に。",
-      "features": ["26種類のツールすべて、透かしなし", "1日2回のAIアクション", "25MBまでのファイル", "アカウント登録不要"],
+      "features": [
+        "26種類のツールすべて、透かしなし",
+        "1日2回のAIアクション",
+        "25MBまでのファイル",
+        "アカウント登録不要"
+      ],
       "cta": "無料で始める"
     },
     "pro": {
@@ -102,17 +384,76 @@
       "badge": "人気No.1",
       "unit": "/月",
       "tagline": "書類を扱う仕事をしている方に。",
-      "features": ["ツール・AIアクションが無制限", "2GBまでのファイル、バッチ処理対応", "デスクトップ・モバイルアプリ", "クラウド保存と履歴管理"],
+      "features": [
+        "ツール・AIアクションが無制限",
+        "2GBまでのファイル、バッチ処理対応",
+        "デスクトップ・モバイルアプリ",
+        "クラウド保存と履歴管理"
+      ],
       "cta": "Proに登録"
     },
     "business": {
       "name": "Business",
       "unit": "/ユーザー/月",
       "tagline": "コンプライアンス体制が必要なチームに。",
-      "features": ["Proのすべての機能", "共有ワークスペースとSSO", "監査ログと優先サポート", "カスタム保存期間の設定"],
+      "features": [
+        "Proのすべての機能",
+        "共有ワークスペースとSSO",
+        "監査ログと優先サポート",
+        "カスタム保存期間の設定"
+      ],
       "cta": "営業に問い合わせる"
     },
-    "manageSubscription": "サブスクリプションを管理"
+    "manageSubscription": "サブスクリプションを管理",
+    "compareTitle": "プランを比較する",
+    "compareHeaders": {
+      "feature": "機能",
+      "free": "無料",
+      "pro": "Pro",
+      "business": "Business"
+    },
+    "compareRows": {
+      "tools": {
+        "feature": "ツール",
+        "free": "26種類すべて",
+        "pro": "26種類すべて",
+        "business": "26種類すべて"
+      },
+      "aiActions": {
+        "feature": "AIアクション",
+        "free": "1日2回",
+        "pro": "無制限",
+        "business": "無制限"
+      },
+      "maxFileSize": {
+        "feature": "最大ファイルサイズ",
+        "free": "25MB",
+        "pro": "2GB",
+        "business": "2GB"
+      },
+      "filesPerBatch": {
+        "feature": "バッチあたりのファイル数",
+        "free": "5",
+        "pro": "20",
+        "business": "無制限"
+      },
+      "fileHistory": {
+        "feature": "ファイル履歴"
+      },
+      "ssoAuditLog": {
+        "feature": "SSOと監査ログ"
+      },
+      "support": {
+        "feature": "サポート",
+        "free": "ヘルプセンター",
+        "pro": "メール、1日以内",
+        "business": "優先対応、4時間以内"
+      }
+    },
+    "notSureTitle": "まだ迷っていますか？",
+    "notSureBody": "すべてのツールを、アカウント登録なしで無料で使えます。上限に達したときだけアップグレードしてください。",
+    "browseTools": "ツールを見る",
+    "talkToSales": "営業に相談する"
   },
   "auth": {
     "loginTitle": "おかえりなさい",
@@ -121,9 +462,12 @@
     "email": "メールアドレス",
     "workEmail": "職場のメールアドレス",
     "password": "パスワード",
-    "forgotPassword": "お忘れですか？",
+    "passwordPlaceholder": "10文字以上",
+    "forgotPassword": "パスワードをお忘れですか？",
     "rememberMe": "ログイン状態を保持する",
     "continueWithGoogle": "Googleで続ける",
+    "continueWithSso": "SSOで続ける",
+    "ssoComingSoon": "近日公開",
     "logIn": "ログイン",
     "createAccount": "無料アカウントを作成",
     "newHere": "はじめてご利用の方",
@@ -133,7 +477,141 @@
     "resetPasswordSubtitle": "新しいパスワードを設定するリンクをお送りします。",
     "sendResetLink": "再設定リンクを送信",
     "setNewPasswordTitle": "新しいパスワードを設定",
-    "updatePassword": "パスワードを更新"
+    "updatePassword": "パスワードを更新",
+    "loggingIn": "ログイン中…",
+    "sending": "送信中…",
+    "saving": "保存中…",
+    "creatingAccount": "アカウントを作成中…",
+    "errorWrongLoginAttempt": "うまくいきませんでした — もう一度ログインしてください。",
+    "errorEnterEmailPassword": "メールアドレスとパスワードを入力してください。",
+    "errorEnterEmail": "メールアドレスを入力してください。",
+    "errorSignupFields": "職場のメールアドレスと10文字以上のパスワードを入力してください。",
+    "errorGeneric": "問題が発生しました。もう一度お試しください。",
+    "errorPasswordTooShort": "パスワードは10文字以上にしてください。",
+    "errorPasswordsDontMatch": "パスワードが一致しません。",
+    "confirmationSentEmail": "{email} 宛に確認リンクを送信しました。リンクをクリックしてアカウントを確認し、利用を開始してください。",
+    "resetSentEmail": "{email} のアカウントが存在する場合、再設定リンクをお送りしています。",
+    "backToLogin": "ログイン画面に戻る",
+    "confirmPassword": "パスワードを確認",
+    "choosePasswordHint": "これまで使ったことのないパスワードを選んでください。",
+    "createAccountHeading": "アカウントを作成",
+    "comparePlans": "プランを比較する",
+    "freePlanSelected": "無料プランが選択されています。",
+    "termsNotice": "続行すると、利用規約に同意したものとみなされます。ファイルは1時間後に削除されます。",
+    "perk1": "26種類のツールすべて、透かしなし",
+    "perk2": "1日2回のAIアクション",
+    "perk3": "本当に見つけやすいファイル履歴",
+    "perk4": "いつでもアップグレードや解約が可能",
+    "testimonialQuote": "3つの別々のツールを、Claira Slate 1つに置き換えました。",
+    "testimonialAttribution": "Maya Rendel · オペレーション責任者、Northwind"
+  },
+  "about": {
+    "title": "会社概要 — Claira Slate",
+    "description": "Claira Slateは2024年、壊れた結合ツールを直す週末プロジェクトとして始まりました。現在は毎月数百万件のドキュメントを処理しています。",
+    "heroTitle": "書類まわりの仕事を、また当たり前のものに。",
+    "heroSubhead": "Claira Slateは2024年、壊れた結合ツールを直す週末プロジェクトとして始まりました。現在は、もうPDFのことなど考えたくないという人々のために、毎月数百万件のドキュメントを処理しています。",
+    "statDocuments": "件のドキュメントを処理",
+    "statRetention": "の最大保存期間",
+    "statPeople": "人、7か国",
+    "statAds": "件の広告、これからも",
+    "valuesTitle": "私たちが大切にしていること",
+    "value1Title": "最初のファイルより前には何もない",
+    "value1Body": "登録の壁も、メールアドレスの要求も、人質にされた透かしもありません。ツールはまず動き、その後であなたが判断できます。",
+    "value2Title": "あなたのドキュメントは、あなたのもの",
+    "value2Body": "転送中は暗号化され、処理中は隔離され、1時間以内に削除されます。モデルの学習に使われることは決してありません。",
+    "value3Title": "確認できる回答",
+    "value3Body": "AIのすべての回答は、根拠となるページを示します。出典を示せない場合、その回答は提供しません。",
+    "trustTitle": "信頼とプライバシー",
+    "trust1Title": "プライバシー",
+    "trust1Body": "サービス運営に必要な最小限の情報のみを収集し、決して販売しません。わかりやすい言葉で書かれたポリシーで、ダークパターンはありません。",
+    "trust2Title": "セキュリティ",
+    "trust2Body": "転送中はTLS 1.3、保存時はAES-256で暗号化。処理環境は隔離されたコンテナ内で、年次の第三者ペネトレーションテストも実施しています。",
+    "trust3Title": "GDPRと利用規約",
+    "trust3Body": "EU域内でのデータ保存、要請に応じたDPAの提供、デフォルトで1時間の保存期間、Businessプランではカスタム設定も可能です。",
+    "requestDpa": "DPAをリクエストする",
+    "readEngineeringNotes": "エンジニアリングノートを読む",
+    "hiringTitle": "静かで丁寧なものづくりをする仲間を募集しています。",
+    "hiringBody": "ヨーロッパを中心としたリモートファースト。インフラとデザインの分野で3つのポジションを募集中です。",
+    "hiringCta": "募集中のポジションを見る"
+  },
+  "contact": {
+    "supportTitle": "サポート",
+    "supportDetail": "help@clairaslate.com · 1営業日以内に返信",
+    "salesTitle": "営業・Businessプランについて",
+    "salesDetail": "sales@clairaslate.com · SSO、DPA、請求について",
+    "securityTitle": "セキュリティに関する報告",
+    "securityDetail": "security@clairaslate.com · PGP鍵はご要望に応じて提供",
+    "heroTitle": "担当者に直接お問い合わせください。",
+    "heroSubhead": "営業、セキュリティレビュー、請求、修正してほしいバグなど — すべて同じ少人数のチームに届きます。",
+    "errorFillFields": "お名前、メールアドレス、メッセージを入力してください。",
+    "errorInvalidEmail": "そのメールアドレスは正しくないようです。",
+    "sentTitle": "メッセージを送信しました",
+    "sentBody": "ありがとうございます、{name}様 — 実在のアドレスから、通常1営業日以内に返信いたします。",
+    "formTitle": "メッセージを送る",
+    "nameLabel": "お名前",
+    "emailLabel": "職場のメールアドレス",
+    "topicLabel": "ご用件は何ですか？",
+    "topicQuote": "Businessプランの見積もり",
+    "topicSecurity": "セキュリティレビュー / DPA",
+    "topicHelp": "ファイルに関するお困りごと",
+    "topicOther": "その他",
+    "messageLabel": "メッセージ",
+    "messagePlaceholder": "普段扱っているドキュメントについて、少し教えてください。",
+    "sendMessage": "メッセージを送信",
+    "noDripCampaigns": "実在のアドレスから返信します。自動配信メールや宣伝キャンペーンは一切ありません。"
+  },
+  "blog": {
+    "headline": "ドキュメントにまつわるノート。",
+    "subheadline": "Claira Slateをどう作っているか、そして世界一風変わったファイル形式について学んだこと。",
+    "readPost": "記事を読む",
+    "minRead": "{count}分で読めます",
+    "teamFallbackAuthor": "Claira Slateチーム",
+    "trySummarizing": "PDFを要約してみる",
+    "backToBlog": "ブログに戻る",
+    "keepReading": "続けて読む",
+    "categories": {
+      "All": "すべて",
+      "Product": "プロダクト",
+      "Engineering": "エンジニアリング",
+      "Guides": "ガイド",
+      "Company": "会社"
+    },
+    "posts": {
+      "the-pdf-turns-33-time-it-learned-to-read-itself": {
+        "title": "PDFが33歳に。ついに自分で読めるようになった。",
+        "excerpt": "どんなフォーマットもいずれは頭脳を持つ。誰も開きたがらなかったファイルに、それを組み込んだ経緯。"
+      },
+      "how-we-delete-your-files-and-prove-it": {
+        "title": "ファイルの削除方法 — そしてその証明",
+        "excerpt": "1時間の保持期限を掲げるのは簡単でも、実装するのは難しい。キュー、暗号鍵、監査ログの仕組みを解説。"
+      },
+      "merging-20-contracts-without-losing-the-order": {
+        "title": "20件の契約書を順序を保ったまま結合する",
+        "excerpt": "順序管理こそ誰もが間違えるポイント。400ページの結合を落ち着いて進める3つの習慣。"
+      },
+      "ocr-quality-what-actually-moves-the-needle": {
+        "title": "OCR品質:本当に差がつくポイント",
+        "excerpt": "解像度が与える影響は思ったより小さい。傾き補正のほうが重要。"
+      },
+      "why-we-priced-pro-at-5": {
+        "title": "Proを5ドルに設定した理由",
+        "excerpt": "価格設定はポジショニングだ。忘れやすい数字にしたかった。"
+      },
+      "a-field-guide-to-compressing-scans": {
+        "title": "スキャンを圧縮するための実践ガイド",
+        "excerpt": "いつダウンサンプリングし、いつ再エンコードし、いつファイルをそのままにするか。"
+      }
+    }
+  },
+  "billingShared": {
+    "checkoutError": "チェックアウトの開始中に問題が発生しました。",
+    "portalError": "請求ポータルを開けませんでした。",
+    "redirecting": "リダイレクト中…",
+    "opening": "開いています…",
+    "usageLimitTitle": "今月のAIアクション（{limit}回）をすべて使い切りました",
+    "usageLimitBody": "Proにアップグレードすると、毎月より多くのAIアクションに加え、ツールの無制限利用や大きなファイルにも対応できます。",
+    "upgradeToProCta": "Proにアップグレード",
+    "maybeLater": "後で"
   },
   "dashboard": {
     "home": "ホーム",
@@ -147,6 +625,264 @@
     "documentsThisMonth": "今月のドキュメント数",
     "aiActions": "AIアクション数",
     "storageUsed": "使用済みストレージ",
-    "timeSaved": "節約できた時間"
+    "timeSaved": "節約できた時間",
+    "upgradeToPro": "Proにアップグレード",
+    "available": "利用可能",
+    "expired": "期限切れ",
+    "home_": {
+      "quickToolMerge": "結合",
+      "quickToolCompress": "圧縮",
+      "quickToolSummarize": "要約",
+      "quickToolAskAi": "AIに質問",
+      "noteVsLastMonth": "6月比 +18%",
+      "noteUnlimitedPro": "Proなら無制限",
+      "noteEstimated": "今月の推定値",
+      "greeting": "こんにちは、{name}さん",
+      "newFile": "新しいファイル",
+      "quickTools": "クイックツール",
+      "recentActivity": "最近のアクティビティ",
+      "viewAll": "すべて見る",
+      "teamPromoTitle": "チームでのご利用をお考えですか？",
+      "teamPromoBody": "Businessプランなら、共有ワークスペース、SSO、監査ログが1ユーザーあたり$12で追加されます。",
+      "teamPromoCta": "チームを管理"
+    },
+    "history_": {
+      "title": "履歴",
+      "subtitle": "これまでに実行したすべてのジョブ。ファイルは1時間、記録は90日間保存されます。",
+      "searchPlaceholder": "ファイルを検索...",
+      "colFileName": "ファイル名",
+      "colTool": "ツール",
+      "colDate": "日付",
+      "colSize": "サイズ",
+      "colStatus": "ステータス",
+      "colActions": "操作",
+      "download": "ダウンロード",
+      "rerun": "再実行",
+      "delete": "削除",
+      "showing": "{total}件中{count}件を表示",
+      "emptyTitle": "まだファイルがありません",
+      "emptyBody": "その検索に一致するものがありません。フィルターをクリアするか、最初のツールを実行してください。",
+      "tryFirstTool": "最初のツールを試す",
+      "clearFilters": "フィルターをクリア",
+      "filterAll": "すべてのジョブ",
+      "filterMerged": "結合済み",
+      "filterCompressed": "圧縮済み",
+      "filterConverted": "変換済み",
+      "filterAiProcessed": "AI処理済み"
+    },
+    "billing_": {
+      "title": "請求",
+      "subtitle": "プランの変更、カード情報の更新、請求書のダウンロード。いつでも解約できます。",
+      "currentPlan": "現在のプラン",
+      "renews": "更新日 {date} ·",
+      "renewalPending": "更新日は未定 ·",
+      "freeLimits": "1日2回のAIアクション、25MBまでのファイル",
+      "paidLimits": "ツールとAIが無制限",
+      "manageSubscription": "サブスクリプションを管理",
+      "upgradePlan": "プランをアップグレード",
+      "aiUsageThisMonth": "今月のAI利用状況",
+      "unlimited": "無制限",
+      "actionsSuffix": "回",
+      "billingDetails": "請求情報",
+      "colDate": "日付",
+      "colDescription": "内容",
+      "colAmount": "金額",
+      "colInvoice": "請求書",
+      "noInvoices": "まだ請求書がありません。",
+      "freeNothingToBill": "無料プランをご利用中です — 請求はありません。",
+      "invoicesNote": "請求書はStripeにより自動生成され、メールで送信されます。",
+      "planFree": "無料",
+      "planPro": "Pro",
+      "planBusiness": "Business",
+      "unitForever": "永年無料",
+      "unitMonth": "/月",
+      "unitUserMonth": "/ユーザー/月"
+    },
+    "settings_": {
+      "title": "設定",
+      "subtitle": "プロフィール、初期設定、プライバシー管理。",
+      "profile": "プロフィール",
+      "changePhoto": "写真を変更",
+      "fullName": "氏名",
+      "email": "メールアドレス",
+      "defaultOcrLanguage": "デフォルトのOCR言語",
+      "saveChanges": "変更を保存",
+      "preferences": "環境設定",
+      "darkMode": "ダークモード",
+      "darkModeDesc": "システム設定ではなく、このスイッチに従います。",
+      "on": "オン",
+      "off": "オフ",
+      "keepFiles": "処理済みファイルを保存",
+      "keepFilesDesc": "Pro限定。オフの場合は1時間後に削除されます。",
+      "emailReceipts": "領収書メール",
+      "emailReceiptsDesc": "請求先住所宛に月次請求書を送付します。",
+      "productEmails": "製品に関するメール",
+      "productEmailsDesc": "おおよそ四半期に1通程度です。",
+      "dangerZone": "危険な操作",
+      "dangerZoneBody": "アカウントを削除すると、保存されているすべてのファイルと請求履歴が即座に削除されます。この操作は元に戻せません。",
+      "deleteAccount": "アカウントを削除"
+    },
+    "team_": {
+      "title": "チーム",
+      "subtitle": "Businessプラン · 10席中5席を使用中 · 1ユーザーあたり$12/月",
+      "inviteMember": "メンバーを招待",
+      "colMember": "メンバー",
+      "colEmail": "メールアドレス",
+      "colRole": "権限",
+      "colStatus": "ステータス",
+      "active": "有効",
+      "invited": "招待中",
+      "permissionsNote": "オーナーと管理者は招待できます。メンバーは自分のファイルのみ閲覧できます。",
+      "rolePermissions": "権限の詳細",
+      "teamBilling": "チームの請求",
+      "billingSummary": "5席 × $12 = $60/月 · 次回請求日は8月1日",
+      "manageBilling": "請求を管理",
+      "inviteModalTitle": "メンバーを招待",
+      "inviteModalBody": "招待されたメンバーには、7日間有効なメールリンクが送信されます。10席中6席目です。",
+      "emailAddress": "メールアドレス",
+      "role": "権限",
+      "roleMember": "メンバー — 自分のファイルのみ",
+      "roleAdmin": "管理者 — 招待と管理が可能",
+      "roleViewer": "閲覧者 — 読み取り専用アクセス",
+      "sendInvite": "招待を送信",
+      "seatsUsed": "使用中の席数",
+      "documentsTeam": "チームのドキュメント数",
+      "thisMonth": "今月",
+      "pendingInvites": "保留中の招待",
+      "expiresInDays": "{days}日後に期限切れ",
+      "sso": "SSO",
+      "ssoDetail": "Okta · 必須"
+    },
+    "files_": {
+      "title": "ファイル",
+      "subtitle": "Proでは、処理済みファイルを削除するまでクラウドストレージに保存します。",
+      "uploadFile": "ファイルをアップロード",
+      "dropHere": "ここにファイルをドロップ",
+      "upTo2gb": "Proなら2GBまで"
+    },
+    "usage_": {
+      "title": "AI利用状況",
+      "subtitle": "Proなら無制限 — 時間の使い方を把握できるよう表示しています。",
+      "actionsThisMonth": "今月のAIアクション · 今週は{count}回",
+      "byFeature": "機能別",
+      "limits": "利用上限",
+      "managePlan": "プランを管理",
+      "featureSummarize": "要約",
+      "featureChat": "何でも質問",
+      "featureOcr": "OCR",
+      "featureTranslate": "翻訳",
+      "limitAiActions": "AIアクション",
+      "limitPagesPerDoc": "ドキュメントあたりのページ数",
+      "limitFileSize": "ファイルサイズ",
+      "limitRetention": "保存期間"
+    }
+  },
+  "home": {
+    "aiTeaser": {
+      "badge": "AI搭載",
+      "headline": "あなたのPDFが、ついに理解された。",
+      "subhead": "Clairaがドキュメントを読み込むので、あなたが読む必要はありません。すべてのモデルは1時間後に削除されるファイル上で動作します。",
+      "cta": "AIを無料で試す"
+    },
+    "howItWorks": {
+      "title": "3ステップで完了。",
+      "step1Title": "PDFをアップロード",
+      "step1Desc": "デスクトップ、Drive、Dropboxからドラッグ。最大2GBまで。",
+      "step2Title": "ツールを選ぶかAIに聞く",
+      "step2Desc": "26のツールから選ぶ、または実行したい内容を入力するだけ。",
+      "step3Title": "すぐにダウンロード",
+      "step3Desc": "透かしなし、メール登録なし。ファイルは1時間後に削除されます。"
+    },
+    "pricingTeaser": {
+      "subhead": "すべてのツールは無料でお試しいただけます。利用量が増えたらアップグレード。",
+      "seeFullPricing": "料金プランをすべて見る"
+    },
+    "socialProof": {
+      "title": "多くのユーザーに信頼されています。",
+      "docsCaption": "件のドキュメントを処理済み、今も増加中",
+      "testimonial1Quote": "3つの別々のツールをClaira Slateに置き換えました。要約機能だけでもチームは週に半日分の時間を節約できています。",
+      "testimonial1Role": "オペレーション責任者、Northwind",
+      "testimonial2Quote": "とにかく使いやすい。アップロードすればそれで完了。アカウント登録も広告も、サブスクを売り込む仕掛けもありません。",
+      "testimonial2Role": "フリーランスデザイナー",
+      "testimonial3Quote": "200ページの契約書に質問して、根拠付きの回答が返ってくるのは、本当に新しい体験です。",
+      "testimonial3Role": "顧問弁護士、Harbor Legal",
+      "badgeGdpr": "GDPR準拠",
+      "badgeDeleted": "1時間後にファイルを削除",
+      "badgeNoAccount": "アカウント登録不要"
+    },
+    "finalCta": {
+      "title": "あなたの書類に、まっさらな一枚を。",
+      "cta": "無料で始める"
+    }
+  },
+  "splitTool": {
+    "addRange": "範囲を追加",
+    "bookmarksFoundInfo": "{count}件のブックマークが見つかりました",
+    "checkingBookmarks": "ブックマークを確認中…",
+    "chooseOption": "オプションを選択",
+    "compressedBadge": "圧縮済み",
+    "compressOutputLabel": "出力ファイルを圧縮",
+    "documentCategoryLabel": "書類のカテゴリー",
+    "downloadAllZip": "すべてZIPでダウンロード",
+    "estimatedTime": "残り約{time}",
+    "extractAllInfo": "{count}件のPDFが作成されます",
+    "fixedSplitInfo": "このPDFは{n}ページごと、{count}個のファイルに分割されます",
+    "maxSizePerFileLabel": "ファイルあたりの最大サイズ",
+    "mergedFileLabel": "結合ファイル",
+    "mergePagesLabel": "抽出したページを1つのPDFに結合",
+    "mergeRangesLabel": "すべての範囲を1つのPDFに結合",
+    "noBookmarksFound": "このPDFにブックマークは見つかりませんでした。",
+    "noChunksError": "分割する前に、少なくとも1つの範囲またはページを設定してください。",
+    "originalInfo": "元のファイル: {size} ・ {pages}ページ",
+    "pageFileLabel": "ページ{n}",
+    "pagesSelectedCount": "{count}ページ選択中",
+    "pagesToExtractLabel": "抽出するページ",
+    "pagesToExtractPlaceholder": "例: 1,3,5-8",
+    "pagesUnit": "ページ",
+    "previewSummary": "{pages}ページ → {files}ファイル",
+    "previewTitle": "分割プレビュー",
+    "processingPages": "{total}ページを処理中…",
+    "proFeatureNudge": "AIによるスマート分割はPro機能です。アップグレードすると、Claudeが最適な分割位置を見つけます。",
+    "rangeFileLabel": "ファイル{n}",
+    "rangeLabel": "範囲{n}：",
+    "removeRange": "範囲を削除",
+    "resultsTitle": "{count}件のファイルが準備完了",
+    "shortcutsHint": "Ctrl+Aですべて選択 ・ Shift+クリックで範囲選択 ・ Escで選択解除",
+    "sizeSplitInfo": "このPDFは{size}以下のファイルに分割されます",
+    "splitAgain": "もう一度分割",
+    "splitButton": "PDFを分割",
+    "splitIntoRangesOf": "次のページ数で分割:",
+    "toLabel": "〜ページ",
+    "upgradeToPro": "Proにアップグレード",
+    "tab": {
+      "range": "範囲",
+      "pages": "ページ",
+      "size": "サイズ",
+      "bookmarks": "ブックマーク",
+      "smart": "スマート"
+    },
+    "rangeSubMode": {
+      "custom": "カスタム",
+      "fixed": "固定"
+    },
+    "pagesSubMode": {
+      "extractAll": "すべてのページを抽出",
+      "select": "ページを選択"
+    },
+    "category": {
+      "invoices": "請求書・課金書類",
+      "contracts": "契約書・法的書類",
+      "bankStatements": "銀行明細・財務報告書",
+      "academic": "学術・教育資料",
+      "medical": "医療・健康記録",
+      "hr": "人事・従業員書類",
+      "insurance": "保険書類",
+      "shipping": "配送・物流書類",
+      "government": "行政・政府書式",
+      "scanned": "スキャン書類一式",
+      "marketing": "マーケティング・クリエイティブ資料",
+      "books": "書籍・読み物",
+      "custom": "カスタムプロンプト"
+    }
   }
 }

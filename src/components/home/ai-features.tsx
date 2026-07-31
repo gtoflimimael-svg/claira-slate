@@ -11,6 +11,7 @@ const FEATURES = [
 
 export function AiFeatures() {
   const t = useTranslations("ai");
+  const th = useTranslations("home.aiTeaser");
 
   return (
     <section id="ai" style={{ position: "relative", background: "var(--cs-ink)", color: "#fff", overflow: "hidden" }}>
@@ -22,13 +23,13 @@ export function AiFeatures() {
           data-spinborder
           style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 12, fontWeight: 600, letterSpacing: ".01em" }}
         >
-          Powered by AI
+          {th("badge")}
         </Reveal>
         <Reveal as="h2" style={{ margin: "22px 0 0", maxWidth: 760, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(32px,5vw,56px)", lineHeight: 1.04, letterSpacing: "-.038em", color: "#fff" }}>
-          Your PDF, finally understood.
+          {th("headline")}
         </Reveal>
         <p style={{ margin: "18px 0 0", maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "rgba(255,255,255,.62)" }}>
-          Claira reads the document so you don&apos;t have to. Every model runs on files that are deleted an hour later.
+          {th("subhead")}
         </p>
 
         <div style={{ marginTop: "clamp(40px,5vw,64px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(238px,1fr))", gap: 14 }}>
@@ -59,7 +60,7 @@ export function AiFeatures() {
             href="/ai"
             style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px", borderRadius: 10, background: "var(--cs-grad)", color: "#fff", fontSize: 15, fontWeight: 500, cursor: "pointer" }}
           >
-            Try AI free <span data-tip>&rarr;</span>
+            {th("cta")} <span data-tip>&rarr;</span>
           </Link>
         </div>
       </div>

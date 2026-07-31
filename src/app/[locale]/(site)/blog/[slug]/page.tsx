@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { POSTS } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
+
+function minReadCount(read: string): number {
+  return parseInt(read, 10) || 0;
+}
 
 type Block = { type: "p" | "h2" | "quote"; text: string };
 
@@ -66,18 +71,22 @@ export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = POSTS.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = POSTS.find((p) => p.slug === slug);
   if (!post) return {};
   return { title: `${post.title} — Claira Slate`, description: post.excerpt };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = POSTS.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const t = await getTranslations("blog");
+  const tc = await getTranslations("common");
+  const post = POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const author = AUTHORS[post.slug] ?? { name: "Claira Slate Team", initials: "CS" };
-  const body = ARTICLES[post.slug] ?? [{ type: "p" as const, text: post.excerpt }];
+  const author = AUTHORS[post.slug] ?? { name: t("teamFallbackAuthor"), initials: "CS" };
+  const body = ARTICLES[post.slug] ?? [{ type: "p" as const, text: t(`posts.${post.slug}.excerpt`) }];
   const morePosts = POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
@@ -85,10 +94,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <article style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(48px,6vw,88px) 24px 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/blog" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>
-            Blog
+            {tc("breadcrumb.blog")}
           </Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
-          <span style={{ color: "var(--cs-text)" }}>{post.cat}</span>
+          <span style={{ color: "var(--cs-text)" }}>{t(`categories.${post.cat}`)}</span>
         </div>
 
         <h1
@@ -101,7 +110,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             letterSpacing: "-.04em",
           }}
         >
-          {post.title}
+          {t(`posts.${post.slug}.title`)}
         </h1>
 
         <div
@@ -133,10 +142,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
           <div style={{ fontSize: 13 }}>
             <span style={{ fontWeight: 600 }}>{author.name}</span>
-            <span style={{ color: "var(--cs-text-2)" }}> &middot; {post.cat}</span>
+            <span style={{ color: "var(--cs-text-2)" }}> &middot; {t(`categories.${post.cat}`)}</span>
           </div>
           <div style={{ marginLeft: "auto", fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-            {post.date} &middot; {post.read}
+            {post.date} &middot; {t("minRead", { count: minReadCount(post.read) })}
           </div>
         </div>
 
@@ -186,14 +195,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         <div style={{ marginTop: 44, paddingTop: 28, borderTop: "1px solid var(--cs-line)", display: "flex", flexWrap: "wrap", gap: 10 }}>
           <Link href="/ai/summarize" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
-            Try summarizing a PDF
+            {t("trySummarizing")}
           </Link>
           <Link
             href="/blog"
             className="hover-border hover-text"
             style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
           >
-            Back to blog
+            {t("backToBlog")}
           </Link>
         </div>
       </article>
@@ -203,7 +212,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           as="h2"
           style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
         >
-          Keep reading
+          {t("keepReading")}
         </Reveal>
         <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(300px,100%),1fr))", gap: 14 }}>
           {morePosts.map((p) => (
@@ -224,13 +233,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
-                <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{p.cat}</span>
+                <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{t(`categories.${p.cat}`)}</span>
                 <span>{p.date}</span>
               </div>
               <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
-                {p.title}
+                {t(`posts.${p.slug}.title`)}
               </div>
-              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{p.read}</div>
+              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
             </Link>
           ))}
         </div>

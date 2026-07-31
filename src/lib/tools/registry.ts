@@ -1,5 +1,6 @@
 export type ToolTechnique = "pdf-lib" | "raster" | "office" | "stub";
 export type OutputKind = "pdf" | "zip" | "image" | "docx" | "xlsx" | "pptx";
+export type InputKind = "pdf" | "image" | "word" | "excel" | "ppt" | "html";
 
 export interface ToolField {
   name: string;
@@ -14,9 +15,24 @@ export interface ToolConfig {
   multi: boolean;
   outputKind: OutputKind;
   technique: ToolTechnique;
+  /** What kind of file this tool accepts as input. Defaults to "pdf". */
+  inputKind?: InputKind;
   fields?: ToolField[];
   /** Only set for tools outside the translated 26 — not part of the `tools` messages namespace. */
   fallback?: { name: string; desc: string };
+}
+
+const ACCEPT_BY_INPUT_KIND: Record<InputKind, string> = {
+  pdf: ".pdf,application/pdf",
+  image: ".jpg,.jpeg,.png,image/jpeg,image/png",
+  word: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  excel: ".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  ppt: ".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  html: ".html,.htm,text/html",
+};
+
+export function getAccept(config: ToolConfig): string {
+  return ACCEPT_BY_INPUT_KIND[config.inputKind ?? "pdf"];
 }
 
 export const TOOL_REGISTRY: ToolConfig[] = [
@@ -39,13 +55,13 @@ export const TOOL_REGISTRY: ToolConfig[] = [
   { slug: "pdf-to-excel", multi: false, outputKind: "xlsx", technique: "office" },
   { slug: "pdf-to-ppt", multi: false, outputKind: "pptx", technique: "office" },
   { slug: "pdf-to-jpg", multi: false, outputKind: "zip", technique: "raster" },
-  { slug: "jpg-to-pdf", multi: true, outputKind: "pdf", technique: "pdf-lib" },
-  { slug: "html-to-pdf", multi: false, outputKind: "pdf", technique: "office" },
-  { slug: "word-to-pdf", multi: false, outputKind: "pdf", technique: "office",
+  { slug: "jpg-to-pdf", multi: true, outputKind: "pdf", technique: "pdf-lib", inputKind: "image" },
+  { slug: "html-to-pdf", multi: false, outputKind: "pdf", technique: "office", inputKind: "html" },
+  { slug: "word-to-pdf", multi: false, outputKind: "pdf", technique: "office", inputKind: "word",
     fallback: { name: "Word to PDF", desc: "Convert a Word document to PDF." } },
-  { slug: "excel-to-pdf", multi: false, outputKind: "pdf", technique: "office",
+  { slug: "excel-to-pdf", multi: false, outputKind: "pdf", technique: "office", inputKind: "excel",
     fallback: { name: "Excel to PDF", desc: "Convert a spreadsheet to PDF." } },
-  { slug: "ppt-to-pdf", multi: false, outputKind: "pdf", technique: "office",
+  { slug: "ppt-to-pdf", multi: false, outputKind: "pdf", technique: "office", inputKind: "ppt",
     fallback: { name: "PowerPoint to PDF", desc: "Convert a presentation to PDF." } },
   { slug: "protect", multi: false, outputKind: "pdf", technique: "stub",
     fields: [{ name: "password", label: "Password", type: "password" }] },
@@ -83,4 +99,15 @@ const REGISTRY_BY_SLUG = new Map(TOOL_REGISTRY.map((t) => [t.slug, t]));
 
 export function getToolConfig(slug: string): ToolConfig | undefined {
   return REGISTRY_BY_SLUG.get(slug);
+}
+
+/** Picks `count` other tools to suggest next, in registry order, wrapping around. */
+export function getRelatedTools(slug: string, count = 4): ToolConfig[] {
+  const index = TOOL_REGISTRY.findIndex((t) => t.slug === slug);
+  if (index === -1) return TOOL_REGISTRY.slice(0, count);
+  const related: ToolConfig[] = [];
+  for (let i = 1; related.length < count && i < TOOL_REGISTRY.length; i++) {
+    related.push(TOOL_REGISTRY[(index + i) % TOOL_REGISTRY.length]);
+  }
+  return related;
 }

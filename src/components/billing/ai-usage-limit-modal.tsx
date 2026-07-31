@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { CheckoutButton } from "@/components/billing/checkout-button";
 
 export function AIUsageLimitModal({
@@ -12,6 +13,7 @@ export function AIUsageLimitModal({
   /** Monthly AI action limit on the user's current plan (for the message). */
   limit: number;
 }) {
+  const t = useTranslations("billingShared");
   if (!open) return null;
 
   return (
@@ -59,10 +61,10 @@ export function AIUsageLimitModal({
           </svg>
         </div>
         <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>
-          You&apos;ve used all {limit} AI actions this month
+          {t("usageLimitTitle", { limit })}
         </div>
         <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
-          Upgrade to Pro for more AI actions every month, plus unlimited tools and larger files.
+          {t("usageLimitBody")}
         </p>
         <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 9 }}>
           <CheckoutButton
@@ -70,14 +72,14 @@ export function AIUsageLimitModal({
             source="ai_usage_limit_modal"
             style={{ display: "block", width: "100%", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600 }}
           >
-            Upgrade to Pro &rarr;
+            {t("upgradeToProCta")} &rarr;
           </CheckoutButton>
           <button
             type="button"
             onClick={onClose}
             style={{ padding: 12, border: "none", borderRadius: 10, background: "transparent", color: "var(--cs-text-2)", fontSize: 13.5, fontWeight: 500, cursor: "pointer", fontFamily: "inherit" }}
           >
-            Maybe later
+            {t("maybeLater")}
           </button>
         </div>
       </div>

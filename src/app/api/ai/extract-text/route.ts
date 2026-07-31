@@ -13,17 +13,13 @@ export async function POST(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
-  }
-
   const formData = await request.formData();
   const file = formData.get("file");
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "Missing 'file' in form data." }, { status: 400 });
   }
 
-  const plan = await getUserPlan(user.id);
+  const plan = user ? await getUserPlan(user.id) : "free";
   const sizeCheck = checkFileSize({ size: file.size }, plan);
   if (!sizeCheck.allowed) {
     return NextResponse.json(

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { AIUsageLimitModal } from "@/components/billing/ai-usage-limit-modal";
 import { track } from "@/lib/analytics";
 
@@ -36,7 +36,8 @@ const secondaryButton: React.CSSProperties = {
 };
 
 export function ChatTool() {
-  const router = useRouter();
+  const t = useTranslations("aiTool.chat");
+  const tc = useTranslations("common");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [file, setFile] = useState<File | null>(null);
@@ -63,12 +64,8 @@ export function ChatTool() {
       const res = await fetch("/api/ai/extract-text", { method: "POST", body: formData });
       const data = await res.json();
 
-      if (res.status === 401) {
-        router.push("/login?redirect=/ai/chat");
-        return;
-      }
       if (!res.ok) {
-        setExtractError(data.error || "Couldn't read that PDF.");
+        setExtractError(data.error || t("extractError"));
         setFile(null);
         return;
       }
@@ -77,7 +74,7 @@ export function ChatTool() {
       setPages(data.pages);
       setMessages([]);
     } catch {
-      setExtractError("Couldn't reach the server. Try again.");
+      setExtractError(tc("couldntReachServer"));
       setFile(null);
     } finally {
       setExtracting(false);
@@ -101,10 +98,6 @@ export function ChatTool() {
       });
       const data = await res.json();
 
-      if (res.status === 401) {
-        router.push("/login?redirect=/ai/chat");
-        return;
-      }
       if (res.status === 429) {
         setLimit(data.limit ?? 5);
         setMessages((prev) => prev.slice(0, -1));
@@ -112,14 +105,14 @@ export function ChatTool() {
         return;
       }
       if (!res.ok) {
-        setMessages((prev) => [...prev, { role: "assistant", content: data.error || "Something went wrong." }]);
+        setMessages((prev) => [...prev, { role: "assistant", content: data.error || tc("error") }]);
         return;
       }
 
       setMessages((prev) => [...prev, { role: "assistant", content: data.answer, citations: data.citations }]);
       track("ai_feature_used", { feature: "chat", user_plan: data.plan ?? "free", tokens_used: data.tokensUsed ?? 0 });
     } catch {
-      setMessages((prev) => [...prev, { role: "assistant", content: "Couldn't reach the server. Try again." }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: tc("couldntReachServer") }]);
     } finally {
       setSending(false);
     }
@@ -158,19 +151,19 @@ export function ChatTool() {
             </svg>
           </div>
           <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 20, fontWeight: 600, letterSpacing: "-.025em", overflowWrap: "anywhere" }}>
-            {file ? file.name : "Drop a PDF to chat with it"}
+            {file ? file.name : t("dropHeading")}
           </div>
           <div style={{ maxWidth: 260, fontSize: 13.5, lineHeight: 1.5, color: "var(--cs-text-2)" }}>
-            {extracting ? "Reading your document…" : "Up to 300 pages"}
+            {extracting ? t("extractingSubtext") : t("idleSubtext")}
           </div>
           <input ref={inputRef} type="file" accept="application/pdf" style={{ display: "none" }} onChange={(e) => handleFile(e.target.files?.[0] ?? null)} />
           <button type="button" className="hover-text" style={primaryButton} disabled={extracting} onClick={() => inputRef.current?.click()}>
-            {extracting ? "Reading…" : "Select file"}
+            {extracting ? t("readingButton") : tc("selectFile")}
           </button>
         </div>
         <div style={{ border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", padding: 22, minHeight: 200 }}>
           <div style={{ fontSize: 13.5, color: extractError ? "var(--cs-bad)" : "var(--cs-text-2)", lineHeight: 1.6 }}>
-            {extractError || "Upload a PDF to start asking it questions."}
+            {extractError || t("emptyResult")}
           </div>
         </div>
       </>
@@ -182,7 +175,7 @@ export function ChatTool() {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "14px 18px", borderBottom: "1px solid var(--cs-line)" }}>
         <div style={{ fontSize: 13, fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{file?.name}</div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flex: "none" }}>
-          <span style={{ fontSize: 11.5, color: "var(--cs-text-2)" }}>{pages} pages</span>
+          <span style={{ fontSize: 11.5, color: "var(--cs-text-2)" }}>{tc("pagesCount", { count: pages ?? 0 })}</span>
           <button
             type="button"
             style={{ ...secondaryButton, padding: "6px 11px", fontSize: 12 }}
@@ -193,14 +186,14 @@ export function ChatTool() {
               if (inputRef.current) inputRef.current.value = "";
             }}
           >
-            New file
+            {t("newFile")}
           </button>
         </div>
       </div>
 
       <div style={{ flex: "1 1 auto", overflowY: "auto", padding: 18, display: "flex", flexDirection: "column", gap: 14 }}>
         {messages.length === 0 && (
-          <div style={{ fontSize: 13.5, color: "var(--cs-text-2)" }}>Ask anything about this document — answers are grounded only in its content.</div>
+          <div style={{ fontSize: 13.5, color: "var(--cs-text-2)" }}>{t("emptyChat")}</div>
         )}
         {messages.map((m, i) => (
           <div key={i} style={{ alignSelf: m.role === "user" ? "flex-end" : "flex-start", maxWidth: "80%" }}>
@@ -239,14 +232,14 @@ export function ChatTool() {
             )}
           </div>
         ))}
-        {sending && <div style={{ fontSize: 13, color: "var(--cs-text-2)" }}>Thinking…</div>}
+        {sending && <div style={{ fontSize: 13, color: "var(--cs-text-2)" }}>{t("thinking")}</div>}
       </div>
 
       <div style={{ display: "flex", gap: 8, padding: 14, borderTop: "1px solid var(--cs-line)" }}>
         <input
           className="cs-field"
           type="text"
-          placeholder="Ask a question about this document…"
+          placeholder={t("inputPlaceholder")}
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           onKeyDown={(e) => {
@@ -265,7 +258,7 @@ export function ChatTool() {
           }}
         />
         <button type="button" style={{ ...primaryButton, padding: "0 20px", opacity: sending || !question.trim() ? 0.6 : 1 }} disabled={sending || !question.trim()} onClick={handleSend}>
-          Send
+          {t("send")}
         </button>
       </div>
 

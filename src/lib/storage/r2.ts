@@ -37,3 +37,18 @@ export async function getSignedDownloadUrl(key: string, filename: string, ttlSec
 export async function deleteFromR2(key: string) {
   await getClient().send(new DeleteObjectCommand({ Bucket: BUCKET, Key: key }));
 }
+
+// The bucket has no CORS policy for browser fetch(), so the client can't read
+// object bytes directly from a presigned URL (only navigate to it, which is
+// how downloads still work). Used to stream bytes same-origin instead, e.g.
+// for client-side thumbnail rendering.
+export async function getObject(key: string): Promise<{ body: Uint8Array; contentType?: string } | null> {
+  try {
+    const res = await getClient().send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
+    const body = await res.Body?.transformToByteArray();
+    if (!body) return null;
+    return { body, contentType: res.ContentType };
+  } catch {
+    return null;
+  }
+}
