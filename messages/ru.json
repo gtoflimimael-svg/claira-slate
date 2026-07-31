@@ -973,5 +973,30 @@
     "shortcutDeselect": "Снять выделение",
     "shortcutUndo": "Отменить",
     "shortcutRedo": "Повторить"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "Страницы для извлечения",
+    "pagesToExtractPlaceholder": "напр. 1-3,5",
+    "pagesSelectedCount": "Выбрано страниц: {count}",
+    "selectAll": "Выбрать всё",
+    "clearAll": "Снять выделение",
+    "undo": "Отменить",
+    "redo": "Повторить",
+    "shortcutsHint": "Ctrl+A выбрать всё · Esc очистить · Ctrl+Z отменить · Enter извлечь",
+    "aiExtractHeading": "ИИ-извлечение",
+    "aiQueryPlaceholder": "напр. страницы со счетами",
+    "aiExtractButton": "Выбор ИИ",
+    "aiExtracting": "Анализ…",
+    "aiQuotaMessage": "Вы использовали все {limit} бесплатных ИИ-действий в этом месяце. Перейдите на Pro для большего.",
+    "upgrade": "Улучшить план",
+    "noPagesError": "Выберите хотя бы одну страницу для извлечения.",
+    "extractButton": "Извлечь страницы",
+    "resultHeadline": "Ваше извлечение готово!",
+    "downloadZip": "Скачать ZIP",
+    "extractAgain": "Извлечь ещё раз",
+    "mode": {
+      "single": "Один PDF",
+      "perPage": "Один PDF на страницу"
+    }
   }
 }

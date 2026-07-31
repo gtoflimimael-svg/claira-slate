@@ -973,5 +973,30 @@
     "shortcutDeselect": "Auswahl aufheben",
     "shortcutUndo": "Rückgängig",
     "shortcutRedo": "Wiederholen"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "Zu extrahierende Seiten",
+    "pagesToExtractPlaceholder": "z. B. 1-3,5",
+    "pagesSelectedCount": "{count} Seiten ausgewählt",
+    "selectAll": "Alle auswählen",
+    "clearAll": "Alle abwählen",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "shortcutsHint": "Strg+A alle auswählen · Esc leeren · Strg+Z rückgängig · Enter extrahieren",
+    "aiExtractHeading": "KI-Extraktion",
+    "aiQueryPlaceholder": "z. B. Seiten mit Rechnungen",
+    "aiExtractButton": "KI-Auswahl",
+    "aiExtracting": "Analysiere…",
+    "aiQuotaMessage": "Du hast alle {limit} kostenlosen KI-Aktionen diesen Monat aufgebraucht. Upgrade auf Pro für mehr.",
+    "upgrade": "Upgrade",
+    "noPagesError": "Wähle mindestens eine Seite zum Extrahieren aus.",
+    "extractButton": "Seiten extrahieren",
+    "resultHeadline": "Deine Extraktion ist bereit!",
+    "downloadZip": "ZIP herunterladen",
+    "extractAgain": "Erneut extrahieren",
+    "mode": {
+      "single": "Einzelnes PDF",
+      "perPage": "Ein PDF pro Seite"
+    }
   }
 }

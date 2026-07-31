@@ -973,5 +973,30 @@
     "shortcutDeselect": "Deseleziona",
     "shortcutUndo": "Annulla",
     "shortcutRedo": "Ripeti"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "Pagine da estrarre",
+    "pagesToExtractPlaceholder": "es. 1-3,5",
+    "pagesSelectedCount": "{count} pagine selezionate",
+    "selectAll": "Seleziona tutto",
+    "clearAll": "Deseleziona tutto",
+    "undo": "Annulla",
+    "redo": "Ripeti",
+    "shortcutsHint": "Ctrl+A seleziona tutto · Esc cancella · Ctrl+Z annulla · Invio estrai",
+    "aiExtractHeading": "Estrazione IA",
+    "aiQueryPlaceholder": "es. pagine con fatture",
+    "aiExtractButton": "Selezione IA",
+    "aiExtracting": "Analisi in corso…",
+    "aiQuotaMessage": "Hai usato tutte le {limit} azioni IA gratuite di questo mese. Passa a Pro per averne di più.",
+    "upgrade": "Passa a Pro",
+    "noPagesError": "Seleziona almeno una pagina da estrarre.",
+    "extractButton": "Estrai pagine",
+    "resultHeadline": "La tua estrazione è pronta!",
+    "downloadZip": "Scarica ZIP",
+    "extractAgain": "Estrai di nuovo",
+    "mode": {
+      "single": "PDF singolo",
+      "perPage": "Un PDF per pagina"
+    }
   }
 }

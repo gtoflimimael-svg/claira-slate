@@ -973,5 +973,30 @@
     "shortcutDeselect": "चयन हटाएं",
     "shortcutUndo": "पूर्ववत करें",
     "shortcutRedo": "फिर से करें"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "निकालने के लिए पृष्ठ",
+    "pagesToExtractPlaceholder": "जैसे 1-3,5",
+    "pagesSelectedCount": "{count} पृष्ठ चयनित",
+    "selectAll": "सभी चुनें",
+    "clearAll": "सभी साफ़ करें",
+    "undo": "पूर्ववत करें",
+    "redo": "फिर से करें",
+    "shortcutsHint": "Ctrl+A सभी चुनें · Esc साफ़ करें · Ctrl+Z पूर्ववत · Enter निकालें",
+    "aiExtractHeading": "AI निष्कर्षण",
+    "aiQueryPlaceholder": "जैसे चालान वाले पृष्ठ",
+    "aiExtractButton": "AI चयन",
+    "aiExtracting": "विश्लेषण हो रहा है…",
+    "aiQuotaMessage": "आपने इस महीने की सभी {limit} मुफ़्त AI कार्रवाइयाँ उपयोग कर ली हैं। अधिक के लिए Pro में अपग्रेड करें।",
+    "upgrade": "अपग्रेड करें",
+    "noPagesError": "निकालने के लिए कम से कम एक पृष्ठ चुनें।",
+    "extractButton": "पृष्ठ निकालें",
+    "resultHeadline": "आपका निष्कर्षण तैयार है!",
+    "downloadZip": "ZIP डाउनलोड करें",
+    "extractAgain": "फिर से निकालें",
+    "mode": {
+      "single": "एकल PDF",
+      "perPage": "प्रति पृष्ठ एक PDF"
+    }
   }
 }

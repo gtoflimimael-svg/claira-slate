@@ -973,5 +973,30 @@
     "shortcutDeselect": "선택 해제",
     "shortcutUndo": "실행 취소",
     "shortcutRedo": "다시 실행"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "추출할 페이지",
+    "pagesToExtractPlaceholder": "예: 1-3,5",
+    "pagesSelectedCount": "{count}페이지 선택됨",
+    "selectAll": "전체 선택",
+    "clearAll": "전체 해제",
+    "undo": "실행 취소",
+    "redo": "다시 실행",
+    "shortcutsHint": "Ctrl+A 전체 선택 · Esc 지우기 · Ctrl+Z 실행 취소 · Enter 추출",
+    "aiExtractHeading": "AI 추출",
+    "aiQueryPlaceholder": "예: 인보이스가 포함된 페이지",
+    "aiExtractButton": "AI 선택",
+    "aiExtracting": "분석 중…",
+    "aiQuotaMessage": "이번 달 무료 AI 작업 {limit}회를 모두 사용했습니다. 더 사용하려면 Pro로 업그레이드하세요.",
+    "upgrade": "업그레이드",
+    "noPagesError": "추출할 페이지를 하나 이상 선택하세요.",
+    "extractButton": "페이지 추출",
+    "resultHeadline": "추출이 완료되었습니다!",
+    "downloadZip": "ZIP 다운로드",
+    "extractAgain": "다시 추출",
+    "mode": {
+      "single": "단일 PDF",
+      "perPage": "페이지당 하나의 PDF"
+    }
   }
 }

@@ -973,5 +973,30 @@
     "shortcutDeselect": "取消选择",
     "shortcutUndo": "撤销",
     "shortcutRedo": "重做"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "要提取的页面",
+    "pagesToExtractPlaceholder": "例如 1-3,5",
+    "pagesSelectedCount": "已选择 {count} 页",
+    "selectAll": "全选",
+    "clearAll": "清除选择",
+    "undo": "撤销",
+    "redo": "重做",
+    "shortcutsHint": "Ctrl+A 全选 · Esc 清除 · Ctrl+Z 撤销 · Enter 提取",
+    "aiExtractHeading": "AI 提取",
+    "aiQueryPlaceholder": "例如 包含发票的页面",
+    "aiExtractButton": "AI 选择",
+    "aiExtracting": "分析中…",
+    "aiQuotaMessage": "您本月的 {limit} 次免费 AI 操作已用完。升级到 Pro 可获得更多次数。",
+    "upgrade": "升级",
+    "noPagesError": "请至少选择一页进行提取。",
+    "extractButton": "提取页面",
+    "resultHeadline": "您的提取已就绪！",
+    "downloadZip": "下载 ZIP",
+    "extractAgain": "再次提取",
+    "mode": {
+      "single": "单个 PDF",
+      "perPage": "每页一个 PDF"
+    }
   }
 }

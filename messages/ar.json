@@ -973,5 +973,30 @@
     "shortcutDeselect": "إلغاء التحديد",
     "shortcutUndo": "تراجع",
     "shortcutRedo": "إعادة"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "الصفحات المراد استخراجها",
+    "pagesToExtractPlaceholder": "مثال: 1-3,5",
+    "pagesSelectedCount": "تم تحديد {count} صفحة",
+    "selectAll": "تحديد الكل",
+    "clearAll": "إلغاء تحديد الكل",
+    "undo": "تراجع",
+    "redo": "إعادة",
+    "shortcutsHint": "Ctrl+A تحديد الكل · Esc مسح · Ctrl+Z تراجع · Enter استخراج",
+    "aiExtractHeading": "استخراج بالذكاء الاصطناعي",
+    "aiQueryPlaceholder": "مثال: الصفحات التي تحتوي على فواتير",
+    "aiExtractButton": "تحديد بالذكاء الاصطناعي",
+    "aiExtracting": "جارٍ التحليل…",
+    "aiQuotaMessage": "لقد استخدمت جميع إجراءات الذكاء الاصطناعي المجانية ({limit}) لهذا الشهر. قم بالترقية إلى Pro للمزيد.",
+    "upgrade": "ترقية",
+    "noPagesError": "حدد صفحة واحدة على الأقل للاستخراج.",
+    "extractButton": "استخراج الصفحات",
+    "resultHeadline": "استخراجك جاهز!",
+    "downloadZip": "تنزيل ZIP",
+    "extractAgain": "استخراج مرة أخرى",
+    "mode": {
+      "single": "PDF واحد",
+      "perPage": "PDF واحد لكل صفحة"
+    }
   }
 }

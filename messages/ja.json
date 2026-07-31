@@ -973,5 +973,30 @@
     "shortcutDeselect": "選択解除",
     "shortcutUndo": "元に戻す",
     "shortcutRedo": "やり直す"
+  },
+  "extractTool": {
+    "pagesToExtractLabel": "抽出するページ",
+    "pagesToExtractPlaceholder": "例: 1-3,5",
+    "pagesSelectedCount": "{count}ページを選択中",
+    "selectAll": "すべて選択",
+    "clearAll": "すべて解除",
+    "undo": "元に戻す",
+    "redo": "やり直す",
+    "shortcutsHint": "Ctrl+Aで全選択・Escでクリア・Ctrl+Zで元に戻す・Enterで抽出",
+    "aiExtractHeading": "AI抽出",
+    "aiQueryPlaceholder": "例: 請求書を含むページ",
+    "aiExtractButton": "AI選択",
+    "aiExtracting": "分析中…",
+    "aiQuotaMessage": "今月の無料AIアクション{limit}回をすべて使用しました。Proにアップグレードするとさらに使えます。",
+    "upgrade": "アップグレード",
+    "noPagesError": "抽出するページを少なくとも1つ選択してください。",
+    "extractButton": "ページを抽出",
+    "resultHeadline": "抽出の準備ができました！",
+    "downloadZip": "ZIPをダウンロード",
+    "extractAgain": "再度抽出",
+    "mode": {
+      "single": "単一のPDF",
+      "perPage": "ページごとに1つのPDF"
+    }
   }
 }
