@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { TOOL_REGISTRY, getToolConfig, getRelatedTools } from "@/lib/tools/registry";
 import { GenericTool } from "@/components/tools/generic-tool";
 import { SplitTool } from "@/components/tools/split/split-tool";
+import { OrganizeTool } from "@/components/tools/organize/organize-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -67,10 +68,11 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   }));
 
   const isSplit = tool === "split";
+  const isOrganize = tool === "reorder";
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
-      <div style={{ maxWidth: isSplit ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
+      <div style={{ maxWidth: isSplit || isOrganize ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
@@ -97,7 +99,15 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
         </div>
 
         <div style={{ marginTop: 36 }}>
-          {isSplit ? <SplitTool /> : <div className="tool-workspace"><GenericTool config={config} /></div>}
+          {isSplit ? (
+            <SplitTool />
+          ) : isOrganize ? (
+            <OrganizeTool />
+          ) : (
+            <div className="tool-workspace">
+              <GenericTool config={config} />
+            </div>
+          )}
         </div>
 
         {relatedWithIcons.length > 0 && (
