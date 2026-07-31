@@ -1029,5 +1029,52 @@
     "resultPageCount": "Dein PDF hat jetzt {count} Seiten",
     "sizeComparison": "Vorher: {before} → Nachher: {after} ({pct}%)",
     "deleteMore": "Weitere Seiten löschen"
+  },
+  "compressTool": {
+    "filesHeading": "{count} Dateien",
+    "resetAll": "Alles zurücksetzen",
+    "removeFile": "Datei entfernen",
+    "addMoreFiles": "Weitere Dateien hinzufügen",
+    "levelHeading": "Komprimierungsstufe",
+    "customQualityLabel": "Benutzerdefinierte Qualität",
+    "qualityEstimate": "Qualität: {quality}% · Gesch. Reduzierung: ~{reduction}%",
+    "customProNudge": "Benutzerdefinierte Qualität ist eine Pro-Funktion — wähle unten eine Voreinstellung oder upgrade, um sie selbst fein abzustimmen.",
+    "customProError": "Benutzerdefinierte Qualität erfordert einen Pro-Plan.",
+    "upgrade": "Upgrade",
+    "aiOptimize": "KI-Optimierung",
+    "aiAnalyzing": "Analysiere…",
+    "aiQuotaMessage": "Du hast alle {limit} kostenlosen KI-Aktionen diesen Monat aufgebraucht. Upgrade auf Pro für mehr.",
+    "estimatedHeading": "Geschätztes Ergebnis",
+    "original": "Original",
+    "estimated": "Geschätzt",
+    "reduction": "Reduzierung",
+    "qualityPreviewHeading": "Qualitätsvorschau",
+    "afterCompression": "Nach der Komprimierung",
+    "compressButton": "PDF komprimieren",
+    "compressingCount": "Komprimiere {count} Dateien…",
+    "resultHeadline": "Komprimierung abgeschlossen!",
+    "downloadZip": "Alle als ZIP herunterladen",
+    "beforeAfter": "Vorher: {before} → Nachher: {after}",
+    "savedPct": "{saved} gespart ({pct}% kleiner)",
+    "totalSaved": "Gesamt: {before} → {after} ({pct}% kleiner)",
+    "compressAgain": "Weitere komprimieren",
+    "multiUploadHint": "Du kannst mehrere PDF-Dateien gleichzeitig auswählen",
+    "level": {
+      "extreme": {
+        "name": "Extreme Komprimierung",
+        "desc": "Geringere Qualität, hohe Komprimierung. Ideal zum Teilen im Web und per E-Mail.",
+        "reduction": "Erwartete Reduzierung: ~80% kleiner"
+      },
+      "recommended": {
+        "name": "Empfohlene Komprimierung",
+        "desc": "Gute Qualität, gute Komprimierung. Ideal für die meisten Anwendungsfälle.",
+        "reduction": "Erwartete Reduzierung: ~50% kleiner"
+      },
+      "less": {
+        "name": "Geringe Komprimierung",
+        "desc": "Hohe Qualität, geringere Komprimierung. Ideal zum Drucken und Archivieren.",
+        "reduction": "Erwartete Reduzierung: ~20% kleiner"
+      }
+    }
   }
 }

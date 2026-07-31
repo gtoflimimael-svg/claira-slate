@@ -1029,5 +1029,52 @@
     "resultPageCount": "您的 PDF 现在有 {count} 页",
     "sizeComparison": "之前: {before} → 之后: {after} ({pct}%)",
     "deleteMore": "删除更多页面"
+  },
+  "compressTool": {
+    "filesHeading": "{count} 个文件",
+    "resetAll": "全部重置",
+    "removeFile": "移除文件",
+    "addMoreFiles": "添加更多文件",
+    "levelHeading": "压缩级别",
+    "customQualityLabel": "自定义质量",
+    "qualityEstimate": "质量：{quality}% · 预计缩减：约{reduction}%",
+    "customProNudge": "自定义质量是高级（Pro）功能 — 请在下方选择预设级别，或升级后自行调整。",
+    "customProError": "自定义质量需要 Pro 套餐。",
+    "upgrade": "升级",
+    "aiOptimize": "AI 优化",
+    "aiAnalyzing": "分析中…",
+    "aiQuotaMessage": "您本月的 {limit} 次免费 AI 操作已用完。升级到 Pro 可获得更多次数。",
+    "estimatedHeading": "预计结果",
+    "original": "原始大小",
+    "estimated": "预计大小",
+    "reduction": "缩减比例",
+    "qualityPreviewHeading": "质量预览",
+    "afterCompression": "压缩后",
+    "compressButton": "压缩 PDF",
+    "compressingCount": "正在压缩 {count} 个文件…",
+    "resultHeadline": "压缩完成！",
+    "downloadZip": "全部下载为 ZIP",
+    "beforeAfter": "压缩前：{before} → 压缩后：{after}",
+    "savedPct": "节省 {saved}（缩小 {pct}%）",
+    "totalSaved": "总计：{before} → {after}（缩小 {pct}%）",
+    "compressAgain": "压缩另一个文件",
+    "multiUploadHint": "您可以一次选择多个 PDF 文件",
+    "level": {
+      "extreme": {
+        "name": "极限压缩",
+        "desc": "质量较低，压缩率高。适合网页分享和电子邮件。",
+        "reduction": "预计缩减：约 80%"
+      },
+      "recommended": {
+        "name": "推荐压缩",
+        "desc": "质量与压缩率兼顾。适合大多数使用场景。",
+        "reduction": "预计缩减：约 50%"
+      },
+      "less": {
+        "name": "轻度压缩",
+        "desc": "质量高，压缩率低。适合打印和存档。",
+        "reduction": "预计缩减：约 20%"
+      }
+    }
   }
 }

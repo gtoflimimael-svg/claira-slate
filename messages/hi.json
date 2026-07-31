@@ -1029,5 +1029,52 @@
     "resultPageCount": "आपकी PDF में अब {count} पृष्ठ हैं",
     "sizeComparison": "पहले: {before} → बाद में: {after} ({pct}%)",
     "deleteMore": "और पृष्ठ हटाएं"
+  },
+  "compressTool": {
+    "filesHeading": "{count} फ़ाइलें",
+    "resetAll": "सभी रीसेट करें",
+    "removeFile": "फ़ाइल हटाएं",
+    "addMoreFiles": "और फ़ाइलें जोड़ें",
+    "levelHeading": "संपीड़न स्तर",
+    "customQualityLabel": "कस्टम गुणवत्ता",
+    "qualityEstimate": "गुणवत्ता: {quality}% · अनुमानित कमी: ~{reduction}%",
+    "customProNudge": "कस्टम गुणवत्ता एक Pro सुविधा है — नीचे कोई प्रीसेट स्तर चुनें, या इसे स्वयं समायोजित करने के लिए अपग्रेड करें।",
+    "customProError": "कस्टम गुणवत्ता के लिए Pro योजना आवश्यक है।",
+    "upgrade": "अपग्रेड करें",
+    "aiOptimize": "AI ऑप्टिमाइज़",
+    "aiAnalyzing": "विश्लेषण हो रहा है…",
+    "aiQuotaMessage": "आपने इस महीने की सभी {limit} मुफ़्त AI कार्रवाइयाँ उपयोग कर ली हैं। अधिक के लिए Pro में अपग्रेड करें।",
+    "estimatedHeading": "अनुमानित परिणाम",
+    "original": "मूल",
+    "estimated": "अनुमानित",
+    "reduction": "कमी",
+    "qualityPreviewHeading": "गुणवत्ता पूर्वावलोकन",
+    "afterCompression": "संपीड़न के बाद",
+    "compressButton": "PDF संपीड़ित करें",
+    "compressingCount": "{count} फ़ाइलें संपीड़ित हो रही हैं…",
+    "resultHeadline": "संपीड़न पूर्ण!",
+    "downloadZip": "सभी को ZIP के रूप में डाउनलोड करें",
+    "beforeAfter": "पहले: {before} → बाद में: {after}",
+    "savedPct": "{saved} बचाए गए ({pct}% छोटा)",
+    "totalSaved": "कुल: {before} → {after} ({pct}% छोटा)",
+    "compressAgain": "एक और संपीड़ित करें",
+    "multiUploadHint": "आप एक साथ कई PDF फ़ाइलें चुन सकते हैं",
+    "level": {
+      "extreme": {
+        "name": "अत्यधिक संपीड़न",
+        "desc": "कम गुणवत्ता, उच्च संपीड़न। वेब शेयरिंग और ईमेल के लिए सर्वोत्तम।",
+        "reduction": "अपेक्षित कमी: ~80% छोटा"
+      },
+      "recommended": {
+        "name": "अनुशंसित संपीड़न",
+        "desc": "अच्छी गुणवत्ता, अच्छा संपीड़न। अधिकांश उपयोगों के लिए सर्वोत्तम।",
+        "reduction": "अपेक्षित कमी: ~50% छोटा"
+      },
+      "less": {
+        "name": "कम संपीड़न",
+        "desc": "उच्च गुणवत्ता, कम संपीड़न। प्रिंटिंग और संग्रहण के लिए सर्वोत्तम।",
+        "reduction": "अपेक्षित कमी: ~20% छोटा"
+      }
+    }
   }
 }

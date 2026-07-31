@@ -1029,5 +1029,52 @@
     "resultPageCount": "Теперь в вашем PDF {count} страниц",
     "sizeComparison": "До: {before} → После: {after} ({pct}%)",
     "deleteMore": "Удалить ещё страницы"
+  },
+  "compressTool": {
+    "filesHeading": "Файлов: {count}",
+    "resetAll": "Сбросить всё",
+    "removeFile": "Удалить файл",
+    "addMoreFiles": "Добавить ещё файлы",
+    "levelHeading": "Уровень сжатия",
+    "customQualityLabel": "Своё качество",
+    "qualityEstimate": "Качество: {quality}% · Прим. уменьшение: ~{reduction}%",
+    "customProNudge": "Своё качество — функция Pro. Выберите готовый уровень ниже или перейдите на Pro, чтобы настроить его самостоятельно.",
+    "customProError": "Своё качество доступно только в плане Pro.",
+    "upgrade": "Улучшить план",
+    "aiOptimize": "ИИ-оптимизация",
+    "aiAnalyzing": "Анализ…",
+    "aiQuotaMessage": "Вы использовали все {limit} бесплатных ИИ-действий в этом месяце. Перейдите на Pro для большего.",
+    "estimatedHeading": "Ожидаемый результат",
+    "original": "Оригинал",
+    "estimated": "Ожидается",
+    "reduction": "Уменьшение",
+    "qualityPreviewHeading": "Предпросмотр качества",
+    "afterCompression": "После сжатия",
+    "compressButton": "Сжать PDF",
+    "compressingCount": "Сжатие файлов: {count}…",
+    "resultHeadline": "Сжатие завершено!",
+    "downloadZip": "Скачать всё в ZIP",
+    "beforeAfter": "До: {before} → После: {after}",
+    "savedPct": "Сэкономлено {saved} (меньше на {pct}%)",
+    "totalSaved": "Итого: {before} → {after} (меньше на {pct}%)",
+    "compressAgain": "Сжать ещё один",
+    "multiUploadHint": "Можно выбрать сразу несколько PDF-файлов",
+    "level": {
+      "extreme": {
+        "name": "Экстремальное сжатие",
+        "desc": "Ниже качество, выше сжатие. Подходит для веба и электронной почты.",
+        "reduction": "Ожидаемое уменьшение: ~80%"
+      },
+      "recommended": {
+        "name": "Рекомендуемое сжатие",
+        "desc": "Хорошее качество, хорошее сжатие. Подходит для большинства случаев.",
+        "reduction": "Ожидаемое уменьшение: ~50%"
+      },
+      "less": {
+        "name": "Слабое сжатие",
+        "desc": "Высокое качество, слабое сжатие. Подходит для печати и архивации.",
+        "reduction": "Ожидаемое уменьшение: ~20%"
+      }
+    }
   }
 }

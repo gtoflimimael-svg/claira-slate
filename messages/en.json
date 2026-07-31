@@ -1029,5 +1029,52 @@
     "resultPageCount": "Your PDF now has {count} pages",
     "sizeComparison": "Before: {before} → After: {after} ({pct}%)",
     "deleteMore": "Delete more pages"
+  },
+  "compressTool": {
+    "filesHeading": "{count} files",
+    "resetAll": "Reset all",
+    "removeFile": "Remove file",
+    "addMoreFiles": "Add more files",
+    "levelHeading": "Compression level",
+    "customQualityLabel": "Custom quality",
+    "qualityEstimate": "Quality: {quality}% · Est. reduction: ~{reduction}%",
+    "customProNudge": "Custom quality is a Pro feature — pick a preset level below, or upgrade to fine-tune it yourself.",
+    "customProError": "Custom quality requires a Pro plan.",
+    "upgrade": "Upgrade",
+    "aiOptimize": "AI Optimize",
+    "aiAnalyzing": "Analyzing…",
+    "aiQuotaMessage": "You've used all {limit} free AI actions this month. Upgrade to Pro for more.",
+    "estimatedHeading": "Estimated result",
+    "original": "Original",
+    "estimated": "Estimated",
+    "reduction": "Reduction",
+    "qualityPreviewHeading": "Quality preview",
+    "afterCompression": "After compression",
+    "compressButton": "Compress PDF",
+    "compressingCount": "Compressing {count} files…",
+    "resultHeadline": "Compression complete!",
+    "downloadZip": "Download all as ZIP",
+    "beforeAfter": "Before: {before} → After: {after}",
+    "savedPct": "Saved {saved} ({pct}% smaller)",
+    "totalSaved": "Total: {before} → {after} ({pct}% smaller)",
+    "compressAgain": "Compress another",
+    "multiUploadHint": "You can select multiple PDF files at once",
+    "level": {
+      "extreme": {
+        "name": "Extreme compression",
+        "desc": "Less quality, high compression. Best for web sharing, email.",
+        "reduction": "Expected reduction: ~80% smaller"
+      },
+      "recommended": {
+        "name": "Recommended compression",
+        "desc": "Good quality, good compression. Best for most use cases.",
+        "reduction": "Expected reduction: ~50% smaller"
+      },
+      "less": {
+        "name": "Less compression",
+        "desc": "High quality, less compression. Best for printing, archiving.",
+        "reduction": "Expected reduction: ~20% smaller"
+      }
+    }
   }
 }

@@ -1029,5 +1029,52 @@
     "resultPageCount": "PDFは現在{count}ページです",
     "sizeComparison": "変更前: {before} → 変更後: {after} ({pct}%)",
     "deleteMore": "さらにページを削除"
+  },
+  "compressTool": {
+    "filesHeading": "{count}件のファイル",
+    "resetAll": "すべてリセット",
+    "removeFile": "ファイルを削除",
+    "addMoreFiles": "さらにファイルを追加",
+    "levelHeading": "圧縮レベル",
+    "customQualityLabel": "カスタム品質",
+    "qualityEstimate": "品質: {quality}% · 推定削減率: ~{reduction}%",
+    "customProNudge": "カスタム品質はProの機能です — 下のプリセットレベルを選ぶか、Proにアップグレードして自分で調整してください。",
+    "customProError": "カスタム品質にはProプランが必要です。",
+    "upgrade": "アップグレード",
+    "aiOptimize": "AI最適化",
+    "aiAnalyzing": "分析中…",
+    "aiQuotaMessage": "今月の無料AIアクション{limit}回をすべて使用しました。Proにアップグレードするとさらに使えます。",
+    "estimatedHeading": "推定結果",
+    "original": "元のサイズ",
+    "estimated": "推定サイズ",
+    "reduction": "削減率",
+    "qualityPreviewHeading": "品質プレビュー",
+    "afterCompression": "圧縮後",
+    "compressButton": "PDFを圧縮",
+    "compressingCount": "{count}件のファイルを圧縮中…",
+    "resultHeadline": "圧縮完了！",
+    "downloadZip": "すべてZIPでダウンロード",
+    "beforeAfter": "圧縮前: {before} → 圧縮後: {after}",
+    "savedPct": "{saved}削減（{pct}%小さく）",
+    "totalSaved": "合計: {before} → {after}（{pct}%小さく）",
+    "compressAgain": "別のファイルを圧縮",
+    "multiUploadHint": "複数のPDFファイルを一度に選択できます",
+    "level": {
+      "extreme": {
+        "name": "極限圧縮",
+        "desc": "品質は低めですが高圧縮。ウェブ共有やメールに最適。",
+        "reduction": "予想削減率: 約80%小さく"
+      },
+      "recommended": {
+        "name": "推奨圧縮",
+        "desc": "良好な品質と圧縮のバランス。ほとんどの用途に最適。",
+        "reduction": "予想削減率: 約50%小さく"
+      },
+      "less": {
+        "name": "低圧縮",
+        "desc": "高品質で圧縮は控えめ。印刷や保存に最適。",
+        "reduction": "予想削減率: 約20%小さく"
+      }
+    }
   }
 }

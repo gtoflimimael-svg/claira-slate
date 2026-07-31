@@ -1029,5 +1029,52 @@
     "resultPageCount": "يحتوي ملف PDF الآن على {count} صفحة",
     "sizeComparison": "قبل: {before} ← بعد: {after} ({pct}%)",
     "deleteMore": "حذف المزيد من الصفحات"
+  },
+  "compressTool": {
+    "filesHeading": "{count} ملفات",
+    "resetAll": "إعادة تعيين الكل",
+    "removeFile": "إزالة الملف",
+    "addMoreFiles": "إضافة ملفات أخرى",
+    "levelHeading": "مستوى الضغط",
+    "customQualityLabel": "جودة مخصصة",
+    "qualityEstimate": "الجودة: {quality}% · التخفيض المقدر: ~{reduction}%",
+    "customProNudge": "الجودة المخصصة ميزة Pro — اختر مستوى جاهزًا أدناه، أو قم بالترقية لضبطها بنفسك.",
+    "customProError": "الجودة المخصصة تتطلب خطة Pro.",
+    "upgrade": "ترقية",
+    "aiOptimize": "تحسين بالذكاء الاصطناعي",
+    "aiAnalyzing": "جارٍ التحليل…",
+    "aiQuotaMessage": "لقد استخدمت جميع إجراءات الذكاء الاصطناعي المجانية ({limit}) لهذا الشهر. قم بالترقية إلى Pro للمزيد.",
+    "estimatedHeading": "النتيجة المتوقعة",
+    "original": "الأصلي",
+    "estimated": "المتوقع",
+    "reduction": "التخفيض",
+    "qualityPreviewHeading": "معاينة الجودة",
+    "afterCompression": "بعد الضغط",
+    "compressButton": "ضغط PDF",
+    "compressingCount": "جارٍ ضغط {count} ملفات…",
+    "resultHeadline": "اكتمل الضغط!",
+    "downloadZip": "تنزيل الكل كملف ZIP",
+    "beforeAfter": "قبل: {before} ← بعد: {after}",
+    "savedPct": "تم توفير {saved} (أصغر بنسبة {pct}%)",
+    "totalSaved": "الإجمالي: {before} ← {after} (أصغر بنسبة {pct}%)",
+    "compressAgain": "ضغط ملف آخر",
+    "multiUploadHint": "يمكنك اختيار عدة ملفات PDF في آنٍ واحد",
+    "level": {
+      "extreme": {
+        "name": "ضغط شديد",
+        "desc": "جودة أقل، ضغط عالٍ. الأنسب للمشاركة عبر الويب والبريد الإلكتروني.",
+        "reduction": "التخفيض المتوقع: ~80% أصغر"
+      },
+      "recommended": {
+        "name": "ضغط موصى به",
+        "desc": "جودة جيدة، ضغط جيد. الأنسب لمعظم الاستخدامات.",
+        "reduction": "التخفيض المتوقع: ~50% أصغر"
+      },
+      "less": {
+        "name": "ضغط أقل",
+        "desc": "جودة عالية، ضغط أقل. الأنسب للطباعة والأرشفة.",
+        "reduction": "التخفيض المتوقع: ~20% أصغر"
+      }
+    }
   }
 }

@@ -1029,5 +1029,52 @@
     "resultPageCount": "이제 PDF에 {count}페이지가 있습니다",
     "sizeComparison": "이전: {before} → 이후: {after} ({pct}%)",
     "deleteMore": "페이지 더 삭제"
+  },
+  "compressTool": {
+    "filesHeading": "파일 {count}개",
+    "resetAll": "전체 초기화",
+    "removeFile": "파일 제거",
+    "addMoreFiles": "파일 더 추가",
+    "levelHeading": "압축 수준",
+    "customQualityLabel": "사용자 지정 품질",
+    "qualityEstimate": "품질: {quality}% · 예상 절감률: ~{reduction}%",
+    "customProNudge": "사용자 지정 품질은 Pro 기능입니다 — 아래에서 프리셋 수준을 선택하거나 Pro로 업그레이드하여 직접 조정하세요.",
+    "customProError": "사용자 지정 품질은 Pro 요금제가 필요합니다.",
+    "upgrade": "업그레이드",
+    "aiOptimize": "AI 최적화",
+    "aiAnalyzing": "분석 중…",
+    "aiQuotaMessage": "이번 달 무료 AI 작업 {limit}회를 모두 사용했습니다. 더 사용하려면 Pro로 업그레이드하세요.",
+    "estimatedHeading": "예상 결과",
+    "original": "원본",
+    "estimated": "예상",
+    "reduction": "절감률",
+    "qualityPreviewHeading": "품질 미리보기",
+    "afterCompression": "압축 후",
+    "compressButton": "PDF 압축",
+    "compressingCount": "{count}개 파일 압축 중…",
+    "resultHeadline": "압축 완료!",
+    "downloadZip": "전체 ZIP으로 다운로드",
+    "beforeAfter": "이전: {before} → 이후: {after}",
+    "savedPct": "{saved} 절약 ({pct}% 축소)",
+    "totalSaved": "합계: {before} → {after} ({pct}% 축소)",
+    "compressAgain": "다른 파일 압축",
+    "multiUploadHint": "여러 PDF 파일을 한 번에 선택할 수 있습니다",
+    "level": {
+      "extreme": {
+        "name": "초강력 압축",
+        "desc": "품질은 낮지만 높은 압축률. 웹 공유 및 이메일에 최적.",
+        "reduction": "예상 절감률: 약 80% 축소"
+      },
+      "recommended": {
+        "name": "권장 압축",
+        "desc": "좋은 품질과 좋은 압축률. 대부분의 용도에 최적.",
+        "reduction": "예상 절감률: 약 50% 축소"
+      },
+      "less": {
+        "name": "약한 압축",
+        "desc": "높은 품질, 낮은 압축률. 인쇄 및 보관에 최적.",
+        "reduction": "예상 절감률: 약 20% 축소"
+      }
+    }
   }
 }

@@ -1029,5 +1029,52 @@
     "resultPageCount": "Seu PDF agora tem {count} páginas",
     "sizeComparison": "Antes: {before} → Depois: {after} ({pct}%)",
     "deleteMore": "Excluir mais páginas"
+  },
+  "compressTool": {
+    "filesHeading": "{count} arquivos",
+    "resetAll": "Redefinir tudo",
+    "removeFile": "Remover arquivo",
+    "addMoreFiles": "Adicionar mais arquivos",
+    "levelHeading": "Nível de compressão",
+    "customQualityLabel": "Qualidade personalizada",
+    "qualityEstimate": "Qualidade: {quality}% · Redução est.: ~{reduction}%",
+    "customProNudge": "Qualidade personalizada é um recurso Pro — escolha um nível predefinido abaixo ou faça upgrade para ajustá-la você mesmo.",
+    "customProError": "A qualidade personalizada requer um plano Pro.",
+    "upgrade": "Fazer upgrade",
+    "aiOptimize": "Otimização com IA",
+    "aiAnalyzing": "Analisando…",
+    "aiQuotaMessage": "Você usou todas as {limit} ações de IA gratuitas deste mês. Faça upgrade para o Pro para mais.",
+    "estimatedHeading": "Resultado estimado",
+    "original": "Original",
+    "estimated": "Estimado",
+    "reduction": "Redução",
+    "qualityPreviewHeading": "Prévia de qualidade",
+    "afterCompression": "Após a compressão",
+    "compressButton": "Comprimir PDF",
+    "compressingCount": "Comprimindo {count} arquivos…",
+    "resultHeadline": "Compressão concluída!",
+    "downloadZip": "Baixar tudo como ZIP",
+    "beforeAfter": "Antes: {before} → Depois: {after}",
+    "savedPct": "{saved} economizados ({pct}% menor)",
+    "totalSaved": "Total: {before} → {after} ({pct}% menor)",
+    "compressAgain": "Comprimir outro",
+    "multiUploadHint": "Você pode selecionar vários arquivos PDF de uma vez",
+    "level": {
+      "extreme": {
+        "name": "Compressão extrema",
+        "desc": "Menos qualidade, alta compressão. Ideal para compartilhar na web e por e-mail.",
+        "reduction": "Redução esperada: ~80% menor"
+      },
+      "recommended": {
+        "name": "Compressão recomendada",
+        "desc": "Boa qualidade, boa compressão. Ideal para a maioria dos casos.",
+        "reduction": "Redução esperada: ~50% menor"
+      },
+      "less": {
+        "name": "Menos compressão",
+        "desc": "Alta qualidade, menos compressão. Ideal para impressão e arquivamento.",
+        "reduction": "Redução esperada: ~20% menor"
+      }
+    }
   }
 }
