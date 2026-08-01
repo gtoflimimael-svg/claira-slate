@@ -14,6 +14,9 @@ import { RepairTool } from "@/components/tools/repair/repair-tool";
 import { OptimizeTool } from "@/components/tools/optimize/optimize-tool";
 import { FlattenTool } from "@/components/tools/flatten/flatten-tool";
 import { GrayscaleTool } from "@/components/tools/grayscale/grayscale-tool";
+import { PdfToWordTool } from "@/components/tools/pdf-to-word/pdf-to-word-tool";
+import { PdfToExcelTool } from "@/components/tools/pdf-to-excel/pdf-to-excel-tool";
+import { PdfToPptTool } from "@/components/tools/pdf-to-ppt/pdf-to-ppt-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -85,7 +88,11 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isOptimize = tool === "optimize";
   const isFlatten = tool === "flatten";
   const isGrayscale = tool === "grayscale";
-  const usesWideLayout = isSplit || isOrganize || isRotate || isExtract || isDelete || isCompress || isRepair || isOptimize || isFlatten || isGrayscale;
+  const isPdfToWord = tool === "pdf-to-word";
+  const isPdfToExcel = tool === "pdf-to-excel";
+  const isPdfToPpt = tool === "pdf-to-ppt";
+  const usesWideLayout =
+    isSplit || isOrganize || isRotate || isExtract || isDelete || isCompress || isRepair || isOptimize || isFlatten || isGrayscale || isPdfToWord || isPdfToExcel || isPdfToPpt;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
@@ -136,6 +143,12 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             <FlattenTool />
           ) : isGrayscale ? (
             <GrayscaleTool />
+          ) : isPdfToWord ? (
+            <PdfToWordTool />
+          ) : isPdfToExcel ? (
+            <PdfToExcelTool />
+          ) : isPdfToPpt ? (
+            <PdfToPptTool />
           ) : (
             <div className="tool-workspace">
               <GenericTool config={config} />

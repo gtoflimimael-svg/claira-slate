@@ -222,7 +222,8 @@
     "resultPlaceholder": "您的文件将显示在这里",
     "pasteHint": "或按 Ctrl+V 粘贴PDF文件",
     "contactSupport": "联系支持",
-    "loginNudge": "创建免费账户以保存文件并访问历史记录"
+    "loginNudge": "创建免费账户以保存文件并访问历史记录",
+    "conversionQualityTip": "提示：转换质量取决于 PDF 的结构——基于文本的 PDF 比扫描图像转换得更加准确。"
   },
   "ai": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "温暖的复古效果"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "转换模式",
+    "mode": {
+      "flowing": {
+        "name": "流式文本",
+        "desc": "将内容重新排列为可编辑的段落"
+      },
+      "exact": {
+        "name": "精确布局",
+        "desc": "保留与原始 PDF 相近的换行方式"
+      }
+    },
+    "optionsHeading": "选项",
+    "preserveFormattingLabel": "保留格式",
+    "convertTablesLabel": "转换表格",
+    "embedImagesLabel": "嵌入图片",
+    "ocrLabel": "对扫描页面使用 OCR",
+    "languageHint": "文档语言",
+    "language": {
+      "auto": "自动检测",
+      "en": "英语",
+      "fr": "法语",
+      "es": "西班牙语",
+      "de": "德语",
+      "ar": "阿拉伯语",
+      "pt": "葡萄牙语",
+      "it": "意大利语",
+      "ru": "俄语",
+      "ja": "日语",
+      "ko": "韩语",
+      "zh": "中文",
+      "hi": "印地语"
+    },
+    "infoBanner": "对基于文本的 PDF 效果最佳。扫描文档可能需要 OCR 才能获得准确结果。",
+    "pagesConverted": "已转换页数：{count}",
+    "imagesExtracted": "已提取图片数：{count}",
+    "openHint": "在 Word 或兼容的编辑器中打开文件。",
+    "convertButton": "转换为 Word",
+    "resultHeadline": "PDF 已转换为 Word",
+    "processAnother": "转换另一个文件"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "提取模式",
+    "mode": {
+      "auto": {
+        "name": "检测表格",
+        "desc": "自动查找并提取表格结构"
+      },
+      "all-rows": {
+        "name": "所有文本按行排列",
+        "desc": "将每一行文本放入独立的一行"
+      }
+    },
+    "optionsHeading": "选项",
+    "oneSheetPerPageLabel": "每页一个工作表",
+    "preserveBordersLabel": "保留单元格边框",
+    "autoFormatLabel": "自动格式化数字和日期",
+    "includeImagesLabel": "包含图片",
+    "worksBestWith": "对已包含真实表格的 PDF（发票、报告、导出为 PDF 的电子表格）效果最佳。",
+    "scannedWarning": "扫描版 PDF 没有可提取的表格数据。",
+    "runOcrFirst": "先运行 OCR",
+    "tablesFound": "找到的表格：共 {pages} 页中 {count} 个",
+    "rowsExtracted": "已提取行数：{count}",
+    "imagesEmbedded": "已嵌入图片数：{count}",
+    "openHint": "在 Excel 或兼容的电子表格应用中打开文件。",
+    "convertButton": "转换为 Excel",
+    "resultHeadline": "PDF 已转换为 Excel",
+    "processAnother": "转换另一个文件"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "幻灯片布局",
+    "layout": {
+      "widescreen": {
+        "name": "宽屏 (16:9)",
+        "desc": "现代演示文稿的标准比例"
+      },
+      "standard": {
+        "name": "标准 (4:3)",
+        "desc": "经典幻灯片比例"
+      }
+    },
+    "optionsHeading": "选项",
+    "includeImagesLabel": "包含图片",
+    "includeTablesLabel": "包含表格",
+    "addSlideNumbersLabel": "添加幻灯片编号",
+    "infoBanner": "PDF 的每一页都会变成一张幻灯片，文本会转换为可编辑的占位符。",
+    "slidesCreated": "已创建幻灯片数：{count}",
+    "imagesEmbedded": "已嵌入图片数：{count}",
+    "openHint": "在 PowerPoint 或兼容的编辑器中打开文件。",
+    "convertButton": "转换为 PowerPoint",
+    "resultHeadline": "PDF 已转换为 PowerPoint",
+    "processAnother": "转换另一个文件"
   }
 }

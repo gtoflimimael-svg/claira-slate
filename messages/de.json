@@ -619,7 +619,8 @@
     "resultPlaceholder": "Ihre Datei erscheint hier",
     "pasteHint": "Oder drücken Sie Strg+V, um eine PDF-Datei einzufügen",
     "contactSupport": "Support kontaktieren",
-    "loginNudge": "Erstellen Sie ein kostenloses Konto, um Ihre Dateien zu speichern und auf Ihren Verlauf zuzugreifen"
+    "loginNudge": "Erstellen Sie ein kostenloses Konto, um Ihre Dateien zu speichern und auf Ihren Verlauf zuzugreifen",
+    "conversionQualityTip": "Tipp: Die Konvertierungsqualität hängt von der Struktur des PDFs ab – textbasierte PDFs werden weitaus genauer konvertiert als gescannte Bilder."
   },
   "aiTool": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "Warmer Vintage-Look"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "Konvertierungsmodus",
+    "mode": {
+      "flowing": {
+        "name": "Fließtext",
+        "desc": "Ordnet den Inhalt in bearbeitbare Absätze neu an"
+      },
+      "exact": {
+        "name": "Exaktes Layout",
+        "desc": "Behält Zeilenumbrüche nahe am Original-PDF bei"
+      }
+    },
+    "optionsHeading": "Optionen",
+    "preserveFormattingLabel": "Formatierung beibehalten",
+    "convertTablesLabel": "Tabellen konvertieren",
+    "embedImagesLabel": "Bilder einbetten",
+    "ocrLabel": "OCR für gescannte Seiten",
+    "languageHint": "Dokumentsprache",
+    "language": {
+      "auto": "Automatisch erkennen",
+      "en": "Englisch",
+      "fr": "Französisch",
+      "es": "Spanisch",
+      "de": "Deutsch",
+      "ar": "Arabisch",
+      "pt": "Portugiesisch",
+      "it": "Italienisch",
+      "ru": "Russisch",
+      "ja": "Japanisch",
+      "ko": "Koreanisch",
+      "zh": "Chinesisch",
+      "hi": "Hindi"
+    },
+    "infoBanner": "Funktioniert am besten mit textbasierten PDFs. Gescannte Dokumente benötigen für genaue Ergebnisse möglicherweise OCR.",
+    "pagesConverted": "Konvertierte Seiten: {count}",
+    "imagesExtracted": "Extrahierte Bilder: {count}",
+    "openHint": "Öffnen Sie die Datei in Word oder einem kompatiblen Editor.",
+    "convertButton": "In Word konvertieren",
+    "resultHeadline": "PDF in Word konvertiert",
+    "processAnother": "Weitere Datei konvertieren"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "Extraktionsmodus",
+    "mode": {
+      "auto": {
+        "name": "Tabellen erkennen",
+        "desc": "Findet und extrahiert Tabellenstrukturen automatisch"
+      },
+      "all-rows": {
+        "name": "Gesamter Text als Zeilen",
+        "desc": "Setzt jede Textzeile in eine eigene Zeile"
+      }
+    },
+    "optionsHeading": "Optionen",
+    "oneSheetPerPageLabel": "Ein Blatt pro Seite",
+    "preserveBordersLabel": "Zellenrahmen beibehalten",
+    "autoFormatLabel": "Zahlen und Daten automatisch formatieren",
+    "includeImagesLabel": "Bilder einbeziehen",
+    "worksBestWith": "Funktioniert am besten mit PDFs, die bereits echte Tabellen enthalten (Rechnungen, Berichte, als PDF exportierte Tabellenblätter).",
+    "scannedWarning": "Gescannte PDFs enthalten keine extrahierbaren Tabellendaten.",
+    "runOcrFirst": "Zuerst OCR ausführen",
+    "tablesFound": "Gefundene Tabellen: {count} auf {pages} Seiten",
+    "rowsExtracted": "Extrahierte Zeilen: {count}",
+    "imagesEmbedded": "Eingebettete Bilder: {count}",
+    "openHint": "Öffnen Sie die Datei in Excel oder einer kompatiblen Tabellenkalkulation.",
+    "convertButton": "In Excel konvertieren",
+    "resultHeadline": "PDF in Excel konvertiert",
+    "processAnother": "Weitere Datei konvertieren"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "Folienformat",
+    "layout": {
+      "widescreen": {
+        "name": "Breitbild (16:9)",
+        "desc": "Standard für moderne Präsentationen"
+      },
+      "standard": {
+        "name": "Standard (4:3)",
+        "desc": "Klassisches Folienformat"
+      }
+    },
+    "optionsHeading": "Optionen",
+    "includeImagesLabel": "Bilder einbeziehen",
+    "includeTablesLabel": "Tabellen einbeziehen",
+    "addSlideNumbersLabel": "Foliennummern hinzufügen",
+    "infoBanner": "Jede PDF-Seite wird zu einer Folie, wobei Text in bearbeitbare Platzhalter umgewandelt wird.",
+    "slidesCreated": "Erstellte Folien: {count}",
+    "imagesEmbedded": "Eingebettete Bilder: {count}",
+    "openHint": "Öffnen Sie die Datei in PowerPoint oder einem kompatiblen Editor.",
+    "convertButton": "In PowerPoint konvertieren",
+    "resultHeadline": "PDF in PowerPoint konvertiert",
+    "processAnother": "Weitere Datei konvertieren"
   }
 }

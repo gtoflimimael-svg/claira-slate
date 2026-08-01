@@ -619,7 +619,8 @@
     "resultPlaceholder": "سيظهر ملفك هنا",
     "pasteHint": "أو اضغط Ctrl+V للصق ملف PDF",
     "contactSupport": "التواصل مع الدعم",
-    "loginNudge": "أنشئ حسابًا مجانيًا لحفظ ملفاتك والوصول إلى سجلك"
+    "loginNudge": "أنشئ حسابًا مجانيًا لحفظ ملفاتك والوصول إلى سجلك",
+    "conversionQualityTip": "نصيحة: تعتمد جودة التحويل على بنية ملف PDF — تُحوَّل ملفات PDF النصية بدقة أكبر بكثير من الصور الممسوحة ضوئيًا."
   },
   "aiTool": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "مظهر عتيق دافئ"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "وضع التحويل",
+    "mode": {
+      "flowing": {
+        "name": "نص متدفق",
+        "desc": "يعيد ترتيب المحتوى في فقرات قابلة للتحرير"
+      },
+      "exact": {
+        "name": "تخطيط مطابق",
+        "desc": "يحافظ على فواصل الأسطر قريبة من ملف PDF الأصلي"
+      }
+    },
+    "optionsHeading": "خيارات",
+    "preserveFormattingLabel": "الحفاظ على التنسيق",
+    "convertTablesLabel": "تحويل الجداول",
+    "embedImagesLabel": "تضمين الصور",
+    "ocrLabel": "التعرف الضوئي على الحروف (OCR) للصفحات الممسوحة ضوئيًا",
+    "languageHint": "لغة المستند",
+    "language": {
+      "auto": "اكتشاف تلقائي",
+      "en": "الإنجليزية",
+      "fr": "الفرنسية",
+      "es": "الإسبانية",
+      "de": "الألمانية",
+      "ar": "العربية",
+      "pt": "البرتغالية",
+      "it": "الإيطالية",
+      "ru": "الروسية",
+      "ja": "اليابانية",
+      "ko": "الكورية",
+      "zh": "الصينية",
+      "hi": "الهندية"
+    },
+    "infoBanner": "يعمل بشكل أفضل مع ملفات PDF النصية. قد تحتاج المستندات الممسوحة ضوئيًا إلى OCR للحصول على نتائج دقيقة.",
+    "pagesConverted": "الصفحات المحوَّلة: {count}",
+    "imagesExtracted": "الصور المستخرجة: {count}",
+    "openHint": "افتح الملف في Word أو أي محرر متوافق.",
+    "convertButton": "التحويل إلى Word",
+    "resultHeadline": "تم تحويل PDF إلى Word",
+    "processAnother": "تحويل ملف آخر"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "وضع الاستخراج",
+    "mode": {
+      "auto": {
+        "name": "اكتشاف الجداول",
+        "desc": "يعثر على هياكل الجداول ويستخرجها تلقائيًا"
+      },
+      "all-rows": {
+        "name": "كل النص كصفوف",
+        "desc": "يضع كل سطر نص في صف خاص به"
+      }
+    },
+    "optionsHeading": "خيارات",
+    "oneSheetPerPageLabel": "ورقة واحدة لكل صفحة",
+    "preserveBordersLabel": "الحفاظ على حدود الخلايا",
+    "autoFormatLabel": "تنسيق الأرقام والتواريخ تلقائيًا",
+    "includeImagesLabel": "تضمين الصور",
+    "worksBestWith": "يعمل بشكل أفضل مع ملفات PDF التي تحتوي بالفعل على جداول حقيقية (فواتير، تقارير، جداول بيانات مصدَّرة إلى PDF).",
+    "scannedWarning": "ملفات PDF الممسوحة ضوئيًا لا تحتوي على بيانات جداول قابلة للاستخراج.",
+    "runOcrFirst": "تشغيل OCR أولاً",
+    "tablesFound": "الجداول الموجودة: {count} عبر {pages} صفحة",
+    "rowsExtracted": "الصفوف المستخرجة: {count}",
+    "imagesEmbedded": "الصور المضمَّنة: {count}",
+    "openHint": "افتح الملف في Excel أو أي تطبيق جداول بيانات متوافق.",
+    "convertButton": "التحويل إلى Excel",
+    "resultHeadline": "تم تحويل PDF إلى Excel",
+    "processAnother": "تحويل ملف آخر"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "تخطيط الشرائح",
+    "layout": {
+      "widescreen": {
+        "name": "شاشة عريضة (16:9)",
+        "desc": "المعيار للعروض التقديمية الحديثة"
+      },
+      "standard": {
+        "name": "قياسي (4:3)",
+        "desc": "نسب الشرائح الكلاسيكية"
+      }
+    },
+    "optionsHeading": "خيارات",
+    "includeImagesLabel": "تضمين الصور",
+    "includeTablesLabel": "تضمين الجداول",
+    "addSlideNumbersLabel": "إضافة أرقام الشرائح",
+    "infoBanner": "تتحول كل صفحة من ملف PDF إلى شريحة واحدة، مع تحويل النص إلى عناصر نائبة قابلة للتحرير.",
+    "slidesCreated": "الشرائح المُنشأة: {count}",
+    "imagesEmbedded": "الصور المضمَّنة: {count}",
+    "openHint": "افتح الملف في PowerPoint أو أي محرر متوافق.",
+    "convertButton": "التحويل إلى PowerPoint",
+    "resultHeadline": "تم تحويل PDF إلى PowerPoint",
+    "processAnother": "تحويل ملف آخر"
   }
 }

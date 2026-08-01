@@ -222,7 +222,8 @@
     "resultPlaceholder": "여기에 파일이 표시됩니다",
     "pasteHint": "또는 Ctrl+V를 눌러 PDF 파일 붙여넣기",
     "contactSupport": "지원팀에 문의",
-    "loginNudge": "무료 계정을 만들어 파일을 저장하고 기록에 액세스하세요"
+    "loginNudge": "무료 계정을 만들어 파일을 저장하고 기록에 액세스하세요",
+    "conversionQualityTip": "팁: 변환 품질은 PDF의 구조에 따라 달라집니다. 텍스트 기반 PDF는 스캔한 이미지보다 훨씬 더 정확하게 변환됩니다."
   },
   "ai": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "따뜻한 빈티지 느낌"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "변환 모드",
+    "mode": {
+      "flowing": {
+        "name": "흐르는 텍스트",
+        "desc": "내용을 편집 가능한 단락으로 재구성합니다"
+      },
+      "exact": {
+        "name": "정확한 레이아웃",
+        "desc": "원본 PDF와 유사하게 줄바꿈을 유지합니다"
+      }
+    },
+    "optionsHeading": "옵션",
+    "preserveFormattingLabel": "서식 유지",
+    "convertTablesLabel": "표 변환",
+    "embedImagesLabel": "이미지 삽입",
+    "ocrLabel": "스캔한 페이지에 OCR 사용",
+    "languageHint": "문서 언어",
+    "language": {
+      "auto": "자동 감지",
+      "en": "영어",
+      "fr": "프랑스어",
+      "es": "스페인어",
+      "de": "독일어",
+      "ar": "아랍어",
+      "pt": "포르투갈어",
+      "it": "이탈리아어",
+      "ru": "러시아어",
+      "ja": "일본어",
+      "ko": "한국어",
+      "zh": "중국어",
+      "hi": "힌디어"
+    },
+    "infoBanner": "텍스트 기반 PDF에서 가장 잘 작동합니다. 스캔한 문서는 정확한 결과를 위해 OCR이 필요할 수 있습니다.",
+    "pagesConverted": "변환된 페이지: {count}개",
+    "imagesExtracted": "추출된 이미지: {count}개",
+    "openHint": "Word 또는 호환 편집기에서 파일을 여세요.",
+    "convertButton": "Word로 변환",
+    "resultHeadline": "PDF가 Word로 변환되었습니다",
+    "processAnother": "다른 파일 변환"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "추출 모드",
+    "mode": {
+      "auto": {
+        "name": "표 감지",
+        "desc": "표 구조를 자동으로 찾아 추출합니다"
+      },
+      "all-rows": {
+        "name": "모든 텍스트를 행으로",
+        "desc": "각 텍스트 줄을 별도의 행에 배치합니다"
+      }
+    },
+    "optionsHeading": "옵션",
+    "oneSheetPerPageLabel": "페이지당 하나의 시트",
+    "preserveBordersLabel": "셀 테두리 유지",
+    "autoFormatLabel": "숫자와 날짜 자동 서식 지정",
+    "includeImagesLabel": "이미지 포함",
+    "worksBestWith": "실제 표가 이미 포함된 PDF(청구서, 보고서, PDF로 내보낸 스프레드시트 등)에서 가장 잘 작동합니다.",
+    "scannedWarning": "스캔한 PDF에는 추출 가능한 표 데이터가 없습니다.",
+    "runOcrFirst": "먼저 OCR 실행",
+    "tablesFound": "찾은 표: {pages}페이지 중 {count}개",
+    "rowsExtracted": "추출된 행: {count}개",
+    "imagesEmbedded": "삽입된 이미지: {count}개",
+    "openHint": "Excel 또는 호환 스프레드시트 앱에서 파일을 여세요.",
+    "convertButton": "Excel로 변환",
+    "resultHeadline": "PDF가 Excel로 변환되었습니다",
+    "processAnother": "다른 파일 변환"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "슬라이드 레이아웃",
+    "layout": {
+      "widescreen": {
+        "name": "와이드스크린 (16:9)",
+        "desc": "최신 프레젠테이션의 표준"
+      },
+      "standard": {
+        "name": "표준 (4:3)",
+        "desc": "전통적인 슬라이드 비율"
+      }
+    },
+    "optionsHeading": "옵션",
+    "includeImagesLabel": "이미지 포함",
+    "includeTablesLabel": "표 포함",
+    "addSlideNumbersLabel": "슬라이드 번호 추가",
+    "infoBanner": "PDF의 각 페이지가 하나의 슬라이드가 되며 텍스트는 편집 가능한 개체 틀로 변환됩니다.",
+    "slidesCreated": "생성된 슬라이드: {count}개",
+    "imagesEmbedded": "삽입된 이미지: {count}개",
+    "openHint": "PowerPoint 또는 호환 편집기에서 파일을 여세요.",
+    "convertButton": "PowerPoint로 변환",
+    "resultHeadline": "PDF가 PowerPoint로 변환되었습니다",
+    "processAnother": "다른 파일 변환"
   }
 }

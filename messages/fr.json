@@ -619,7 +619,8 @@
     "resultPlaceholder": "Votre fichier apparaîtra ici",
     "pasteHint": "Ou appuyez sur Ctrl+V pour coller un fichier PDF",
     "contactSupport": "Contacter le support",
-    "loginNudge": "Créez un compte gratuit pour sauvegarder vos fichiers et accéder à l'historique"
+    "loginNudge": "Créez un compte gratuit pour sauvegarder vos fichiers et accéder à l'historique",
+    "conversionQualityTip": "Astuce : la qualité de la conversion dépend de la structure du PDF — les PDF contenant du texte se convertissent bien plus fidèlement que les images numérisées."
   },
   "aiTool": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "Look vintage chaleureux"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "Mode de conversion",
+    "mode": {
+      "flowing": {
+        "name": "Texte fluide",
+        "desc": "Réorganise le contenu en paragraphes modifiables"
+      },
+      "exact": {
+        "name": "Mise en page exacte",
+        "desc": "Conserve les sauts de ligne proches du PDF d'origine"
+      }
+    },
+    "optionsHeading": "Options",
+    "preserveFormattingLabel": "Conserver la mise en forme",
+    "convertTablesLabel": "Convertir les tableaux",
+    "embedImagesLabel": "Intégrer les images",
+    "ocrLabel": "OCR pour les pages numérisées",
+    "languageHint": "Langue du document",
+    "language": {
+      "auto": "Détection automatique",
+      "en": "Anglais",
+      "fr": "Français",
+      "es": "Espagnol",
+      "de": "Allemand",
+      "ar": "Arabe",
+      "pt": "Portugais",
+      "it": "Italien",
+      "ru": "Russe",
+      "ja": "Japonais",
+      "ko": "Coréen",
+      "zh": "Chinois",
+      "hi": "Hindi"
+    },
+    "infoBanner": "Fonctionne mieux avec les PDF contenant du texte. Les documents numérisés peuvent nécessiter l'OCR pour un résultat fidèle.",
+    "pagesConverted": "Pages converties : {count}",
+    "imagesExtracted": "Images extraites : {count}",
+    "openHint": "Ouvrez le fichier dans Word ou un éditeur compatible.",
+    "convertButton": "Convertir en Word",
+    "resultHeadline": "PDF converti en Word",
+    "processAnother": "Convertir un autre fichier"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "Mode d'extraction",
+    "mode": {
+      "auto": {
+        "name": "Détecter les tableaux",
+        "desc": "Trouve et extrait automatiquement les structures de tableaux"
+      },
+      "all-rows": {
+        "name": "Tout le texte en lignes",
+        "desc": "Place chaque ligne de texte dans sa propre rangée"
+      }
+    },
+    "optionsHeading": "Options",
+    "oneSheetPerPageLabel": "Une feuille par page",
+    "preserveBordersLabel": "Conserver les bordures des cellules",
+    "autoFormatLabel": "Formater automatiquement les nombres et les dates",
+    "includeImagesLabel": "Inclure les images",
+    "worksBestWith": "Fonctionne mieux avec les PDF contenant déjà de vrais tableaux (factures, rapports, tableurs exportés en PDF).",
+    "scannedWarning": "Les PDF numérisés ne contiennent aucune donnée de tableau extractible.",
+    "runOcrFirst": "Lancer l'OCR d'abord",
+    "tablesFound": "Tableaux trouvés : {count} sur {pages} pages",
+    "rowsExtracted": "Lignes extraites : {count}",
+    "imagesEmbedded": "Images intégrées : {count}",
+    "openHint": "Ouvrez le fichier dans Excel ou un tableur compatible.",
+    "convertButton": "Convertir en Excel",
+    "resultHeadline": "PDF converti en Excel",
+    "processAnother": "Convertir un autre fichier"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "Format des diapositives",
+    "layout": {
+      "widescreen": {
+        "name": "Panoramique (16:9)",
+        "desc": "Standard pour les présentations modernes"
+      },
+      "standard": {
+        "name": "Standard (4:3)",
+        "desc": "Proportions classiques des diapositives"
+      }
+    },
+    "optionsHeading": "Options",
+    "includeImagesLabel": "Inclure les images",
+    "includeTablesLabel": "Inclure les tableaux",
+    "addSlideNumbersLabel": "Ajouter les numéros de diapositive",
+    "infoBanner": "Chaque page du PDF devient une diapositive, avec le texte transformé en zones modifiables.",
+    "slidesCreated": "Diapositives créées : {count}",
+    "imagesEmbedded": "Images intégrées : {count}",
+    "openHint": "Ouvrez le fichier dans PowerPoint ou un éditeur compatible.",
+    "convertButton": "Convertir en PowerPoint",
+    "resultHeadline": "PDF converti en PowerPoint",
+    "processAnother": "Convertir un autre fichier"
   }
 }

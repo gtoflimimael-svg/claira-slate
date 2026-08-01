@@ -222,7 +222,8 @@
     "resultPlaceholder": "Your file will appear here",
     "pasteHint": "Or press Ctrl+V to paste a PDF file",
     "contactSupport": "Contact support",
-    "loginNudge": "Create a free account to save your files and access your history"
+    "loginNudge": "Create a free account to save your files and access your history",
+    "conversionQualityTip": "Tip: conversion quality depends on the PDF's structure — text-based PDFs convert far more accurately than scanned images."
   },
   "ai": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "Warm vintage look"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "Conversion mode",
+    "mode": {
+      "flowing": {
+        "name": "Flowing text",
+        "desc": "Reflows content into editable paragraphs"
+      },
+      "exact": {
+        "name": "Exact layout",
+        "desc": "Keeps line breaks close to the original PDF"
+      }
+    },
+    "optionsHeading": "Options",
+    "preserveFormattingLabel": "Preserve formatting",
+    "convertTablesLabel": "Convert tables",
+    "embedImagesLabel": "Embed images",
+    "ocrLabel": "OCR for scanned pages",
+    "languageHint": "Document language",
+    "language": {
+      "auto": "Auto-detect",
+      "en": "English",
+      "fr": "French",
+      "es": "Spanish",
+      "de": "German",
+      "ar": "Arabic",
+      "pt": "Portuguese",
+      "it": "Italian",
+      "ru": "Russian",
+      "ja": "Japanese",
+      "ko": "Korean",
+      "zh": "Chinese",
+      "hi": "Hindi"
+    },
+    "infoBanner": "Works best with text-based PDFs. Scanned documents may need OCR for accurate results.",
+    "pagesConverted": "Pages converted: {count}",
+    "imagesExtracted": "Images extracted: {count}",
+    "openHint": "Open the file in Word or any compatible editor.",
+    "convertButton": "Convert to Word",
+    "resultHeadline": "PDF converted to Word",
+    "processAnother": "Convert another file"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "Extraction mode",
+    "mode": {
+      "auto": {
+        "name": "Detect tables",
+        "desc": "Finds and extracts table structures automatically"
+      },
+      "all-rows": {
+        "name": "All text as rows",
+        "desc": "Puts every line of text into its own row"
+      }
+    },
+    "optionsHeading": "Options",
+    "oneSheetPerPageLabel": "One sheet per page",
+    "preserveBordersLabel": "Preserve cell borders",
+    "autoFormatLabel": "Auto-format numbers and dates",
+    "includeImagesLabel": "Include images",
+    "worksBestWith": "Works best with PDFs that already contain real tables (invoices, reports, spreadsheets exported to PDF).",
+    "scannedWarning": "Scanned PDFs have no extractable table data.",
+    "runOcrFirst": "Run OCR first",
+    "tablesFound": "Tables found: {count} across {pages} pages",
+    "rowsExtracted": "Rows extracted: {count}",
+    "imagesEmbedded": "Images embedded: {count}",
+    "openHint": "Open the file in Excel or any compatible spreadsheet app.",
+    "convertButton": "Convert to Excel",
+    "resultHeadline": "PDF converted to Excel",
+    "processAnother": "Convert another file"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "Slide layout",
+    "layout": {
+      "widescreen": {
+        "name": "Widescreen (16:9)",
+        "desc": "Standard for modern presentations"
+      },
+      "standard": {
+        "name": "Standard (4:3)",
+        "desc": "Classic slide proportions"
+      }
+    },
+    "optionsHeading": "Options",
+    "includeImagesLabel": "Include images",
+    "includeTablesLabel": "Include tables",
+    "addSlideNumbersLabel": "Add slide numbers",
+    "infoBanner": "Each PDF page becomes one slide, with text turned into editable placeholders.",
+    "slidesCreated": "Slides created: {count}",
+    "imagesEmbedded": "Images embedded: {count}",
+    "openHint": "Open the file in PowerPoint or any compatible editor.",
+    "convertButton": "Convert to PowerPoint",
+    "resultHeadline": "PDF converted to PowerPoint",
+    "processAnother": "Convert another file"
   }
 }

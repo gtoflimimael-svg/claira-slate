@@ -619,7 +619,8 @@
     "resultPlaceholder": "Tu archivo aparecerá aquí",
     "pasteHint": "O pulsa Ctrl+V para pegar un archivo PDF",
     "contactSupport": "Contactar con soporte",
-    "loginNudge": "Crea una cuenta gratuita para guardar tus archivos y acceder a tu historial"
+    "loginNudge": "Crea una cuenta gratuita para guardar tus archivos y acceder a tu historial",
+    "conversionQualityTip": "Consejo: la calidad de la conversión depende de la estructura del PDF; los PDF basados en texto se convierten con mucha más precisión que las imágenes escaneadas."
   },
   "aiTool": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "Aspecto cálido y vintage"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "Modo de conversión",
+    "mode": {
+      "flowing": {
+        "name": "Texto fluido",
+        "desc": "Reorganiza el contenido en párrafos editables"
+      },
+      "exact": {
+        "name": "Diseño exacto",
+        "desc": "Mantiene los saltos de línea similares al PDF original"
+      }
+    },
+    "optionsHeading": "Opciones",
+    "preserveFormattingLabel": "Conservar el formato",
+    "convertTablesLabel": "Convertir tablas",
+    "embedImagesLabel": "Incrustar imágenes",
+    "ocrLabel": "OCR para páginas escaneadas",
+    "languageHint": "Idioma del documento",
+    "language": {
+      "auto": "Detección automática",
+      "en": "Inglés",
+      "fr": "Francés",
+      "es": "Español",
+      "de": "Alemán",
+      "ar": "Árabe",
+      "pt": "Portugués",
+      "it": "Italiano",
+      "ru": "Ruso",
+      "ja": "Japonés",
+      "ko": "Coreano",
+      "zh": "Chino",
+      "hi": "Hindi"
+    },
+    "infoBanner": "Funciona mejor con PDF basados en texto. Los documentos escaneados pueden necesitar OCR para obtener resultados precisos.",
+    "pagesConverted": "Páginas convertidas: {count}",
+    "imagesExtracted": "Imágenes extraídas: {count}",
+    "openHint": "Abre el archivo en Word o un editor compatible.",
+    "convertButton": "Convertir a Word",
+    "resultHeadline": "PDF convertido a Word",
+    "processAnother": "Convertir otro archivo"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "Modo de extracción",
+    "mode": {
+      "auto": {
+        "name": "Detectar tablas",
+        "desc": "Encuentra y extrae estructuras de tablas automáticamente"
+      },
+      "all-rows": {
+        "name": "Todo el texto como filas",
+        "desc": "Coloca cada línea de texto en su propia fila"
+      }
+    },
+    "optionsHeading": "Opciones",
+    "oneSheetPerPageLabel": "Una hoja por página",
+    "preserveBordersLabel": "Conservar bordes de celda",
+    "autoFormatLabel": "Formatear automáticamente números y fechas",
+    "includeImagesLabel": "Incluir imágenes",
+    "worksBestWith": "Funciona mejor con PDF que ya contienen tablas reales (facturas, informes, hojas de cálculo exportadas a PDF).",
+    "scannedWarning": "Los PDF escaneados no tienen datos de tabla extraíbles.",
+    "runOcrFirst": "Ejecutar OCR primero",
+    "tablesFound": "Tablas encontradas: {count} en {pages} páginas",
+    "rowsExtracted": "Filas extraídas: {count}",
+    "imagesEmbedded": "Imágenes incrustadas: {count}",
+    "openHint": "Abre el archivo en Excel o una hoja de cálculo compatible.",
+    "convertButton": "Convertir a Excel",
+    "resultHeadline": "PDF convertido a Excel",
+    "processAnother": "Convertir otro archivo"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "Formato de diapositiva",
+    "layout": {
+      "widescreen": {
+        "name": "Panorámico (16:9)",
+        "desc": "Estándar para presentaciones modernas"
+      },
+      "standard": {
+        "name": "Estándar (4:3)",
+        "desc": "Proporciones clásicas de diapositiva"
+      }
+    },
+    "optionsHeading": "Opciones",
+    "includeImagesLabel": "Incluir imágenes",
+    "includeTablesLabel": "Incluir tablas",
+    "addSlideNumbersLabel": "Añadir números de diapositiva",
+    "infoBanner": "Cada página del PDF se convierte en una diapositiva, con el texto transformado en cuadros editables.",
+    "slidesCreated": "Diapositivas creadas: {count}",
+    "imagesEmbedded": "Imágenes incrustadas: {count}",
+    "openHint": "Abre el archivo en PowerPoint o un editor compatible.",
+    "convertButton": "Convertir a PowerPoint",
+    "resultHeadline": "PDF convertido a PowerPoint",
+    "processAnother": "Convertir otro archivo"
   }
 }

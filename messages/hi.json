@@ -619,7 +619,8 @@
     "resultPlaceholder": "आपकी फ़ाइल यहाँ दिखेगी",
     "pasteHint": "या PDF फ़ाइल पेस्ट करने के लिए Ctrl+V दबाएं",
     "contactSupport": "सहायता से संपर्क करें",
-    "loginNudge": "अपनी फ़ाइलें सहेजने और इतिहास तक पहुंचने के लिए एक निःशुल्क खाता बनाएं"
+    "loginNudge": "अपनी फ़ाइलें सहेजने और इतिहास तक पहुंचने के लिए एक निःशुल्क खाता बनाएं",
+    "conversionQualityTip": "सुझाव: रूपांतरण की गुणवत्ता PDF की संरचना पर निर्भर करती है — टेक्स्ट-आधारित PDF, स्कैन की गई छवियों की तुलना में कहीं अधिक सटीकता से बदलते हैं।"
   },
   "aiTool": {
     "summarize": {
@@ -1160,5 +1161,98 @@
         "desc": "गर्म विंटेज लुक"
       }
     }
+  },
+  "pdfToWordTool": {
+    "modeHeading": "रूपांतरण मोड",
+    "mode": {
+      "flowing": {
+        "name": "प्रवाहित टेक्स्ट",
+        "desc": "सामग्री को संपादन योग्य पैराग्राफ़ में फिर से व्यवस्थित करता है"
+      },
+      "exact": {
+        "name": "सटीक लेआउट",
+        "desc": "मूल PDF के करीब लाइन ब्रेक बनाए रखता है"
+      }
+    },
+    "optionsHeading": "विकल्प",
+    "preserveFormattingLabel": "फ़ॉर्मेटिंग बनाए रखें",
+    "convertTablesLabel": "तालिकाएँ बदलें",
+    "embedImagesLabel": "छवियाँ एम्बेड करें",
+    "ocrLabel": "स्कैन किए गए पृष्ठों के लिए OCR",
+    "languageHint": "दस्तावेज़ की भाषा",
+    "language": {
+      "auto": "स्वतः पहचान",
+      "en": "अंग्रेज़ी",
+      "fr": "फ़्रेंच",
+      "es": "स्पेनिश",
+      "de": "जर्मन",
+      "ar": "अरबी",
+      "pt": "पुर्तगाली",
+      "it": "इतालवी",
+      "ru": "रूसी",
+      "ja": "जापानी",
+      "ko": "कोरियाई",
+      "zh": "चीनी",
+      "hi": "हिंदी"
+    },
+    "infoBanner": "टेक्स्ट-आधारित PDF के साथ सबसे बेहतर काम करता है। स्कैन किए गए दस्तावेज़ों के लिए सटीक परिणामों हेतु OCR की आवश्यकता हो सकती है।",
+    "pagesConverted": "रूपांतरित पृष्ठ: {count}",
+    "imagesExtracted": "निकाली गई छवियाँ: {count}",
+    "openHint": "फ़ाइल को Word या किसी संगत एडिटर में खोलें।",
+    "convertButton": "Word में बदलें",
+    "resultHeadline": "PDF को Word में बदल दिया गया",
+    "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "pdfToExcelTool": {
+    "modeHeading": "निष्कर्षण मोड",
+    "mode": {
+      "auto": {
+        "name": "तालिकाएँ पहचानें",
+        "desc": "तालिका संरचनाओं को स्वचालित रूप से खोजता और निकालता है"
+      },
+      "all-rows": {
+        "name": "सभी टेक्स्ट पंक्तियों के रूप में",
+        "desc": "टेक्स्ट की हर लाइन को अपनी अलग पंक्ति में रखता है"
+      }
+    },
+    "optionsHeading": "विकल्प",
+    "oneSheetPerPageLabel": "प्रति पृष्ठ एक शीट",
+    "preserveBordersLabel": "सेल बॉर्डर बनाए रखें",
+    "autoFormatLabel": "संख्याएँ और तारीखें स्वतः फ़ॉर्मेट करें",
+    "includeImagesLabel": "छवियाँ शामिल करें",
+    "worksBestWith": "उन PDF के साथ सबसे बेहतर काम करता है जिनमें पहले से वास्तविक तालिकाएँ हों (चालान, रिपोर्ट, PDF में निर्यात की गई स्प्रेडशीट)।",
+    "scannedWarning": "स्कैन किए गए PDF में निकाली जा सकने वाली तालिका डेटा नहीं होता।",
+    "runOcrFirst": "पहले OCR चलाएँ",
+    "tablesFound": "मिली तालिकाएँ: {pages} पृष्ठों में {count}",
+    "rowsExtracted": "निकाली गई पंक्तियाँ: {count}",
+    "imagesEmbedded": "एम्बेड की गई छवियाँ: {count}",
+    "openHint": "फ़ाइल को Excel या किसी संगत स्प्रेडशीट ऐप में खोलें।",
+    "convertButton": "Excel में बदलें",
+    "resultHeadline": "PDF को Excel में बदल दिया गया",
+    "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "pdfToPptTool": {
+    "layoutHeading": "स्लाइड लेआउट",
+    "layout": {
+      "widescreen": {
+        "name": "वाइडस्क्रीन (16:9)",
+        "desc": "आधुनिक प्रस्तुतियों के लिए मानक"
+      },
+      "standard": {
+        "name": "मानक (4:3)",
+        "desc": "क्लासिक स्लाइड अनुपात"
+      }
+    },
+    "optionsHeading": "विकल्प",
+    "includeImagesLabel": "छवियाँ शामिल करें",
+    "includeTablesLabel": "तालिकाएँ शामिल करें",
+    "addSlideNumbersLabel": "स्लाइड नंबर जोड़ें",
+    "infoBanner": "PDF का हर पृष्ठ एक स्लाइड बन जाता है, और टेक्स्ट संपादन योग्य प्लेसहोल्डर में बदल जाता है।",
+    "slidesCreated": "बनाई गई स्लाइड्स: {count}",
+    "imagesEmbedded": "एम्बेड की गई छवियाँ: {count}",
+    "openHint": "फ़ाइल को PowerPoint या किसी संगत एडिटर में खोलें।",
+    "convertButton": "PowerPoint में बदलें",
+    "resultHeadline": "PDF को PowerPoint में बदल दिया गया",
+    "processAnother": "एक और फ़ाइल बदलें"
   }
 }
