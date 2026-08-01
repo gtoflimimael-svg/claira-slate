@@ -1,5 +1,7 @@
 import { PDFParse } from "pdf-parse";
-import { convertWithLibreOffice, type LibreOfficeFilterValue } from "@/lib/tools/libreoffice";
+import mammoth from "mammoth";
+import { convertWithLibreOffice, checkSofficeAvailable, type LibreOfficeFilterValue } from "@/lib/tools/libreoffice";
+import { renderHtmlToPdf } from "@/lib/tools/handlers/simple-html-to-pdf";
 
 export type WordToPdfQuality = "standard" | "high" | "compressed";
 
@@ -40,13 +42,12 @@ async function countPages(buffer: Buffer): Promise<number> {
   }
 }
 
-export async function runWordToPdf(fileBuffer: Buffer, filename: string, config: WordToPdfConfig): Promise<WordToPdfResult> {
+async function runWordToPdfWithLibreOffice(fileBuffer: Buffer, inputExt: string, config: WordToPdfConfig): Promise<WordToPdfResult> {
   const baseFilterData: Record<string, LibreOfficeFilterValue> = {
     ...QUALITY_FILTER[config.quality],
     EmbedStandardFonts: { type: "boolean", value: String(config.embedFonts) },
     ExportNotesInMargin: { type: "boolean", value: String(config.includeComments) },
   };
-  const inputExt = extOf(filename);
 
   const plainBuffer = await convertWithLibreOffice(fileBuffer, inputExt, "pdf", {
     filterName: "writer_pdf_Export",
@@ -75,4 +76,30 @@ export async function runWordToPdf(fileBuffer: Buffer, filename: string, config:
     throw new Error("PDF conversion isn't available on this server right now.");
   }
   return { buffer: encryptedBuffer, pagesCreated };
+}
+
+// Runs when LibreOffice isn't installed (e.g. Vercel's serverless runtime).
+// mammoth only reads the modern .docx format — legacy .doc needs the real
+// engine — and pdf-lib can't encrypt a PDF, so password protection isn't
+// available here either. Both are reported as clear errors rather than
+// silently producing an unprotected file or failing opaquely.
+export async function runWordToPdfFallback(fileBuffer: Buffer, inputExt: string, config: WordToPdfConfig): Promise<WordToPdfResult> {
+  if (inputExt !== "docx") {
+    throw new Error("Legacy .doc files need the primary conversion engine, which isn't available on this server right now. Please try again later.");
+  }
+  if (config.password) {
+    throw new Error("Password protection isn't available on this server right now. Try converting without a password, or try again later.");
+  }
+
+  const { value: html } = await mammoth.convertToHtml({ buffer: fileBuffer });
+  const { buffer, pagesCreated } = await renderHtmlToPdf(html, { pageWidth: 595.28, pageHeight: 841.89, margin: 56 });
+  return { buffer, pagesCreated };
+}
+
+export async function runWordToPdf(fileBuffer: Buffer, filename: string, config: WordToPdfConfig): Promise<WordToPdfResult> {
+  const inputExt = extOf(filename);
+  if (await checkSofficeAvailable()) {
+    return runWordToPdfWithLibreOffice(fileBuffer, inputExt, config);
+  }
+  return runWordToPdfFallback(fileBuffer, inputExt, config);
 }

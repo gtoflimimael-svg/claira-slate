@@ -5,7 +5,7 @@ import path from "node:path";
 
 let sofficeAvailable: boolean | null = null;
 
-async function checkSofficeAvailable(): Promise<boolean> {
+export async function checkSofficeAvailable(): Promise<boolean> {
   if (sofficeAvailable !== null) return sofficeAvailable;
   const available = await new Promise<boolean>((resolve) => {
     const check = spawn("which", ["soffice"]);

@@ -1,6 +1,7 @@
 import dns from "node:dns/promises";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { convertWithLibreOffice } from "@/lib/tools/libreoffice";
+import { convertWithLibreOffice, checkSofficeAvailable } from "@/lib/tools/libreoffice";
+import { renderHtmlToPdf } from "@/lib/tools/handlers/simple-html-to-pdf";
 
 export type HtmlToPdfPageSize = "a4-portrait" | "a4-landscape" | "letter-portrait" | "match-content";
 export type HtmlToPdfMargin = "none" | "minimal" | "standard" | "wide";
@@ -28,6 +29,13 @@ const PAGE_CSS: Record<HtmlToPdfPageSize, string> = {
   "a4-landscape": "size: A4 landscape;",
   "letter-portrait": "size: Letter portrait;",
   "match-content": "size: 1000px 1400px;",
+};
+
+const PAGE_DIMENSIONS_PT: Record<HtmlToPdfPageSize, [number, number]> = {
+  "a4-portrait": [595.28, 841.89],
+  "a4-landscape": [841.89, 595.28],
+  "letter-portrait": [612, 792],
+  "match-content": [750, 1050],
 };
 
 function ipInCidr(ip: number[], base: number[], prefix: number): boolean {
@@ -162,6 +170,29 @@ function drawUrlFooter(pdfBuffer: Buffer, url: string): Promise<Buffer> {
   })();
 }
 
+const MARGIN_PT: Record<HtmlToPdfMargin, number> = { none: 0, minimal: 23, standard: 51, wide: 91 };
+
+// Runs when LibreOffice isn't installed (e.g. Vercel's serverless runtime) —
+// reuses the same plain-text/table/image renderer built for word-to-pdf's
+// fallback. It has no real CSS engine, so header/footer removal still works
+// (those tags are just skipped) but "include background colors" has nothing
+// to toggle — there's no background rendering in this reduced-fidelity tier.
+export async function runHtmlToPdfFallback(html: string, config: HtmlToPdfConfig, sourceUrl: string | null): Promise<HtmlToPdfResult> {
+  const [pageWidth, pageHeight] = PAGE_DIMENSIONS_PT[config.pageSize];
+  const { buffer, pagesCreated } = await renderHtmlToPdf(html, {
+    pageWidth,
+    pageHeight,
+    margin: MARGIN_PT[config.margin],
+    skipHeaderFooter: config.removeHeaderFooter,
+  });
+
+  if (config.addUrlFooter && sourceUrl) {
+    const withFooter = await drawUrlFooter(buffer, sourceUrl);
+    return { buffer: withFooter, pagesCreated };
+  }
+  return { buffer, pagesCreated };
+}
+
 export async function runHtmlToPdf(config: HtmlToPdfConfig): Promise<HtmlToPdfResult> {
   let rawHtml: string;
   let sourceUrl: string | null = null;
@@ -175,6 +206,10 @@ export async function runHtmlToPdf(config: HtmlToPdfConfig): Promise<HtmlToPdfRe
     }
   } else {
     rawHtml = config.content;
+  }
+
+  if (!(await checkSofficeAvailable())) {
+    return runHtmlToPdfFallback(rawHtml, config, sourceUrl);
   }
 
   const preparedHtml = injectPageStyles(rawHtml, config, sourceUrl);

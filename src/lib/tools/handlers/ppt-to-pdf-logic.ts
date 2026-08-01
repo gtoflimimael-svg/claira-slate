@@ -1,6 +1,7 @@
 import JSZip from "jszip";
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { convertWithLibreOffice, type LibreOfficeFilterValue } from "@/lib/tools/libreoffice";
+import sharp from "sharp";
+import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "pdf-lib";
+import { convertWithLibreOffice, checkSofficeAvailable, type LibreOfficeFilterValue } from "@/lib/tools/libreoffice";
 
 export type PptToPdfLayout = "single" | "handout-2" | "handout-4" | "handout-6" | "notes";
 export type PptToPdfQuality = "standard" | "high";
@@ -27,6 +28,7 @@ const QUALITY_FILTER: Record<PptToPdfQuality, Record<string, LibreOfficeFilterVa
   },
   high: { Quality: { type: "long", value: "97" }, ReduceImageResolution: { type: "boolean", value: "false" } },
 };
+const JPEG_QUALITY: Record<PptToPdfQuality, number> = { standard: 70, high: 92 };
 
 function attr(tag: string, name: string): string | null {
   const m = tag.match(new RegExp(`${name}="([^"]*)"`));
@@ -126,18 +128,145 @@ const HANDOUT_GRID: Record<"handout-2" | "handout-4" | "handout-6", { cols: numb
 const PAGE_W = 612; // US Letter, portrait — standard handout/notes print size
 const PAGE_H = 792;
 
-export async function runPptToPdf(fileBuffer: Buffer, filename: string, config: PptToPdfConfig): Promise<PptToPdfResult> {
-  const filterData: Record<string, LibreOfficeFilterValue> = {
-    ...QUALITY_FILTER[config.quality],
-    ExportHiddenSlides: { type: "boolean", value: String(config.includeHidden) },
-  };
+function resolveRelPath(baseDir: string, target: string): string {
+  const baseParts = baseDir.split("/").filter(Boolean);
+  for (const part of target.split("/")) {
+    if (part === "..") baseParts.pop();
+    else if (part !== "." && part !== "") baseParts.push(part);
+  }
+  return baseParts.join("/");
+}
 
-  const baseline = await convertWithLibreOffice(fileBuffer, extOf(filename), "pdf", {
-    filterName: "impress_pdf_Export",
-    filterData,
-  });
-  if (!baseline) {
-    throw new Error("PDF conversion isn't available on this server right now.");
+async function getSlideSizePt(zip: JSZip): Promise<[number, number]> {
+  const xml = await zip.file("ppt/presentation.xml")?.async("text");
+  const m = xml?.match(/<p:sldSz\b[^>]*cx="(\d+)"[^>]*cy="(\d+)"/);
+  if (!m) return [720, 405];
+  return [Number(m[1]) / 12700, Number(m[2]) / 12700];
+}
+
+/** Every text run on the slide, in document order — one entry per paragraph. */
+async function extractSlideTextLines(zip: JSZip, slidePath: string): Promise<string[]> {
+  const xml = await zip.file(slidePath)?.async("text");
+  if (!xml) return [];
+  const lines: string[] = [];
+  for (const shape of xml.matchAll(/<p:sp>[\s\S]*?<\/p:sp>/g)) {
+    for (const para of shape[0].matchAll(/<a:p>[\s\S]*?<\/a:p>/g)) {
+      const text = [...para[0].matchAll(/<a:t>([^<]*)<\/a:t>/g)].map((m) => decodeXmlText(m[1])).join("");
+      if (text.trim()) lines.push(text.trim());
+    }
+  }
+  return lines;
+}
+
+async function extractSlideImages(zip: JSZip, slidePath: string): Promise<Buffer[]> {
+  const slideFile = slidePath.split("/").pop()!;
+  const relsXml = await zip.file(`ppt/slides/_rels/${slideFile}.rels`)?.async("text");
+  if (!relsXml) return [];
+
+  const images: Buffer[] = [];
+  for (const m of relsXml.matchAll(/<Relationship\b[^>]*\/?>/g)) {
+    const type = attr(m[0], "Type") ?? "";
+    const target = attr(m[0], "Target");
+    if (!target || !type.endsWith("/image")) continue;
+    const path = resolveRelPath("ppt/slides", target);
+    const data = await zip.file(path)?.async("nodebuffer");
+    if (data) images.push(data);
+  }
+  return images;
+}
+
+function isLikelyHeading(line: string): boolean {
+  return line.length > 0 && line.length <= 70 && !/[.,;:]$/.test(line);
+}
+
+// Runs when LibreOffice isn't installed: parses each slide's own XML for
+// text and embedded images (pptxgenjs only *writes* pptx files, it can't
+// read an existing one back) and renders a plain "one slide per page" PDF —
+// no animations/transitions/precise layout, just the content.
+async function renderSlideToPage(doc: PDFDocument, font: PDFFont, boldFont: PDFFont, zip: JSZip, slidePath: string, pageW: number, pageH: number, quality: PptToPdfQuality): Promise<void> {
+  const page = doc.addPage([pageW, pageH]);
+  const lines = await extractSlideTextLines(zip, slidePath);
+  const images = await extractSlideImages(zip, slidePath);
+
+  let title = "";
+  let bodyLines = lines;
+  if (lines.length > 0 && isLikelyHeading(lines[0])) {
+    title = lines[0];
+    bodyLines = lines.slice(1);
+  }
+
+  const margin = Math.max(30, pageW * 0.06);
+  let cursorY = pageH - margin - 10;
+
+  if (title) {
+    const size = Math.min(28, pageW / 20);
+    page.drawText(title, { x: margin, y: cursorY - size, size, font: boldFont, color: rgb(0.05, 0.05, 0.08) });
+    cursorY -= size + 26;
+  }
+
+  const bodySize = Math.min(15, pageW / 40);
+  for (const line of bodyLines) {
+    const wrapped = wrapText(line, font, bodySize, pageW - margin * 2);
+    for (const w of wrapped) {
+      if (cursorY < margin) break;
+      page.drawText(w, { x: margin, y: cursorY - bodySize, size: bodySize, font, color: rgb(0.2, 0.2, 0.2) });
+      cursorY -= bodySize + 7;
+    }
+    cursorY -= 4;
+  }
+
+  for (const imgData of images) {
+    if (cursorY < margin + 40) break;
+    try {
+      const jpeg = await sharp(imgData).jpeg({ quality: JPEG_QUALITY[quality] }).toBuffer();
+      const meta = await sharp(jpeg).metadata();
+      const w = meta.width ?? 300;
+      const h = meta.height ?? 200;
+      const maxW = pageW - margin * 2;
+      const maxH = cursorY - margin;
+      const scale = Math.min(1, maxW / w, maxH / h);
+      const drawW = w * scale;
+      const drawH = h * scale;
+      const embedded = await doc.embedJpg(jpeg);
+      page.drawImage(embedded, { x: margin, y: cursorY - drawH, width: drawW, height: drawH });
+      cursorY -= drawH + 16;
+    } catch {
+      // Unsupported/corrupt embedded image — skip rather than fail the whole slide.
+    }
+  }
+}
+
+export async function renderBaselineFallback(zip: JSZip, slidePaths: string[], quality: PptToPdfQuality): Promise<Buffer> {
+  const [pageW, pageH] = await getSlideSizePt(zip);
+  const doc = await PDFDocument.create();
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const boldFont = await doc.embedFont(StandardFonts.HelveticaBold);
+  for (const path of slidePaths) {
+    await renderSlideToPage(doc, font, boldFont, zip, path, pageW, pageH, quality);
+  }
+  return Buffer.from(await doc.save());
+}
+
+export async function runPptToPdf(fileBuffer: Buffer, filename: string, config: PptToPdfConfig): Promise<PptToPdfResult> {
+  const zip = await JSZip.loadAsync(fileBuffer);
+  const slideOrder = await getSlideOrder(zip);
+  const visibleSlides = config.includeHidden ? slideOrder : slideOrder.filter((s) => !s.hidden);
+
+  let baseline: Buffer;
+  if (await checkSofficeAvailable()) {
+    const filterData: Record<string, LibreOfficeFilterValue> = {
+      ...QUALITY_FILTER[config.quality],
+      ExportHiddenSlides: { type: "boolean", value: String(config.includeHidden) },
+    };
+    const converted = await convertWithLibreOffice(fileBuffer, extOf(filename), "pdf", { filterName: "impress_pdf_Export", filterData });
+    if (!converted) throw new Error("PDF conversion isn't available on this server right now.");
+    baseline = converted;
+  } else {
+    baseline = await renderBaselineFallback(
+      zip,
+      visibleSlides.map((s) => s.path),
+      config.quality
+    );
   }
 
   const baselineDoc = await PDFDocument.load(baseline);
@@ -147,9 +276,6 @@ export async function runPptToPdf(fileBuffer: Buffer, filename: string, config: 
     return { buffer: Buffer.from(await baselineDoc.save()), slideCount, pagesCreated: slideCount };
   }
 
-  const zip = await JSZip.loadAsync(fileBuffer);
-  const slideOrder = await getSlideOrder(zip);
-  const visibleSlides = config.includeHidden ? slideOrder : slideOrder.filter((s) => !s.hidden);
   const notesCache = config.includeSpeakerNotesFooter
     ? await Promise.all(visibleSlides.map((s) => getNotesText(zip, s.path)))
     : [];
@@ -158,7 +284,7 @@ export async function runPptToPdf(fileBuffer: Buffer, filename: string, config: 
   const font = await out.embedFont(StandardFonts.Helvetica);
   const embeddedPages = await out.embedPdf(baseline, Array.from({ length: slideCount }, (_, i) => i));
 
-  function drawSlideNumber(page: import("pdf-lib").PDFPage, num: number, x: number, y: number) {
+  function drawSlideNumber(page: PDFPage, num: number, x: number, y: number) {
     if (!config.addSlideNumbers) return;
     const text = String(num);
     const size = 9;
@@ -239,7 +365,7 @@ export async function runPptToPdf(fileBuffer: Buffer, filename: string, config: 
   return { buffer, slideCount, pagesCreated: out.getPageCount() };
 }
 
-function truncateToWidth(text: string, font: import("pdf-lib").PDFFont, size: number, maxWidth: number): string {
+function truncateToWidth(text: string, font: PDFFont, size: number, maxWidth: number): string {
   if (font.widthOfTextAtSize(text, size) <= maxWidth) return text;
   let lo = 0;
   let hi = text.length;
@@ -252,7 +378,7 @@ function truncateToWidth(text: string, font: import("pdf-lib").PDFFont, size: nu
   return lo < text.length ? `${text.slice(0, lo)}…` : text;
 }
 
-function wrapText(text: string, font: import("pdf-lib").PDFFont, size: number, maxWidth: number): string[] {
+function wrapText(text: string, font: PDFFont, size: number, maxWidth: number): string[] {
   const words = text.split(/\s+/).filter(Boolean);
   const lines: string[] = [];
   let current = "";

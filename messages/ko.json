@@ -202,6 +202,18 @@
     "ppt-to-pdf": {
       "name": "PowerPoint를 PDF로 변환",
       "desc": "프레젠테이션을 PDF 슬라이드로 변환합니다."
+    },
+    "grayscale": {
+      "name": "PDF 흑백 변환",
+      "desc": "모든 페이지를 흑백(그레이스케일)으로 변환합니다."
+    },
+    "header-footer": {
+      "name": "머리글 및 바닥글",
+      "desc": "반복되는 머리글과 바닥글 텍스트를 추가합니다."
+    },
+    "certify": {
+      "name": "PDF 인증",
+      "desc": "인증 서명을 추가합니다."
     }
   },
   "toolPage": {

@@ -202,6 +202,18 @@
     "ppt-to-pdf": {
       "name": "PowerPointをPDFに変換",
       "desc": "プレゼンテーションをPDFスライドに変換します。"
+    },
+    "grayscale": {
+      "name": "PDFをグレースケールに",
+      "desc": "すべてのページをグレースケールに変換します。"
+    },
+    "header-footer": {
+      "name": "ヘッダーとフッター",
+      "desc": "繰り返し表示するヘッダーとフッターのテキストを追加します。"
+    },
+    "certify": {
+      "name": "PDFを認証",
+      "desc": "認証用の署名を追加します。"
     }
   },
   "toolPage": {

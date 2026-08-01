@@ -202,6 +202,18 @@
     "ppt-to-pdf": {
       "name": "PowerPoint vers PDF",
       "desc": "Convertissez vos présentations en diapositives PDF."
+    },
+    "grayscale": {
+      "name": "PDF en niveaux de gris",
+      "desc": "Convertit chaque page en niveaux de gris."
+    },
+    "header-footer": {
+      "name": "En-tête et pied de page",
+      "desc": "Ajoutez un texte d'en-tête et de pied de page récurrent."
+    },
+    "certify": {
+      "name": "Certifier le PDF",
+      "desc": "Ajoutez une signature de certification."
     }
   },
   "ai": {
