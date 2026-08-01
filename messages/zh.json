@@ -190,6 +190,18 @@
       "Convert": "转换",
       "Secure": "安全",
       "Edit": "编辑"
+    },
+    "word-to-pdf": {
+      "name": "Word 转 PDF",
+      "desc": "完美地将 Word 文档转换为 PDF。"
+    },
+    "excel-to-pdf": {
+      "name": "Excel 转 PDF",
+      "desc": "将电子表格转换为 PDF 文档。"
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint 转 PDF",
+      "desc": "将演示文稿转换为 PDF 幻灯片。"
     }
   },
   "toolPage": {
@@ -223,7 +235,8 @@
     "pasteHint": "或按 Ctrl+V 粘贴PDF文件",
     "contactSupport": "联系支持",
     "loginNudge": "创建免费账户以保存文件并访问历史记录",
-    "conversionQualityTip": "提示：转换质量取决于 PDF 的结构——基于文本的 PDF 比扫描图像转换得更加准确。"
+    "conversionQualityTip": "提示：转换质量取决于 PDF 的结构——基于文本的 PDF 比扫描图像转换得更加准确。",
+    "passwordRequired": "请输入密码，或关闭密码保护。"
   },
   "ai": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "转换为 PowerPoint",
     "resultHeadline": "PDF 已转换为 PowerPoint",
     "processAnother": "转换另一个文件"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "PDF 质量",
+    "quality": {
+      "standard": {
+        "name": "标准",
+        "desc": "质量与文件大小兼顾"
+      },
+      "high": {
+        "name": "高质量",
+        "desc": "最佳保真度，文件更大"
+      },
+      "compressed": {
+        "name": "压缩",
+        "desc": "文件更小，图片质量较低"
+      }
+    },
+    "optionsHeading": "选项",
+    "preserveFormattingLabel": "保留所有格式",
+    "embedFontsLabel": "嵌入字体",
+    "includeCommentsLabel": "包含批注/修订记录",
+    "passwordProtectLabel": "为输出文件设置密码保护",
+    "passwordPlaceholder": "设置密码",
+    "infoBanner": "支持：文本、表格、图片、页眉、页脚、页码、脚注、超链接",
+    "pagesCreated": "已创建页数：{count}",
+    "convertButton": "转换为 PDF",
+    "resultHeadline": "Word 已转换为 PDF！",
+    "processAnother": "转换另一个文件"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "页面布局",
+    "orientation": {
+      "portrait": {
+        "name": "纵向",
+        "desc": "高大于宽"
+      },
+      "landscape": {
+        "name": "横向",
+        "desc": "宽大于高"
+      },
+      "auto": {
+        "name": "自动",
+        "desc": "自动适应页面"
+      }
+    },
+    "optionsHeading": "选项",
+    "fitToPageLabel": "适应页面宽度",
+    "includeGridlinesLabel": "包含网格线",
+    "includeSheetNamesLabel": "将工作表名称作为页眉",
+    "allSheetsLabel": "转换所有工作表（默认：仅当前工作表）",
+    "printAreaOnlyLabel": "仅打印区域",
+    "paperSizeHint": "纸张大小",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "已转换 {count} 个工作表",
+    "pagesCreated": "已创建页数：{count}",
+    "convertButton": "转换为 PDF",
+    "resultHeadline": "Excel 已转换为 PDF！",
+    "processAnother": "转换另一个文件"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "幻灯片布局",
+    "layout": {
+      "single": {
+        "name": "每页一张幻灯片",
+        "desc": "默认，整页显示"
+      },
+      "handout": {
+        "name": "讲义",
+        "desc": "每页多张幻灯片"
+      },
+      "notes": {
+        "name": "备注视图",
+        "desc": "幻灯片加演讲者备注"
+      }
+    },
+    "handoutPerPage": "每页 {count} 张",
+    "optionsHeading": "选项",
+    "preserveAnimationsLabel": "将动画保留为静态画面",
+    "includeHiddenLabel": "包含隐藏的幻灯片",
+    "addSlideNumbersLabel": "添加幻灯片编号",
+    "speakerNotesFooterLabel": "将演讲者备注作为页脚包含",
+    "qualityHeading": "质量",
+    "quality": {
+      "standard": "标准",
+      "high": "高质量（文件更大）"
+    },
+    "slidesConverted": "{slides} 张幻灯片 → {pages} 页",
+    "convertButton": "转换为 PDF",
+    "resultHeadline": "演示文稿已转换为 PDF！",
+    "processAnother": "转换另一个文件"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} 张图片",
+    "addMore": "添加更多",
+    "pageSizeHeading": "页面大小",
+    "pageSize": {
+      "fit": "使图片适应页面",
+      "a4-portrait": "A4 纵向",
+      "a4-landscape": "A4 横向",
+      "letter": "Letter 纵向",
+      "match": "匹配图片尺寸（统一尺寸）"
+    },
+    "marginHeading": "页边距",
+    "margin": {
+      "none": "无",
+      "small": "窄",
+      "medium": "中等",
+      "large": "宽"
+    },
+    "optionsHeading": "选项",
+    "onePerPageLabel": "每页一张图片",
+    "fourPerPageLabel": "每页多张图片（2×2 网格）",
+    "addPageNumbersLabel": "添加页码",
+    "addCaptionsLabel": "将文件名添加为说明文字",
+    "outputNameLabel": "输出文件名",
+    "convertButton": "合并为 PDF",
+    "resultHeadline": "已将 {count} 张图片合并为 PDF！",
+    "pagesCreated": "已创建页数：{count}",
+    "processAnother": "合并更多图片"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "HTML 代码"
+    },
+    "urlWarning": "由于登录限制或反爬虫机制，部分页面可能无法转换。",
+    "pageSettingsHeading": "页面设置",
+    "pageSize": {
+      "a4-portrait": "A4 纵向",
+      "a4-landscape": "A4 横向",
+      "letter-portrait": "Letter 纵向",
+      "match-content": "匹配内容宽度"
+    },
+    "optionsHeading": "选项",
+    "includeBackgroundLabel": "包含背景颜色/图片",
+    "waitForLoadLabel": "等待页面加载（延迟 3 秒）",
+    "removeHeaderFooterLabel": "移除页眉和页脚",
+    "addUrlFooterLabel": "将网址添加为页脚",
+    "marginHint": "页边距预设",
+    "margin": {
+      "none": "无",
+      "minimal": "极窄",
+      "standard": "标准",
+      "wide": "宽"
+    },
+    "infoBanner": "要转换 URL，该页面必须可公开访问。",
+    "convertButton": "转换为 PDF",
+    "resultHeadline": "HTML 已转换为 PDF！",
+    "pagesCreated": "已创建页数：{count}",
+    "processAnother": "转换另一个页面"
   }
 }

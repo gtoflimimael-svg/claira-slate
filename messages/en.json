@@ -190,6 +190,18 @@
       "Convert": "Convert",
       "Secure": "Secure",
       "Edit": "Edit"
+    },
+    "word-to-pdf": {
+      "name": "Word to PDF",
+      "desc": "Convert Word documents to PDF perfectly."
+    },
+    "excel-to-pdf": {
+      "name": "Excel to PDF",
+      "desc": "Convert spreadsheets to PDF documents."
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint to PDF",
+      "desc": "Convert presentations to PDF slides."
     }
   },
   "toolPage": {
@@ -223,7 +235,8 @@
     "pasteHint": "Or press Ctrl+V to paste a PDF file",
     "contactSupport": "Contact support",
     "loginNudge": "Create a free account to save your files and access your history",
-    "conversionQualityTip": "Tip: conversion quality depends on the PDF's structure — text-based PDFs convert far more accurately than scanned images."
+    "conversionQualityTip": "Tip: conversion quality depends on the PDF's structure — text-based PDFs convert far more accurately than scanned images.",
+    "passwordRequired": "Enter a password, or turn off password protection."
   },
   "ai": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "Convert to PowerPoint",
     "resultHeadline": "PDF converted to PowerPoint",
     "processAnother": "Convert another file"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "PDF quality",
+    "quality": {
+      "standard": {
+        "name": "Standard",
+        "desc": "Balanced quality and file size"
+      },
+      "high": {
+        "name": "High quality",
+        "desc": "Best fidelity, larger file"
+      },
+      "compressed": {
+        "name": "Compressed",
+        "desc": "Smaller file, lower image quality"
+      }
+    },
+    "optionsHeading": "Options",
+    "preserveFormattingLabel": "Preserve all formatting",
+    "embedFontsLabel": "Embed fonts",
+    "includeCommentsLabel": "Include comments/track changes",
+    "passwordProtectLabel": "Password protect output",
+    "passwordPlaceholder": "Set a password",
+    "infoBanner": "Supports: text, tables, images, headers, footers, page numbers, footnotes, hyperlinks",
+    "pagesCreated": "Pages created: {count}",
+    "convertButton": "Convert to PDF",
+    "resultHeadline": "Word converted to PDF!",
+    "processAnother": "Convert another file"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "Page layout",
+    "orientation": {
+      "portrait": {
+        "name": "Portrait",
+        "desc": "Taller than wide"
+      },
+      "landscape": {
+        "name": "Landscape",
+        "desc": "Wider than tall"
+      },
+      "auto": {
+        "name": "Auto",
+        "desc": "Fit to page automatically"
+      }
+    },
+    "optionsHeading": "Options",
+    "fitToPageLabel": "Fit to page width",
+    "includeGridlinesLabel": "Include gridlines",
+    "includeSheetNamesLabel": "Include sheet names as headers",
+    "allSheetsLabel": "Convert all sheets (default: active only)",
+    "printAreaOnlyLabel": "Print area only",
+    "paperSizeHint": "Paper size",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "{count} sheets converted",
+    "pagesCreated": "Pages created: {count}",
+    "convertButton": "Convert to PDF",
+    "resultHeadline": "Excel converted to PDF!",
+    "processAnother": "Convert another file"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "Slide layout",
+    "layout": {
+      "single": {
+        "name": "One slide per page",
+        "desc": "Default, full-page slides"
+      },
+      "handout": {
+        "name": "Handout",
+        "desc": "Multiple slides per page"
+      },
+      "notes": {
+        "name": "Notes view",
+        "desc": "Slide plus speaker notes"
+      }
+    },
+    "handoutPerPage": "{count} per page",
+    "optionsHeading": "Options",
+    "preserveAnimationsLabel": "Preserve animations as static",
+    "includeHiddenLabel": "Include hidden slides",
+    "addSlideNumbersLabel": "Add slide numbers",
+    "speakerNotesFooterLabel": "Include speaker notes as footer",
+    "qualityHeading": "Quality",
+    "quality": {
+      "standard": "Standard",
+      "high": "High quality (larger file)"
+    },
+    "slidesConverted": "{slides} slides → {pages} pages",
+    "convertButton": "Convert to PDF",
+    "resultHeadline": "Presentation converted to PDF!",
+    "processAnother": "Convert another file"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} images",
+    "addMore": "Add more",
+    "pageSizeHeading": "Page size",
+    "pageSize": {
+      "fit": "Fit image to page",
+      "a4-portrait": "A4 Portrait",
+      "a4-landscape": "A4 Landscape",
+      "letter": "Letter Portrait",
+      "match": "Match image size (one size fits all)"
+    },
+    "marginHeading": "Margin",
+    "margin": {
+      "none": "None",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large"
+    },
+    "optionsHeading": "Options",
+    "onePerPageLabel": "One image per page",
+    "fourPerPageLabel": "Multiple images per page (2×2 grid)",
+    "addPageNumbersLabel": "Add page numbers",
+    "addCaptionsLabel": "Add filename as caption",
+    "outputNameLabel": "Output filename",
+    "convertButton": "Combine into PDF",
+    "resultHeadline": "{count} images combined into PDF!",
+    "pagesCreated": "Pages created: {count}",
+    "processAnother": "Combine more images"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "HTML code"
+    },
+    "urlWarning": "Some pages may block conversion due to login walls or anti-scraping measures.",
+    "pageSettingsHeading": "Page settings",
+    "pageSize": {
+      "a4-portrait": "A4 Portrait",
+      "a4-landscape": "A4 Landscape",
+      "letter-portrait": "Letter Portrait",
+      "match-content": "Match content width"
+    },
+    "optionsHeading": "Options",
+    "includeBackgroundLabel": "Include background colors/images",
+    "waitForLoadLabel": "Wait for page to load (3s delay)",
+    "removeHeaderFooterLabel": "Remove headers and footers",
+    "addUrlFooterLabel": "Add URL as footer",
+    "marginHint": "Margin preset",
+    "margin": {
+      "none": "None",
+      "minimal": "Minimal",
+      "standard": "Standard",
+      "wide": "Wide"
+    },
+    "infoBanner": "For URL conversion, the page must be publicly accessible.",
+    "convertButton": "Convert to PDF",
+    "resultHeadline": "HTML converted to PDF!",
+    "pagesCreated": "Pages created: {count}",
+    "processAnother": "Convert another page"
   }
 }

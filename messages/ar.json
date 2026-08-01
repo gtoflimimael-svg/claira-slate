@@ -190,7 +190,19 @@
       "Secure": "حماية",
       "Edit": "تحرير"
     },
-    "homeSubheadline": "كل ما تحتاجه لملف PDF، مباشرة من المتصفح. بلا تثبيت، بلا انتظار."
+    "homeSubheadline": "كل ما تحتاجه لملف PDF، مباشرة من المتصفح. بلا تثبيت، بلا انتظار.",
+    "word-to-pdf": {
+      "name": "Word إلى PDF",
+      "desc": "حوّل مستندات Word إلى PDF بشكل مثالي."
+    },
+    "excel-to-pdf": {
+      "name": "Excel إلى PDF",
+      "desc": "حوّل جداول البيانات إلى مستندات PDF."
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint إلى PDF",
+      "desc": "حوّل العروض التقديمية إلى شرائح PDF."
+    }
   },
   "ai": {
     "summarize": {
@@ -620,7 +632,8 @@
     "pasteHint": "أو اضغط Ctrl+V للصق ملف PDF",
     "contactSupport": "التواصل مع الدعم",
     "loginNudge": "أنشئ حسابًا مجانيًا لحفظ ملفاتك والوصول إلى سجلك",
-    "conversionQualityTip": "نصيحة: تعتمد جودة التحويل على بنية ملف PDF — تُحوَّل ملفات PDF النصية بدقة أكبر بكثير من الصور الممسوحة ضوئيًا."
+    "conversionQualityTip": "نصيحة: تعتمد جودة التحويل على بنية ملف PDF — تُحوَّل ملفات PDF النصية بدقة أكبر بكثير من الصور الممسوحة ضوئيًا.",
+    "passwordRequired": "أدخل كلمة مرور، أو أوقف تفعيل الحماية بكلمة مرور."
   },
   "aiTool": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "التحويل إلى PowerPoint",
     "resultHeadline": "تم تحويل PDF إلى PowerPoint",
     "processAnother": "تحويل ملف آخر"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "جودة PDF",
+    "quality": {
+      "standard": {
+        "name": "قياسي",
+        "desc": "توازن بين الجودة وحجم الملف"
+      },
+      "high": {
+        "name": "جودة عالية",
+        "desc": "أفضل دقة، حجم ملف أكبر"
+      },
+      "compressed": {
+        "name": "مضغوط",
+        "desc": "حجم ملف أصغر، جودة صور أقل"
+      }
+    },
+    "optionsHeading": "خيارات",
+    "preserveFormattingLabel": "الحفاظ على كل التنسيق",
+    "embedFontsLabel": "تضمين الخطوط",
+    "includeCommentsLabel": "تضمين التعليقات/تتبع التغييرات",
+    "passwordProtectLabel": "حماية الملف الناتج بكلمة مرور",
+    "passwordPlaceholder": "عيّن كلمة مرور",
+    "infoBanner": "يدعم: النصوص، الجداول، الصور، الرؤوس، التذييلات، أرقام الصفحات، الحواشي، الروابط التشعبية",
+    "pagesCreated": "الصفحات المُنشأة: {count}",
+    "convertButton": "التحويل إلى PDF",
+    "resultHeadline": "تم تحويل Word إلى PDF!",
+    "processAnother": "تحويل ملف آخر"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "تخطيط الصفحة",
+    "orientation": {
+      "portrait": {
+        "name": "طولي",
+        "desc": "أطول من العرض"
+      },
+      "landscape": {
+        "name": "عرضي",
+        "desc": "أعرض من الطول"
+      },
+      "auto": {
+        "name": "تلقائي",
+        "desc": "ملاءمة تلقائية للصفحة"
+      }
+    },
+    "optionsHeading": "خيارات",
+    "fitToPageLabel": "ملاءمة عرض الصفحة",
+    "includeGridlinesLabel": "تضمين خطوط الشبكة",
+    "includeSheetNamesLabel": "تضمين أسماء الأوراق كعناوين",
+    "allSheetsLabel": "تحويل كل الأوراق (الافتراضي: الورقة النشطة فقط)",
+    "printAreaOnlyLabel": "منطقة الطباعة فقط",
+    "paperSizeHint": "حجم الورق",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "تم تحويل {count} ورقة",
+    "pagesCreated": "الصفحات المُنشأة: {count}",
+    "convertButton": "التحويل إلى PDF",
+    "resultHeadline": "تم تحويل Excel إلى PDF!",
+    "processAnother": "تحويل ملف آخر"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "تخطيط الشرائح",
+    "layout": {
+      "single": {
+        "name": "شريحة واحدة لكل صفحة",
+        "desc": "افتراضي، صفحة كاملة"
+      },
+      "handout": {
+        "name": "نشرة",
+        "desc": "عدة شرائح لكل صفحة"
+      },
+      "notes": {
+        "name": "عرض الملاحظات",
+        "desc": "الشريحة مع ملاحظات المتحدث"
+      }
+    },
+    "handoutPerPage": "{count} لكل صفحة",
+    "optionsHeading": "خيارات",
+    "preserveAnimationsLabel": "الحفاظ على الحركات كصور ثابتة",
+    "includeHiddenLabel": "تضمين الشرائح المخفية",
+    "addSlideNumbersLabel": "إضافة أرقام الشرائح",
+    "speakerNotesFooterLabel": "تضمين ملاحظات المتحدث كتذييل",
+    "qualityHeading": "الجودة",
+    "quality": {
+      "standard": "قياسي",
+      "high": "جودة عالية (حجم ملف أكبر)"
+    },
+    "slidesConverted": "{slides} شريحة ← {pages} صفحة",
+    "convertButton": "التحويل إلى PDF",
+    "resultHeadline": "تم تحويل العرض التقديمي إلى PDF!",
+    "processAnother": "تحويل ملف آخر"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} صورة",
+    "addMore": "إضافة المزيد",
+    "pageSizeHeading": "حجم الصفحة",
+    "pageSize": {
+      "fit": "ملاءمة الصورة مع الصفحة",
+      "a4-portrait": "A4 طولي",
+      "a4-landscape": "A4 عرضي",
+      "letter": "Letter طولي",
+      "match": "حجم الصورة (حجم واحد للجميع)"
+    },
+    "marginHeading": "الهامش",
+    "margin": {
+      "none": "بلا",
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير"
+    },
+    "optionsHeading": "خيارات",
+    "onePerPageLabel": "صورة واحدة لكل صفحة",
+    "fourPerPageLabel": "عدة صور لكل صفحة (شبكة 2×2)",
+    "addPageNumbersLabel": "إضافة أرقام الصفحات",
+    "addCaptionsLabel": "إضافة اسم الملف كتسمية توضيحية",
+    "outputNameLabel": "اسم ملف الإخراج",
+    "convertButton": "الدمج في PDF",
+    "resultHeadline": "تم دمج {count} صورة في PDF!",
+    "pagesCreated": "الصفحات المُنشأة: {count}",
+    "processAnother": "دمج صور أخرى"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "رابط URL",
+      "html": "كود HTML"
+    },
+    "urlWarning": "قد تمنع بعض الصفحات التحويل بسبب جدران تسجيل الدخول أو إجراءات مكافحة الاستخراج.",
+    "pageSettingsHeading": "إعدادات الصفحة",
+    "pageSize": {
+      "a4-portrait": "A4 طولي",
+      "a4-landscape": "A4 عرضي",
+      "letter-portrait": "Letter طولي",
+      "match-content": "مطابقة عرض المحتوى"
+    },
+    "optionsHeading": "خيارات",
+    "includeBackgroundLabel": "تضمين ألوان/صور الخلفية",
+    "waitForLoadLabel": "انتظار تحميل الصفحة (تأخير 3 ثوانٍ)",
+    "removeHeaderFooterLabel": "إزالة الرؤوس والتذييلات",
+    "addUrlFooterLabel": "إضافة الرابط كتذييل",
+    "marginHint": "إعداد الهامش المسبق",
+    "margin": {
+      "none": "بلا",
+      "minimal": "بسيط",
+      "standard": "قياسي",
+      "wide": "واسع"
+    },
+    "infoBanner": "لتحويل رابط، يجب أن تكون الصفحة متاحة للجميع.",
+    "convertButton": "التحويل إلى PDF",
+    "resultHeadline": "تم تحويل HTML إلى PDF!",
+    "pagesCreated": "الصفحات المُنشأة: {count}",
+    "processAnother": "تحويل صفحة أخرى"
   }
 }

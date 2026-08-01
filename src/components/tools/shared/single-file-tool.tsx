@@ -6,7 +6,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { formatBytes } from "@/lib/format";
 import { track, type Plan } from "@/lib/analytics";
-import { FileThumbnail } from "@/components/tools/file-thumbnail";
+import { FileThumbnail, type FileKind } from "@/components/tools/file-thumbnail";
 
 type Phase = "idle" | "uploading" | "processing" | "success";
 
@@ -81,6 +81,8 @@ export interface SingleFileToolProps {
   /** Returns an error message to block submission (e.g. "check at least one option"), or null if OK. */
   validate?: () => string | null;
   submitLabelKey?: string;
+  /** What kind of file this tool accepts, for the file-card thumbnail/icon. Defaults to "pdf". */
+  fileKind?: FileKind;
 }
 
 export function SingleFileTool({
@@ -93,6 +95,7 @@ export function SingleFileTool({
   renderResultDetails,
   validate,
   submitLabelKey = "submitButton",
+  fileKind = "pdf",
 }: SingleFileToolProps) {
   const t = useTranslations(namespace);
   const tp = useTranslations("toolPage");
@@ -275,7 +278,7 @@ export function SingleFileTool({
             </button>
           </div>
           <div style={{ width: 220, height: 280, borderRadius: 12, overflow: "hidden", background: "var(--cs-bg-2)", border: "1px solid var(--cs-line)" }}>
-            <FileThumbnail file={file} isPdf onPageCount={setPageCount} />
+            <FileThumbnail file={file} isPdf={fileKind === "pdf"} kind={fileKind} onPageCount={setPageCount} />
           </div>
           <div style={{ fontSize: 12.5, color: "var(--cs-text-2)" }}>
             {formatBytes(file.size)}

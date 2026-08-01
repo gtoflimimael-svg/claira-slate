@@ -190,6 +190,18 @@
       "Convert": "कन्वर्ट करें",
       "Secure": "सुरक्षित करें",
       "Edit": "संपादित करें"
+    },
+    "word-to-pdf": {
+      "name": "Word से PDF",
+      "desc": "Word दस्तावेज़ों को पूरी तरह सटीकता से PDF में बदलें।"
+    },
+    "excel-to-pdf": {
+      "name": "Excel से PDF",
+      "desc": "स्प्रेडशीट को PDF दस्तावेज़ों में बदलें।"
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint से PDF",
+      "desc": "प्रस्तुतियों को PDF स्लाइड्स में बदलें।"
     }
   },
   "ai": {
@@ -620,7 +632,8 @@
     "pasteHint": "या PDF फ़ाइल पेस्ट करने के लिए Ctrl+V दबाएं",
     "contactSupport": "सहायता से संपर्क करें",
     "loginNudge": "अपनी फ़ाइलें सहेजने और इतिहास तक पहुंचने के लिए एक निःशुल्क खाता बनाएं",
-    "conversionQualityTip": "सुझाव: रूपांतरण की गुणवत्ता PDF की संरचना पर निर्भर करती है — टेक्स्ट-आधारित PDF, स्कैन की गई छवियों की तुलना में कहीं अधिक सटीकता से बदलते हैं।"
+    "conversionQualityTip": "सुझाव: रूपांतरण की गुणवत्ता PDF की संरचना पर निर्भर करती है — टेक्स्ट-आधारित PDF, स्कैन की गई छवियों की तुलना में कहीं अधिक सटीकता से बदलते हैं।",
+    "passwordRequired": "एक पासवर्ड दर्ज करें, या पासवर्ड सुरक्षा बंद करें।"
   },
   "aiTool": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "PowerPoint में बदलें",
     "resultHeadline": "PDF को PowerPoint में बदल दिया गया",
     "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "PDF गुणवत्ता",
+    "quality": {
+      "standard": {
+        "name": "मानक",
+        "desc": "गुणवत्ता और फ़ाइल आकार में संतुलन"
+      },
+      "high": {
+        "name": "उच्च गुणवत्ता",
+        "desc": "सर्वश्रेष्ठ निष्ठा, बड़ी फ़ाइल"
+      },
+      "compressed": {
+        "name": "संपीड़ित",
+        "desc": "छोटी फ़ाइल, कम छवि गुणवत्ता"
+      }
+    },
+    "optionsHeading": "विकल्प",
+    "preserveFormattingLabel": "सारी फ़ॉर्मेटिंग सुरक्षित रखें",
+    "embedFontsLabel": "फ़ॉन्ट एम्बेड करें",
+    "includeCommentsLabel": "टिप्पणियाँ/बदलाव ट्रैकिंग शामिल करें",
+    "passwordProtectLabel": "आउटपुट फ़ाइल को पासवर्ड से सुरक्षित करें",
+    "passwordPlaceholder": "एक पासवर्ड सेट करें",
+    "infoBanner": "समर्थित: टेक्स्ट, तालिकाएँ, छवियाँ, हेडर, फ़ुटर, पृष्ठ संख्या, फ़ुटनोट, हाइपरलिंक",
+    "pagesCreated": "बनाए गए पृष्ठ: {count}",
+    "convertButton": "PDF में बदलें",
+    "resultHeadline": "Word को PDF में बदल दिया गया!",
+    "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "पृष्ठ लेआउट",
+    "orientation": {
+      "portrait": {
+        "name": "पोर्ट्रेट",
+        "desc": "चौड़ाई से ज़्यादा ऊँचाई"
+      },
+      "landscape": {
+        "name": "लैंडस्केप",
+        "desc": "ऊँचाई से ज़्यादा चौड़ाई"
+      },
+      "auto": {
+        "name": "ऑटो",
+        "desc": "पृष्ठ के अनुसार स्वतः समायोजन"
+      }
+    },
+    "optionsHeading": "विकल्प",
+    "fitToPageLabel": "पृष्ठ की चौड़ाई में समायोजित करें",
+    "includeGridlinesLabel": "ग्रिडलाइनें शामिल करें",
+    "includeSheetNamesLabel": "शीट नामों को हेडर के रूप में शामिल करें",
+    "allSheetsLabel": "सभी शीट बदलें (डिफ़ॉल्ट: केवल सक्रिय शीट)",
+    "printAreaOnlyLabel": "केवल प्रिंट क्षेत्र",
+    "paperSizeHint": "कागज़ का आकार",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "{count} शीट बदली गईं",
+    "pagesCreated": "बनाए गए पृष्ठ: {count}",
+    "convertButton": "PDF में बदलें",
+    "resultHeadline": "Excel को PDF में बदल दिया गया!",
+    "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "स्लाइड लेआउट",
+    "layout": {
+      "single": {
+        "name": "प्रति पृष्ठ एक स्लाइड",
+        "desc": "डिफ़ॉल्ट, पूरा पृष्ठ"
+      },
+      "handout": {
+        "name": "हैंडआउट",
+        "desc": "प्रति पृष्ठ कई स्लाइड्स"
+      },
+      "notes": {
+        "name": "नोट्स दृश्य",
+        "desc": "स्लाइड के साथ वक्ता के नोट्स"
+      }
+    },
+    "handoutPerPage": "प्रति पृष्ठ {count}",
+    "optionsHeading": "विकल्प",
+    "preserveAnimationsLabel": "एनिमेशन को स्थिर छवि के रूप में सुरक्षित रखें",
+    "includeHiddenLabel": "छिपी हुई स्लाइड्स शामिल करें",
+    "addSlideNumbersLabel": "स्लाइड नंबर जोड़ें",
+    "speakerNotesFooterLabel": "वक्ता के नोट्स को फ़ुटर के रूप में शामिल करें",
+    "qualityHeading": "गुणवत्ता",
+    "quality": {
+      "standard": "मानक",
+      "high": "उच्च गुणवत्ता (बड़ी फ़ाइल)"
+    },
+    "slidesConverted": "{slides} स्लाइड्स → {pages} पृष्ठ",
+    "convertButton": "PDF में बदलें",
+    "resultHeadline": "प्रस्तुति को PDF में बदल दिया गया!",
+    "processAnother": "एक और फ़ाइल बदलें"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} छवियाँ",
+    "addMore": "और जोड़ें",
+    "pageSizeHeading": "पृष्ठ आकार",
+    "pageSize": {
+      "fit": "छवि को पृष्ठ में समायोजित करें",
+      "a4-portrait": "A4 पोर्ट्रेट",
+      "a4-landscape": "A4 लैंडस्केप",
+      "letter": "Letter पोर्ट्रेट",
+      "match": "छवि के आकार से मिलाएँ (सभी के लिए एक आकार)"
+    },
+    "marginHeading": "मार्जिन",
+    "margin": {
+      "none": "कोई नहीं",
+      "small": "छोटा",
+      "medium": "मध्यम",
+      "large": "बड़ा"
+    },
+    "optionsHeading": "विकल्प",
+    "onePerPageLabel": "प्रति पृष्ठ एक छवि",
+    "fourPerPageLabel": "प्रति पृष्ठ कई छवियाँ (2×2 ग्रिड)",
+    "addPageNumbersLabel": "पृष्ठ संख्या जोड़ें",
+    "addCaptionsLabel": "फ़ाइल नाम को कैप्शन के रूप में जोड़ें",
+    "outputNameLabel": "आउटपुट फ़ाइल का नाम",
+    "convertButton": "PDF में मिलाएँ",
+    "resultHeadline": "{count} छवियों को एक PDF में मिला दिया गया!",
+    "pagesCreated": "बनाए गए पृष्ठ: {count}",
+    "processAnother": "और छवियाँ मिलाएँ"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "HTML कोड"
+    },
+    "urlWarning": "लॉगिन दीवारों या एंटी-स्क्रैपिंग उपायों के कारण कुछ पेज रूपांतरण को रोक सकते हैं।",
+    "pageSettingsHeading": "पृष्ठ सेटिंग्स",
+    "pageSize": {
+      "a4-portrait": "A4 पोर्ट्रेट",
+      "a4-landscape": "A4 लैंडस्केप",
+      "letter-portrait": "Letter पोर्ट्रेट",
+      "match-content": "सामग्री की चौड़ाई से मिलाएँ"
+    },
+    "optionsHeading": "विकल्प",
+    "includeBackgroundLabel": "पृष्ठभूमि रंग/छवियाँ शामिल करें",
+    "waitForLoadLabel": "पृष्ठ लोड होने की प्रतीक्षा करें (3 सेकंड की देरी)",
+    "removeHeaderFooterLabel": "हेडर और फ़ुटर हटाएँ",
+    "addUrlFooterLabel": "URL को फ़ुटर के रूप में जोड़ें",
+    "marginHint": "मार्जिन प्रीसेट",
+    "margin": {
+      "none": "कोई नहीं",
+      "minimal": "न्यूनतम",
+      "standard": "मानक",
+      "wide": "चौड़ा"
+    },
+    "infoBanner": "URL रूपांतरण के लिए, पृष्ठ सार्वजनिक रूप से सुलभ होना चाहिए।",
+    "convertButton": "PDF में बदलें",
+    "resultHeadline": "HTML को PDF में बदल दिया गया!",
+    "pagesCreated": "बनाए गए पृष्ठ: {count}",
+    "processAnother": "एक और पृष्ठ बदलें"
   }
 }

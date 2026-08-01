@@ -17,6 +17,11 @@ import { GrayscaleTool } from "@/components/tools/grayscale/grayscale-tool";
 import { PdfToWordTool } from "@/components/tools/pdf-to-word/pdf-to-word-tool";
 import { PdfToExcelTool } from "@/components/tools/pdf-to-excel/pdf-to-excel-tool";
 import { PdfToPptTool } from "@/components/tools/pdf-to-ppt/pdf-to-ppt-tool";
+import { WordToPdfTool } from "@/components/tools/word-to-pdf/word-to-pdf-tool";
+import { ExcelToPdfTool } from "@/components/tools/excel-to-pdf/excel-to-pdf-tool";
+import { PptToPdfTool } from "@/components/tools/ppt-to-pdf/ppt-to-pdf-tool";
+import { JpgToPdfTool } from "@/components/tools/jpg-to-pdf/jpg-to-pdf-tool";
+import { HtmlToPdfTool } from "@/components/tools/html-to-pdf/html-to-pdf-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -91,8 +96,30 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isPdfToWord = tool === "pdf-to-word";
   const isPdfToExcel = tool === "pdf-to-excel";
   const isPdfToPpt = tool === "pdf-to-ppt";
+  const isWordToPdf = tool === "word-to-pdf";
+  const isExcelToPdf = tool === "excel-to-pdf";
+  const isPptToPdf = tool === "ppt-to-pdf";
+  const isJpgToPdf = tool === "jpg-to-pdf";
+  const isHtmlToPdf = tool === "html-to-pdf";
   const usesWideLayout =
-    isSplit || isOrganize || isRotate || isExtract || isDelete || isCompress || isRepair || isOptimize || isFlatten || isGrayscale || isPdfToWord || isPdfToExcel || isPdfToPpt;
+    isSplit ||
+    isOrganize ||
+    isRotate ||
+    isExtract ||
+    isDelete ||
+    isCompress ||
+    isRepair ||
+    isOptimize ||
+    isFlatten ||
+    isGrayscale ||
+    isPdfToWord ||
+    isPdfToExcel ||
+    isPdfToPpt ||
+    isWordToPdf ||
+    isExcelToPdf ||
+    isPptToPdf ||
+    isJpgToPdf ||
+    isHtmlToPdf;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
@@ -149,6 +176,16 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             <PdfToExcelTool />
           ) : isPdfToPpt ? (
             <PdfToPptTool />
+          ) : isWordToPdf ? (
+            <WordToPdfTool />
+          ) : isExcelToPdf ? (
+            <ExcelToPdfTool />
+          ) : isPptToPdf ? (
+            <PptToPdfTool />
+          ) : isJpgToPdf ? (
+            <JpgToPdfTool />
+          ) : isHtmlToPdf ? (
+            <HtmlToPdfTool />
           ) : (
             <div className="tool-workspace">
               <GenericTool config={config} />

@@ -190,6 +190,18 @@
       "Convert": "Конвертация",
       "Secure": "Безопасность",
       "Edit": "Редактирование"
+    },
+    "word-to-pdf": {
+      "name": "Word в PDF",
+      "desc": "Идеально конвертируйте документы Word в PDF."
+    },
+    "excel-to-pdf": {
+      "name": "Excel в PDF",
+      "desc": "Конвертируйте таблицы в документы PDF."
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint в PDF",
+      "desc": "Конвертируйте презентации в слайды PDF."
     }
   },
   "toolPage": {
@@ -223,7 +235,8 @@
     "pasteHint": "Или нажмите Ctrl+V, чтобы вставить PDF-файл",
     "contactSupport": "Связаться с поддержкой",
     "loginNudge": "Создайте бесплатный аккаунт, чтобы сохранять файлы и получить доступ к истории",
-    "conversionQualityTip": "Совет: качество конвертации зависит от структуры PDF — текстовые PDF конвертируются намного точнее, чем отсканированные изображения."
+    "conversionQualityTip": "Совет: качество конвертации зависит от структуры PDF — текстовые PDF конвертируются намного точнее, чем отсканированные изображения.",
+    "passwordRequired": "Введите пароль или отключите защиту паролем."
   },
   "ai": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "Конвертировать в PowerPoint",
     "resultHeadline": "PDF конвертирован в PowerPoint",
     "processAnother": "Конвертировать другой файл"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "Качество PDF",
+    "quality": {
+      "standard": {
+        "name": "Стандартное",
+        "desc": "Баланс качества и размера файла"
+      },
+      "high": {
+        "name": "Высокое качество",
+        "desc": "Лучшая точность, больший размер файла"
+      },
+      "compressed": {
+        "name": "Сжатое",
+        "desc": "Меньший размер файла, ниже качество изображений"
+      }
+    },
+    "optionsHeading": "Параметры",
+    "preserveFormattingLabel": "Сохранить все форматирование",
+    "embedFontsLabel": "Встроить шрифты",
+    "includeCommentsLabel": "Включить комментарии/отслеживание изменений",
+    "passwordProtectLabel": "Защитить файл паролем",
+    "passwordPlaceholder": "Задайте пароль",
+    "infoBanner": "Поддерживается: текст, таблицы, изображения, колонтитулы, номера страниц, сноски, гиперссылки",
+    "pagesCreated": "Создано страниц: {count}",
+    "convertButton": "Конвертировать в PDF",
+    "resultHeadline": "Word конвертирован в PDF!",
+    "processAnother": "Конвертировать другой файл"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "Макет страницы",
+    "orientation": {
+      "portrait": {
+        "name": "Книжная",
+        "desc": "Выше, чем шире"
+      },
+      "landscape": {
+        "name": "Альбомная",
+        "desc": "Шире, чем выше"
+      },
+      "auto": {
+        "name": "Авто",
+        "desc": "Автоматическое размещение на странице"
+      }
+    },
+    "optionsHeading": "Параметры",
+    "fitToPageLabel": "Уместить по ширине страницы",
+    "includeGridlinesLabel": "Включить линии сетки",
+    "includeSheetNamesLabel": "Включить названия листов в заголовки",
+    "allSheetsLabel": "Конвертировать все листы (по умолчанию: только активный)",
+    "printAreaOnlyLabel": "Только область печати",
+    "paperSizeHint": "Размер бумаги",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "Конвертировано листов: {count}",
+    "pagesCreated": "Создано страниц: {count}",
+    "convertButton": "Конвертировать в PDF",
+    "resultHeadline": "Excel конвертирован в PDF!",
+    "processAnother": "Конвертировать другой файл"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "Макет слайда",
+    "layout": {
+      "single": {
+        "name": "Один слайд на страницу",
+        "desc": "По умолчанию, вся страница"
+      },
+      "handout": {
+        "name": "Раздаточный материал",
+        "desc": "Несколько слайдов на странице"
+      },
+      "notes": {
+        "name": "Режим заметок",
+        "desc": "Слайд и заметки докладчика"
+      }
+    },
+    "handoutPerPage": "{count} на странице",
+    "optionsHeading": "Параметры",
+    "preserveAnimationsLabel": "Сохранить анимацию как статичное изображение",
+    "includeHiddenLabel": "Включить скрытые слайды",
+    "addSlideNumbersLabel": "Добавить номера слайдов",
+    "speakerNotesFooterLabel": "Включить заметки докладчика как нижний колонтитул",
+    "qualityHeading": "Качество",
+    "quality": {
+      "standard": "Стандартное",
+      "high": "Высокое качество (больший размер файла)"
+    },
+    "slidesConverted": "{slides} слайдов → {pages} страниц",
+    "convertButton": "Конвертировать в PDF",
+    "resultHeadline": "Презентация конвертирована в PDF!",
+    "processAnother": "Конвертировать другой файл"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} изображений",
+    "addMore": "Добавить ещё",
+    "pageSizeHeading": "Размер страницы",
+    "pageSize": {
+      "fit": "Уместить изображение на странице",
+      "a4-portrait": "A4 Книжная",
+      "a4-landscape": "A4 Альбомная",
+      "letter": "Letter Книжная",
+      "match": "Размер изображения (единый для всех)"
+    },
+    "marginHeading": "Поле",
+    "margin": {
+      "none": "Нет",
+      "small": "Маленькое",
+      "medium": "Среднее",
+      "large": "Большое"
+    },
+    "optionsHeading": "Параметры",
+    "onePerPageLabel": "Одно изображение на странице",
+    "fourPerPageLabel": "Несколько изображений на странице (сетка 2×2)",
+    "addPageNumbersLabel": "Добавить номера страниц",
+    "addCaptionsLabel": "Добавить имя файла как подпись",
+    "outputNameLabel": "Имя выходного файла",
+    "convertButton": "Объединить в PDF",
+    "resultHeadline": "{count} изображений объединено в PDF!",
+    "pagesCreated": "Создано страниц: {count}",
+    "processAnother": "Объединить другие изображения"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "Код HTML"
+    },
+    "urlWarning": "Некоторые страницы могут блокировать конвертацию из-за требований входа или защиты от скрапинга.",
+    "pageSettingsHeading": "Настройки страницы",
+    "pageSize": {
+      "a4-portrait": "A4 Книжная",
+      "a4-landscape": "A4 Альбомная",
+      "letter-portrait": "Letter Книжная",
+      "match-content": "По ширине содержимого"
+    },
+    "optionsHeading": "Параметры",
+    "includeBackgroundLabel": "Включить цвета/изображения фона",
+    "waitForLoadLabel": "Подождать загрузку страницы (задержка 3 с)",
+    "removeHeaderFooterLabel": "Удалить верхние и нижние колонтитулы",
+    "addUrlFooterLabel": "Добавить URL в нижний колонтитул",
+    "marginHint": "Предустановка полей",
+    "margin": {
+      "none": "Нет",
+      "minimal": "Минимальное",
+      "standard": "Стандартное",
+      "wide": "Широкое"
+    },
+    "infoBanner": "Для конвертации по URL страница должна быть общедоступной.",
+    "convertButton": "Конвертировать в PDF",
+    "resultHeadline": "HTML конвертирован в PDF!",
+    "pagesCreated": "Создано страниц: {count}",
+    "processAnother": "Конвертировать другую страницу"
   }
 }

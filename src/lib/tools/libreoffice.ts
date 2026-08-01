@@ -16,15 +16,23 @@ async function checkSofficeAvailable(): Promise<boolean> {
   return available;
 }
 
+export type LibreOfficeFilterValue = { type: "boolean" | "long" | "string"; value: string };
+
 /**
  * Converts a file to another format via LibreOffice's headless CLI. Returns
  * null (instead of throwing) when `soffice` isn't installed, so callers can
  * fall back to a "coming soon" response rather than crashing.
+ *
+ * `filterName` + `filterData` select an export filter with PDF options (e.g.
+ * "writer_pdf_Export" with `{ Quality: { type: "long", value: "50" } }`) —
+ * verified empirically against the LibreOffice CLI, since this option syntax
+ * is thinly documented.
  */
 export async function convertWithLibreOffice(
   inputBuffer: Buffer,
   inputExt: string,
-  outputExt: string
+  outputExt: string,
+  options?: { filterName?: string; filterData?: Record<string, LibreOfficeFilterValue> }
 ): Promise<Buffer | null> {
   if (!(await checkSofficeAvailable())) return null;
 
@@ -33,12 +41,23 @@ export async function convertWithLibreOffice(
     const inputPath = path.join(dir, `input.${inputExt}`);
     await writeFile(inputPath, inputBuffer);
 
+    const convertTarget =
+      options?.filterName && options.filterData
+        ? `${outputExt}:${options.filterName}:${JSON.stringify(options.filterData)}`
+        : outputExt;
+
+    // Each conversion gets its own LibreOffice user profile — concurrent
+    // requests sharing the default profile directory make soffice fail with
+    // "another instance is already running".
+    const profileDir = path.join(dir, "profile");
+
     await new Promise<void>((resolve, reject) => {
       const proc = spawn("soffice", [
         "--headless",
         "--norestore",
+        `-env:UserInstallation=file://${profileDir}`,
         "--convert-to",
-        outputExt,
+        convertTarget,
         "--outdir",
         dir,
         inputPath,

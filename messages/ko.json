@@ -190,6 +190,18 @@
       "Convert": "변환",
       "Secure": "보안",
       "Edit": "편집"
+    },
+    "word-to-pdf": {
+      "name": "Word를 PDF로 변환",
+      "desc": "Word 문서를 완벽하게 PDF로 변환합니다."
+    },
+    "excel-to-pdf": {
+      "name": "Excel을 PDF로 변환",
+      "desc": "스프레드시트를 PDF 문서로 변환합니다."
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint를 PDF로 변환",
+      "desc": "프레젠테이션을 PDF 슬라이드로 변환합니다."
     }
   },
   "toolPage": {
@@ -223,7 +235,8 @@
     "pasteHint": "또는 Ctrl+V를 눌러 PDF 파일 붙여넣기",
     "contactSupport": "지원팀에 문의",
     "loginNudge": "무료 계정을 만들어 파일을 저장하고 기록에 액세스하세요",
-    "conversionQualityTip": "팁: 변환 품질은 PDF의 구조에 따라 달라집니다. 텍스트 기반 PDF는 스캔한 이미지보다 훨씬 더 정확하게 변환됩니다."
+    "conversionQualityTip": "팁: 변환 품질은 PDF의 구조에 따라 달라집니다. 텍스트 기반 PDF는 스캔한 이미지보다 훨씬 더 정확하게 변환됩니다.",
+    "passwordRequired": "비밀번호를 입력하거나 비밀번호 보호를 꺼주세요."
   },
   "ai": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "PowerPoint로 변환",
     "resultHeadline": "PDF가 PowerPoint로 변환되었습니다",
     "processAnother": "다른 파일 변환"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "PDF 품질",
+    "quality": {
+      "standard": {
+        "name": "표준",
+        "desc": "품질과 파일 크기의 균형"
+      },
+      "high": {
+        "name": "고품질",
+        "desc": "최고의 충실도, 더 큰 파일"
+      },
+      "compressed": {
+        "name": "압축",
+        "desc": "더 작은 파일, 낮은 이미지 품질"
+      }
+    },
+    "optionsHeading": "옵션",
+    "preserveFormattingLabel": "모든 서식 유지",
+    "embedFontsLabel": "글꼴 포함",
+    "includeCommentsLabel": "댓글/변경 내용 추적 포함",
+    "passwordProtectLabel": "출력 파일 비밀번호 보호",
+    "passwordPlaceholder": "비밀번호 설정",
+    "infoBanner": "지원: 텍스트, 표, 이미지, 머리글, 바닥글, 페이지 번호, 각주, 하이퍼링크",
+    "pagesCreated": "생성된 페이지: {count}개",
+    "convertButton": "PDF로 변환",
+    "resultHeadline": "Word가 PDF로 변환되었습니다!",
+    "processAnother": "다른 파일 변환"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "페이지 레이아웃",
+    "orientation": {
+      "portrait": {
+        "name": "세로",
+        "desc": "가로보다 세로가 김"
+      },
+      "landscape": {
+        "name": "가로",
+        "desc": "세로보다 가로가 김"
+      },
+      "auto": {
+        "name": "자동",
+        "desc": "페이지에 자동으로 맞춤"
+      }
+    },
+    "optionsHeading": "옵션",
+    "fitToPageLabel": "페이지 너비에 맞추기",
+    "includeGridlinesLabel": "눈금선 포함",
+    "includeSheetNamesLabel": "시트 이름을 머리글로 포함",
+    "allSheetsLabel": "모든 시트 변환(기본값: 활성 시트만)",
+    "printAreaOnlyLabel": "인쇄 영역만",
+    "paperSizeHint": "용지 크기",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "{count}개 시트 변환됨",
+    "pagesCreated": "생성된 페이지: {count}개",
+    "convertButton": "PDF로 변환",
+    "resultHeadline": "Excel이 PDF로 변환되었습니다!",
+    "processAnother": "다른 파일 변환"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "슬라이드 레이아웃",
+    "layout": {
+      "single": {
+        "name": "페이지당 슬라이드 1개",
+        "desc": "기본값, 전체 페이지"
+      },
+      "handout": {
+        "name": "유인물",
+        "desc": "페이지당 여러 슬라이드"
+      },
+      "notes": {
+        "name": "메모 보기",
+        "desc": "슬라이드와 발표자 메모"
+      }
+    },
+    "handoutPerPage": "페이지당 {count}개",
+    "optionsHeading": "옵션",
+    "preserveAnimationsLabel": "애니메이션을 정지 이미지로 유지",
+    "includeHiddenLabel": "숨겨진 슬라이드 포함",
+    "addSlideNumbersLabel": "슬라이드 번호 추가",
+    "speakerNotesFooterLabel": "발표자 메모를 바닥글로 포함",
+    "qualityHeading": "품질",
+    "quality": {
+      "standard": "표준",
+      "high": "고품질(더 큰 파일)"
+    },
+    "slidesConverted": "슬라이드 {slides}개 → 페이지 {pages}개",
+    "convertButton": "PDF로 변환",
+    "resultHeadline": "프레젠테이션이 PDF로 변환되었습니다!",
+    "processAnother": "다른 파일 변환"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "이미지 {count}개",
+    "addMore": "더 추가",
+    "pageSizeHeading": "페이지 크기",
+    "pageSize": {
+      "fit": "이미지를 페이지에 맞추기",
+      "a4-portrait": "A4 세로",
+      "a4-landscape": "A4 가로",
+      "letter": "Letter 세로",
+      "match": "이미지 크기와 동일(전체 동일 크기)"
+    },
+    "marginHeading": "여백",
+    "margin": {
+      "none": "없음",
+      "small": "좁게",
+      "medium": "보통",
+      "large": "넓게"
+    },
+    "optionsHeading": "옵션",
+    "onePerPageLabel": "페이지당 이미지 1개",
+    "fourPerPageLabel": "페이지당 여러 이미지(2×2 그리드)",
+    "addPageNumbersLabel": "페이지 번호 추가",
+    "addCaptionsLabel": "파일 이름을 캡션으로 추가",
+    "outputNameLabel": "출력 파일 이름",
+    "convertButton": "PDF로 결합",
+    "resultHeadline": "이미지 {count}개가 PDF로 결합되었습니다!",
+    "pagesCreated": "생성된 페이지: {count}개",
+    "processAnother": "다른 이미지 결합"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "HTML 코드"
+    },
+    "urlWarning": "로그인 장벽이나 스크래핑 방지 조치로 인해 일부 페이지는 변환이 차단될 수 있습니다.",
+    "pageSettingsHeading": "페이지 설정",
+    "pageSize": {
+      "a4-portrait": "A4 세로",
+      "a4-landscape": "A4 가로",
+      "letter-portrait": "Letter 세로",
+      "match-content": "콘텐츠 너비에 맞춤"
+    },
+    "optionsHeading": "옵션",
+    "includeBackgroundLabel": "배경 색상/이미지 포함",
+    "waitForLoadLabel": "페이지 로드 대기(3초 지연)",
+    "removeHeaderFooterLabel": "머리글과 바닥글 제거",
+    "addUrlFooterLabel": "URL을 바닥글로 추가",
+    "marginHint": "여백 사전 설정",
+    "margin": {
+      "none": "없음",
+      "minimal": "최소",
+      "standard": "표준",
+      "wide": "넓게"
+    },
+    "infoBanner": "URL 변환의 경우 페이지가 공개적으로 접근 가능해야 합니다.",
+    "convertButton": "PDF로 변환",
+    "resultHeadline": "HTML이 PDF로 변환되었습니다!",
+    "pagesCreated": "생성된 페이지: {count}개",
+    "processAnother": "다른 페이지 변환"
   }
 }

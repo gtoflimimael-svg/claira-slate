@@ -2,10 +2,14 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
+export type FileKind = "pdf" | "image" | "word" | "excel" | "ppt" | "generic";
+
 interface FileThumbnailProps {
   file: File;
   isPdf: boolean;
   onPageCount?: (count: number) => void;
+  /** Overrides the icon shown for non-PDF, non-image files (Word/Excel/PPT get a branded colored icon instead of the generic outline). */
+  kind?: FileKind;
 }
 
 const genericIcon = (
@@ -15,7 +19,29 @@ const genericIcon = (
   </svg>
 );
 
-export function FileThumbnail({ file, isPdf, onPageCount }: FileThumbnailProps) {
+const docBadge = (color: string, label: string) => (
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill={color} opacity="0.14" />
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 2v6h6" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <text x="12" y="17.5" textAnchor="middle" fontSize="7.5" fontWeight="700" fontFamily="Arial, sans-serif" fill={color}>
+      {label}
+    </text>
+  </svg>
+);
+
+const wordIcon = docBadge("#2b579a", "W");
+const excelIcon = docBadge("#217346", "X");
+const pptIcon = docBadge("#d24726", "P");
+
+function iconForKind(kind: FileKind | undefined) {
+  if (kind === "word") return wordIcon;
+  if (kind === "excel") return excelIcon;
+  if (kind === "ppt") return pptIcon;
+  return genericIcon;
+}
+
+export function FileThumbnail({ file, isPdf, onPageCount, kind }: FileThumbnailProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [rendered, setRendered] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -80,5 +106,5 @@ export function FileThumbnail({ file, isPdf, onPageCount }: FileThumbnailProps) 
     );
   }
 
-  return <div style={{ display: "grid", placeItems: "center", width: "100%", height: "100%" }}>{genericIcon}</div>;
+  return <div style={{ display: "grid", placeItems: "center", width: "100%", height: "100%" }}>{iconForKind(kind)}</div>;
 }

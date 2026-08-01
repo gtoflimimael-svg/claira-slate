@@ -190,6 +190,18 @@
       "Convert": "変換",
       "Secure": "保護",
       "Edit": "編集"
+    },
+    "word-to-pdf": {
+      "name": "WordをPDFに変換",
+      "desc": "Word文書を完璧にPDFへ変換します。"
+    },
+    "excel-to-pdf": {
+      "name": "ExcelをPDFに変換",
+      "desc": "表計算ファイルをPDF文書に変換します。"
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPointをPDFに変換",
+      "desc": "プレゼンテーションをPDFスライドに変換します。"
     }
   },
   "toolPage": {
@@ -223,7 +235,8 @@
     "pasteHint": "またはCtrl+VでPDFファイルを貼り付け",
     "contactSupport": "サポートに問い合わせる",
     "loginNudge": "無料アカウントを作成してファイルを保存し、履歴にアクセスしましょう",
-    "conversionQualityTip": "ヒント: 変換の品質はPDFの構造によって異なります。テキストベースのPDFはスキャン画像よりもはるかに正確に変換されます。"
+    "conversionQualityTip": "ヒント: 変換の品質はPDFの構造によって異なります。テキストベースのPDFはスキャン画像よりもはるかに正確に変換されます。",
+    "passwordRequired": "パスワードを入力するか、パスワード保護をオフにしてください。"
   },
   "ai": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "PowerPointに変換",
     "resultHeadline": "PDFをPowerPointに変換しました",
     "processAnother": "別のファイルを変換"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "PDFの品質",
+    "quality": {
+      "standard": {
+        "name": "標準",
+        "desc": "品質とファイルサイズのバランス"
+      },
+      "high": {
+        "name": "高品質",
+        "desc": "最高の再現性、ファイルサイズは大きめ"
+      },
+      "compressed": {
+        "name": "圧縮",
+        "desc": "ファイルサイズを縮小、画質は低下"
+      }
+    },
+    "optionsHeading": "オプション",
+    "preserveFormattingLabel": "すべての書式を保持する",
+    "embedFontsLabel": "フォントを埋め込む",
+    "includeCommentsLabel": "コメント/変更履歴を含める",
+    "passwordProtectLabel": "出力ファイルをパスワードで保護する",
+    "passwordPlaceholder": "パスワードを設定",
+    "infoBanner": "対応: テキスト、表、画像、ヘッダー、フッター、ページ番号、脚注、ハイパーリンク",
+    "pagesCreated": "作成されたページ数: {count}",
+    "convertButton": "PDFに変換",
+    "resultHeadline": "WordをPDFに変換しました！",
+    "processAnother": "別のファイルを変換"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "ページレイアウト",
+    "orientation": {
+      "portrait": {
+        "name": "縦向き",
+        "desc": "横より縦が長い"
+      },
+      "landscape": {
+        "name": "横向き",
+        "desc": "縦より横が長い"
+      },
+      "auto": {
+        "name": "自動",
+        "desc": "自動的にページに合わせる"
+      }
+    },
+    "optionsHeading": "オプション",
+    "fitToPageLabel": "ページ幅に合わせる",
+    "includeGridlinesLabel": "枠線を含める",
+    "includeSheetNamesLabel": "シート名を見出しとして含める",
+    "allSheetsLabel": "すべてのシートを変換する(既定: アクティブなシートのみ)",
+    "printAreaOnlyLabel": "印刷範囲のみ",
+    "paperSizeHint": "用紙サイズ",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "レター",
+      "a3": "A3",
+      "legal": "リーガル"
+    },
+    "sheetsConverted": "{count} シートを変換しました",
+    "pagesCreated": "作成されたページ数: {count}",
+    "convertButton": "PDFに変換",
+    "resultHeadline": "ExcelをPDFに変換しました！",
+    "processAnother": "別のファイルを変換"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "スライドのレイアウト",
+    "layout": {
+      "single": {
+        "name": "1ページに1スライド",
+        "desc": "既定、全ページ表示"
+      },
+      "handout": {
+        "name": "配布資料",
+        "desc": "1ページに複数スライド"
+      },
+      "notes": {
+        "name": "ノート表示",
+        "desc": "スライドと発表者ノート"
+      }
+    },
+    "handoutPerPage": "1ページに{count}枚",
+    "optionsHeading": "オプション",
+    "preserveAnimationsLabel": "アニメーションを静止画として保持する",
+    "includeHiddenLabel": "非表示のスライドを含める",
+    "addSlideNumbersLabel": "スライド番号を追加する",
+    "speakerNotesFooterLabel": "発表者ノートをフッターとして含める",
+    "qualityHeading": "品質",
+    "quality": {
+      "standard": "標準",
+      "high": "高品質(ファイルサイズが大きい)"
+    },
+    "slidesConverted": "{slides} スライド → {pages} ページ",
+    "convertButton": "PDFに変換",
+    "resultHeadline": "プレゼンテーションをPDFに変換しました！",
+    "processAnother": "別のファイルを変換"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} 枚の画像",
+    "addMore": "追加",
+    "pageSizeHeading": "ページサイズ",
+    "pageSize": {
+      "fit": "画像をページに合わせる",
+      "a4-portrait": "A4 縦向き",
+      "a4-landscape": "A4 横向き",
+      "letter": "レター 縦向き",
+      "match": "画像サイズに合わせる(全ページ共通サイズ)"
+    },
+    "marginHeading": "余白",
+    "margin": {
+      "none": "なし",
+      "small": "小",
+      "medium": "中",
+      "large": "大"
+    },
+    "optionsHeading": "オプション",
+    "onePerPageLabel": "1ページに1枚の画像",
+    "fourPerPageLabel": "1ページに複数の画像(2×2グリッド)",
+    "addPageNumbersLabel": "ページ番号を追加する",
+    "addCaptionsLabel": "ファイル名をキャプションとして追加する",
+    "outputNameLabel": "出力ファイル名",
+    "convertButton": "PDFに結合",
+    "resultHeadline": "{count} 枚の画像をPDFに結合しました！",
+    "pagesCreated": "作成されたページ数: {count}",
+    "processAnother": "別の画像を結合"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "HTMLコード"
+    },
+    "urlWarning": "ログインが必要なページやスクレイピング対策のあるページは変換できない場合があります。",
+    "pageSettingsHeading": "ページ設定",
+    "pageSize": {
+      "a4-portrait": "A4 縦向き",
+      "a4-landscape": "A4 横向き",
+      "letter-portrait": "レター 縦向き",
+      "match-content": "コンテンツ幅に合わせる"
+    },
+    "optionsHeading": "オプション",
+    "includeBackgroundLabel": "背景色/背景画像を含める",
+    "waitForLoadLabel": "ページの読み込みを待つ(3秒の遅延)",
+    "removeHeaderFooterLabel": "ヘッダーとフッターを削除する",
+    "addUrlFooterLabel": "URLをフッターとして追加する",
+    "marginHint": "余白のプリセット",
+    "margin": {
+      "none": "なし",
+      "minimal": "最小",
+      "standard": "標準",
+      "wide": "広い"
+    },
+    "infoBanner": "URLからの変換には、そのページが一般公開されている必要があります。",
+    "convertButton": "PDFに変換",
+    "resultHeadline": "HTMLをPDFに変換しました！",
+    "pagesCreated": "作成されたページ数: {count}",
+    "processAnother": "別のページを変換"
   }
 }

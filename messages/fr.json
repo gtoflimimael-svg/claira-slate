@@ -190,7 +190,19 @@
       "Secure": "Sécuriser",
       "Edit": "Modifier"
     },
-    "homeSubheadline": "Tout ce qu'il vous faut pour un PDF, dans le navigateur. Sans installation, sans file d'attente."
+    "homeSubheadline": "Tout ce qu'il vous faut pour un PDF, dans le navigateur. Sans installation, sans file d'attente.",
+    "word-to-pdf": {
+      "name": "Word vers PDF",
+      "desc": "Convertissez vos documents Word en PDF, parfaitement."
+    },
+    "excel-to-pdf": {
+      "name": "Excel vers PDF",
+      "desc": "Convertissez vos tableurs en documents PDF."
+    },
+    "ppt-to-pdf": {
+      "name": "PowerPoint vers PDF",
+      "desc": "Convertissez vos présentations en diapositives PDF."
+    }
   },
   "ai": {
     "summarize": {
@@ -620,7 +632,8 @@
     "pasteHint": "Ou appuyez sur Ctrl+V pour coller un fichier PDF",
     "contactSupport": "Contacter le support",
     "loginNudge": "Créez un compte gratuit pour sauvegarder vos fichiers et accéder à l'historique",
-    "conversionQualityTip": "Astuce : la qualité de la conversion dépend de la structure du PDF — les PDF contenant du texte se convertissent bien plus fidèlement que les images numérisées."
+    "conversionQualityTip": "Astuce : la qualité de la conversion dépend de la structure du PDF — les PDF contenant du texte se convertissent bien plus fidèlement que les images numérisées.",
+    "passwordRequired": "Saisissez un mot de passe, ou désactivez la protection par mot de passe."
   },
   "aiTool": {
     "summarize": {
@@ -1254,5 +1267,160 @@
     "convertButton": "Convertir en PowerPoint",
     "resultHeadline": "PDF converti en PowerPoint",
     "processAnother": "Convertir un autre fichier"
+  },
+  "wordToPdfTool": {
+    "qualityHeading": "Qualité du PDF",
+    "quality": {
+      "standard": {
+        "name": "Standard",
+        "desc": "Qualité et taille de fichier équilibrées"
+      },
+      "high": {
+        "name": "Haute qualité",
+        "desc": "Meilleure fidélité, fichier plus volumineux"
+      },
+      "compressed": {
+        "name": "Compressé",
+        "desc": "Fichier plus léger, images de moindre qualité"
+      }
+    },
+    "optionsHeading": "Options",
+    "preserveFormattingLabel": "Conserver toute la mise en forme",
+    "embedFontsLabel": "Intégrer les polices",
+    "includeCommentsLabel": "Inclure les commentaires/suivi des modifications",
+    "passwordProtectLabel": "Protéger le fichier par mot de passe",
+    "passwordPlaceholder": "Définir un mot de passe",
+    "infoBanner": "Pris en charge : texte, tableaux, images, en-têtes, pieds de page, numéros de page, notes de bas de page, liens hypertexte",
+    "pagesCreated": "Pages créées : {count}",
+    "convertButton": "Convertir en PDF",
+    "resultHeadline": "Word converti en PDF !",
+    "processAnother": "Convertir un autre fichier"
+  },
+  "excelToPdfTool": {
+    "layoutHeading": "Mise en page",
+    "orientation": {
+      "portrait": {
+        "name": "Portrait",
+        "desc": "Plus haut que large"
+      },
+      "landscape": {
+        "name": "Paysage",
+        "desc": "Plus large que haut"
+      },
+      "auto": {
+        "name": "Automatique",
+        "desc": "Ajustement automatique à la page"
+      }
+    },
+    "optionsHeading": "Options",
+    "fitToPageLabel": "Ajuster à la largeur de la page",
+    "includeGridlinesLabel": "Inclure le quadrillage",
+    "includeSheetNamesLabel": "Inclure les noms des feuilles en en-tête",
+    "allSheetsLabel": "Convertir toutes les feuilles (par défaut : uniquement la feuille active)",
+    "printAreaOnlyLabel": "Zone d'impression uniquement",
+    "paperSizeHint": "Format du papier",
+    "paperSize": {
+      "a4": "A4",
+      "letter": "Letter",
+      "a3": "A3",
+      "legal": "Legal"
+    },
+    "sheetsConverted": "{count} feuilles converties",
+    "pagesCreated": "Pages créées : {count}",
+    "convertButton": "Convertir en PDF",
+    "resultHeadline": "Excel converti en PDF !",
+    "processAnother": "Convertir un autre fichier"
+  },
+  "pptToPdfTool": {
+    "layoutHeading": "Format des diapositives",
+    "layout": {
+      "single": {
+        "name": "Une diapositive par page",
+        "desc": "Par défaut, pleine page"
+      },
+      "handout": {
+        "name": "Document à distribuer",
+        "desc": "Plusieurs diapositives par page"
+      },
+      "notes": {
+        "name": "Vue des notes",
+        "desc": "Diapositive et notes du présentateur"
+      }
+    },
+    "handoutPerPage": "{count} par page",
+    "optionsHeading": "Options",
+    "preserveAnimationsLabel": "Conserver les animations en statique",
+    "includeHiddenLabel": "Inclure les diapositives masquées",
+    "addSlideNumbersLabel": "Ajouter les numéros de diapositive",
+    "speakerNotesFooterLabel": "Inclure les notes du présentateur en pied de page",
+    "qualityHeading": "Qualité",
+    "quality": {
+      "standard": "Standard",
+      "high": "Haute qualité (fichier plus volumineux)"
+    },
+    "slidesConverted": "{slides} diapositives → {pages} pages",
+    "convertButton": "Convertir en PDF",
+    "resultHeadline": "Présentation convertie en PDF !",
+    "processAnother": "Convertir un autre fichier"
+  },
+  "jpgToPdfTool": {
+    "imagesCount": "{count} images",
+    "addMore": "Ajouter",
+    "pageSizeHeading": "Format de page",
+    "pageSize": {
+      "fit": "Ajuster l'image à la page",
+      "a4-portrait": "A4 Portrait",
+      "a4-landscape": "A4 Paysage",
+      "letter": "Letter Portrait",
+      "match": "Taille de l'image (format unique)"
+    },
+    "marginHeading": "Marge",
+    "margin": {
+      "none": "Aucune",
+      "small": "Petite",
+      "medium": "Moyenne",
+      "large": "Grande"
+    },
+    "optionsHeading": "Options",
+    "onePerPageLabel": "Une image par page",
+    "fourPerPageLabel": "Plusieurs images par page (grille 2×2)",
+    "addPageNumbersLabel": "Ajouter les numéros de page",
+    "addCaptionsLabel": "Ajouter le nom du fichier en légende",
+    "outputNameLabel": "Nom du fichier de sortie",
+    "convertButton": "Combiner en PDF",
+    "resultHeadline": "{count} images combinées en PDF !",
+    "pagesCreated": "Pages créées : {count}",
+    "processAnother": "Combiner d'autres images"
+  },
+  "htmlToPdfTool": {
+    "tab": {
+      "url": "URL",
+      "html": "Code HTML"
+    },
+    "urlWarning": "Certaines pages peuvent bloquer la conversion en raison d'une connexion requise ou de protections anti-extraction.",
+    "pageSettingsHeading": "Paramètres de page",
+    "pageSize": {
+      "a4-portrait": "A4 Portrait",
+      "a4-landscape": "A4 Paysage",
+      "letter-portrait": "Letter Portrait",
+      "match-content": "Largeur du contenu"
+    },
+    "optionsHeading": "Options",
+    "includeBackgroundLabel": "Inclure les couleurs/images de fond",
+    "waitForLoadLabel": "Attendre le chargement de la page (délai de 3 s)",
+    "removeHeaderFooterLabel": "Supprimer les en-têtes et pieds de page",
+    "addUrlFooterLabel": "Ajouter l'URL en pied de page",
+    "marginHint": "Préréglage de marge",
+    "margin": {
+      "none": "Aucune",
+      "minimal": "Minimale",
+      "standard": "Standard",
+      "wide": "Large"
+    },
+    "infoBanner": "Pour la conversion d'une URL, la page doit être accessible publiquement.",
+    "convertButton": "Convertir en PDF",
+    "resultHeadline": "HTML converti en PDF !",
+    "pagesCreated": "Pages créées : {count}",
+    "processAnother": "Convertir une autre page"
   }
 }
