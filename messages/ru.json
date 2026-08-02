@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML конвертирован в PDF!",
     "pagesCreated": "Создано страниц: {count}",
     "processAnother": "Конвертировать другую страницу"
+  },
+  "protectTool": {
+    "openPasswordHeading": "Пароль на открытие",
+    "passwordPlaceholder": "Введите пароль",
+    "confirmPlaceholder": "Подтвердите пароль",
+    "strength": {
+      "weak": "Слабый",
+      "medium": "Средний",
+      "strong": "Сильный"
+    },
+    "permissionsPasswordHeading": "Пароль на разрешения",
+    "permissionsPasswordPlaceholder": "Задайте пароль на разрешения",
+    "permissionsPasswordHint": "Отдельный пароль для управления тем, что пользователи могут делать с файлом",
+    "permissionsHeading": "Разрешения",
+    "allowPrintLabel": "Разрешить печать",
+    "allowCopyLabel": "Разрешить копирование текста",
+    "allowEditLabel": "Разрешить редактирование",
+    "allowAnnotateLabel": "Разрешить добавление аннотаций",
+    "allowFillFormsLabel": "Разрешить заполнение форм",
+    "encryptionHeading": "Уровень шифрования",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "Совместимо со всеми программами для чтения PDF"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "Максимальная защита"
+      }
+    },
+    "warningBanner": "Храните пароль в надёжном месте. Если он будет утерян, восстановить PDF не удастся — даже нам.",
+    "openPasswordRequired": "Введите пароль, чтобы защитить этот PDF.",
+    "passwordMismatch": "Пароли не совпадают.",
+    "protectButton": "Защитить PDF",
+    "protectedWith": "Защищено паролем с использованием {encryption}",
+    "resultHeadline": "PDF защищён!",
+    "processAnother": "Защитить другой файл"
+  },
+  "unlockTool": {
+    "passwordHeading": "Введите пароль PDF",
+    "passwordPlaceholder": "Пароль",
+    "passwordRequired": "Введите пароль PDF-файла.",
+    "infoBanner": "Чтобы снять защиту с файла, вы должны знать пароль. Мы не можем обойти неизвестные пароли.",
+    "whatWeRemoveHeading": "Что мы удаляем:",
+    "removeOpenPassword": "Пароль на открытие (требуется для просмотра)",
+    "removeRestrictions": "Ограничения на редактирование/печать/копирование",
+    "legalNotice": "Снимайте защиту только с тех PDF, которыми вы владеете или которые вам разрешено изменять.",
+    "unlockButton": "Снять защиту с PDF",
+    "resultHeadline": "Защита снята!",
+    "processAnother": "Снять защиту с другого файла"
+  },
+  "certifyTool": {
+    "standardHeading": "Версия PDF/A",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "Базовый, наиболее совместимый"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "Лучшее сжатие"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "Разрешает встроенные файлы"
+      }
+    },
+    "whatItDoesHeading": "Что делает сертификация",
+    "info": {
+      "readability": "Обеспечивает долгосрочную читаемость",
+      "embedFonts": "Встраивает все шрифты",
+      "removeJs": "Удаляет JavaScript",
+      "colorProfiles": "Стандартизирует цветовые профили",
+      "courtsArchives": "Принимается судами и архивами"
+    },
+    "complianceCheckHeading": "Предварительная проверка соответствия",
+    "checking": "Проверка PDF…",
+    "check": {
+      "fontsOk": "Шрифты: встроены",
+      "fontsWarn": "Шрифты: встроены не полностью — будут встроены",
+      "colorOk": "Цвета: sRGB",
+      "colorWarn": "Обнаружены цвета не в RGB — будут преобразованы",
+      "jsOk": "JavaScript не обнаружен",
+      "jsWarn": "Обнаружен JavaScript — будет удалён",
+      "transparencyOk": "Прозрачность не обнаружена",
+      "transparencyWarn": "Обнаружена прозрачность — будет сведена"
+    },
+    "certifyButton": "Сертифицировать PDF",
+    "standardResult": "Стандарт: {standard}",
+    "bestEffortNotice": "Полная архивная проверка требует функции, недоступной на этом сервере — JavaScript всё же был удалён.",
+    "resultHeadline": "PDF/A сертифицирован!",
+    "processAnother": "Сертифицировать другой файл"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "Нарисовать",
+      "type": "Ввести текст",
+      "upload": "Загрузить"
+    },
+    "clearButton": "Очистить",
+    "useSignatureButton": "Использовать эту подпись",
+    "yourNamePlaceholder": "Ваше имя",
+    "propertiesHeading": "Свойства подписи",
+    "sizeLabel": "Размер",
+    "opacityLabel": "Непрозрачность",
+    "applyToHeading": "Применить к",
+    "applyTo": {
+      "current": "Только текущая страница",
+      "all": "Все страницы",
+      "custom": "Выбрать страницы"
+    },
+    "dateStampLabel": "Добавить дату рядом с подписью",
+    "pageOf": "Страница {current} из {total}",
+    "addSignatureButton": "Добавить подпись",
+    "resultHeadline": "Подпись добавлена!",
+    "pagesSigned": "Подписано страниц: {count}",
+    "processAnother": "Подписать другой файл"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "Текст",
+      "image": "Изображение"
+    },
+    "fontSizeLabel": "Размер шрифта: {size}px",
+    "font": {
+      "helvetica": "Без засечек",
+      "times": "С засечками",
+      "courier": "Моноширинный",
+      "helveticaOblique": "Курсив без засечек"
+    },
+    "opacityLabel": "Непрозрачность",
+    "scaleLabel": "Масштаб",
+    "positionHeading": "Положение",
+    "diagonalLabel": "Повернуть на 45° (диагональный водяной знак)",
+    "applyToHeading": "Применить к",
+    "applyTo": {
+      "all": "Все страницы",
+      "first": "Только первая страница",
+      "custom": "Выбранные страницы"
+    },
+    "applyButton": "Применить водяной знак",
+    "previewLabel": "Предпросмотр — первая страница",
+    "imageRequired": "Загрузите изображение для водяного знака.",
+    "resultHeadline": "Водяной знак применён!",
+    "pagesStamped": "Отмечено страниц: {count}",
+    "processAnother": "Добавить водяной знак к другому файлу"
+  },
+  "redactTool": {
+    "drawHint": "Нажмите и перетащите на странице, чтобы нарисовать область скрытия",
+    "colorHeading": "Цвет скрытия",
+    "color": {
+      "black": "Чёрный (по умолчанию)",
+      "white": "Белый (невидимый)",
+      "custom": "Свой цвет"
+    },
+    "optionsHeading": "Параметры",
+    "removeUnderlyingTextLabel": "Также удалить исходный текст (а не просто скрыть визуально)",
+    "removeMetadataLabel": "Удалить метаданные из скрытых областей",
+    "aiRedactHeading": "ИИ-скрытие",
+    "ai": {
+      "emails": "Адреса электронной почты",
+      "phones": "Номера телефонов",
+      "names": "Имена (эвристическое определение)",
+      "dates": "Даты",
+      "creditCards": "Номера кредитных карт",
+      "ssn": "Номера социального страхования",
+      "customPatternPlaceholder": "Свой шаблон (regex)"
+    },
+    "redactionCount": "Применено скрытий: {count} на {pages} страницах",
+    "aiRedactPending": "ИИ-скрытие проверит каждую страницу при запуске.",
+    "noRedactionsError": "Нарисуйте хотя бы одну область скрытия или включите ИИ-скрытие.",
+    "redactButton": "Скрыть данные в PDF",
+    "resultHeadline": "{count} областей скрыто безвозвратно",
+    "textPermanentlyRemoved": "Текстовые данные удалены безвозвратно",
+    "processAnother": "Скрыть данные в другом файле"
   }
 }

@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML converti en PDF !",
     "pagesCreated": "Pages créées : {count}",
     "processAnother": "Convertir une autre page"
+  },
+  "protectTool": {
+    "openPasswordHeading": "Mot de passe d'ouverture",
+    "passwordPlaceholder": "Saisissez un mot de passe",
+    "confirmPlaceholder": "Confirmez le mot de passe",
+    "strength": {
+      "weak": "Faible",
+      "medium": "Moyen",
+      "strong": "Fort"
+    },
+    "permissionsPasswordHeading": "Mot de passe des autorisations",
+    "permissionsPasswordPlaceholder": "Définissez un mot de passe d'autorisations",
+    "permissionsPasswordHint": "Un mot de passe différent pour contrôler ce que les utilisateurs peuvent faire avec le fichier",
+    "permissionsHeading": "Autorisations",
+    "allowPrintLabel": "Autoriser l'impression",
+    "allowCopyLabel": "Autoriser la copie de texte",
+    "allowEditLabel": "Autoriser la modification",
+    "allowAnnotateLabel": "Autoriser l'ajout d'annotations",
+    "allowFillFormsLabel": "Autoriser le remplissage de formulaires",
+    "encryptionHeading": "Niveau de chiffrement",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "Compatible avec tous les lecteurs de PDF"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "Le plus sécurisé"
+      }
+    },
+    "warningBanner": "Conservez votre mot de passe en lieu sûr. S'il est perdu, le PDF ne pourra pas être récupéré — même pas par nous.",
+    "openPasswordRequired": "Saisissez un mot de passe pour protéger ce PDF.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas.",
+    "protectButton": "Protéger le PDF",
+    "protectedWith": "Protégé par mot de passe avec {encryption}",
+    "resultHeadline": "PDF protégé !",
+    "processAnother": "Protéger un autre fichier"
+  },
+  "unlockTool": {
+    "passwordHeading": "Saisissez le mot de passe du PDF",
+    "passwordPlaceholder": "Mot de passe",
+    "passwordRequired": "Saisissez le mot de passe du PDF.",
+    "infoBanner": "Vous devez connaître le mot de passe pour déverrouiller le fichier. Nous ne pouvons pas contourner un mot de passe inconnu.",
+    "whatWeRemoveHeading": "Ce que nous supprimons :",
+    "removeOpenPassword": "Mot de passe d'ouverture (requis pour consulter le fichier)",
+    "removeRestrictions": "Restrictions de modification/impression/copie",
+    "legalNotice": "Ne déverrouillez que les PDF que vous possédez ou que vous êtes autorisé à modifier.",
+    "unlockButton": "Déverrouiller le PDF",
+    "resultHeadline": "PDF déverrouillé !",
+    "processAnother": "Déverrouiller un autre fichier"
+  },
+  "certifyTool": {
+    "standardHeading": "Version PDF/A",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "Basique, la plus compatible"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "Meilleure compression"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "Autorise les fichiers intégrés"
+      }
+    },
+    "whatItDoesHeading": "Ce que fait la certification",
+    "info": {
+      "readability": "Garantit une lisibilité à long terme",
+      "embedFonts": "Intègre toutes les polices",
+      "removeJs": "Supprime le JavaScript",
+      "colorProfiles": "Standardise les profils de couleur",
+      "courtsArchives": "Accepté par les tribunaux et les archives"
+    },
+    "complianceCheckHeading": "Vérification préalable de conformité",
+    "checking": "Vérification de votre PDF…",
+    "check": {
+      "fontsOk": "Polices : intégrées",
+      "fontsWarn": "Polices : non entièrement intégrées — elles seront intégrées",
+      "colorOk": "Couleurs : sRGB",
+      "colorWarn": "Couleurs non-RVB détectées — elles seront converties",
+      "jsOk": "Aucun JavaScript détecté",
+      "jsWarn": "JavaScript détecté — il sera supprimé",
+      "transparencyOk": "Aucune transparence détectée",
+      "transparencyWarn": "Transparence détectée — elle sera aplatie"
+    },
+    "certifyButton": "Certifier le PDF",
+    "standardResult": "Norme : {standard}",
+    "bestEffortNotice": "La validation archivistique complète nécessite une fonctionnalité indisponible sur ce serveur pour le moment — le JavaScript a tout de même été supprimé.",
+    "resultHeadline": "PDF/A certifié !",
+    "processAnother": "Certifier un autre fichier"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "Dessiner",
+      "type": "Taper",
+      "upload": "Importer"
+    },
+    "clearButton": "Effacer",
+    "useSignatureButton": "Utiliser cette signature",
+    "yourNamePlaceholder": "Votre nom",
+    "propertiesHeading": "Propriétés de la signature",
+    "sizeLabel": "Taille",
+    "opacityLabel": "Opacité",
+    "applyToHeading": "Appliquer à",
+    "applyTo": {
+      "current": "Page actuelle uniquement",
+      "all": "Toutes les pages",
+      "custom": "Sélectionner des pages"
+    },
+    "dateStampLabel": "Ajouter la date à côté de la signature",
+    "pageOf": "Page {current} sur {total}",
+    "addSignatureButton": "Ajouter la signature",
+    "resultHeadline": "Signature ajoutée !",
+    "pagesSigned": "Page(s) signée(s) : {count}",
+    "processAnother": "Signer un autre fichier"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "Texte",
+      "image": "Image"
+    },
+    "fontSizeLabel": "Taille de police : {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Sans-serif italique"
+    },
+    "opacityLabel": "Opacité",
+    "scaleLabel": "Échelle",
+    "positionHeading": "Position",
+    "diagonalLabel": "Rotation de 45° (filigrane diagonal)",
+    "applyToHeading": "Appliquer à",
+    "applyTo": {
+      "all": "Toutes les pages",
+      "first": "Première page uniquement",
+      "custom": "Pages personnalisées"
+    },
+    "applyButton": "Appliquer le filigrane",
+    "previewLabel": "Aperçu en direct — première page",
+    "imageRequired": "Importez une image de filigrane.",
+    "resultHeadline": "Filigrane appliqué !",
+    "pagesStamped": "{count} pages tamponnées",
+    "processAnother": "Filigraner un autre fichier"
+  },
+  "redactTool": {
+    "drawHint": "Cliquez et faites glisser sur une page pour dessiner une zone de caviardage",
+    "colorHeading": "Couleur de caviardage",
+    "color": {
+      "black": "Noir (par défaut)",
+      "white": "Blanc (invisible)",
+      "custom": "Couleur personnalisée"
+    },
+    "optionsHeading": "Options",
+    "removeUnderlyingTextLabel": "Supprimer aussi le texte sous-jacent (pas seulement le masquer visuellement)",
+    "removeMetadataLabel": "Supprimer les métadonnées des zones caviardées",
+    "aiRedactHeading": "Caviardage IA",
+    "ai": {
+      "emails": "Adresses e-mail",
+      "phones": "Numéros de téléphone",
+      "names": "Noms (détection heuristique)",
+      "dates": "Dates",
+      "creditCards": "Numéros de carte bancaire",
+      "ssn": "Numéros de sécurité sociale",
+      "customPatternPlaceholder": "Motif personnalisé (regex)"
+    },
+    "redactionCount": "{count} caviardages appliqués sur {pages} pages",
+    "aiRedactPending": "Le caviardage IA analysera chaque page lors du lancement.",
+    "noRedactionsError": "Dessinez au moins une zone de caviardage, ou activez le caviardage IA.",
+    "redactButton": "Caviarder le PDF",
+    "resultHeadline": "{count} zones définitivement caviardées",
+    "textPermanentlyRemoved": "Données textuelles définitivement supprimées",
+    "processAnother": "Caviarder un autre fichier"
   }
 }

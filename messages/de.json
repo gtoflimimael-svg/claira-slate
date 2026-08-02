@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML in PDF umgewandelt!",
     "pagesCreated": "Erstellte Seiten: {count}",
     "processAnother": "Weitere Seite konvertieren"
+  },
+  "protectTool": {
+    "openPasswordHeading": "Öffnen-Passwort",
+    "passwordPlaceholder": "Passwort eingeben",
+    "confirmPlaceholder": "Passwort bestätigen",
+    "strength": {
+      "weak": "Schwach",
+      "medium": "Mittel",
+      "strong": "Stark"
+    },
+    "permissionsPasswordHeading": "Berechtigungspasswort",
+    "permissionsPasswordPlaceholder": "Berechtigungspasswort festlegen",
+    "permissionsPasswordHint": "Ein anderes Passwort, um zu steuern, was Nutzer mit der Datei tun dürfen",
+    "permissionsHeading": "Berechtigungen",
+    "allowPrintLabel": "Drucken erlauben",
+    "allowCopyLabel": "Textkopieren erlauben",
+    "allowEditLabel": "Bearbeiten erlauben",
+    "allowAnnotateLabel": "Anmerkungen hinzufügen erlauben",
+    "allowFillFormsLabel": "Formulare ausfüllen erlauben",
+    "encryptionHeading": "Verschlüsselungsstufe",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "Kompatibel mit allen PDF-Readern"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "Am sichersten"
+      }
+    },
+    "warningBanner": "Bewahren Sie Ihr Passwort sicher auf. Geht es verloren, kann das PDF nicht wiederhergestellt werden — auch nicht von uns.",
+    "openPasswordRequired": "Geben Sie ein Passwort ein, um dieses PDF zu schützen.",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+    "protectButton": "PDF schützen",
+    "protectedWith": "Passwortgeschützt mit {encryption}",
+    "resultHeadline": "PDF geschützt!",
+    "processAnother": "Weitere Datei schützen"
+  },
+  "unlockTool": {
+    "passwordHeading": "PDF-Passwort eingeben",
+    "passwordPlaceholder": "Passwort",
+    "passwordRequired": "Geben Sie das Passwort des PDFs ein.",
+    "infoBanner": "Sie müssen das Passwort kennen, um die Datei zu entsperren. Wir können unbekannte Passwörter nicht umgehen.",
+    "whatWeRemoveHeading": "Was wir entfernen:",
+    "removeOpenPassword": "Öffnen-Passwort (zum Anzeigen erforderlich)",
+    "removeRestrictions": "Bearbeitungs-/Druck-/Kopierbeschränkungen",
+    "legalNotice": "Entsperren Sie nur PDFs, die Ihnen gehören oder die Sie bearbeiten dürfen.",
+    "unlockButton": "PDF entsperren",
+    "resultHeadline": "PDF entsperrt!",
+    "processAnother": "Weitere Datei entsperren"
+  },
+  "certifyTool": {
+    "standardHeading": "PDF/A-Version",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "Einfach, am kompatibelsten"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "Bessere Komprimierung"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "Erlaubt eingebettete Dateien"
+      }
+    },
+    "whatItDoesHeading": "Was die Zertifizierung bewirkt",
+    "info": {
+      "readability": "Sichert langfristige Lesbarkeit",
+      "embedFonts": "Bettet alle Schriftarten ein",
+      "removeJs": "Entfernt JavaScript",
+      "colorProfiles": "Vereinheitlicht Farbprofile",
+      "courtsArchives": "Wird von Gerichten und Archiven akzeptiert"
+    },
+    "complianceCheckHeading": "Konformitätsprüfung",
+    "checking": "PDF wird geprüft…",
+    "check": {
+      "fontsOk": "Schriftarten: eingebettet",
+      "fontsWarn": "Schriftarten: nicht vollständig eingebettet — werden eingebettet",
+      "colorOk": "Farben: sRGB",
+      "colorWarn": "Nicht-RGB-Farben gefunden — werden konvertiert",
+      "jsOk": "Kein JavaScript gefunden",
+      "jsWarn": "JavaScript gefunden — wird entfernt",
+      "transparencyOk": "Keine Transparenz gefunden",
+      "transparencyWarn": "Transparenz gefunden — wird geglättet"
+    },
+    "certifyButton": "PDF zertifizieren",
+    "standardResult": "Standard: {standard}",
+    "bestEffortNotice": "Die vollständige Archivvalidierung erfordert eine Funktion, die auf diesem Server derzeit nicht verfügbar ist — JavaScript wurde trotzdem entfernt.",
+    "resultHeadline": "PDF/A zertifiziert!",
+    "processAnother": "Weitere Datei zertifizieren"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "Zeichnen",
+      "type": "Tippen",
+      "upload": "Hochladen"
+    },
+    "clearButton": "Löschen",
+    "useSignatureButton": "Diese Unterschrift verwenden",
+    "yourNamePlaceholder": "Ihr Name",
+    "propertiesHeading": "Signatureigenschaften",
+    "sizeLabel": "Größe",
+    "opacityLabel": "Deckkraft",
+    "applyToHeading": "Anwenden auf",
+    "applyTo": {
+      "current": "Nur aktuelle Seite",
+      "all": "Alle Seiten",
+      "custom": "Seiten auswählen"
+    },
+    "dateStampLabel": "Datum neben der Unterschrift hinzufügen",
+    "pageOf": "Seite {current} von {total}",
+    "addSignatureButton": "Unterschrift hinzufügen",
+    "resultHeadline": "Unterschrift hinzugefügt!",
+    "pagesSigned": "Unterschriebene Seite(n): {count}",
+    "processAnother": "Weitere Datei unterschreiben"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "Text",
+      "image": "Bild"
+    },
+    "fontSizeLabel": "Schriftgröße: {size}px",
+    "font": {
+      "helvetica": "Serifenlos",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Serifenlos kursiv"
+    },
+    "opacityLabel": "Deckkraft",
+    "scaleLabel": "Skalierung",
+    "positionHeading": "Position",
+    "diagonalLabel": "Um 45° drehen (diagonales Wasserzeichen)",
+    "applyToHeading": "Anwenden auf",
+    "applyTo": {
+      "all": "Alle Seiten",
+      "first": "Nur erste Seite",
+      "custom": "Benutzerdefinierte Seiten"
+    },
+    "applyButton": "Wasserzeichen anwenden",
+    "previewLabel": "Live-Vorschau — erste Seite",
+    "imageRequired": "Laden Sie ein Wasserzeichenbild hoch.",
+    "resultHeadline": "Wasserzeichen angewendet!",
+    "pagesStamped": "{count} Seiten gestempelt",
+    "processAnother": "Weitere Datei mit Wasserzeichen versehen"
+  },
+  "redactTool": {
+    "drawHint": "Klicken und ziehen Sie auf einer Seite, um einen Schwärzungsbereich zu zeichnen",
+    "colorHeading": "Schwärzungsfarbe",
+    "color": {
+      "black": "Schwarz (Standard)",
+      "white": "Weiß (unsichtbar)",
+      "custom": "Benutzerdefinierte Farbe"
+    },
+    "optionsHeading": "Optionen",
+    "removeUnderlyingTextLabel": "Auch den darunterliegenden Text entfernen (nicht nur visuell abdecken)",
+    "removeMetadataLabel": "Metadaten aus geschwärzten Bereichen entfernen",
+    "aiRedactHeading": "KI-Schwärzung",
+    "ai": {
+      "emails": "E-Mail-Adressen",
+      "phones": "Telefonnummern",
+      "names": "Namen (heuristische Erkennung)",
+      "dates": "Datumsangaben",
+      "creditCards": "Kreditkartennummern",
+      "ssn": "Sozialversicherungsnummern",
+      "customPatternPlaceholder": "Benutzerdefiniertes Muster (Regex)"
+    },
+    "redactionCount": "{count} Schwärzungen auf {pages} Seiten angewendet",
+    "aiRedactPending": "Die KI-Schwärzung durchsucht beim Ausführen jede Seite.",
+    "noRedactionsError": "Zeichnen Sie mindestens einen Schwärzungsbereich oder aktivieren Sie die KI-Schwärzung.",
+    "redactButton": "PDF schwärzen",
+    "resultHeadline": "{count} Bereiche dauerhaft geschwärzt",
+    "textPermanentlyRemoved": "Textdaten dauerhaft entfernt",
+    "processAnother": "Weitere Datei schwärzen"
   }
 }

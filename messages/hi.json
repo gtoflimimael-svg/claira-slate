@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML को PDF में बदल दिया गया!",
     "pagesCreated": "बनाए गए पृष्ठ: {count}",
     "processAnother": "एक और पृष्ठ बदलें"
+  },
+  "protectTool": {
+    "openPasswordHeading": "खोलने का पासवर्ड",
+    "passwordPlaceholder": "एक पासवर्ड दर्ज करें",
+    "confirmPlaceholder": "पासवर्ड की पुष्टि करें",
+    "strength": {
+      "weak": "कमज़ोर",
+      "medium": "मध्यम",
+      "strong": "मज़बूत"
+    },
+    "permissionsPasswordHeading": "अनुमतियों का पासवर्ड",
+    "permissionsPasswordPlaceholder": "अनुमतियों के लिए पासवर्ड सेट करें",
+    "permissionsPasswordHint": "यह नियंत्रित करने के लिए एक अलग पासवर्ड कि उपयोगकर्ता फ़ाइल के साथ क्या कर सकते हैं",
+    "permissionsHeading": "अनुमतियाँ",
+    "allowPrintLabel": "प्रिंटिंग की अनुमति दें",
+    "allowCopyLabel": "टेक्स्ट कॉपी करने की अनुमति दें",
+    "allowEditLabel": "संपादन की अनुमति दें",
+    "allowAnnotateLabel": "टिप्पणियाँ जोड़ने की अनुमति दें",
+    "allowFillFormsLabel": "फ़ॉर्म भरने की अनुमति दें",
+    "encryptionHeading": "एन्क्रिप्शन स्तर",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "सभी PDF रीडर के साथ संगत"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "सबसे सुरक्षित"
+      }
+    },
+    "warningBanner": "अपना पासवर्ड सुरक्षित रखें। यदि यह खो जाता है, तो PDF को पुनर्प्राप्त नहीं किया जा सकता — यहाँ तक कि हमारे द्वारा भी नहीं।",
+    "openPasswordRequired": "इस PDF को सुरक्षित करने के लिए एक पासवर्ड दर्ज करें।",
+    "passwordMismatch": "पासवर्ड मेल नहीं खाते।",
+    "protectButton": "PDF सुरक्षित करें",
+    "protectedWith": "{encryption} के साथ पासवर्ड सुरक्षित",
+    "resultHeadline": "PDF सुरक्षित हो गया!",
+    "processAnother": "एक और फ़ाइल सुरक्षित करें"
+  },
+  "unlockTool": {
+    "passwordHeading": "PDF पासवर्ड दर्ज करें",
+    "passwordPlaceholder": "पासवर्ड",
+    "passwordRequired": "PDF का पासवर्ड दर्ज करें।",
+    "infoBanner": "फ़ाइल को अनलॉक करने के लिए आपको पासवर्ड पता होना चाहिए। हम अज्ञात पासवर्ड को बायपास नहीं कर सकते।",
+    "whatWeRemoveHeading": "हम क्या हटाते हैं:",
+    "removeOpenPassword": "खोलने का पासवर्ड (देखने के लिए आवश्यक)",
+    "removeRestrictions": "संपादन/प्रिंट/कॉपी प्रतिबंध",
+    "legalNotice": "केवल वही PDF अनलॉक करें जिनके आप मालिक हैं या जिन्हें बदलने की आपको अनुमति है।",
+    "unlockButton": "PDF अनलॉक करें",
+    "resultHeadline": "PDF अनलॉक हो गया!",
+    "processAnother": "एक और फ़ाइल अनलॉक करें"
+  },
+  "certifyTool": {
+    "standardHeading": "PDF/A संस्करण",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "बुनियादी, सबसे अधिक संगत"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "बेहतर संपीड़न"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "एम्बेडेड फ़ाइलों की अनुमति देता है"
+      }
+    },
+    "whatItDoesHeading": "प्रमाणन क्या करता है",
+    "info": {
+      "readability": "दीर्घकालिक पठनीयता सुनिश्चित करता है",
+      "embedFonts": "सभी फ़ॉन्ट एम्बेड करता है",
+      "removeJs": "JavaScript हटाता है",
+      "colorProfiles": "रंग प्रोफ़ाइल को मानकीकृत करता है",
+      "courtsArchives": "अदालतों और अभिलेखागारों द्वारा स्वीकार किया जाता है"
+    },
+    "complianceCheckHeading": "अनुपालन पूर्व-जांच",
+    "checking": "आपकी PDF जाँची जा रही है…",
+    "check": {
+      "fontsOk": "फ़ॉन्ट: एम्बेडेड",
+      "fontsWarn": "फ़ॉन्ट: पूरी तरह एम्बेडेड नहीं — एम्बेड किए जाएँगे",
+      "colorOk": "रंग: sRGB",
+      "colorWarn": "गैर-RGB रंग मिले — बदले जाएँगे",
+      "jsOk": "कोई JavaScript नहीं मिला",
+      "jsWarn": "JavaScript मिला — हटाया जाएगा",
+      "transparencyOk": "कोई पारदर्शिता नहीं मिली",
+      "transparencyWarn": "पारदर्शिता मिली — समतल की जाएगी"
+    },
+    "certifyButton": "PDF प्रमाणित करें",
+    "standardResult": "मानक: {standard}",
+    "bestEffortNotice": "पूर्ण आर्काइवल सत्यापन के लिए एक ऐसी सुविधा चाहिए जो फ़िलहाल इस सर्वर पर उपलब्ध नहीं है — फिर भी JavaScript हटा दिया गया है।",
+    "resultHeadline": "PDF/A प्रमाणित हो गया!",
+    "processAnother": "एक और फ़ाइल प्रमाणित करें"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "बनाएँ",
+      "type": "टाइप करें",
+      "upload": "अपलोड करें"
+    },
+    "clearButton": "साफ़ करें",
+    "useSignatureButton": "यह हस्ताक्षर उपयोग करें",
+    "yourNamePlaceholder": "आपका नाम",
+    "propertiesHeading": "हस्ताक्षर गुण",
+    "sizeLabel": "आकार",
+    "opacityLabel": "अपारदर्शिता",
+    "applyToHeading": "यहाँ लागू करें",
+    "applyTo": {
+      "current": "केवल वर्तमान पृष्ठ",
+      "all": "सभी पृष्ठ",
+      "custom": "पृष्ठ चुनें"
+    },
+    "dateStampLabel": "हस्ताक्षर के बगल में तारीख जोड़ें",
+    "pageOf": "पृष्ठ {current} / {total}",
+    "addSignatureButton": "हस्ताक्षर जोड़ें",
+    "resultHeadline": "हस्ताक्षर जोड़ दिया गया!",
+    "pagesSigned": "हस्ताक्षरित पृष्ठ: {count}",
+    "processAnother": "एक और फ़ाइल पर हस्ताक्षर करें"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "टेक्स्ट",
+      "image": "छवि"
+    },
+    "fontSizeLabel": "फ़ॉन्ट आकार: {size}px",
+    "font": {
+      "helvetica": "सैन्स-सेरिफ़",
+      "times": "सेरिफ़",
+      "courier": "मोनोस्पेस",
+      "helveticaOblique": "सैन्स-सेरिफ़ इटैलिक"
+    },
+    "opacityLabel": "अपारदर्शिता",
+    "scaleLabel": "स्केल",
+    "positionHeading": "स्थिति",
+    "diagonalLabel": "45° घुमाएँ (तिरछा वॉटरमार्क)",
+    "applyToHeading": "यहाँ लागू करें",
+    "applyTo": {
+      "all": "सभी पृष्ठ",
+      "first": "केवल पहला पृष्ठ",
+      "custom": "कस्टम पृष्ठ"
+    },
+    "applyButton": "वॉटरमार्क लागू करें",
+    "previewLabel": "लाइव पूर्वावलोकन — पहला पृष्ठ",
+    "imageRequired": "वॉटरमार्क के लिए एक छवि अपलोड करें।",
+    "resultHeadline": "वॉटरमार्क लागू हो गया!",
+    "pagesStamped": "{count} पृष्ठों पर स्टैंप किया गया",
+    "processAnother": "एक और फ़ाइल पर वॉटरमार्क लगाएँ"
+  },
+  "redactTool": {
+    "drawHint": "रीडैक्शन बॉक्स बनाने के लिए किसी पृष्ठ पर क्लिक करें और खींचें",
+    "colorHeading": "रीडैक्शन रंग",
+    "color": {
+      "black": "काला (डिफ़ॉल्ट)",
+      "white": "सफ़ेद (अदृश्य)",
+      "custom": "कस्टम रंग"
+    },
+    "optionsHeading": "विकल्प",
+    "removeUnderlyingTextLabel": "अंतर्निहित टेक्स्ट भी हटाएँ (केवल दृश्य रूप से न ढकें)",
+    "removeMetadataLabel": "रीडैक्ट किए गए क्षेत्रों से मेटाडेटा हटाएँ",
+    "aiRedactHeading": "AI रीडैक्ट",
+    "ai": {
+      "emails": "ईमेल पते",
+      "phones": "फ़ोन नंबर",
+      "names": "नाम (अनुमानित पहचान)",
+      "dates": "तारीखें",
+      "creditCards": "क्रेडिट कार्ड नंबर",
+      "ssn": "सामाजिक सुरक्षा नंबर",
+      "customPatternPlaceholder": "कस्टम पैटर्न (regex)"
+    },
+    "redactionCount": "{pages} पृष्ठों में {count} रीडैक्शन लागू किए गए",
+    "aiRedactPending": "चलाने पर AI रीडैक्ट हर पृष्ठ को स्कैन करेगा।",
+    "noRedactionsError": "कम से कम एक रीडैक्शन बॉक्स बनाएँ, या AI रीडैक्ट सक्षम करें।",
+    "redactButton": "PDF रीडैक्ट करें",
+    "resultHeadline": "{count} क्षेत्र स्थायी रूप से रीडैक्ट किए गए",
+    "textPermanentlyRemoved": "टेक्स्ट डेटा स्थायी रूप से हटा दिया गया",
+    "processAnother": "एक और फ़ाइल रीडैक्ट करें"
   }
 }

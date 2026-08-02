@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML 已转换为 PDF！",
     "pagesCreated": "已创建页数：{count}",
     "processAnother": "转换另一个页面"
+  },
+  "protectTool": {
+    "openPasswordHeading": "打开密码",
+    "passwordPlaceholder": "输入密码",
+    "confirmPlaceholder": "确认密码",
+    "strength": {
+      "weak": "弱",
+      "medium": "中等",
+      "strong": "强"
+    },
+    "permissionsPasswordHeading": "权限密码",
+    "permissionsPasswordPlaceholder": "设置权限密码",
+    "permissionsPasswordHint": "用于控制用户可对文件执行的操作的另一个密码",
+    "permissionsHeading": "权限",
+    "allowPrintLabel": "允许打印",
+    "allowCopyLabel": "允许复制文本",
+    "allowEditLabel": "允许编辑",
+    "allowAnnotateLabel": "允许添加批注",
+    "allowFillFormsLabel": "允许填写表单",
+    "encryptionHeading": "加密级别",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "与所有 PDF 阅读器兼容"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "最高安全性"
+      }
+    },
+    "warningBanner": "请妥善保管密码。一旦丢失，该 PDF 将无法恢复——即使我们也无法恢复。",
+    "openPasswordRequired": "请输入密码以保护此 PDF。",
+    "passwordMismatch": "两次输入的密码不一致。",
+    "protectButton": "保护 PDF",
+    "protectedWith": "已使用 {encryption} 进行密码保护",
+    "resultHeadline": "PDF 已受保护！",
+    "processAnother": "保护另一个文件"
+  },
+  "unlockTool": {
+    "passwordHeading": "输入 PDF 密码",
+    "passwordPlaceholder": "密码",
+    "passwordRequired": "请输入该 PDF 的密码。",
+    "infoBanner": "您必须知道密码才能解锁文件。我们无法绕过未知密码。",
+    "whatWeRemoveHeading": "将移除的内容：",
+    "removeOpenPassword": "打开密码（查看时需要）",
+    "removeRestrictions": "编辑/打印/复制限制",
+    "legalNotice": "仅可解锁您拥有或获得授权修改的 PDF。",
+    "unlockButton": "解锁 PDF",
+    "resultHeadline": "PDF 已解锁！",
+    "processAnother": "解锁另一个文件"
+  },
+  "certifyTool": {
+    "standardHeading": "PDF/A 版本",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "基础版，兼容性最佳"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "压缩效果更好"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "允许嵌入文件"
+      }
+    },
+    "whatItDoesHeading": "认证会执行的操作",
+    "info": {
+      "readability": "确保长期可读性",
+      "embedFonts": "嵌入所有字体",
+      "removeJs": "移除 JavaScript",
+      "colorProfiles": "统一色彩配置文件",
+      "courtsArchives": "被法院和档案机构接受"
+    },
+    "complianceCheckHeading": "合规性预检查",
+    "checking": "正在检查您的 PDF…",
+    "check": {
+      "fontsOk": "字体：已嵌入",
+      "fontsWarn": "字体：未完全嵌入 — 将进行嵌入",
+      "colorOk": "颜色：sRGB",
+      "colorWarn": "检测到非 RGB 颜色 — 将进行转换",
+      "jsOk": "未检测到 JavaScript",
+      "jsWarn": "检测到 JavaScript — 将被移除",
+      "transparencyOk": "未检测到透明度",
+      "transparencyWarn": "检测到透明度 — 将被拼合"
+    },
+    "certifyButton": "认证 PDF",
+    "standardResult": "标准：{standard}",
+    "bestEffortNotice": "完整的存档级验证需要此服务器当前不可用的功能 — 但 JavaScript 仍已被移除。",
+    "resultHeadline": "PDF/A 认证完成！",
+    "processAnother": "认证另一个文件"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "手写",
+      "type": "输入",
+      "upload": "上传"
+    },
+    "clearButton": "清除",
+    "useSignatureButton": "使用此签名",
+    "yourNamePlaceholder": "您的姓名",
+    "propertiesHeading": "签名属性",
+    "sizeLabel": "大小",
+    "opacityLabel": "不透明度",
+    "applyToHeading": "应用于",
+    "applyTo": {
+      "current": "仅当前页",
+      "all": "所有页面",
+      "custom": "选择页面"
+    },
+    "dateStampLabel": "在签名旁添加日期",
+    "pageOf": "第 {current} 页，共 {total} 页",
+    "addSignatureButton": "添加签名",
+    "resultHeadline": "签名已添加！",
+    "pagesSigned": "已签名页数：{count}",
+    "processAnother": "为另一个文件签名"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "文本",
+      "image": "图片"
+    },
+    "fontSizeLabel": "字体大小：{size}px",
+    "font": {
+      "helvetica": "无衬线体",
+      "times": "衬线体",
+      "courier": "等宽字体",
+      "helveticaOblique": "无衬线斜体"
+    },
+    "opacityLabel": "不透明度",
+    "scaleLabel": "缩放比例",
+    "positionHeading": "位置",
+    "diagonalLabel": "旋转 45°（对角水印）",
+    "applyToHeading": "应用于",
+    "applyTo": {
+      "all": "所有页面",
+      "first": "仅第一页",
+      "custom": "自定义页面"
+    },
+    "applyButton": "应用水印",
+    "previewLabel": "实时预览——第一页",
+    "imageRequired": "请上传水印图片。",
+    "resultHeadline": "水印已应用！",
+    "pagesStamped": "已为 {count} 页添加水印",
+    "processAnother": "为另一个文件添加水印"
+  },
+  "redactTool": {
+    "drawHint": "在页面上点击并拖动以绘制涂黑区域",
+    "colorHeading": "涂黑颜色",
+    "color": {
+      "black": "黑色（默认）",
+      "white": "白色（隐形）",
+      "custom": "自定义颜色"
+    },
+    "optionsHeading": "选项",
+    "removeUnderlyingTextLabel": "同时移除底层文本（而不仅仅是视觉遮盖）",
+    "removeMetadataLabel": "移除涂黑区域的元数据",
+    "aiRedactHeading": "AI 涂黑",
+    "ai": {
+      "emails": "电子邮件地址",
+      "phones": "电话号码",
+      "names": "姓名（启发式检测）",
+      "dates": "日期",
+      "creditCards": "信用卡号",
+      "ssn": "社会保障号码",
+      "customPatternPlaceholder": "自定义模式（正则表达式）"
+    },
+    "redactionCount": "已在 {pages} 页中应用 {count} 处涂黑",
+    "aiRedactPending": "运行后，AI 涂黑将扫描每一页。",
+    "noRedactionsError": "请至少绘制一个涂黑区域，或启用 AI 涂黑。",
+    "redactButton": "涂黑 PDF",
+    "resultHeadline": "已永久涂黑 {count} 处区域",
+    "textPermanentlyRemoved": "文本数据已永久移除",
+    "processAnother": "涂黑另一个文件"
   }
 }

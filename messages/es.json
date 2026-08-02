@@ -1434,5 +1434,180 @@
     "resultHeadline": "¡HTML convertido a PDF!",
     "pagesCreated": "Páginas creadas: {count}",
     "processAnother": "Convertir otra página"
+  },
+  "protectTool": {
+    "openPasswordHeading": "Contraseña de apertura",
+    "passwordPlaceholder": "Introduce una contraseña",
+    "confirmPlaceholder": "Confirma la contraseña",
+    "strength": {
+      "weak": "Débil",
+      "medium": "Media",
+      "strong": "Fuerte"
+    },
+    "permissionsPasswordHeading": "Contraseña de permisos",
+    "permissionsPasswordPlaceholder": "Establece una contraseña de permisos",
+    "permissionsPasswordHint": "Una contraseña diferente para controlar lo que los usuarios pueden hacer con el archivo",
+    "permissionsHeading": "Permisos",
+    "allowPrintLabel": "Permitir impresión",
+    "allowCopyLabel": "Permitir copiar texto",
+    "allowEditLabel": "Permitir edición",
+    "allowAnnotateLabel": "Permitir añadir anotaciones",
+    "allowFillFormsLabel": "Permitir rellenar formularios",
+    "encryptionHeading": "Nivel de cifrado",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "Compatible con todos los lectores de PDF"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "Máxima seguridad"
+      }
+    },
+    "warningBanner": "Guarda bien tu contraseña. Si la pierdes, el PDF no se podrá recuperar — ni siquiera por nosotros.",
+    "openPasswordRequired": "Introduce una contraseña para proteger este PDF.",
+    "passwordMismatch": "Las contraseñas no coinciden.",
+    "protectButton": "Proteger PDF",
+    "protectedWith": "Protegido con contraseña usando {encryption}",
+    "resultHeadline": "¡PDF protegido!",
+    "processAnother": "Proteger otro archivo"
+  },
+  "unlockTool": {
+    "passwordHeading": "Introduce la contraseña del PDF",
+    "passwordPlaceholder": "Contraseña",
+    "passwordRequired": "Introduce la contraseña del PDF.",
+    "infoBanner": "Debes conocer la contraseña para desbloquear el archivo. No podemos saltarnos contraseñas desconocidas.",
+    "whatWeRemoveHeading": "Qué eliminamos:",
+    "removeOpenPassword": "Contraseña de apertura (necesaria para ver el archivo)",
+    "removeRestrictions": "Restricciones de edición/impresión/copia",
+    "legalNotice": "Desbloquea únicamente PDF que te pertenezcan o que tengas permiso para modificar.",
+    "unlockButton": "Desbloquear PDF",
+    "resultHeadline": "¡PDF desbloqueado!",
+    "processAnother": "Desbloquear otro archivo"
+  },
+  "certifyTool": {
+    "standardHeading": "Versión PDF/A",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "Básico, el más compatible"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "Mejor compresión"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "Permite archivos incrustados"
+      }
+    },
+    "whatItDoesHeading": "Qué hace la certificación",
+    "info": {
+      "readability": "Garantiza la legibilidad a largo plazo",
+      "embedFonts": "Incrusta todas las fuentes",
+      "removeJs": "Elimina el JavaScript",
+      "colorProfiles": "Estandariza los perfiles de color",
+      "courtsArchives": "Aceptado por tribunales y archivos"
+    },
+    "complianceCheckHeading": "Verificación previa de cumplimiento",
+    "checking": "Comprobando tu PDF…",
+    "check": {
+      "fontsOk": "Fuentes: incrustadas",
+      "fontsWarn": "Fuentes: no completamente incrustadas — se incrustarán",
+      "colorOk": "Colores: sRGB",
+      "colorWarn": "Se encontraron colores no RGB — se convertirán",
+      "jsOk": "No se encontró JavaScript",
+      "jsWarn": "Se encontró JavaScript — se eliminará",
+      "transparencyOk": "No se encontró transparencia",
+      "transparencyWarn": "Se encontró transparencia — se aplanará"
+    },
+    "certifyButton": "Certificar PDF",
+    "standardResult": "Norma: {standard}",
+    "bestEffortNotice": "La validación archivística completa requiere una función que no está disponible en este servidor por ahora — aun así se eliminó el JavaScript.",
+    "resultHeadline": "¡PDF/A certificado!",
+    "processAnother": "Certificar otro archivo"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "Dibujar",
+      "type": "Escribir",
+      "upload": "Subir"
+    },
+    "clearButton": "Borrar",
+    "useSignatureButton": "Usar esta firma",
+    "yourNamePlaceholder": "Tu nombre",
+    "propertiesHeading": "Propiedades de la firma",
+    "sizeLabel": "Tamaño",
+    "opacityLabel": "Opacidad",
+    "applyToHeading": "Aplicar a",
+    "applyTo": {
+      "current": "Solo la página actual",
+      "all": "Todas las páginas",
+      "custom": "Seleccionar páginas"
+    },
+    "dateStampLabel": "Añadir fecha junto a la firma",
+    "pageOf": "Página {current} de {total}",
+    "addSignatureButton": "Añadir firma",
+    "resultHeadline": "¡Firma añadida!",
+    "pagesSigned": "Página(s) firmada(s): {count}",
+    "processAnother": "Firmar otro archivo"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "Texto",
+      "image": "Imagen"
+    },
+    "fontSizeLabel": "Tamaño de fuente: {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monoespaciada",
+      "helveticaOblique": "Sans-serif cursiva"
+    },
+    "opacityLabel": "Opacidad",
+    "scaleLabel": "Escala",
+    "positionHeading": "Posición",
+    "diagonalLabel": "Rotar 45° (marca de agua diagonal)",
+    "applyToHeading": "Aplicar a",
+    "applyTo": {
+      "all": "Todas las páginas",
+      "first": "Solo la primera página",
+      "custom": "Páginas personalizadas"
+    },
+    "applyButton": "Aplicar marca de agua",
+    "previewLabel": "Vista previa en vivo — primera página",
+    "imageRequired": "Sube una imagen para la marca de agua.",
+    "resultHeadline": "¡Marca de agua aplicada!",
+    "pagesStamped": "{count} páginas marcadas",
+    "processAnother": "Marcar otro archivo"
+  },
+  "redactTool": {
+    "drawHint": "Haz clic y arrastra sobre una página para dibujar un área de censura",
+    "colorHeading": "Color de censura",
+    "color": {
+      "black": "Negro (predeterminado)",
+      "white": "Blanco (invisible)",
+      "custom": "Color personalizado"
+    },
+    "optionsHeading": "Opciones",
+    "removeUnderlyingTextLabel": "Eliminar también el texto subyacente (no solo cubrirlo visualmente)",
+    "removeMetadataLabel": "Eliminar metadatos de las áreas censuradas",
+    "aiRedactHeading": "Censura con IA",
+    "ai": {
+      "emails": "Direcciones de correo",
+      "phones": "Números de teléfono",
+      "names": "Nombres (detección heurística)",
+      "dates": "Fechas",
+      "creditCards": "Números de tarjeta de crédito",
+      "ssn": "Números de la seguridad social",
+      "customPatternPlaceholder": "Patrón personalizado (regex)"
+    },
+    "redactionCount": "{count} censuras aplicadas en {pages} páginas",
+    "aiRedactPending": "La censura con IA escaneará cada página al ejecutarse.",
+    "noRedactionsError": "Dibuja al menos un área de censura, o activa la censura con IA.",
+    "redactButton": "Censurar PDF",
+    "resultHeadline": "{count} áreas censuradas permanentemente",
+    "textPermanentlyRemoved": "Datos de texto eliminados permanentemente",
+    "processAnother": "Censurar otro archivo"
   }
 }

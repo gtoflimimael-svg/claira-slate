@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTML converted to PDF!",
     "pagesCreated": "Pages created: {count}",
     "processAnother": "Convert another page"
+  },
+  "protectTool": {
+    "openPasswordHeading": "Open password",
+    "passwordPlaceholder": "Enter a password",
+    "confirmPlaceholder": "Confirm password",
+    "strength": {
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong"
+    },
+    "permissionsPasswordHeading": "Permissions password",
+    "permissionsPasswordPlaceholder": "Set a permissions password",
+    "permissionsPasswordHint": "A different password to control what users can do with the file",
+    "permissionsHeading": "Permissions",
+    "allowPrintLabel": "Allow printing",
+    "allowCopyLabel": "Allow copying text",
+    "allowEditLabel": "Allow editing",
+    "allowAnnotateLabel": "Allow adding annotations",
+    "allowFillFormsLabel": "Allow filling forms",
+    "encryptionHeading": "Encryption level",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "Compatible with all PDF readers"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "Most secure"
+      }
+    },
+    "warningBanner": "Keep your password safe. If lost, the PDF cannot be recovered — not even by us.",
+    "openPasswordRequired": "Enter a password to protect this PDF.",
+    "passwordMismatch": "Passwords don't match.",
+    "protectButton": "Protect PDF",
+    "protectedWith": "Password protected with {encryption}",
+    "resultHeadline": "PDF protected!",
+    "processAnother": "Protect another file"
+  },
+  "unlockTool": {
+    "passwordHeading": "Enter the PDF password",
+    "passwordPlaceholder": "Password",
+    "passwordRequired": "Enter the PDF's password.",
+    "infoBanner": "You must know the password to unlock the file. We cannot bypass unknown passwords.",
+    "whatWeRemoveHeading": "What we remove:",
+    "removeOpenPassword": "Open password (requires password to view)",
+    "removeRestrictions": "Edit/print/copy restrictions",
+    "legalNotice": "Only unlock PDFs you own or have permission to modify.",
+    "unlockButton": "Unlock PDF",
+    "resultHeadline": "PDF unlocked!",
+    "processAnother": "Unlock another file"
+  },
+  "certifyTool": {
+    "standardHeading": "PDF/A version",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "Basic, most compatible"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "Better compression"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "Allows embedded files"
+      }
+    },
+    "whatItDoesHeading": "What certification does",
+    "info": {
+      "readability": "Ensures long-term readability",
+      "embedFonts": "Embeds all fonts",
+      "removeJs": "Removes JavaScript",
+      "colorProfiles": "Standardizes color profiles",
+      "courtsArchives": "Accepted by courts and archives"
+    },
+    "complianceCheckHeading": "Compliance pre-check",
+    "checking": "Checking your PDF…",
+    "check": {
+      "fontsOk": "Fonts: embedded",
+      "fontsWarn": "Fonts: not fully embedded — will be embedded",
+      "colorOk": "Colors: sRGB",
+      "colorWarn": "Colors: non-RGB found — will be converted",
+      "jsOk": "No JavaScript found",
+      "jsWarn": "JavaScript found — will be removed",
+      "transparencyOk": "No transparency found",
+      "transparencyWarn": "Transparency found — will be flattened"
+    },
+    "certifyButton": "Certify PDF",
+    "standardResult": "Standard: {standard}",
+    "bestEffortNotice": "Full archival validation needs a feature that isn't available on this server right now — JavaScript was still removed for you.",
+    "resultHeadline": "PDF/A certified!",
+    "processAnother": "Certify another file"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "Draw",
+      "type": "Type",
+      "upload": "Upload"
+    },
+    "clearButton": "Clear",
+    "useSignatureButton": "Use this signature",
+    "yourNamePlaceholder": "Your name",
+    "propertiesHeading": "Signature properties",
+    "sizeLabel": "Size",
+    "opacityLabel": "Opacity",
+    "applyToHeading": "Apply to",
+    "applyTo": {
+      "current": "Current page only",
+      "all": "All pages",
+      "custom": "Select pages"
+    },
+    "dateStampLabel": "Add date next to signature",
+    "pageOf": "Page {current} of {total}",
+    "addSignatureButton": "Add signature",
+    "resultHeadline": "Signature added!",
+    "pagesSigned": "Page(s) signed: {count}",
+    "processAnother": "Sign another file"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "Text",
+      "image": "Image"
+    },
+    "fontSizeLabel": "Font size: {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Sans-serif italic"
+    },
+    "opacityLabel": "Opacity",
+    "scaleLabel": "Scale",
+    "positionHeading": "Position",
+    "diagonalLabel": "Rotate 45° (diagonal watermark)",
+    "applyToHeading": "Apply to",
+    "applyTo": {
+      "all": "All pages",
+      "first": "First page only",
+      "custom": "Custom pages"
+    },
+    "applyButton": "Apply watermark",
+    "previewLabel": "Live preview — first page",
+    "imageRequired": "Upload a watermark image.",
+    "resultHeadline": "Watermark applied!",
+    "pagesStamped": "{count} pages stamped",
+    "processAnother": "Watermark another file"
+  },
+  "redactTool": {
+    "drawHint": "Click and drag on a page to draw a redaction box",
+    "colorHeading": "Redaction color",
+    "color": {
+      "black": "Black (default)",
+      "white": "White (invisible)",
+      "custom": "Custom color"
+    },
+    "optionsHeading": "Options",
+    "removeUnderlyingTextLabel": "Also remove underlying text (not just visually cover it)",
+    "removeMetadataLabel": "Remove metadata from redacted areas",
+    "aiRedactHeading": "AI Redact",
+    "ai": {
+      "emails": "Email addresses",
+      "phones": "Phone numbers",
+      "names": "Names (heuristic detection)",
+      "dates": "Dates",
+      "creditCards": "Credit card numbers",
+      "ssn": "Social security numbers",
+      "customPatternPlaceholder": "Custom pattern (regex)"
+    },
+    "redactionCount": "{count} redactions applied across {pages} pages",
+    "aiRedactPending": "AI Redact will scan every page when you run this.",
+    "noRedactionsError": "Draw at least one redaction box, or enable AI Redact.",
+    "redactButton": "Redact PDF",
+    "resultHeadline": "{count} areas permanently redacted",
+    "textPermanentlyRemoved": "Text data permanently removed",
+    "processAnother": "Redact another file"
   }
 }

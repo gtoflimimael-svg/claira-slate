@@ -1434,5 +1434,180 @@
     "resultHeadline": "HTMLをPDFに変換しました！",
     "pagesCreated": "作成されたページ数: {count}",
     "processAnother": "別のページを変換"
+  },
+  "protectTool": {
+    "openPasswordHeading": "開くためのパスワード",
+    "passwordPlaceholder": "パスワードを入力",
+    "confirmPlaceholder": "パスワードを確認",
+    "strength": {
+      "weak": "弱い",
+      "medium": "普通",
+      "strong": "強い"
+    },
+    "permissionsPasswordHeading": "権限用パスワード",
+    "permissionsPasswordPlaceholder": "権限用パスワードを設定",
+    "permissionsPasswordHint": "ファイルに対してユーザーができることを制御する別のパスワード",
+    "permissionsHeading": "権限",
+    "allowPrintLabel": "印刷を許可",
+    "allowCopyLabel": "テキストのコピーを許可",
+    "allowEditLabel": "編集を許可",
+    "allowAnnotateLabel": "注釈の追加を許可",
+    "allowFillFormsLabel": "フォームへの入力を許可",
+    "encryptionHeading": "暗号化レベル",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "すべてのPDFリーダーと互換"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "最も安全"
+      }
+    },
+    "warningBanner": "パスワードは安全に保管してください。紛失した場合、PDFは復元できません — 私たちにもできません。",
+    "openPasswordRequired": "このPDFを保護するにはパスワードを入力してください。",
+    "passwordMismatch": "パスワードが一致しません。",
+    "protectButton": "PDFを保護",
+    "protectedWith": "{encryption} でパスワード保護されました",
+    "resultHeadline": "PDFを保護しました！",
+    "processAnother": "別のファイルを保護"
+  },
+  "unlockTool": {
+    "passwordHeading": "PDFのパスワードを入力",
+    "passwordPlaceholder": "パスワード",
+    "passwordRequired": "PDFのパスワードを入力してください。",
+    "infoBanner": "ファイルのロックを解除するにはパスワードを知っている必要があります。不明なパスワードを回避することはできません。",
+    "whatWeRemoveHeading": "削除される内容:",
+    "removeOpenPassword": "開くためのパスワード（閲覧に必要）",
+    "removeRestrictions": "編集・印刷・コピーの制限",
+    "legalNotice": "ご自身が所有する、または変更する権限のあるPDFのみロックを解除してください。",
+    "unlockButton": "PDFのロックを解除",
+    "resultHeadline": "PDFのロックを解除しました！",
+    "processAnother": "別のファイルのロックを解除"
+  },
+  "certifyTool": {
+    "standardHeading": "PDF/Aのバージョン",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "基本、最も互換性が高い"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "より高い圧縮率"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "埋め込みファイルを許可"
+      }
+    },
+    "whatItDoesHeading": "認証で行われること",
+    "info": {
+      "readability": "長期的な可読性を確保します",
+      "embedFonts": "すべてのフォントを埋め込みます",
+      "removeJs": "JavaScriptを削除します",
+      "colorProfiles": "カラープロファイルを標準化します",
+      "courtsArchives": "裁判所やアーカイブで受け入れられます"
+    },
+    "complianceCheckHeading": "適合性の事前チェック",
+    "checking": "PDFを確認しています…",
+    "check": {
+      "fontsOk": "フォント: 埋め込み済み",
+      "fontsWarn": "フォント: 完全には埋め込まれていません — 埋め込まれます",
+      "colorOk": "色: sRGB",
+      "colorWarn": "RGB以外の色が見つかりました — 変換されます",
+      "jsOk": "JavaScriptは見つかりませんでした",
+      "jsWarn": "JavaScriptが見つかりました — 削除されます",
+      "transparencyOk": "透明度は見つかりませんでした",
+      "transparencyWarn": "透明度が見つかりました — 統合されます"
+    },
+    "certifyButton": "PDFを認証",
+    "standardResult": "規格: {standard}",
+    "bestEffortNotice": "完全なアーカイブ検証には現在このサーバーで利用できない機能が必要です — それでもJavaScriptは削除されました。",
+    "resultHeadline": "PDF/Aを認証しました！",
+    "processAnother": "別のファイルを認証"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "描く",
+      "type": "入力",
+      "upload": "アップロード"
+    },
+    "clearButton": "クリア",
+    "useSignatureButton": "この署名を使用",
+    "yourNamePlaceholder": "お名前",
+    "propertiesHeading": "署名のプロパティ",
+    "sizeLabel": "サイズ",
+    "opacityLabel": "不透明度",
+    "applyToHeading": "適用先",
+    "applyTo": {
+      "current": "現在のページのみ",
+      "all": "すべてのページ",
+      "custom": "ページを選択"
+    },
+    "dateStampLabel": "署名の横に日付を追加する",
+    "pageOf": "{total} ページ中 {current} ページ目",
+    "addSignatureButton": "署名を追加",
+    "resultHeadline": "署名を追加しました！",
+    "pagesSigned": "署名したページ数: {count}",
+    "processAnother": "別のファイルに署名"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "テキスト",
+      "image": "画像"
+    },
+    "fontSizeLabel": "フォントサイズ: {size}px",
+    "font": {
+      "helvetica": "サンセリフ体",
+      "times": "セリフ体",
+      "courier": "等幅",
+      "helveticaOblique": "サンセリフ体（斜体）"
+    },
+    "opacityLabel": "不透明度",
+    "scaleLabel": "拡大率",
+    "positionHeading": "位置",
+    "diagonalLabel": "45°回転（斜めの透かし）",
+    "applyToHeading": "適用先",
+    "applyTo": {
+      "all": "すべてのページ",
+      "first": "最初のページのみ",
+      "custom": "カスタムページ"
+    },
+    "applyButton": "透かしを適用",
+    "previewLabel": "ライブプレビュー — 1ページ目",
+    "imageRequired": "透かし用の画像をアップロードしてください。",
+    "resultHeadline": "透かしを適用しました！",
+    "pagesStamped": "{count} ページにスタンプしました",
+    "processAnother": "別のファイルに透かしを追加"
+  },
+  "redactTool": {
+    "drawHint": "ページ上でクリックしてドラッグし、黒塗り範囲を描画します",
+    "colorHeading": "黒塗りの色",
+    "color": {
+      "black": "黒（既定）",
+      "white": "白（非表示）",
+      "custom": "カスタムカラー"
+    },
+    "optionsHeading": "オプション",
+    "removeUnderlyingTextLabel": "視覚的に覆うだけでなく、元のテキストも削除する",
+    "removeMetadataLabel": "黒塗り範囲のメタデータを削除する",
+    "aiRedactHeading": "AI黒塗り",
+    "ai": {
+      "emails": "メールアドレス",
+      "phones": "電話番号",
+      "names": "名前（推定検出）",
+      "dates": "日付",
+      "creditCards": "クレジットカード番号",
+      "ssn": "社会保障番号",
+      "customPatternPlaceholder": "カスタムパターン（正規表現）"
+    },
+    "redactionCount": "{pages} ページにわたり {count} 件の黒塗りを適用しました",
+    "aiRedactPending": "実行するとAI黒塗りが各ページをスキャンします。",
+    "noRedactionsError": "黒塗り範囲を少なくとも1つ描画するか、AI黒塗りを有効にしてください。",
+    "redactButton": "PDFを黒塗り",
+    "resultHeadline": "{count} 箇所を完全に黒塗りしました",
+    "textPermanentlyRemoved": "テキストデータは完全に削除されました",
+    "processAnother": "別のファイルを黒塗り"
   }
 }

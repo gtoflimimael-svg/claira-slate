@@ -1434,5 +1434,180 @@
     "resultHeadline": "تم تحويل HTML إلى PDF!",
     "pagesCreated": "الصفحات المُنشأة: {count}",
     "processAnother": "تحويل صفحة أخرى"
+  },
+  "protectTool": {
+    "openPasswordHeading": "كلمة مرور الفتح",
+    "passwordPlaceholder": "أدخل كلمة مرور",
+    "confirmPlaceholder": "أكّد كلمة المرور",
+    "strength": {
+      "weak": "ضعيفة",
+      "medium": "متوسطة",
+      "strong": "قوية"
+    },
+    "permissionsPasswordHeading": "كلمة مرور الأذونات",
+    "permissionsPasswordPlaceholder": "عيّن كلمة مرور للأذونات",
+    "permissionsPasswordHint": "كلمة مرور مختلفة للتحكم فيما يمكن للمستخدمين فعله بالملف",
+    "permissionsHeading": "الأذونات",
+    "allowPrintLabel": "السماح بالطباعة",
+    "allowCopyLabel": "السماح بنسخ النص",
+    "allowEditLabel": "السماح بالتعديل",
+    "allowAnnotateLabel": "السماح بإضافة التعليقات التوضيحية",
+    "allowFillFormsLabel": "السماح بملء النماذج",
+    "encryptionHeading": "مستوى التشفير",
+    "encryption": {
+      "aes128": {
+        "name": "AES-128",
+        "desc": "متوافق مع جميع قارئات PDF"
+      },
+      "aes256": {
+        "name": "AES-256",
+        "desc": "الأكثر أمانًا"
+      }
+    },
+    "warningBanner": "احتفظ بكلمة المرور في مكان آمن. في حال فقدانها، لا يمكن استرجاع PDF — ولا حتى من قِبلنا.",
+    "openPasswordRequired": "أدخل كلمة مرور لحماية هذا الملف.",
+    "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+    "protectButton": "حماية PDF",
+    "protectedWith": "محمي بكلمة مرور باستخدام {encryption}",
+    "resultHeadline": "تم حماية PDF!",
+    "processAnother": "حماية ملف آخر"
+  },
+  "unlockTool": {
+    "passwordHeading": "أدخل كلمة مرور PDF",
+    "passwordPlaceholder": "كلمة المرور",
+    "passwordRequired": "أدخل كلمة مرور الملف.",
+    "infoBanner": "يجب أن تعرف كلمة المرور لإلغاء قفل الملف. لا يمكننا تجاوز كلمات المرور غير المعروفة.",
+    "whatWeRemoveHeading": "ما الذي نزيله:",
+    "removeOpenPassword": "كلمة مرور الفتح (مطلوبة للعرض)",
+    "removeRestrictions": "قيود التعديل/الطباعة/النسخ",
+    "legalNotice": "لا تُلغِ قفل سوى ملفات PDF التي تملكها أو لديك إذن بتعديلها.",
+    "unlockButton": "إلغاء قفل PDF",
+    "resultHeadline": "تم إلغاء قفل PDF!",
+    "processAnother": "إلغاء قفل ملف آخر"
+  },
+  "certifyTool": {
+    "standardHeading": "إصدار PDF/A",
+    "standard": {
+      "pdfa1b": {
+        "name": "PDF/A-1b",
+        "desc": "أساسي، الأكثر توافقًا"
+      },
+      "pdfa2b": {
+        "name": "PDF/A-2b",
+        "desc": "ضغط أفضل"
+      },
+      "pdfa3b": {
+        "name": "PDF/A-3b",
+        "desc": "يسمح بالملفات المضمّنة"
+      }
+    },
+    "whatItDoesHeading": "ما الذي تفعله عملية التوثيق",
+    "info": {
+      "readability": "يضمن قابلية القراءة على المدى الطويل",
+      "embedFonts": "يضمّن جميع الخطوط",
+      "removeJs": "يزيل JavaScript",
+      "colorProfiles": "يوحّد ملفات تعريف الألوان",
+      "courtsArchives": "مقبول لدى المحاكم والأرشيفات"
+    },
+    "complianceCheckHeading": "فحص الامتثال المسبق",
+    "checking": "جارٍ فحص ملف PDF…",
+    "check": {
+      "fontsOk": "الخطوط: مضمّنة",
+      "fontsWarn": "الخطوط: غير مضمّنة بالكامل — سيتم تضمينها",
+      "colorOk": "الألوان: sRGB",
+      "colorWarn": "تم العثور على ألوان غير RGB — سيتم تحويلها",
+      "jsOk": "لم يُعثر على JavaScript",
+      "jsWarn": "تم العثور على JavaScript — سيتم إزالته",
+      "transparencyOk": "لم يُعثر على شفافية",
+      "transparencyWarn": "تم العثور على شفافية — سيتم تسويتها"
+    },
+    "certifyButton": "توثيق PDF",
+    "standardResult": "المعيار: {standard}",
+    "bestEffortNotice": "يتطلب التحقق الأرشيفي الكامل ميزة غير متاحة على هذا الخادم حاليًا — تمت إزالة JavaScript رغم ذلك.",
+    "resultHeadline": "تم توثيق PDF/A!",
+    "processAnother": "توثيق ملف آخر"
+  },
+  "signTool": {
+    "tab": {
+      "draw": "رسم",
+      "type": "كتابة",
+      "upload": "رفع"
+    },
+    "clearButton": "مسح",
+    "useSignatureButton": "استخدام هذا التوقيع",
+    "yourNamePlaceholder": "اسمك",
+    "propertiesHeading": "خصائص التوقيع",
+    "sizeLabel": "الحجم",
+    "opacityLabel": "التعتيم",
+    "applyToHeading": "التطبيق على",
+    "applyTo": {
+      "current": "الصفحة الحالية فقط",
+      "all": "كل الصفحات",
+      "custom": "اختيار صفحات"
+    },
+    "dateStampLabel": "إضافة التاريخ بجانب التوقيع",
+    "pageOf": "الصفحة {current} من {total}",
+    "addSignatureButton": "إضافة التوقيع",
+    "resultHeadline": "تمت إضافة التوقيع!",
+    "pagesSigned": "الصفحات الموقّعة: {count}",
+    "processAnother": "توقيع ملف آخر"
+  },
+  "watermarkTool": {
+    "tab": {
+      "text": "نص",
+      "image": "صورة"
+    },
+    "fontSizeLabel": "حجم الخط: {size}px",
+    "font": {
+      "helvetica": "بلا زوائد",
+      "times": "بزوائد",
+      "courier": "أحادي المسافة",
+      "helveticaOblique": "بلا زوائد مائل"
+    },
+    "opacityLabel": "التعتيم",
+    "scaleLabel": "الحجم النسبي",
+    "positionHeading": "الموضع",
+    "diagonalLabel": "تدوير 45° (علامة مائية قطرية)",
+    "applyToHeading": "التطبيق على",
+    "applyTo": {
+      "all": "كل الصفحات",
+      "first": "الصفحة الأولى فقط",
+      "custom": "صفحات مخصصة"
+    },
+    "applyButton": "تطبيق العلامة المائية",
+    "previewLabel": "معاينة مباشرة — الصفحة الأولى",
+    "imageRequired": "ارفع صورة للعلامة المائية.",
+    "resultHeadline": "تم تطبيق العلامة المائية!",
+    "pagesStamped": "تم ختم {count} صفحة",
+    "processAnother": "وضع علامة مائية على ملف آخر"
+  },
+  "redactTool": {
+    "drawHint": "انقر واسحب على الصفحة لرسم مربع تشويه",
+    "colorHeading": "لون التشويه",
+    "color": {
+      "black": "أسود (افتراضي)",
+      "white": "أبيض (غير مرئي)",
+      "custom": "لون مخصص"
+    },
+    "optionsHeading": "خيارات",
+    "removeUnderlyingTextLabel": "إزالة النص الأساسي أيضًا (وليس مجرد تغطيته بصريًا)",
+    "removeMetadataLabel": "إزالة البيانات الوصفية من المناطق المشوّهة",
+    "aiRedactHeading": "تشويه بالذكاء الاصطناعي",
+    "ai": {
+      "emails": "عناوين البريد الإلكتروني",
+      "phones": "أرقام الهواتف",
+      "names": "الأسماء (كشف تقريبي)",
+      "dates": "التواريخ",
+      "creditCards": "أرقام بطاقات الائتمان",
+      "ssn": "أرقام الضمان الاجتماعي",
+      "customPatternPlaceholder": "نمط مخصص (regex)"
+    },
+    "redactionCount": "تم تطبيق {count} عملية تشويه عبر {pages} صفحة",
+    "aiRedactPending": "سيقوم التشويه بالذكاء الاصطناعي بفحص كل صفحة عند التشغيل.",
+    "noRedactionsError": "ارسم منطقة تشويه واحدة على الأقل، أو فعّل التشويه بالذكاء الاصطناعي.",
+    "redactButton": "تشويه PDF",
+    "resultHeadline": "تم تشويه {count} منطقة بشكل دائم",
+    "textPermanentlyRemoved": "تمت إزالة بيانات النص بشكل دائم",
+    "processAnother": "تشويه ملف آخر"
   }
 }

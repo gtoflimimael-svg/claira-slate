@@ -22,6 +22,12 @@ import { ExcelToPdfTool } from "@/components/tools/excel-to-pdf/excel-to-pdf-too
 import { PptToPdfTool } from "@/components/tools/ppt-to-pdf/ppt-to-pdf-tool";
 import { JpgToPdfTool } from "@/components/tools/jpg-to-pdf/jpg-to-pdf-tool";
 import { HtmlToPdfTool } from "@/components/tools/html-to-pdf/html-to-pdf-tool";
+import { ProtectTool } from "@/components/tools/protect/protect-tool";
+import { UnlockTool } from "@/components/tools/unlock/unlock-tool";
+import { RedactTool } from "@/components/tools/redact/redact-tool";
+import { CertifyTool } from "@/components/tools/certify/certify-tool";
+import { SignTool } from "@/components/tools/sign/sign-tool";
+import { WatermarkTool } from "@/components/tools/watermark/watermark-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -101,6 +107,12 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isPptToPdf = tool === "ppt-to-pdf";
   const isJpgToPdf = tool === "jpg-to-pdf";
   const isHtmlToPdf = tool === "html-to-pdf";
+  const isProtect = tool === "protect";
+  const isUnlock = tool === "unlock";
+  const isRedact = tool === "redact";
+  const isCertify = tool === "certify";
+  const isSign = tool === "sign";
+  const isWatermark = tool === "watermark";
   const usesWideLayout =
     isSplit ||
     isOrganize ||
@@ -119,7 +131,13 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
     isExcelToPdf ||
     isPptToPdf ||
     isJpgToPdf ||
-    isHtmlToPdf;
+    isHtmlToPdf ||
+    isProtect ||
+    isUnlock ||
+    isRedact ||
+    isCertify ||
+    isSign ||
+    isWatermark;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
@@ -186,6 +204,18 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             <JpgToPdfTool />
           ) : isHtmlToPdf ? (
             <HtmlToPdfTool />
+          ) : isProtect ? (
+            <ProtectTool />
+          ) : isUnlock ? (
+            <UnlockTool />
+          ) : isRedact ? (
+            <RedactTool />
+          ) : isCertify ? (
+            <CertifyTool />
+          ) : isSign ? (
+            <SignTool />
+          ) : isWatermark ? (
+            <WatermarkTool />
           ) : (
             <div className="tool-workspace">
               <GenericTool config={config} />
