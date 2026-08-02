@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} Bereiche dauerhaft geschwärzt",
     "textPermanentlyRemoved": "Textdaten dauerhaft entfernt",
     "processAnother": "Weitere Datei schwärzen"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Live-Vorschau — erste Seite",
+    "resultHeadline": "Seitenzahlen hinzugefügt!",
+    "pagesNumbered": "{count} Seiten nummeriert",
+    "processAnother": "Weitere Datei nummerieren",
+    "positionHeading": "Position",
+    "formatHeading": "Nummernformat",
+    "format": {
+      "numeric": "Numerisch (1, 2, 3...)",
+      "with-total": "Seite X von Y",
+      "roman": "Römische Ziffern (i, ii, iii...)",
+      "alpha": "Alphabetisch (A, B, C...)",
+      "custom": "Eigenes Präfix"
+    },
+    "startFromLabel": "Startnummer",
+    "applyToHeading": "Auf Seiten anwenden",
+    "applyTo": {
+      "all": "Alle Seiten",
+      "skip-first": "Erste Seite überspringen",
+      "custom": "Benutzerdefinierter Bereich"
+    },
+    "styleHeading": "Stil",
+    "fontSizeLabel": "Schriftgröße: {size}px",
+    "font": {
+      "helvetica": "Serifenlos",
+      "times": "Serifenschrift",
+      "courier": "Monospace",
+      "helveticaOblique": "Serifenlos kursiv"
+    },
+    "marginLabel": "Randabstand: {margin}px",
+    "addNumbersButton": "Seitenzahlen hinzufügen"
+  },
+  "headerFooterTool": {
+    "emptyError": "Fügen Sie mindestens ein Kopf- oder Fußzeilenfeld hinzu.",
+    "previewLabel": "Live-Vorschau — erste Seite",
+    "headerHeading": "Kopfzeile",
+    "footerHeading": "Fußzeile",
+    "column": {
+      "left": "Links",
+      "center": "Mitte",
+      "right": "Rechts"
+    },
+    "font": {
+      "helvetica": "Serifenlos",
+      "times": "Serifenschrift",
+      "courier": "Monospace",
+      "helveticaOblique": "Serifenlos kursiv"
+    },
+    "fontSizeLabel": "Schriftgröße: {size}px",
+    "marginLabel": "Randabstand: {margin}px",
+    "showLineHeader": "Linie unter der Kopfzeile anzeigen",
+    "showLineFooter": "Linie über der Fußzeile anzeigen",
+    "separatorHeading": "Trennlinie",
+    "lineThicknessLabel": "Dicke: {thickness}px",
+    "applyToHeading": "Auf Seiten anwenden",
+    "applyTo": {
+      "all": "Alle Seiten",
+      "skip-first": "Erste Seite überspringen",
+      "odd": "Nur ungerade Seiten",
+      "even": "Nur gerade Seiten",
+      "custom": "Benutzerdefinierter Bereich"
+    },
+    "addButton": "Kopf- und Fußzeile hinzufügen",
+    "resultHeadline": "Kopf- und Fußzeile hinzugefügt!",
+    "pagesUpdated": "{count} Seiten aktualisiert",
+    "processAnother": "Weitere Datei verarbeiten"
+  },
+  "cropTool": {
+    "pageOf": "Seite {current} von {total}",
+    "originalSize": "Original: {size}",
+    "afterCropSize": "Nach Zuschnitt: {size}",
+    "resultHeadline": "PDF zugeschnitten!",
+    "marginsRemoved": "Ränder entfernt: Oben {top}mm, Unten {bottom}mm, Links {left}mm, Rechts {right}mm",
+    "newSize": "Neue Größe: {width}×{height}mm",
+    "processAnother": "Weitere Datei zuschneiden",
+    "tab": {
+      "manual": "Manuell",
+      "preset": "Voreinstellung",
+      "auto": "Auto"
+    },
+    "manualHeading": "Ränder",
+    "unit": {
+      "inches": "Zoll"
+    },
+    "margin": {
+      "top": "Oben",
+      "bottom": "Unten",
+      "left": "Links",
+      "right": "Rechts"
+    },
+    "presetHeading": "Voreingestellte Größe",
+    "preset": {
+      "a4-portrait": "A4 Hochformat (210×297mm)",
+      "a4-landscape": "A4 Querformat (297×210mm)",
+      "letter": "Letter (216×279mm)",
+      "square": "Quadratisch",
+      "custom": "Benutzerdefinierte Größe"
+    },
+    "widthLabel": "Breite",
+    "heightLabel": "Höhe",
+    "autoHeading": "Intelligenter Zuschnitt (Pro)",
+    "autoDescription": "Erkennt und entfernt automatisch weiße oder leere Ränder auf Ihren Seiten.",
+    "optionsHeading": "Optionen",
+    "applyAllPages": "Auf alle Seiten anwenden",
+    "applySelectedPages": "Nur ausgewählte Seiten",
+    "maintainAspectRatio": "Seitenverhältnis beibehalten",
+    "cropButton": "PDF zuschneiden"
   }
 }

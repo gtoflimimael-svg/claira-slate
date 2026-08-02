@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} áreas redigidas permanentemente",
     "textPermanentlyRemoved": "Dados de texto removidos permanentemente",
     "processAnother": "Redigir outro arquivo"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Pré-visualização ao vivo — primeira página",
+    "resultHeadline": "Números de página adicionados!",
+    "pagesNumbered": "{count} páginas numeradas",
+    "processAnother": "Numerar outro arquivo",
+    "positionHeading": "Posição",
+    "formatHeading": "Formato do número",
+    "format": {
+      "numeric": "Numérico (1, 2, 3...)",
+      "with-total": "Página X de Y",
+      "roman": "Numerais romanos (i, ii, iii...)",
+      "alpha": "Alfabético (A, B, C...)",
+      "custom": "Prefixo personalizado"
+    },
+    "startFromLabel": "Número inicial",
+    "applyToHeading": "Aplicar às páginas",
+    "applyTo": {
+      "all": "Todas as páginas",
+      "skip-first": "Pular a primeira página",
+      "custom": "Intervalo personalizado"
+    },
+    "styleHeading": "Estilo",
+    "fontSizeLabel": "Tamanho da fonte: {size}px",
+    "font": {
+      "helvetica": "Sem serifa",
+      "times": "Serifada",
+      "courier": "Monoespaçada",
+      "helveticaOblique": "Itálico sem serifa"
+    },
+    "marginLabel": "Margem da borda: {margin}px",
+    "addNumbersButton": "Adicionar números de página"
+  },
+  "headerFooterTool": {
+    "emptyError": "Adicione pelo menos um campo de cabeçalho ou rodapé.",
+    "previewLabel": "Pré-visualização ao vivo — primeira página",
+    "headerHeading": "Cabeçalho",
+    "footerHeading": "Rodapé",
+    "column": {
+      "left": "Esquerda",
+      "center": "Centro",
+      "right": "Direita"
+    },
+    "font": {
+      "helvetica": "Sem serifa",
+      "times": "Serifada",
+      "courier": "Monoespaçada",
+      "helveticaOblique": "Itálico sem serifa"
+    },
+    "fontSizeLabel": "Tamanho da fonte: {size}px",
+    "marginLabel": "Margem da borda: {margin}px",
+    "showLineHeader": "Mostrar linha sob o cabeçalho",
+    "showLineFooter": "Mostrar linha acima do rodapé",
+    "separatorHeading": "Linha separadora",
+    "lineThicknessLabel": "Espessura: {thickness}px",
+    "applyToHeading": "Aplicar às páginas",
+    "applyTo": {
+      "all": "Todas as páginas",
+      "skip-first": "Pular a primeira página",
+      "odd": "Somente páginas ímpares",
+      "even": "Somente páginas pares",
+      "custom": "Intervalo personalizado"
+    },
+    "addButton": "Adicionar cabeçalho e rodapé",
+    "resultHeadline": "Cabeçalho e rodapé adicionados!",
+    "pagesUpdated": "{count} páginas atualizadas",
+    "processAnother": "Processar outro arquivo"
+  },
+  "cropTool": {
+    "pageOf": "Página {current} de {total}",
+    "originalSize": "Original: {size}",
+    "afterCropSize": "Após o corte: {size}",
+    "resultHeadline": "PDF cortado!",
+    "marginsRemoved": "Margens removidas: Superior {top}mm, Inferior {bottom}mm, Esquerda {left}mm, Direita {right}mm",
+    "newSize": "Novo tamanho: {width}×{height}mm",
+    "processAnother": "Cortar outro arquivo",
+    "tab": {
+      "manual": "Manual",
+      "preset": "Predefinição",
+      "auto": "Automático"
+    },
+    "manualHeading": "Margens",
+    "unit": {
+      "inches": "pol"
+    },
+    "margin": {
+      "top": "Superior",
+      "bottom": "Inferior",
+      "left": "Esquerda",
+      "right": "Direita"
+    },
+    "presetHeading": "Tamanho predefinido",
+    "preset": {
+      "a4-portrait": "A4 Retrato (210×297mm)",
+      "a4-landscape": "A4 Paisagem (297×210mm)",
+      "letter": "Carta (216×279mm)",
+      "square": "Quadrado",
+      "custom": "Tamanho personalizado"
+    },
+    "widthLabel": "Largura",
+    "heightLabel": "Altura",
+    "autoHeading": "Corte inteligente (Pro)",
+    "autoDescription": "Detecta e remove automaticamente as margens brancas ou vazias das suas páginas.",
+    "optionsHeading": "Opções",
+    "applyAllPages": "Aplicar a todas as páginas",
+    "applySelectedPages": "Somente páginas selecionadas",
+    "maintainAspectRatio": "Manter proporção",
+    "cropButton": "Cortar PDF"
   }
 }

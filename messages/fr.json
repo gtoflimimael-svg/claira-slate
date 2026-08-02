@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} zones définitivement caviardées",
     "textPermanentlyRemoved": "Données textuelles définitivement supprimées",
     "processAnother": "Caviarder un autre fichier"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Aperçu en direct — première page",
+    "resultHeadline": "Numéros de page ajoutés !",
+    "pagesNumbered": "{count} pages numérotées",
+    "processAnother": "Numéroter un autre fichier",
+    "positionHeading": "Position",
+    "formatHeading": "Format du numéro",
+    "format": {
+      "numeric": "Numérique (1, 2, 3...)",
+      "with-total": "Page X sur Y",
+      "roman": "Chiffres romains (i, ii, iii...)",
+      "alpha": "Alphabétique (A, B, C...)",
+      "custom": "Préfixe personnalisé"
+    },
+    "startFromLabel": "Numéro de départ",
+    "applyToHeading": "Appliquer aux pages",
+    "applyTo": {
+      "all": "Toutes les pages",
+      "skip-first": "Ignorer la première page",
+      "custom": "Plage personnalisée"
+    },
+    "styleHeading": "Style",
+    "fontSizeLabel": "Taille de police : {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Italique sans-serif"
+    },
+    "marginLabel": "Marge du bord : {margin}px",
+    "addNumbersButton": "Ajouter les numéros de page"
+  },
+  "headerFooterTool": {
+    "emptyError": "Ajoutez au moins un champ d'en-tête ou de pied de page.",
+    "previewLabel": "Aperçu en direct — première page",
+    "headerHeading": "En-tête",
+    "footerHeading": "Pied de page",
+    "column": {
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite"
+    },
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Italique sans-serif"
+    },
+    "fontSizeLabel": "Taille de police : {size}px",
+    "marginLabel": "Marge du bord : {margin}px",
+    "showLineHeader": "Afficher une ligne sous l'en-tête",
+    "showLineFooter": "Afficher une ligne au-dessus du pied de page",
+    "separatorHeading": "Ligne de séparation",
+    "lineThicknessLabel": "Épaisseur : {thickness}px",
+    "applyToHeading": "Appliquer aux pages",
+    "applyTo": {
+      "all": "Toutes les pages",
+      "skip-first": "Ignorer la première page",
+      "odd": "Pages impaires uniquement",
+      "even": "Pages paires uniquement",
+      "custom": "Plage personnalisée"
+    },
+    "addButton": "Ajouter en-tête et pied de page",
+    "resultHeadline": "En-tête et pied de page ajoutés !",
+    "pagesUpdated": "{count} pages mises à jour",
+    "processAnother": "Traiter un autre fichier"
+  },
+  "cropTool": {
+    "pageOf": "Page {current} sur {total}",
+    "originalSize": "Original : {size}",
+    "afterCropSize": "Après recadrage : {size}",
+    "resultHeadline": "PDF recadré !",
+    "marginsRemoved": "Marges supprimées : Haut {top}mm, Bas {bottom}mm, Gauche {left}mm, Droite {right}mm",
+    "newSize": "Nouvelle taille : {width}×{height}mm",
+    "processAnother": "Recadrer un autre fichier",
+    "tab": {
+      "manual": "Manuel",
+      "preset": "Prédéfini",
+      "auto": "Auto"
+    },
+    "manualHeading": "Marges",
+    "unit": {
+      "inches": "po"
+    },
+    "margin": {
+      "top": "Haut",
+      "bottom": "Bas",
+      "left": "Gauche",
+      "right": "Droite"
+    },
+    "presetHeading": "Taille prédéfinie",
+    "preset": {
+      "a4-portrait": "A4 Portrait (210×297mm)",
+      "a4-landscape": "A4 Paysage (297×210mm)",
+      "letter": "Lettre (216×279mm)",
+      "square": "Carré",
+      "custom": "Taille personnalisée"
+    },
+    "widthLabel": "Largeur",
+    "heightLabel": "Hauteur",
+    "autoHeading": "Recadrage intelligent (Pro)",
+    "autoDescription": "Détecte et supprime automatiquement les marges blanches ou vides de vos pages.",
+    "optionsHeading": "Options",
+    "applyAllPages": "Appliquer à toutes les pages",
+    "applySelectedPages": "Pages sélectionnées uniquement",
+    "maintainAspectRatio": "Conserver les proportions",
+    "cropButton": "Recadrer le PDF"
   }
 }

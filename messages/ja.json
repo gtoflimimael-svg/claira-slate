@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} 箇所を完全に黒塗りしました",
     "textPermanentlyRemoved": "テキストデータは完全に削除されました",
     "processAnother": "別のファイルを黒塗り"
+  },
+  "numberPagesTool": {
+    "previewLabel": "ライブプレビュー — 1ページ目",
+    "resultHeadline": "ページ番号を追加しました！",
+    "pagesNumbered": "{count} ページに番号を付けました",
+    "processAnother": "別のファイルに番号を付ける",
+    "positionHeading": "位置",
+    "formatHeading": "番号の書式",
+    "format": {
+      "numeric": "数字 (1, 2, 3...)",
+      "with-total": "X / Y ページ",
+      "roman": "ローマ数字 (i, ii, iii...)",
+      "alpha": "アルファベット (A, B, C...)",
+      "custom": "カスタム接頭辞"
+    },
+    "startFromLabel": "開始番号",
+    "applyToHeading": "適用するページ",
+    "applyTo": {
+      "all": "すべてのページ",
+      "skip-first": "最初のページを除く",
+      "custom": "カスタム範囲"
+    },
+    "styleHeading": "スタイル",
+    "fontSizeLabel": "フォントサイズ: {size}px",
+    "font": {
+      "helvetica": "サンセリフ",
+      "times": "セリフ",
+      "courier": "等幅",
+      "helveticaOblique": "サンセリフ斜体"
+    },
+    "marginLabel": "端からの余白: {margin}px",
+    "addNumbersButton": "ページ番号を追加"
+  },
+  "headerFooterTool": {
+    "emptyError": "ヘッダーまたはフッターに少なくとも1つの項目を入力してください。",
+    "previewLabel": "ライブプレビュー — 1ページ目",
+    "headerHeading": "ヘッダー",
+    "footerHeading": "フッター",
+    "column": {
+      "left": "左",
+      "center": "中央",
+      "right": "右"
+    },
+    "font": {
+      "helvetica": "サンセリフ",
+      "times": "セリフ",
+      "courier": "等幅",
+      "helveticaOblique": "サンセリフ斜体"
+    },
+    "fontSizeLabel": "フォントサイズ: {size}px",
+    "marginLabel": "端からの余白: {margin}px",
+    "showLineHeader": "ヘッダーの下に線を表示",
+    "showLineFooter": "フッターの上に線を表示",
+    "separatorHeading": "区切り線",
+    "lineThicknessLabel": "太さ: {thickness}px",
+    "applyToHeading": "適用するページ",
+    "applyTo": {
+      "all": "すべてのページ",
+      "skip-first": "最初のページを除く",
+      "odd": "奇数ページのみ",
+      "even": "偶数ページのみ",
+      "custom": "カスタム範囲"
+    },
+    "addButton": "ヘッダーとフッターを追加",
+    "resultHeadline": "ヘッダーとフッターを追加しました！",
+    "pagesUpdated": "{count} ページを更新しました",
+    "processAnother": "別のファイルを処理する"
+  },
+  "cropTool": {
+    "pageOf": "{current} / {total} ページ",
+    "originalSize": "元のサイズ: {size}",
+    "afterCropSize": "切り抜き後: {size}",
+    "resultHeadline": "PDFを切り抜きました！",
+    "marginsRemoved": "削除した余白: 上 {top}mm、下 {bottom}mm、左 {left}mm、右 {right}mm",
+    "newSize": "新しいサイズ: {width}×{height}mm",
+    "processAnother": "別のファイルを切り抜く",
+    "tab": {
+      "manual": "手動",
+      "preset": "プリセット",
+      "auto": "自動"
+    },
+    "manualHeading": "余白",
+    "unit": {
+      "inches": "インチ"
+    },
+    "margin": {
+      "top": "上",
+      "bottom": "下",
+      "left": "左",
+      "right": "右"
+    },
+    "presetHeading": "プリセットサイズ",
+    "preset": {
+      "a4-portrait": "A4 縦向き (210×297mm)",
+      "a4-landscape": "A4 横向き (297×210mm)",
+      "letter": "レター (216×279mm)",
+      "square": "正方形",
+      "custom": "カスタムサイズ"
+    },
+    "widthLabel": "幅",
+    "heightLabel": "高さ",
+    "autoHeading": "スマート切り抜き（Pro）",
+    "autoDescription": "ページの白い余白や空白の余白を自動的に検出して削除します。",
+    "optionsHeading": "オプション",
+    "applyAllPages": "すべてのページに適用",
+    "applySelectedPages": "選択したページのみ",
+    "maintainAspectRatio": "アスペクト比を維持",
+    "cropButton": "PDFを切り抜く"
   }
 }

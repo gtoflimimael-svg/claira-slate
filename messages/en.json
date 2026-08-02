@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} areas permanently redacted",
     "textPermanentlyRemoved": "Text data permanently removed",
     "processAnother": "Redact another file"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Live preview — first page",
+    "resultHeadline": "Page numbers added!",
+    "pagesNumbered": "{count} pages numbered",
+    "processAnother": "Number another file",
+    "positionHeading": "Position",
+    "formatHeading": "Number format",
+    "format": {
+      "numeric": "Numeric (1, 2, 3...)",
+      "with-total": "Page X of Y",
+      "roman": "Roman numerals (i, ii, iii...)",
+      "alpha": "Alphabetical (A, B, C...)",
+      "custom": "Custom prefix"
+    },
+    "startFromLabel": "Starting number",
+    "applyToHeading": "Apply to pages",
+    "applyTo": {
+      "all": "All pages",
+      "skip-first": "Skip first page",
+      "custom": "Custom range"
+    },
+    "styleHeading": "Style",
+    "fontSizeLabel": "Font size: {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Sans-serif italic"
+    },
+    "marginLabel": "Margin from edge: {margin}px",
+    "addNumbersButton": "Add page numbers"
+  },
+  "headerFooterTool": {
+    "emptyError": "Add at least one header or footer field.",
+    "previewLabel": "Live preview — first page",
+    "headerHeading": "Header",
+    "footerHeading": "Footer",
+    "column": {
+      "left": "Left",
+      "center": "Center",
+      "right": "Right"
+    },
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monospace",
+      "helveticaOblique": "Sans-serif italic"
+    },
+    "fontSizeLabel": "Font size: {size}px",
+    "marginLabel": "Margin from edge: {margin}px",
+    "showLineHeader": "Show line under header",
+    "showLineFooter": "Show line above footer",
+    "separatorHeading": "Separator line",
+    "lineThicknessLabel": "Thickness: {thickness}px",
+    "applyToHeading": "Apply to pages",
+    "applyTo": {
+      "all": "All pages",
+      "skip-first": "Skip first page",
+      "odd": "Odd pages only",
+      "even": "Even pages only",
+      "custom": "Custom range"
+    },
+    "addButton": "Add header & footer",
+    "resultHeadline": "Header & footer added!",
+    "pagesUpdated": "{count} pages updated",
+    "processAnother": "Process another file"
+  },
+  "cropTool": {
+    "pageOf": "Page {current} of {total}",
+    "originalSize": "Original: {size}",
+    "afterCropSize": "After crop: {size}",
+    "resultHeadline": "PDF cropped!",
+    "marginsRemoved": "Margins removed: Top {top}mm, Bottom {bottom}mm, Left {left}mm, Right {right}mm",
+    "newSize": "New size: {width}×{height}mm",
+    "processAnother": "Crop another file",
+    "tab": {
+      "manual": "Manual",
+      "preset": "Preset",
+      "auto": "Auto"
+    },
+    "manualHeading": "Margins",
+    "unit": {
+      "inches": "in"
+    },
+    "margin": {
+      "top": "Top",
+      "bottom": "Bottom",
+      "left": "Left",
+      "right": "Right"
+    },
+    "presetHeading": "Preset size",
+    "preset": {
+      "a4-portrait": "A4 Portrait (210×297mm)",
+      "a4-landscape": "A4 Landscape (297×210mm)",
+      "letter": "Letter (216×279mm)",
+      "square": "Square",
+      "custom": "Custom size"
+    },
+    "widthLabel": "Width",
+    "heightLabel": "Height",
+    "autoHeading": "Smart crop (Pro)",
+    "autoDescription": "Automatically detects and removes white or blank margins from your pages.",
+    "optionsHeading": "Options",
+    "applyAllPages": "Apply to all pages",
+    "applySelectedPages": "Selected pages only",
+    "maintainAspectRatio": "Maintain aspect ratio",
+    "cropButton": "Crop PDF"
   }
 }

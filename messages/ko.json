@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count}개 영역이 영구적으로 마스킹되었습니다",
     "textPermanentlyRemoved": "텍스트 데이터가 영구적으로 제거되었습니다",
     "processAnother": "다른 파일 마스킹"
+  },
+  "numberPagesTool": {
+    "previewLabel": "실시간 미리보기 — 첫 페이지",
+    "resultHeadline": "페이지 번호가 추가되었습니다!",
+    "pagesNumbered": "{count}페이지에 번호가 매겨졌습니다",
+    "processAnother": "다른 파일 번호 매기기",
+    "positionHeading": "위치",
+    "formatHeading": "번호 형식",
+    "format": {
+      "numeric": "숫자 (1, 2, 3...)",
+      "with-total": "X/Y 페이지",
+      "roman": "로마 숫자 (i, ii, iii...)",
+      "alpha": "알파벳 (A, B, C...)",
+      "custom": "사용자 지정 접두사"
+    },
+    "startFromLabel": "시작 번호",
+    "applyToHeading": "적용할 페이지",
+    "applyTo": {
+      "all": "모든 페이지",
+      "skip-first": "첫 페이지 제외",
+      "custom": "사용자 지정 범위"
+    },
+    "styleHeading": "스타일",
+    "fontSizeLabel": "글꼴 크기: {size}px",
+    "font": {
+      "helvetica": "산세리프",
+      "times": "세리프",
+      "courier": "고정폭",
+      "helveticaOblique": "산세리프 기울임"
+    },
+    "marginLabel": "가장자리 여백: {margin}px",
+    "addNumbersButton": "페이지 번호 추가"
+  },
+  "headerFooterTool": {
+    "emptyError": "머리글 또는 바닥글 필드를 하나 이상 입력하세요.",
+    "previewLabel": "실시간 미리보기 — 첫 페이지",
+    "headerHeading": "머리글",
+    "footerHeading": "바닥글",
+    "column": {
+      "left": "왼쪽",
+      "center": "가운데",
+      "right": "오른쪽"
+    },
+    "font": {
+      "helvetica": "산세리프",
+      "times": "세리프",
+      "courier": "고정폭",
+      "helveticaOblique": "산세리프 기울임"
+    },
+    "fontSizeLabel": "글꼴 크기: {size}px",
+    "marginLabel": "가장자리 여백: {margin}px",
+    "showLineHeader": "머리글 아래에 선 표시",
+    "showLineFooter": "바닥글 위에 선 표시",
+    "separatorHeading": "구분선",
+    "lineThicknessLabel": "두께: {thickness}px",
+    "applyToHeading": "적용할 페이지",
+    "applyTo": {
+      "all": "모든 페이지",
+      "skip-first": "첫 페이지 제외",
+      "odd": "홀수 페이지만",
+      "even": "짝수 페이지만",
+      "custom": "사용자 지정 범위"
+    },
+    "addButton": "머리글 및 바닥글 추가",
+    "resultHeadline": "머리글과 바닥글이 추가되었습니다!",
+    "pagesUpdated": "{count}페이지가 업데이트되었습니다",
+    "processAnother": "다른 파일 처리"
+  },
+  "cropTool": {
+    "pageOf": "{total}페이지 중 {current}페이지",
+    "originalSize": "원본: {size}",
+    "afterCropSize": "자르기 후: {size}",
+    "resultHeadline": "PDF가 잘렸습니다!",
+    "marginsRemoved": "제거된 여백: 위 {top}mm, 아래 {bottom}mm, 왼쪽 {left}mm, 오른쪽 {right}mm",
+    "newSize": "새 크기: {width}×{height}mm",
+    "processAnother": "다른 파일 자르기",
+    "tab": {
+      "manual": "수동",
+      "preset": "사전 설정",
+      "auto": "자동"
+    },
+    "manualHeading": "여백",
+    "unit": {
+      "inches": "인치"
+    },
+    "margin": {
+      "top": "위",
+      "bottom": "아래",
+      "left": "왼쪽",
+      "right": "오른쪽"
+    },
+    "presetHeading": "사전 설정 크기",
+    "preset": {
+      "a4-portrait": "A4 세로 (210×297mm)",
+      "a4-landscape": "A4 가로 (297×210mm)",
+      "letter": "레터 (216×279mm)",
+      "square": "정사각형",
+      "custom": "사용자 지정 크기"
+    },
+    "widthLabel": "너비",
+    "heightLabel": "높이",
+    "autoHeading": "스마트 자르기 (Pro)",
+    "autoDescription": "페이지의 흰색 또는 빈 여백을 자동으로 감지하여 제거합니다.",
+    "optionsHeading": "옵션",
+    "applyAllPages": "모든 페이지에 적용",
+    "applySelectedPages": "선택한 페이지만",
+    "maintainAspectRatio": "종횡비 유지",
+    "cropButton": "PDF 자르기"
   }
 }

@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} áreas censuradas permanentemente",
     "textPermanentlyRemoved": "Datos de texto eliminados permanentemente",
     "processAnother": "Censurar otro archivo"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Vista previa en vivo — primera página",
+    "resultHeadline": "¡Números de página añadidos!",
+    "pagesNumbered": "{count} páginas numeradas",
+    "processAnother": "Numerar otro archivo",
+    "positionHeading": "Posición",
+    "formatHeading": "Formato del número",
+    "format": {
+      "numeric": "Numérico (1, 2, 3...)",
+      "with-total": "Página X de Y",
+      "roman": "Números romanos (i, ii, iii...)",
+      "alpha": "Alfabético (A, B, C...)",
+      "custom": "Prefijo personalizado"
+    },
+    "startFromLabel": "Número inicial",
+    "applyToHeading": "Aplicar a páginas",
+    "applyTo": {
+      "all": "Todas las páginas",
+      "skip-first": "Omitir la primera página",
+      "custom": "Rango personalizado"
+    },
+    "styleHeading": "Estilo",
+    "fontSizeLabel": "Tamaño de fuente: {size}px",
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monoespaciada",
+      "helveticaOblique": "Sans-serif cursiva"
+    },
+    "marginLabel": "Margen desde el borde: {margin}px",
+    "addNumbersButton": "Añadir números de página"
+  },
+  "headerFooterTool": {
+    "emptyError": "Añade al menos un campo de encabezado o pie de página.",
+    "previewLabel": "Vista previa en vivo — primera página",
+    "headerHeading": "Encabezado",
+    "footerHeading": "Pie de página",
+    "column": {
+      "left": "Izquierda",
+      "center": "Centro",
+      "right": "Derecha"
+    },
+    "font": {
+      "helvetica": "Sans-serif",
+      "times": "Serif",
+      "courier": "Monoespaciada",
+      "helveticaOblique": "Sans-serif cursiva"
+    },
+    "fontSizeLabel": "Tamaño de fuente: {size}px",
+    "marginLabel": "Margen desde el borde: {margin}px",
+    "showLineHeader": "Mostrar línea bajo el encabezado",
+    "showLineFooter": "Mostrar línea sobre el pie de página",
+    "separatorHeading": "Línea separadora",
+    "lineThicknessLabel": "Grosor: {thickness}px",
+    "applyToHeading": "Aplicar a páginas",
+    "applyTo": {
+      "all": "Todas las páginas",
+      "skip-first": "Omitir la primera página",
+      "odd": "Solo páginas impares",
+      "even": "Solo páginas pares",
+      "custom": "Rango personalizado"
+    },
+    "addButton": "Añadir encabezado y pie de página",
+    "resultHeadline": "¡Encabezado y pie de página añadidos!",
+    "pagesUpdated": "{count} páginas actualizadas",
+    "processAnother": "Procesar otro archivo"
+  },
+  "cropTool": {
+    "pageOf": "Página {current} de {total}",
+    "originalSize": "Original: {size}",
+    "afterCropSize": "Después del recorte: {size}",
+    "resultHeadline": "¡PDF recortado!",
+    "marginsRemoved": "Márgenes eliminados: Superior {top}mm, Inferior {bottom}mm, Izquierda {left}mm, Derecha {right}mm",
+    "newSize": "Nuevo tamaño: {width}×{height}mm",
+    "processAnother": "Recortar otro archivo",
+    "tab": {
+      "manual": "Manual",
+      "preset": "Preajuste",
+      "auto": "Auto"
+    },
+    "manualHeading": "Márgenes",
+    "unit": {
+      "inches": "pulg"
+    },
+    "margin": {
+      "top": "Superior",
+      "bottom": "Inferior",
+      "left": "Izquierda",
+      "right": "Derecha"
+    },
+    "presetHeading": "Tamaño preestablecido",
+    "preset": {
+      "a4-portrait": "A4 Vertical (210×297mm)",
+      "a4-landscape": "A4 Horizontal (297×210mm)",
+      "letter": "Carta (216×279mm)",
+      "square": "Cuadrado",
+      "custom": "Tamaño personalizado"
+    },
+    "widthLabel": "Ancho",
+    "heightLabel": "Alto",
+    "autoHeading": "Recorte inteligente (Pro)",
+    "autoDescription": "Detecta y elimina automáticamente los márgenes blancos o en blanco de tus páginas.",
+    "optionsHeading": "Opciones",
+    "applyAllPages": "Aplicar a todas las páginas",
+    "applySelectedPages": "Solo páginas seleccionadas",
+    "maintainAspectRatio": "Mantener proporción",
+    "cropButton": "Recortar PDF"
   }
 }

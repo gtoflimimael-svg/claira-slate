@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} областей скрыто безвозвратно",
     "textPermanentlyRemoved": "Текстовые данные удалены безвозвратно",
     "processAnother": "Скрыть данные в другом файле"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Живой просмотр — первая страница",
+    "resultHeadline": "Номера страниц добавлены!",
+    "pagesNumbered": "Пронумеровано страниц: {count}",
+    "processAnother": "Пронумеровать другой файл",
+    "positionHeading": "Позиция",
+    "formatHeading": "Формат номера",
+    "format": {
+      "numeric": "Числовой (1, 2, 3...)",
+      "with-total": "Страница X из Y",
+      "roman": "Римские цифры (i, ii, iii...)",
+      "alpha": "Буквенный (A, B, C...)",
+      "custom": "Свой префикс"
+    },
+    "startFromLabel": "Начальный номер",
+    "applyToHeading": "Применить к страницам",
+    "applyTo": {
+      "all": "Все страницы",
+      "skip-first": "Пропустить первую страницу",
+      "custom": "Свой диапазон"
+    },
+    "styleHeading": "Стиль",
+    "fontSizeLabel": "Размер шрифта: {size}px",
+    "font": {
+      "helvetica": "Без засечек",
+      "times": "С засечками",
+      "courier": "Моноширинный",
+      "helveticaOblique": "Курсив без засечек"
+    },
+    "marginLabel": "Отступ от края: {margin}px",
+    "addNumbersButton": "Добавить номера страниц"
+  },
+  "headerFooterTool": {
+    "emptyError": "Добавьте хотя бы одно поле верхнего или нижнего колонтитула.",
+    "previewLabel": "Живой просмотр — первая страница",
+    "headerHeading": "Верхний колонтитул",
+    "footerHeading": "Нижний колонтитул",
+    "column": {
+      "left": "Слева",
+      "center": "По центру",
+      "right": "Справа"
+    },
+    "font": {
+      "helvetica": "Без засечек",
+      "times": "С засечками",
+      "courier": "Моноширинный",
+      "helveticaOblique": "Курсив без засечек"
+    },
+    "fontSizeLabel": "Размер шрифта: {size}px",
+    "marginLabel": "Отступ от края: {margin}px",
+    "showLineHeader": "Показать линию под верхним колонтитулом",
+    "showLineFooter": "Показать линию над нижним колонтитулом",
+    "separatorHeading": "Разделительная линия",
+    "lineThicknessLabel": "Толщина: {thickness}px",
+    "applyToHeading": "Применить к страницам",
+    "applyTo": {
+      "all": "Все страницы",
+      "skip-first": "Пропустить первую страницу",
+      "odd": "Только нечётные страницы",
+      "even": "Только чётные страницы",
+      "custom": "Свой диапазон"
+    },
+    "addButton": "Добавить колонтитулы",
+    "resultHeadline": "Колонтитулы добавлены!",
+    "pagesUpdated": "Обновлено страниц: {count}",
+    "processAnother": "Обработать другой файл"
+  },
+  "cropTool": {
+    "pageOf": "Страница {current} из {total}",
+    "originalSize": "Исходный: {size}",
+    "afterCropSize": "После обрезки: {size}",
+    "resultHeadline": "PDF обрезан!",
+    "marginsRemoved": "Удалённые поля: сверху {top}мм, снизу {bottom}мм, слева {left}мм, справа {right}мм",
+    "newSize": "Новый размер: {width}×{height}мм",
+    "processAnother": "Обрезать другой файл",
+    "tab": {
+      "manual": "Вручную",
+      "preset": "Шаблон",
+      "auto": "Авто"
+    },
+    "manualHeading": "Поля",
+    "unit": {
+      "inches": "дюймы"
+    },
+    "margin": {
+      "top": "Сверху",
+      "bottom": "Снизу",
+      "left": "Слева",
+      "right": "Справа"
+    },
+    "presetHeading": "Готовый размер",
+    "preset": {
+      "a4-portrait": "A4 Книжная (210×297мм)",
+      "a4-landscape": "A4 Альбомная (297×210мм)",
+      "letter": "Letter (216×279мм)",
+      "square": "Квадрат",
+      "custom": "Свой размер"
+    },
+    "widthLabel": "Ширина",
+    "heightLabel": "Высота",
+    "autoHeading": "Умная обрезка (Pro)",
+    "autoDescription": "Автоматически обнаруживает и удаляет белые или пустые поля на страницах.",
+    "optionsHeading": "Параметры",
+    "applyAllPages": "Применить ко всем страницам",
+    "applySelectedPages": "Только выбранные страницы",
+    "maintainAspectRatio": "Сохранить пропорции",
+    "cropButton": "Обрезать PDF"
   }
 }

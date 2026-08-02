@@ -1609,5 +1609,113 @@
     "resultHeadline": "已永久涂黑 {count} 处区域",
     "textPermanentlyRemoved": "文本数据已永久移除",
     "processAnother": "涂黑另一个文件"
+  },
+  "numberPagesTool": {
+    "previewLabel": "实时预览 — 第一页",
+    "resultHeadline": "页码已添加！",
+    "pagesNumbered": "已为 {count} 页添加页码",
+    "processAnother": "为另一个文件编号",
+    "positionHeading": "位置",
+    "formatHeading": "页码格式",
+    "format": {
+      "numeric": "数字 (1, 2, 3...)",
+      "with-total": "第 X 页，共 Y 页",
+      "roman": "罗马数字 (i, ii, iii...)",
+      "alpha": "字母 (A, B, C...)",
+      "custom": "自定义前缀"
+    },
+    "startFromLabel": "起始页码",
+    "applyToHeading": "应用页面范围",
+    "applyTo": {
+      "all": "所有页面",
+      "skip-first": "跳过第一页",
+      "custom": "自定义范围"
+    },
+    "styleHeading": "样式",
+    "fontSizeLabel": "字体大小：{size}px",
+    "font": {
+      "helvetica": "无衬线",
+      "times": "衬线",
+      "courier": "等宽",
+      "helveticaOblique": "无衬线斜体"
+    },
+    "marginLabel": "边距：{margin}px",
+    "addNumbersButton": "添加页码"
+  },
+  "headerFooterTool": {
+    "emptyError": "请至少填写一个页眉或页脚字段。",
+    "previewLabel": "实时预览 — 第一页",
+    "headerHeading": "页眉",
+    "footerHeading": "页脚",
+    "column": {
+      "left": "左",
+      "center": "中",
+      "right": "右"
+    },
+    "font": {
+      "helvetica": "无衬线",
+      "times": "衬线",
+      "courier": "等宽",
+      "helveticaOblique": "无衬线斜体"
+    },
+    "fontSizeLabel": "字体大小：{size}px",
+    "marginLabel": "边距：{margin}px",
+    "showLineHeader": "在页眉下方显示线条",
+    "showLineFooter": "在页脚上方显示线条",
+    "separatorHeading": "分隔线",
+    "lineThicknessLabel": "粗细：{thickness}px",
+    "applyToHeading": "应用页面范围",
+    "applyTo": {
+      "all": "所有页面",
+      "skip-first": "跳过第一页",
+      "odd": "仅奇数页",
+      "even": "仅偶数页",
+      "custom": "自定义范围"
+    },
+    "addButton": "添加页眉和页脚",
+    "resultHeadline": "页眉和页脚已添加！",
+    "pagesUpdated": "已更新 {count} 页",
+    "processAnother": "处理另一个文件"
+  },
+  "cropTool": {
+    "pageOf": "第 {current} 页，共 {total} 页",
+    "originalSize": "原始尺寸：{size}",
+    "afterCropSize": "裁剪后：{size}",
+    "resultHeadline": "PDF 已裁剪！",
+    "marginsRemoved": "已移除的边距：上 {top}mm，下 {bottom}mm，左 {left}mm，右 {right}mm",
+    "newSize": "新尺寸：{width}×{height}mm",
+    "processAnother": "裁剪另一个文件",
+    "tab": {
+      "manual": "手动",
+      "preset": "预设",
+      "auto": "自动"
+    },
+    "manualHeading": "边距",
+    "unit": {
+      "inches": "英寸"
+    },
+    "margin": {
+      "top": "上",
+      "bottom": "下",
+      "left": "左",
+      "right": "右"
+    },
+    "presetHeading": "预设尺寸",
+    "preset": {
+      "a4-portrait": "A4 纵向 (210×297mm)",
+      "a4-landscape": "A4 横向 (297×210mm)",
+      "letter": "信纸 (216×279mm)",
+      "square": "正方形",
+      "custom": "自定义尺寸"
+    },
+    "widthLabel": "宽度",
+    "heightLabel": "高度",
+    "autoHeading": "智能裁剪（专业版）",
+    "autoDescription": "自动检测并移除页面中的空白边距。",
+    "optionsHeading": "选项",
+    "applyAllPages": "应用到所有页面",
+    "applySelectedPages": "仅选定页面",
+    "maintainAspectRatio": "保持宽高比",
+    "cropButton": "裁剪 PDF"
   }
 }

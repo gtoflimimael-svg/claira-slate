@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} aree oscurate permanentemente",
     "textPermanentlyRemoved": "Dati testuali rimossi permanentemente",
     "processAnother": "Oscura un altro file"
+  },
+  "numberPagesTool": {
+    "previewLabel": "Anteprima dal vivo — prima pagina",
+    "resultHeadline": "Numeri di pagina aggiunti!",
+    "pagesNumbered": "{count} pagine numerate",
+    "processAnother": "Numera un altro file",
+    "positionHeading": "Posizione",
+    "formatHeading": "Formato numero",
+    "format": {
+      "numeric": "Numerico (1, 2, 3...)",
+      "with-total": "Pagina X di Y",
+      "roman": "Numeri romani (i, ii, iii...)",
+      "alpha": "Alfabetico (A, B, C...)",
+      "custom": "Prefisso personalizzato"
+    },
+    "startFromLabel": "Numero iniziale",
+    "applyToHeading": "Applica alle pagine",
+    "applyTo": {
+      "all": "Tutte le pagine",
+      "skip-first": "Salta la prima pagina",
+      "custom": "Intervallo personalizzato"
+    },
+    "styleHeading": "Stile",
+    "fontSizeLabel": "Dimensione carattere: {size}px",
+    "font": {
+      "helvetica": "Senza grazie",
+      "times": "Con grazie",
+      "courier": "Monospazio",
+      "helveticaOblique": "Senza grazie corsivo"
+    },
+    "marginLabel": "Margine dal bordo: {margin}px",
+    "addNumbersButton": "Aggiungi numeri di pagina"
+  },
+  "headerFooterTool": {
+    "emptyError": "Aggiungi almeno un campo intestazione o piè di pagina.",
+    "previewLabel": "Anteprima dal vivo — prima pagina",
+    "headerHeading": "Intestazione",
+    "footerHeading": "Piè di pagina",
+    "column": {
+      "left": "Sinistra",
+      "center": "Centro",
+      "right": "Destra"
+    },
+    "font": {
+      "helvetica": "Senza grazie",
+      "times": "Con grazie",
+      "courier": "Monospazio",
+      "helveticaOblique": "Senza grazie corsivo"
+    },
+    "fontSizeLabel": "Dimensione carattere: {size}px",
+    "marginLabel": "Margine dal bordo: {margin}px",
+    "showLineHeader": "Mostra linea sotto l'intestazione",
+    "showLineFooter": "Mostra linea sopra il piè di pagina",
+    "separatorHeading": "Linea separatrice",
+    "lineThicknessLabel": "Spessore: {thickness}px",
+    "applyToHeading": "Applica alle pagine",
+    "applyTo": {
+      "all": "Tutte le pagine",
+      "skip-first": "Salta la prima pagina",
+      "odd": "Solo pagine dispari",
+      "even": "Solo pagine pari",
+      "custom": "Intervallo personalizzato"
+    },
+    "addButton": "Aggiungi intestazione e piè di pagina",
+    "resultHeadline": "Intestazione e piè di pagina aggiunti!",
+    "pagesUpdated": "{count} pagine aggiornate",
+    "processAnother": "Elabora un altro file"
+  },
+  "cropTool": {
+    "pageOf": "Pagina {current} di {total}",
+    "originalSize": "Originale: {size}",
+    "afterCropSize": "Dopo il ritaglio: {size}",
+    "resultHeadline": "PDF ritagliato!",
+    "marginsRemoved": "Margini rimossi: Alto {top}mm, Basso {bottom}mm, Sinistra {left}mm, Destra {right}mm",
+    "newSize": "Nuova dimensione: {width}×{height}mm",
+    "processAnother": "Ritaglia un altro file",
+    "tab": {
+      "manual": "Manuale",
+      "preset": "Preimpostato",
+      "auto": "Auto"
+    },
+    "manualHeading": "Margini",
+    "unit": {
+      "inches": "poll"
+    },
+    "margin": {
+      "top": "Alto",
+      "bottom": "Basso",
+      "left": "Sinistra",
+      "right": "Destra"
+    },
+    "presetHeading": "Dimensione preimpostata",
+    "preset": {
+      "a4-portrait": "A4 Verticale (210×297mm)",
+      "a4-landscape": "A4 Orizzontale (297×210mm)",
+      "letter": "Letter (216×279mm)",
+      "square": "Quadrato",
+      "custom": "Dimensione personalizzata"
+    },
+    "widthLabel": "Larghezza",
+    "heightLabel": "Altezza",
+    "autoHeading": "Ritaglio intelligente (Pro)",
+    "autoDescription": "Rileva e rimuove automaticamente i margini bianchi o vuoti dalle tue pagine.",
+    "optionsHeading": "Opzioni",
+    "applyAllPages": "Applica a tutte le pagine",
+    "applySelectedPages": "Solo pagine selezionate",
+    "maintainAspectRatio": "Mantieni proporzioni",
+    "cropButton": "Ritaglia PDF"
   }
 }

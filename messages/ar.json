@@ -1609,5 +1609,113 @@
     "resultHeadline": "تم تشويه {count} منطقة بشكل دائم",
     "textPermanentlyRemoved": "تمت إزالة بيانات النص بشكل دائم",
     "processAnother": "تشويه ملف آخر"
+  },
+  "numberPagesTool": {
+    "previewLabel": "معاينة مباشرة — الصفحة الأولى",
+    "resultHeadline": "تمت إضافة أرقام الصفحات!",
+    "pagesNumbered": "تم ترقيم {count} صفحة",
+    "processAnother": "ترقيم ملف آخر",
+    "positionHeading": "الموضع",
+    "formatHeading": "تنسيق الرقم",
+    "format": {
+      "numeric": "رقمي (1، 2، 3...)",
+      "with-total": "صفحة X من Y",
+      "roman": "أرقام رومانية (i، ii، iii...)",
+      "alpha": "أبجدي (A، B، C...)",
+      "custom": "بادئة مخصصة"
+    },
+    "startFromLabel": "رقم البداية",
+    "applyToHeading": "التطبيق على الصفحات",
+    "applyTo": {
+      "all": "كل الصفحات",
+      "skip-first": "تخطي الصفحة الأولى",
+      "custom": "نطاق مخصص"
+    },
+    "styleHeading": "النمط",
+    "fontSizeLabel": "حجم الخط: {size}px",
+    "font": {
+      "helvetica": "بلا زوائد",
+      "times": "بزوائد",
+      "courier": "أحادي المسافة",
+      "helveticaOblique": "بلا زوائد مائل"
+    },
+    "marginLabel": "الهامش من الحافة: {margin}px",
+    "addNumbersButton": "إضافة أرقام الصفحات"
+  },
+  "headerFooterTool": {
+    "emptyError": "أضف حقل ترويسة أو تذييل واحدًا على الأقل.",
+    "previewLabel": "معاينة مباشرة — الصفحة الأولى",
+    "headerHeading": "الترويسة",
+    "footerHeading": "التذييل",
+    "column": {
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين"
+    },
+    "font": {
+      "helvetica": "بلا زوائد",
+      "times": "بزوائد",
+      "courier": "أحادي المسافة",
+      "helveticaOblique": "بلا زوائد مائل"
+    },
+    "fontSizeLabel": "حجم الخط: {size}px",
+    "marginLabel": "الهامش من الحافة: {margin}px",
+    "showLineHeader": "إظهار خط أسفل الترويسة",
+    "showLineFooter": "إظهار خط أعلى التذييل",
+    "separatorHeading": "خط الفاصل",
+    "lineThicknessLabel": "السُمك: {thickness}px",
+    "applyToHeading": "التطبيق على الصفحات",
+    "applyTo": {
+      "all": "كل الصفحات",
+      "skip-first": "تخطي الصفحة الأولى",
+      "odd": "الصفحات الفردية فقط",
+      "even": "الصفحات الزوجية فقط",
+      "custom": "نطاق مخصص"
+    },
+    "addButton": "إضافة الترويسة والتذييل",
+    "resultHeadline": "تمت إضافة الترويسة والتذييل!",
+    "pagesUpdated": "تم تحديث {count} صفحة",
+    "processAnother": "معالجة ملف آخر"
+  },
+  "cropTool": {
+    "pageOf": "صفحة {current} من {total}",
+    "originalSize": "الأصلي: {size}",
+    "afterCropSize": "بعد القص: {size}",
+    "resultHeadline": "تم قص ملف PDF!",
+    "marginsRemoved": "الهوامش المُزالة: أعلى {top}مم، أسفل {bottom}مم، يسار {left}مم، يمين {right}مم",
+    "newSize": "الحجم الجديد: {width}×{height}مم",
+    "processAnother": "قص ملف آخر",
+    "tab": {
+      "manual": "يدوي",
+      "preset": "إعداد مسبق",
+      "auto": "تلقائي"
+    },
+    "manualHeading": "الهوامش",
+    "unit": {
+      "inches": "بوصة"
+    },
+    "margin": {
+      "top": "أعلى",
+      "bottom": "أسفل",
+      "left": "يسار",
+      "right": "يمين"
+    },
+    "presetHeading": "حجم مُعد مسبقًا",
+    "preset": {
+      "a4-portrait": "A4 عمودي (210×297مم)",
+      "a4-landscape": "A4 أفقي (297×210مم)",
+      "letter": "Letter (216×279مم)",
+      "square": "مربع",
+      "custom": "حجم مخصص"
+    },
+    "widthLabel": "العرض",
+    "heightLabel": "الارتفاع",
+    "autoHeading": "قص ذكي (Pro)",
+    "autoDescription": "يكتشف ويزيل تلقائيًا الهوامش البيضاء أو الفارغة من صفحاتك.",
+    "optionsHeading": "خيارات",
+    "applyAllPages": "التطبيق على كل الصفحات",
+    "applySelectedPages": "الصفحات المحددة فقط",
+    "maintainAspectRatio": "الحفاظ على نسبة الأبعاد",
+    "cropButton": "قص PDF"
   }
 }

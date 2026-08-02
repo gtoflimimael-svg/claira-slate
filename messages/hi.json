@@ -1609,5 +1609,113 @@
     "resultHeadline": "{count} क्षेत्र स्थायी रूप से रीडैक्ट किए गए",
     "textPermanentlyRemoved": "टेक्स्ट डेटा स्थायी रूप से हटा दिया गया",
     "processAnother": "एक और फ़ाइल रीडैक्ट करें"
+  },
+  "numberPagesTool": {
+    "previewLabel": "लाइव पूर्वावलोकन — पहला पृष्ठ",
+    "resultHeadline": "पृष्ठ संख्याएँ जोड़ी गईं!",
+    "pagesNumbered": "{count} पृष्ठों पर संख्या डाली गई",
+    "processAnother": "किसी अन्य फ़ाइल पर नंबर डालें",
+    "positionHeading": "स्थिति",
+    "formatHeading": "संख्या प्रारूप",
+    "format": {
+      "numeric": "अंकीय (1, 2, 3...)",
+      "with-total": "पृष्ठ X का Y",
+      "roman": "रोमन अंक (i, ii, iii...)",
+      "alpha": "वर्णानुक्रम (A, B, C...)",
+      "custom": "कस्टम प्रीफ़िक्स"
+    },
+    "startFromLabel": "प्रारंभिक संख्या",
+    "applyToHeading": "पृष्ठों पर लागू करें",
+    "applyTo": {
+      "all": "सभी पृष्ठ",
+      "skip-first": "पहला पृष्ठ छोड़ें",
+      "custom": "कस्टम रेंज"
+    },
+    "styleHeading": "शैली",
+    "fontSizeLabel": "फ़ॉन्ट आकार: {size}px",
+    "font": {
+      "helvetica": "सैन्स-सेरिफ़",
+      "times": "सेरिफ़",
+      "courier": "मोनोस्पेस",
+      "helveticaOblique": "सैन्स-सेरिफ़ इटैलिक"
+    },
+    "marginLabel": "किनारे से मार्जिन: {margin}px",
+    "addNumbersButton": "पृष्ठ संख्याएँ जोड़ें"
+  },
+  "headerFooterTool": {
+    "emptyError": "कम से कम एक हेडर या फ़ुटर फ़ील्ड जोड़ें।",
+    "previewLabel": "लाइव पूर्वावलोकन — पहला पृष्ठ",
+    "headerHeading": "हेडर",
+    "footerHeading": "फ़ुटर",
+    "column": {
+      "left": "बाएँ",
+      "center": "केंद्र",
+      "right": "दाएँ"
+    },
+    "font": {
+      "helvetica": "सैन्स-सेरिफ़",
+      "times": "सेरिफ़",
+      "courier": "मोनोस्पेस",
+      "helveticaOblique": "सैन्स-सेरिफ़ इटैलिक"
+    },
+    "fontSizeLabel": "फ़ॉन्ट आकार: {size}px",
+    "marginLabel": "किनारे से मार्जिन: {margin}px",
+    "showLineHeader": "हेडर के नीचे रेखा दिखाएँ",
+    "showLineFooter": "फ़ुटर के ऊपर रेखा दिखाएँ",
+    "separatorHeading": "विभाजक रेखा",
+    "lineThicknessLabel": "मोटाई: {thickness}px",
+    "applyToHeading": "पृष्ठों पर लागू करें",
+    "applyTo": {
+      "all": "सभी पृष्ठ",
+      "skip-first": "पहला पृष्ठ छोड़ें",
+      "odd": "केवल विषम पृष्ठ",
+      "even": "केवल सम पृष्ठ",
+      "custom": "कस्टम रेंज"
+    },
+    "addButton": "हेडर और फ़ुटर जोड़ें",
+    "resultHeadline": "हेडर और फ़ुटर जोड़ दिया गया!",
+    "pagesUpdated": "{count} पृष्ठ अपडेट किए गए",
+    "processAnother": "किसी अन्य फ़ाइल को संसाधित करें"
+  },
+  "cropTool": {
+    "pageOf": "पृष्ठ {current} / {total}",
+    "originalSize": "मूल: {size}",
+    "afterCropSize": "क्रॉप के बाद: {size}",
+    "resultHeadline": "PDF क्रॉप हो गया!",
+    "marginsRemoved": "हटाए गए मार्जिन: ऊपर {top}mm, नीचे {bottom}mm, बाएँ {left}mm, दाएँ {right}mm",
+    "newSize": "नया आकार: {width}×{height}mm",
+    "processAnother": "किसी अन्य फ़ाइल को क्रॉप करें",
+    "tab": {
+      "manual": "मैनुअल",
+      "preset": "प्रीसेट",
+      "auto": "ऑटो"
+    },
+    "manualHeading": "मार्जिन",
+    "unit": {
+      "inches": "इंच"
+    },
+    "margin": {
+      "top": "ऊपर",
+      "bottom": "नीचे",
+      "left": "बाएँ",
+      "right": "दाएँ"
+    },
+    "presetHeading": "प्रीसेट आकार",
+    "preset": {
+      "a4-portrait": "A4 पोर्ट्रेट (210×297mm)",
+      "a4-landscape": "A4 लैंडस्केप (297×210mm)",
+      "letter": "लेटर (216×279mm)",
+      "square": "वर्ग",
+      "custom": "कस्टम आकार"
+    },
+    "widthLabel": "चौड़ाई",
+    "heightLabel": "ऊँचाई",
+    "autoHeading": "स्मार्ट क्रॉप (Pro)",
+    "autoDescription": "आपके पृष्ठों से सफ़ेद या खाली मार्जिन को स्वतः पहचानकर हटाता है।",
+    "optionsHeading": "विकल्प",
+    "applyAllPages": "सभी पृष्ठों पर लागू करें",
+    "applySelectedPages": "केवल चयनित पृष्ठ",
+    "maintainAspectRatio": "आस्पेक्ट रेशियो बनाए रखें",
+    "cropButton": "PDF क्रॉप करें"
   }
 }
