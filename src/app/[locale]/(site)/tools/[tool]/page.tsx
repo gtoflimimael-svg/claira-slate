@@ -31,6 +31,9 @@ import { WatermarkTool } from "@/components/tools/watermark/watermark-tool";
 import { NumberPagesTool } from "@/components/tools/number-pages/number-pages-tool";
 import { HeaderFooterTool } from "@/components/tools/header-footer/header-footer-tool";
 import { CropTool } from "@/components/tools/crop/crop-tool";
+import { AnnotateTool } from "@/components/tools/annotate/annotate-tool";
+import { EditTextTool } from "@/components/tools/edit-text/edit-text-tool";
+import { OcrTool } from "@/components/tools/ocr/ocr-tool";
 import { TOOLS } from "@/lib/data";
 
 const CUSTOM_METADATA: Record<string, { title: string; description: string }> = {
@@ -119,6 +122,9 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isNumberPages = tool === "number-pages";
   const isHeaderFooter = tool === "header-footer";
   const isCrop = tool === "crop";
+  const isAnnotate = tool === "annotate";
+  const isEditText = tool === "edit-text";
+  const isOcr = tool === "ocr";
   const usesWideLayout =
     isSplit ||
     isOrganize ||
@@ -146,7 +152,10 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
     isWatermark ||
     isNumberPages ||
     isHeaderFooter ||
-    isCrop;
+    isCrop ||
+    isAnnotate ||
+    isEditText ||
+    isOcr;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
@@ -231,6 +240,12 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
             <HeaderFooterTool />
           ) : isCrop ? (
             <CropTool />
+          ) : isAnnotate ? (
+            <AnnotateTool />
+          ) : isEditText ? (
+            <EditTextTool />
+          ) : isOcr ? (
+            <OcrTool />
           ) : (
             <div className="tool-workspace">
               <GenericTool config={config} />

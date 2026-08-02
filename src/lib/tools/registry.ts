@@ -82,6 +82,7 @@ export const TOOL_REGISTRY: ToolConfig[] = [
   { slug: "crop", multi: false, outputKind: "pdf", technique: "pdf-lib",
     fields: [{ name: "marginPercent", label: "Trim margin (%)", type: "number", defaultValue: "10" }] },
   { slug: "grayscale", multi: false, outputKind: "pdf", technique: "raster" },
+  { slug: "ocr", multi: false, outputKind: "pdf", technique: "raster" },
   { slug: "annotate", multi: false, outputKind: "pdf", technique: "pdf-lib",
     fields: [
       { name: "comment", label: "Comment text", type: "text" },
