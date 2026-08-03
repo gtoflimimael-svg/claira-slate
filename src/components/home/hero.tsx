@@ -17,6 +17,7 @@ export function Hero() {
       dir={isRTL ? "rtl" : "ltr"}
       style={{
         position: "relative",
+        minHeight: "100svh",
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
