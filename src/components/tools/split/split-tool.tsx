@@ -388,15 +388,9 @@ export function SplitTool() {
     if (modifiers.shiftKey && lastClickedRef.current != null) {
       const [lo, hi] = [lastClickedRef.current, pageNum].sort((a, b) => a - b);
       for (let p = lo; p <= hi; p++) next.add(p);
-    } else if (modifiers.ctrlKey) {
+    } else {
       if (next.has(pageNum)) next.delete(pageNum);
       else next.add(pageNum);
-    } else {
-      if (next.size === 1 && next.has(pageNum)) next.delete(pageNum);
-      else {
-        next.clear();
-        next.add(pageNum);
-      }
     }
     lastClickedRef.current = pageNum;
     setSelectedPages(next);
