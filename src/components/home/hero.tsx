@@ -49,7 +49,7 @@ export function Hero() {
                 margin: 0,
                 fontFamily: "var(--font-geist), Inter, sans-serif",
                 fontWeight: 600,
-                fontSize: "clamp(47.5px,7.5vw,90px)",
+                fontSize: "clamp(57px,9vw,108px)",
                 lineHeight: 1.04,
                 letterSpacing: "-.042em",
                 textWrap: "balance",
@@ -77,7 +77,7 @@ export function Hero() {
               style={{
                 margin: "24px 0 0",
                 maxWidth: 520,
-                fontSize: "clamp(20px,1.88vw,23.75px)",
+                fontSize: "clamp(24px,2.25vw,28.5px)",
                 lineHeight: 1.6,
                 color: "var(--cs-text-2)",
                 animation: "csRise .5s var(--cs-ease) 1.05s both",
@@ -98,12 +98,12 @@ export function Hero() {
                   borderRadius: 10,
                   background: "var(--cs-grad)",
                   color: "#fff",
-                  fontSize: 18.75,
+                  fontSize: 22.5,
                   fontWeight: 500,
                   cursor: "pointer",
                 }}
               >
-                {t("ctaPrimary")} <span data-tip style={{ fontSize: 18.75 }}>&rarr;</span>
+                {t("ctaPrimary")} <span data-tip style={{ fontSize: 22.5 }}>&rarr;</span>
               </Link>
               <Link
                 data-press
@@ -116,7 +116,7 @@ export function Hero() {
                   borderRadius: 10,
                   border: "1px solid var(--cs-line)",
                   color: "var(--cs-text)",
-                  fontSize: 18.75,
+                  fontSize: 22.5,
                   fontWeight: 500,
                   cursor: "pointer",
                 }}
@@ -124,7 +124,7 @@ export function Hero() {
                 {t("ctaSecondary")}
               </Link>
             </div>
-            <div style={{ margin: "22px 0 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, fontSize: 16.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <div style={{ margin: "22px 0 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, fontSize: 20.25, fontWeight: 500, color: "var(--cs-text-2)" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 7, animation: "csRise .4s var(--cs-ease) 1.45s both" }}>
                 <svg data-check width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cs-ok)" strokeWidth="2.6" strokeLinecap="round" style={{ flex: "none" }}>
                   <path d="M4 12.5l5 5L20 6.5" style={{ animationDelay: "1.45s" }}></path>

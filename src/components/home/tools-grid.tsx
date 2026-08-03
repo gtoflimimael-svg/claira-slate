@@ -20,10 +20,10 @@ export function ToolsGrid() {
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 24 }}>
           <div>
-            <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(37.5px,5.5vw,60px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
+            <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45px,6.6vw,72px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
               {t("headline")}
             </Reveal>
-            <p style={{ margin: "14px 0 0", maxWidth: 460, fontSize: 20, color: "var(--cs-text-2)" }}>
+            <p style={{ margin: "14px 0 0", maxWidth: 460, fontSize: 24, color: "var(--cs-text-2)" }}>
               {t("homeSubheadline")}
             </p>
           </div>
@@ -38,7 +38,7 @@ export function ToolsGrid() {
                     padding: "8px 13px",
                     borderRadius: 99,
                     fontFamily: "Inter, sans-serif",
-                    fontSize: 16.25,
+                    fontSize: 19.5,
                     fontWeight: 500,
                     cursor: "pointer",
                     border: "1px solid",
@@ -80,13 +80,13 @@ export function ToolsGrid() {
                   <path d={tool.d}></path>
                 </svg>
               </div>
-              <div data-shine style={{ marginTop: 14, fontSize: 18.12, fontWeight: 600, letterSpacing: "-.015em" }}>{t(`${tool.slug}.name`)}</div>
-              <div style={{ marginTop: 5, fontSize: 16.25, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{t(`${tool.slug}.desc`)}</div>
+              <div data-shine style={{ marginTop: 14, fontSize: 21.75, fontWeight: 600, letterSpacing: "-.015em" }}>{t(`${tool.slug}.name`)}</div>
+              <div style={{ marginTop: 5, fontSize: 19.5, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{t(`${tool.slug}.desc`)}</div>
             </Reveal>
           ))}
         </div>
         <div style={{ marginTop: 32 }}>
-          <Link href="/tools" style={{ fontSize: 18.12, fontWeight: 500, cursor: "pointer" }}>
+          <Link href="/tools" style={{ fontSize: 21.75, fontWeight: 500, cursor: "pointer" }}>
             {t("viewAll")} &rarr;
           </Link>
         </div>

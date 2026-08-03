@@ -23,14 +23,14 @@ export function SocialProof() {
     <section id="trust" style={{ borderTop: "1px solid var(--cs-line)", background: "var(--cs-bg)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 28 }}>
-          <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(37.5px,5.5vw,60px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
+          <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45px,6.6vw,72px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
             {t("title")}
           </Reveal>
           <div>
             <div
               style={{
                 fontFamily: "var(--font-geist), Inter, sans-serif",
-                fontSize: "clamp(35px,4.25vw,50px)",
+                fontSize: "clamp(42px,5.1vw,60px)",
                 fontWeight: 600,
                 letterSpacing: "-.04em",
                 fontVariantNumeric: "tabular-nums",
@@ -43,21 +43,21 @@ export function SocialProof() {
             >
               {docs}
             </div>
-            <div style={{ marginTop: 4, fontSize: 16.88, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("docsCaption")}</div>
+            <div style={{ marginTop: 4, fontSize: 20.25, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("docsCaption")}</div>
           </div>
         </div>
 
         <div style={{ marginTop: "clamp(36px,5vw,52px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(272px,1fr))", gap: 14 }}>
           {TESTIMONIALS.map((item, i) => (
             <Reveal key={item.key} index={i} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
-              <p style={{ margin: 0, fontSize: 19.38, lineHeight: 1.6, letterSpacing: "-.012em" }}>&ldquo;{t(`${item.key}Quote`)}&rdquo;</p>
+              <p style={{ margin: 0, fontSize: 23.25, lineHeight: 1.6, letterSpacing: "-.012em" }}>&ldquo;{t(`${item.key}Quote`)}&rdquo;</p>
               <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 11 }}>
-                <div style={{ width: 34, height: 34, borderRadius: 8, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", display: "grid", placeItems: "center", fontSize: 15.62, fontWeight: 600, color: "var(--cs-accent)" }}>
+                <div style={{ width: 34, height: 34, borderRadius: 8, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", display: "grid", placeItems: "center", fontSize: 18.75, fontWeight: 600, color: "var(--cs-accent)" }}>
                   {item.initials}
                 </div>
                 <div>
-                  <div style={{ fontSize: 16.88, fontWeight: 600 }}>{item.name}</div>
-                  <div style={{ fontSize: 15.62, color: "var(--cs-text-2)" }}>{t(`${item.key}Role`)}</div>
+                  <div style={{ fontSize: 20.25, fontWeight: 600 }}>{item.name}</div>
+                  <div style={{ fontSize: 18.75, color: "var(--cs-text-2)" }}>{t(`${item.key}Role`)}</div>
                 </div>
               </div>
             </Reveal>
@@ -66,7 +66,7 @@ export function SocialProof() {
 
         <div style={{ marginTop: 34, display: "flex", flexWrap: "wrap", gap: 10 }}>
           {BADGES.map((b) => (
-            <div key={b.key} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 16.25, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <div key={b.key} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 19.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cs-ok)" strokeWidth="2" strokeLinecap="round">
                 {b.icon}
               </svg>
