@@ -266,11 +266,6 @@ export function GenericTool({ config }: { config: ToolConfig }) {
     window.location.href = result.downloadUrl;
     setDownloaded(true);
     track("file_downloaded", { tool_name: config.slug });
-    fetch("/api/files/consumed", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ r2Key: result.r2Key }),
-    }).catch(() => {});
   }
 
   function reset() {

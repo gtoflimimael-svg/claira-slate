@@ -530,11 +530,6 @@ export function OrganizeTool() {
     window.location.href = result.downloadUrl;
     setDownloaded(true);
     track("file_downloaded", { tool_name: "reorder" });
-    fetch("/api/files/consumed", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ r2Key: result.r2Key }),
-    }).catch(() => {});
   }
 
   const canInterleave = sources.length === 2;

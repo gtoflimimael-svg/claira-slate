@@ -379,11 +379,6 @@ export function RotateTool() {
     window.location.href = result.downloadUrl;
     setDownloaded(true);
     track("file_downloaded", { tool_name: "rotate" });
-    fetch("/api/files/consumed", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ r2Key: result.r2Key }),
-    }).catch(() => {});
   }
 
   const allPagesLoaded = sources.length > 0 && sources.every((s) => s.pageCount !== null);

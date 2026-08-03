@@ -451,7 +451,6 @@ export function AnnotateTool() {
     window.location.href = result.downloadUrl;
     setDownloaded(true);
     track("file_downloaded", { tool_name: "annotate" });
-    fetch("/api/files/consumed", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ r2Key: result.r2Key }) }).catch(() => {});
   }
 
   function reset() {
