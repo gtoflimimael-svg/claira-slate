@@ -20,13 +20,6 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 
-// CSS `zoom` scaled the whole site 75% in every environment we could inspect
-// (compiled bundle, local browsers) but was reported invisible in production,
-// so the whole-page scale is applied via `transform` here instead — less
-// elegant, but transform support doesn't depend on the browser recognizing
-// the non-standard `zoom` property.
-const UI_SCALE = 1.75;
-
 const SITE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 const DEFAULT_DESCRIPTION =
   "Merge, compress, convert and understand your PDFs with AI. Free to start, no account required.";
@@ -72,22 +65,16 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} dir={RTL_LOCALES.has(locale) ? "rtl" : "ltr"} className={`${geist.variable} ${inter.variable}`}>
+    <html
+      lang={locale}
+      dir={RTL_LOCALES.has(locale) ? "rtl" : "ltr"}
+      className={`${geist.variable} ${inter.variable}`}
+      style={{ zoom: "1.75" }}
+    >
       <body>
         <AnalyticsProvider />
         <NextIntlClientProvider>
-          <ThemeProvider>
-            <div
-              style={{
-                transform: `scale(${UI_SCALE})`,
-                transformOrigin: "top left",
-                width: `${(100 / UI_SCALE).toFixed(4)}%`,
-                minHeight: `${(100 / UI_SCALE).toFixed(4)}vh`,
-              }}
-            >
-              {children}
-            </div>
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
