@@ -53,6 +53,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
+  zoom: 1.75;
+  overflow-x: hidden;
 }
 
 body {
@@ -60,6 +62,7 @@ body {
   background: var(--cs-bg);
   color: var(--cs-text);
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 * {
