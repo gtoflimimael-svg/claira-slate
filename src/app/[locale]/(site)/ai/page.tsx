@@ -57,7 +57,7 @@ export default function AiHubPage() {
             pointerEvents: "none",
           }}
         ></div>
-        <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto", padding: "calc(clamp(56px,8vw,112px) + 68px) 24px clamp(56px,7vw,96px)" }}>
+        <div style={{ position: "relative", padding: "calc(clamp(56px,8vw,112px) + 68px) 24px clamp(56px,7vw,96px)" }}>
           <span data-spinborder style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 12, fontWeight: 600 }}>
             {t("badge")}
           </span>
@@ -115,7 +115,7 @@ export default function AiHubPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px" }}>
         <Reveal
           as="h2"
           style={{ margin: 0, maxWidth: 640, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.06, letterSpacing: "-.035em", textWrap: "balance" }}
@@ -172,7 +172,7 @@ export default function AiHubPage() {
       </section>
 
       <section style={{ background: "var(--cs-grad-135)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px", textAlign: "center" }}>
+        <div style={{ padding: "clamp(56px,7vw,96px) 24px", textAlign: "center" }}>
           <Reveal
             as="h2"
             style={{ margin: "0 auto", maxWidth: 680, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(28px,4.6vw,52px)", lineHeight: 1.05, letterSpacing: "-.04em", color: "#fff", textWrap: "balance" }}

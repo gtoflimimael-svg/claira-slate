@@ -21,7 +21,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,8vw,104px) 24px 0" }}>
         <h1
           style={{
             margin: 0,
@@ -108,7 +108,7 @@ export default function BlogPage() {
         </Reveal>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(28px,4vw,40px) 24px clamp(56px,7vw,96px)" }}>
+      <section style={{ padding: "clamp(28px,4vw,40px) 24px clamp(56px,7vw,96px)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(300px,100%),1fr))", gap: 14 }}>
           {posts.map((p, i) => (
             <Reveal

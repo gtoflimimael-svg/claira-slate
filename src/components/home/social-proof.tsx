@@ -21,7 +21,7 @@ export function SocialProof() {
   const docs = useDocsCounter();
   return (
     <section id="trust" style={{ borderTop: "1px solid var(--cs-line)", background: "var(--cs-bg)" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
+      <div style={{ padding: "clamp(64px,8vw,104px) 24px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 28 }}>
           <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45px,6.6vw,72px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
             {t("title")}

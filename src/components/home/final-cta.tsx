@@ -5,7 +5,7 @@ export function FinalCta() {
   const t = useTranslations("home.finalCta");
   return (
     <section id="cta" style={{ background: "var(--cs-grad-135)" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(72px,9vw,120px) 24px", textAlign: "center" }}>
+      <div style={{ padding: "clamp(72px,9vw,120px) 24px", textAlign: "center" }}>
         <h2
           style={{
             margin: "0 auto",

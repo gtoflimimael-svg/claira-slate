@@ -41,7 +41,7 @@ export function Hero() {
         }
       `}</style>
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", width: "100%" }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
         <div data-hero-grid>
           <div>
             <h1

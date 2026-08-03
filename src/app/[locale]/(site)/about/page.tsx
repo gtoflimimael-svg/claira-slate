@@ -30,7 +30,7 @@ export default function AboutPage() {
 
   return (
     <div>
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,8vw,104px) 24px 0" }}>
         <h1
           style={{
             margin: 0,
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
         <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,40px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("valuesTitle")}
         </Reveal>
@@ -87,7 +87,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
         <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,40px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("trustTitle")}
         </Reveal>
@@ -117,7 +117,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
         <div
           style={{
             display: "flex",

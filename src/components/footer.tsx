@@ -21,8 +21,6 @@ export function Footer() {
     <footer style={{ background: "var(--cs-bg)", borderTop: "1px solid var(--cs-line)", marginTop: compact ? 120 : 0 }}>
       <div
         style={{
-          maxWidth: 1200,
-          margin: "0 auto",
           padding: compact ? "32px 24px 20px" : "clamp(52px,6vw,76px) 24px 40px",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))",
@@ -83,8 +81,6 @@ export function Footer() {
       </div>
       <div
         style={{
-          maxWidth: 1200,
-          margin: "0 auto",
           padding: compact ? "14px 24px 24px" : "22px 24px 44px",
           borderTop: "1px solid var(--cs-line)",
           display: "flex",

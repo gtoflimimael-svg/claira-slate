@@ -48,7 +48,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px clamp(56px,7vw,96px)" }}>
+    <section style={{ padding: "clamp(56px,8vw,104px) 24px clamp(56px,7vw,96px)" }}>
       <style>{`.cs-field:focus{border-color:var(--cs-accent)}`}</style>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(320px,100%),1fr))", gap: "clamp(28px,4vw,56px)", alignItems: "start" }}>
         <div>

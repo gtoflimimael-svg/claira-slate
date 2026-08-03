@@ -49,7 +49,7 @@ export default async function PricingPage() {
 
   return (
     <>
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,8vw,104px) 24px 0" }}>
         <h1
           style={{
             margin: 0,
@@ -157,7 +157,7 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,7vw,88px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,7vw,88px) 24px 0" }}>
         <Reveal
           as="h2"
           style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
@@ -199,7 +199,7 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(48px,6vw,80px) 24px clamp(56px,7vw,96px)" }}>
+      <section style={{ padding: "clamp(48px,6vw,80px) 24px clamp(56px,7vw,96px)" }}>
         <div
           style={{
             display: "flex",

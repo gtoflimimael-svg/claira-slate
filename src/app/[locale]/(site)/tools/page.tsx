@@ -18,7 +18,7 @@ export default function ToolsIndexPage() {
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(56px,8vw,104px) 24px clamp(28px,4vw,44px)" }}>
+      <section style={{ padding: "clamp(56px,8vw,104px) 24px clamp(28px,4vw,44px)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
@@ -68,7 +68,7 @@ export default function ToolsIndexPage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px clamp(56px,7vw,96px)" }}>
+      <section style={{ padding: "0 24px clamp(56px,7vw,96px)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(248px,100%),1fr))", gap: 12 }}>
           {shownTools.map((tool, i) => (
             <Reveal

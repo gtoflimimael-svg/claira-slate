@@ -69,7 +69,7 @@ export default function SignupPage() {
   }
 
   return (
-    <section style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(48px,7vw,96px) 24px clamp(64px,8vw,112px)" }}>
+    <section style={{ padding: "clamp(48px,7vw,96px) 24px clamp(64px,8vw,112px)" }}>
       <style>{`.cs-field:focus{border-color:var(--cs-accent)}`}</style>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(320px,100%),1fr))", gap: "clamp(28px,4vw,56px)", alignItems: "center" }}>
         <div>

@@ -125,41 +125,10 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   const isAnnotate = tool === "annotate";
   const isEditText = tool === "edit-text";
   const isOcr = tool === "ocr";
-  const usesWideLayout =
-    isSplit ||
-    isOrganize ||
-    isRotate ||
-    isExtract ||
-    isDelete ||
-    isCompress ||
-    isRepair ||
-    isOptimize ||
-    isFlatten ||
-    isGrayscale ||
-    isPdfToWord ||
-    isPdfToExcel ||
-    isPdfToPpt ||
-    isWordToPdf ||
-    isExcelToPdf ||
-    isPptToPdf ||
-    isJpgToPdf ||
-    isHtmlToPdf ||
-    isProtect ||
-    isUnlock ||
-    isRedact ||
-    isCertify ||
-    isSign ||
-    isWatermark ||
-    isNumberPages ||
-    isHeaderFooter ||
-    isCrop ||
-    isAnnotate ||
-    isEditText ||
-    isOcr;
 
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
-      <div style={{ maxWidth: usesWideLayout ? 1400 : 1100, margin: "0 auto", padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
+      <div style={{ padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>

@@ -45,7 +45,7 @@ export default function SummarizePage() {
 
   return (
     <div>
-      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(48px,6vw,88px) 24px 0" }}>
+      <section style={{ padding: "clamp(48px,6vw,88px) 24px 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
@@ -64,13 +64,13 @@ export default function SummarizePage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(36px,5vw,60px) 24px 0" }}>
+      <section style={{ padding: "clamp(36px,5vw,60px) 24px 0" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(320px,100%),1fr))", gap: 16, alignItems: "start" }}>
           <SummarizeTool />
         </div>
       </section>
 
-      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px 0" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
         <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,38px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("summarizePage.howItWorks")}
         </Reveal>
@@ -99,7 +99,7 @@ export default function SummarizePage() {
         </div>
       </section>
 
-      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
+      <section style={{ padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
         <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,38px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("otherAiTools")}
         </Reveal>

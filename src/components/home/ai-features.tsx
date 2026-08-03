@@ -16,7 +16,7 @@ export function AiFeatures() {
   return (
     <section id="ai" style={{ position: "relative", background: "var(--cs-ink)", color: "#fff", overflow: "hidden" }}>
       <div data-stars></div>
-      <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto", padding: "clamp(72px,9vw,120px) 24px" }}>
+      <div style={{ position: "relative", padding: "clamp(72px,9vw,120px) 24px" }}>
         <Reveal
           as="span"
           variant="fade"
