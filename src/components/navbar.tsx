@@ -71,7 +71,7 @@ export function Navbar() {
                   position: "relative",
                   padding: "7px 12px",
                   borderRadius: 8,
-                  fontSize: 21,
+                  fontSize: 24.5,
                   fontWeight: 500,
                   cursor: "pointer",
                   whiteSpace: "nowrap",
@@ -103,7 +103,7 @@ export function Navbar() {
             data-navghost
             href="/login"
             className="hover-bg"
-            style={{ padding: "9px 14px", borderRadius: 8, fontSize: 21, fontWeight: 500, color: "var(--cs-text)", cursor: "pointer" }}
+            style={{ padding: "9px 14px", borderRadius: 8, fontSize: 24.5, fontWeight: 500, color: "var(--cs-text)", cursor: "pointer" }}
           >
             {t("login")}
           </Link>
@@ -113,7 +113,7 @@ export function Navbar() {
             style={{
               padding: "9px 15px",
               borderRadius: 8,
-              fontSize: 21,
+              fontSize: 24.5,
               fontWeight: 500,
               background: "var(--cs-grad)",
               color: "#fff",

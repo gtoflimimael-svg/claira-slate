@@ -12,7 +12,7 @@ export function FinalCta() {
             maxWidth: 760,
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(48px,8.1vw,90px)",
+            fontSize: "clamp(56px,9.45vw,105px)",
             lineHeight: 1.04,
             letterSpacing: "-.04em",
             color: "#fff",
@@ -33,7 +33,7 @@ export function FinalCta() {
             borderRadius: 10,
             background: "#fff",
             color: "var(--cs-accent)",
-            fontSize: 23.25,
+            fontSize: 27.12,
             fontWeight: 600,
             cursor: "pointer",
           }}

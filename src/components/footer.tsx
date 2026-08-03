@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/language-switcher";
 
-const linkStyle = { cursor: "pointer", fontSize: 20.25, color: "var(--cs-text-2)" } as const;
-const colTitleStyle = { fontSize: 18.75, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-text)" } as const;
-const compactLinkStyle = { cursor: "pointer", fontSize: "1.2rem", color: "var(--cs-text-2)" } as const;
-const compactColTitleStyle = { fontSize: "1.2rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-text)" } as const;
+const linkStyle = { cursor: "pointer", fontSize: 23.62, color: "var(--cs-text-2)" } as const;
+const colTitleStyle = { fontSize: 21.88, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-text)" } as const;
+const compactLinkStyle = { cursor: "pointer", fontSize: "1.4rem", color: "var(--cs-text-2)" } as const;
+const compactColTitleStyle = { fontSize: "1.4rem", fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-text)" } as const;
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -38,7 +38,7 @@ export function Footer() {
               strokeLinecap="round"
             ></path>
           </svg>
-          <div style={{ marginTop: 12, fontSize: compact ? "1.2rem" : 21, color: "var(--cs-text-2)", maxWidth: 220 }}>{t("tagline")}</div>
+          <div style={{ marginTop: 12, fontSize: compact ? "1.4rem" : 24.5, color: "var(--cs-text-2)", maxWidth: 220 }}>{t("tagline")}</div>
         </div>
         <div>
           <div style={compact ? compactColTitleStyle : colTitleStyle}>{t("colTools")}</div>
@@ -87,7 +87,7 @@ export function Footer() {
           flexWrap: "wrap",
           gap: 14,
           justifyContent: "space-between",
-          fontSize: compact ? "1.125rem" : 18.75,
+          fontSize: compact ? "1.31rem" : 21.88,
           color: "var(--cs-text-2)",
         }}
       >
