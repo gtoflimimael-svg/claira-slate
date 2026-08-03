@@ -56,7 +56,7 @@ export function Navbar() {
         }}
       >
         <Link href="/" aria-label="Claira Slate" style={{ display: "flex", alignItems: "center", lineHeight: 0, cursor: "pointer" }}>
-          <Logo />
+          <Logo size={56} />
         </Link>
         <div data-navlinks style={{ display: "flex", alignItems: "center", gap: 6, margin: "0 auto" }}>
           {NAV_LINKS.map((l) => {

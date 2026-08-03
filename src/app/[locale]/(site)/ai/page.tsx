@@ -58,7 +58,7 @@ export default function AiHubPage() {
           }}
         ></div>
         <div style={{ position: "relative", padding: "calc(clamp(56px,8vw,112px) + 68px) 24px clamp(56px,7vw,96px)" }}>
-          <span data-spinborder style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 12, fontWeight: 600 }}>
+          <span data-spinborder style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 21, fontWeight: 600 }}>
             {t("badge")}
           </span>
           <TypewriterHeadline
@@ -75,7 +75,7 @@ export default function AiHubPage() {
             words={t.raw("typewriterWords") as string[]}
             suffix={t("typewriterSuffix")}
           />
-          <p style={{ margin: "20px 0 0", maxWidth: 540, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
+          <p style={{ margin: "20px 0 0", maxWidth: 540, fontSize: "clamp(26.25px,2.62vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
             {t("hubSubhead")}
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 32 }}>
@@ -84,14 +84,14 @@ export default function AiHubPage() {
               data-arrow
               href="/signup"
               className="hover-text"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px", borderRadius: 10, background: "var(--cs-grad)", color: "#fff", fontSize: 15, fontWeight: 500, cursor: "pointer" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px", borderRadius: 10, background: "var(--cs-grad)", color: "#fff", fontSize: 26.25, fontWeight: 500, cursor: "pointer" }}
             >
               {t("tryFree")} <span data-tip>&rarr;</span>
             </Link>
             <Link
               data-press
               href="/ai/summarize"
-              style={{ display: "inline-flex", alignItems: "center", padding: "13px 22px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 15, fontWeight: 500, cursor: "pointer" }}
+              style={{ display: "inline-flex", alignItems: "center", padding: "13px 22px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 26.25, fontWeight: 500, cursor: "pointer" }}
             >
               {t("seeHowItWorks")}
             </Link>
@@ -105,9 +105,9 @@ export default function AiHubPage() {
                       {c.icon}
                     </svg>
                   </div>
-                  <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${c.key}.name`)}</div>
-                  <div style={{ marginTop: 7, fontSize: 14, lineHeight: 1.5, color: "rgba(255,255,255,.58)" }}>{t(`${c.key}.desc`)}</div>
-                  <div className="ai-card-open" style={{ marginTop: "auto", paddingTop: 16, fontSize: 13, fontWeight: 500, color: "var(--cs-accent)" }}>{t("openTool")} &rarr;</div>
+                  <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 29.75, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${c.key}.name`)}</div>
+                  <div style={{ marginTop: 7, fontSize: 24.5, lineHeight: 1.5, color: "rgba(255,255,255,.58)" }}>{t(`${c.key}.desc`)}</div>
+                  <div className="ai-card-open" style={{ marginTop: "auto", paddingTop: 16, fontSize: 22.75, fontWeight: 500, color: "var(--cs-accent)" }}>{t("openTool")} &rarr;</div>
                 </Link>
               </Reveal>
             ))}
@@ -118,16 +118,16 @@ export default function AiHubPage() {
       <section style={{ padding: "clamp(56px,7vw,96px) 24px" }}>
         <Reveal
           as="h2"
-          style={{ margin: 0, maxWidth: 640, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.06, letterSpacing: "-.035em", textWrap: "balance" }}
+          style={{ margin: 0, maxWidth: 640, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(49px,7vw,77px)", lineHeight: 1.06, letterSpacing: "-.035em", textWrap: "balance" }}
         >
           {t("answersTitle")}
         </Reveal>
-        <p style={{ margin: "16px 0 0", maxWidth: 520, fontSize: 16, lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
+        <p style={{ margin: "16px 0 0", maxWidth: 520, fontSize: 28, lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
           {t("answersSubhead")}
         </p>
         <div style={{ marginTop: 36, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))", gap: 14 }}>
           <Reveal variant="left" style={{ border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", padding: 22 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--cs-text-2)" }}>{t("mockDocumentLabel")}</div>
+            <div style={{ fontSize: 19.25, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--cs-text-2)" }}>{t("mockDocumentLabel")}</div>
             <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 9 }}>
               <div data-skeleton style={{ height: 9, borderRadius: 99, width: "88%" }}></div>
               <div data-skeleton style={{ height: 9, borderRadius: 99, width: "96%" }}></div>
@@ -137,21 +137,21 @@ export default function AiHubPage() {
               <div data-skeleton style={{ height: 9, borderRadius: 99, width: "84%" }}></div>
               <div data-skeleton style={{ height: 9, borderRadius: 99, width: "46%" }}></div>
             </div>
-            <div style={{ marginTop: 20, fontSize: 12, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("mockDocumentCaption")}</div>
+            <div style={{ marginTop: 20, fontSize: 21, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("mockDocumentCaption")}</div>
           </Reveal>
           <Reveal variant="right" style={{ border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)", padding: 22, display: "flex", flexDirection: "column", gap: 12 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--cs-accent)" }}>{t("mockChatLabel")}</div>
-            <div style={{ alignSelf: "flex-end", maxWidth: "86%", padding: "10px 13px", borderRadius: "12px 12px 4px 12px", background: "var(--cs-accent)", color: "#fff", fontSize: 13, lineHeight: 1.45 }}>
+            <div style={{ fontSize: 19.25, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--cs-accent)" }}>{t("mockChatLabel")}</div>
+            <div style={{ alignSelf: "flex-end", maxWidth: "86%", padding: "10px 13px", borderRadius: "12px 12px 4px 12px", background: "var(--cs-accent)", color: "#fff", fontSize: 22.75, lineHeight: 1.45 }}>
               {t("mockQuestion")}
             </div>
-            <div style={{ maxWidth: "94%", padding: "12px 14px", borderRadius: "12px 12px 12px 4px", background: "var(--cs-bg-2)", border: "1px solid var(--cs-line)", fontSize: 13, lineHeight: 1.55 }}>
+            <div style={{ maxWidth: "94%", padding: "12px 14px", borderRadius: "12px 12px 12px 4px", background: "var(--cs-bg-2)", border: "1px solid var(--cs-line)", fontSize: 22.75, lineHeight: 1.55 }}>
               {t("mockAnswer")}
               <div style={{ marginTop: 10, display: "flex", flexWrap: "wrap", gap: 6 }}>
-                <span style={{ padding: "3px 8px", borderRadius: 6, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 11, fontWeight: 500, color: "var(--cs-accent)" }}>&sect;9.1 &middot; p. 27</span>
-                <span style={{ padding: "3px 8px", borderRadius: 6, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 11, fontWeight: 500, color: "var(--cs-accent)" }}>&sect;9.4 &middot; p. 29</span>
+                <span style={{ padding: "3px 8px", borderRadius: 6, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 19.25, fontWeight: 500, color: "var(--cs-accent)" }}>&sect;9.1 &middot; p. 27</span>
+                <span style={{ padding: "3px 8px", borderRadius: 6, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 19.25, fontWeight: 500, color: "var(--cs-accent)" }}>&sect;9.4 &middot; p. 29</span>
               </div>
             </div>
-            <div style={{ marginTop: "auto", display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", border: "1px solid var(--cs-line)", borderRadius: 10, fontSize: 13, color: "var(--cs-text-2)" }}>
+            <div style={{ marginTop: "auto", display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", border: "1px solid var(--cs-line)", borderRadius: 10, fontSize: 22.75, color: "var(--cs-text-2)" }}>
               {t("mockChatPlaceholder")}
             </div>
           </Reveal>
@@ -160,7 +160,7 @@ export default function AiHubPage() {
           {TRUST.map((item) => (
             <div
               key={item.key}
-              style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 15px", border: "1px solid var(--cs-line)", borderRadius: 99, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cs-ok)" strokeWidth="2" strokeLinecap="round">
                 <path d={item.d}></path>
@@ -175,7 +175,7 @@ export default function AiHubPage() {
         <div style={{ padding: "clamp(56px,7vw,96px) 24px", textAlign: "center" }}>
           <Reveal
             as="h2"
-            style={{ margin: "0 auto", maxWidth: 680, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(28px,4.6vw,52px)", lineHeight: 1.05, letterSpacing: "-.04em", color: "#fff", textWrap: "balance" }}
+            style={{ margin: "0 auto", maxWidth: 680, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(49px,8.05vw,91px)", lineHeight: 1.05, letterSpacing: "-.04em", color: "#fff", textWrap: "balance" }}
           >
             {t("bottomCtaTitle")}
           </Reveal>
@@ -183,7 +183,7 @@ export default function AiHubPage() {
             data-press
             href="/signup"
             className="hover-text"
-            style={{ marginTop: 30, display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 26px", borderRadius: 10, background: "#fff", color: "var(--cs-accent)", fontSize: 15.5, fontWeight: 600, cursor: "pointer" }}
+            style={{ marginTop: 30, display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 26px", borderRadius: 10, background: "#fff", color: "var(--cs-accent)", fontSize: 27.12, fontWeight: 600, cursor: "pointer" }}
           >
             {t("bottomCtaButton")}
           </Link>

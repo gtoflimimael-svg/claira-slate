@@ -12,7 +12,7 @@ const CHANNEL_ICONS = [
 
 const TOPIC_KEYS = ["quote", "security", "help", "other"] as const;
 
-const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
+const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
   padding: "12px 14px",
   border: "1px solid var(--cs-line)",
@@ -20,7 +20,7 @@ const fieldInput: CSSProperties = {
   background: "var(--cs-bg)",
   color: "var(--cs-text)",
   fontFamily: "Inter, sans-serif",
-  fontSize: 14,
+  fontSize: 24.5,
   outline: "none",
 };
 
@@ -58,14 +58,14 @@ export default function ContactPage() {
               maxWidth: 460,
               fontFamily: "var(--font-geist), Inter, sans-serif",
               fontWeight: 600,
-              fontSize: "clamp(34px,5vw,54px)",
+              fontSize: "clamp(59.5px,8.75vw,94.5px)",
               lineHeight: 1.04,
               letterSpacing: "-.042em",
             }}
           >
             {t("heroTitle")}
           </h1>
-          <p style={{ margin: "20px 0 0", maxWidth: 420, fontSize: 16, lineHeight: 1.65, color: "var(--cs-text-2)" }}>
+          <p style={{ margin: "20px 0 0", maxWidth: 420, fontSize: 28, lineHeight: 1.65, color: "var(--cs-text-2)" }}>
             {t("heroSubhead")}
           </p>
           <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -89,8 +89,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 600 }}>{t(`${key}Title`)}</div>
-                  <div style={{ marginTop: 4, fontSize: 13.5, color: "var(--cs-text-2)" }}>{t(`${key}Detail`)}</div>
+                  <div style={{ fontSize: 24.5, fontWeight: 600 }}>{t(`${key}Title`)}</div>
+                  <div style={{ marginTop: 4, fontSize: 23.62, color: "var(--cs-text-2)" }}>{t(`${key}Detail`)}</div>
                 </div>
               </div>
             ))}
@@ -100,14 +100,14 @@ export default function ContactPage() {
         <div style={{ padding: "clamp(24px,3vw,32px)", border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
           {sent ? (
             <div style={{ padding: "20px 0", textAlign: "center" }}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("sentTitle")}</div>
-              <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 33.25, fontWeight: 600, letterSpacing: "-.025em" }}>{t("sentTitle")}</div>
+              <p style={{ marginTop: 10, fontSize: 24.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
                 {t("sentBody", { name: name.split(" ")[0] || "" })}
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("formTitle")}</div>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 33.25, fontWeight: 600, letterSpacing: "-.025em" }}>{t("formTitle")}</div>
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 16 }}>
                 <label style={fieldLabel}>
                   {t("nameLabel")}
@@ -138,15 +138,15 @@ export default function ContactPage() {
                     onChange={(e) => setMessage(e.target.value)}
                   />
                 </label>
-                {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
+                {error && <div style={{ fontSize: 22.75, color: "var(--cs-bad)" }}>{error}</div>}
                 <button
                   type="submit"
                   className="hover-bg"
-                  style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: "pointer" }}
+                  style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 600, cursor: "pointer" }}
                 >
                   {t("sendMessage")}
                 </button>
-                <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--cs-text-2)" }}>{t("noDripCampaigns")}</div>
+                <div style={{ fontSize: 21, lineHeight: 1.5, color: "var(--cs-text-2)" }}>{t("noDripCampaigns")}</div>
               </div>
             </form>
           )}

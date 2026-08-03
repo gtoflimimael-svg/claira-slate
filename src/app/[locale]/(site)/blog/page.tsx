@@ -28,14 +28,14 @@ export default function BlogPage() {
             maxWidth: 620,
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(36px,6vw,64px)",
+            fontSize: "clamp(63px,10.5vw,112px)",
             lineHeight: 1.03,
             letterSpacing: "-.042em",
           }}
         >
           {t("headline")}
         </h1>
-        <p style={{ margin: "20px 0 0", maxWidth: 480, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+        <p style={{ margin: "20px 0 0", maxWidth: 480, fontSize: "clamp(26.25px,2.62vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
           {t("subheadline")}
         </p>
 
@@ -53,7 +53,7 @@ export default function BlogPage() {
                   borderColor: active ? "var(--cs-accent)" : "var(--cs-line)",
                   background: active ? "var(--cs-accent)" : "transparent",
                   color: active ? "#fff" : "var(--cs-text-2)",
-                  fontSize: 13,
+                  fontSize: 22.75,
                   fontWeight: 500,
                   cursor: "pointer",
                   fontFamily: "inherit",
@@ -82,7 +82,7 @@ export default function BlogPage() {
           }}
           className="hover-border hover-text"
         >
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, fontSize: 12, fontWeight: 500, color: "var(--cs-text-2)" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, fontSize: 21, fontWeight: 500, color: "var(--cs-text-2)" }}>
             <span style={{ padding: "4px 10px", borderRadius: 6, background: "var(--cs-grad)", color: "#fff", fontWeight: 600 }}>{t(`categories.${featured.cat}`)}</span>
             <span>{featured.date}</span>
             <span style={{ width: 3, height: 3, borderRadius: "50%", background: "var(--cs-text-2)" }}></span>
@@ -93,7 +93,7 @@ export default function BlogPage() {
               marginTop: 18,
               maxWidth: 720,
               fontFamily: "var(--font-geist), Inter, sans-serif",
-              fontSize: "clamp(24px,3.4vw,40px)",
+              fontSize: "clamp(42px,5.95vw,70px)",
               fontWeight: 600,
               lineHeight: 1.08,
               letterSpacing: "-.035em",
@@ -101,8 +101,8 @@ export default function BlogPage() {
           >
             {t(`posts.${featured.slug}.title`)}
           </div>
-          <div style={{ marginTop: 14, maxWidth: 600, fontSize: 15.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`posts.${featured.slug}.excerpt`)}</div>
-          <div style={{ marginTop: 22, fontSize: 14, fontWeight: 500, color: "var(--cs-accent)" }}>
+          <div style={{ marginTop: 14, maxWidth: 600, fontSize: 27.12, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`posts.${featured.slug}.excerpt`)}</div>
+          <div style={{ marginTop: 22, fontSize: 24.5, fontWeight: 500, color: "var(--cs-accent)" }}>
             {t("readPost")} <span data-tip>&rarr;</span>
           </div>
         </Reveal>
@@ -132,15 +132,15 @@ export default function BlogPage() {
               }}
               className="hover-border hover-text"
             >
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 9, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 9, fontSize: 20.12, fontWeight: 500, color: "var(--cs-text-2)" }}>
                 <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{t(`categories.${p.cat}`)}</span>
                 <span>{p.date}</span>
               </div>
-              <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
+              <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 31.5, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
                 {t(`posts.${p.slug}.title`)}
               </div>
-              <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t(`posts.${p.slug}.excerpt`)}</div>
-              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
+              <div style={{ marginTop: 10, fontSize: 24.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t(`posts.${p.slug}.excerpt`)}</div>
+              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
             </Reveal>
           ))}
         </div>

@@ -19,7 +19,7 @@ export default function ToolsIndexPage() {
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
       <section style={{ padding: "clamp(56px,8vw,104px) 24px clamp(28px,4vw,44px)" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
           <span style={{ color: "var(--cs-text)" }}>{tc("breadcrumb.tools")}</span>
@@ -30,7 +30,7 @@ export default function ToolsIndexPage() {
             maxWidth: 760,
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(36px,6vw,64px)",
+            fontSize: "clamp(63px,10.5vw,112px)",
             lineHeight: 1.03,
             letterSpacing: "-.042em",
             textWrap: "balance",
@@ -38,7 +38,7 @@ export default function ToolsIndexPage() {
         >
           {t("headline")}
         </h1>
-        <p style={{ margin: "20px 0 0", maxWidth: 520, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
+        <p style={{ margin: "20px 0 0", maxWidth: 520, fontSize: "clamp(26.25px,2.62vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
           {t("subheadline")}
         </p>
         <div style={{ marginTop: 30, display: "flex", flexWrap: "wrap", gap: 7 }}>
@@ -52,7 +52,7 @@ export default function ToolsIndexPage() {
                   padding: "8px 13px",
                   borderRadius: 99,
                   fontFamily: "Inter, sans-serif",
-                  fontSize: 13,
+                  fontSize: 22.75,
                   fontWeight: 500,
                   cursor: "pointer",
                   border: "1px solid",
@@ -95,8 +95,8 @@ export default function ToolsIndexPage() {
                   <path d={tool.d}></path>
                 </svg>
               </div>
-              <div data-shine style={{ marginTop: 14, fontSize: 14.5, fontWeight: 600, letterSpacing: "-.015em" }}>{t(`${tool.slug}.name`)}</div>
-              <div style={{ marginTop: 5, fontSize: 13, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{t(`${tool.slug}.desc`)}</div>
+              <div data-shine style={{ marginTop: 14, fontSize: 25.38, fontWeight: 600, letterSpacing: "-.015em" }}>{t(`${tool.slug}.name`)}</div>
+              <div style={{ marginTop: 5, fontSize: 22.75, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{t(`${tool.slug}.desc`)}</div>
             </Reveal>
           ))}
         </div>
@@ -116,8 +116,8 @@ export default function ToolsIndexPage() {
           }}
         >
           <div style={{ maxWidth: 520 }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: "-.025em" }}>{t("cantFind")}</div>
-            <div style={{ marginTop: 6, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("aiSuggestion")}</div>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 31.5, fontWeight: 600, letterSpacing: "-.025em" }}>{t("cantFind")}</div>
+            <div style={{ marginTop: 6, fontSize: 24.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("aiSuggestion")}</div>
           </div>
           <Link
             href="/ai"
@@ -130,7 +130,7 @@ export default function ToolsIndexPage() {
               borderRadius: 10,
               background: "var(--cs-accent)",
               color: "#fff",
-              fontSize: 14.5,
+              fontSize: 25.38,
               fontWeight: 500,
               cursor: "pointer",
               whiteSpace: "nowrap",

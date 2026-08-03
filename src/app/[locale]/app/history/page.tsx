@@ -43,8 +43,8 @@ export default function HistoryPage() {
 
   return (
     <div>
-      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
-      <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
+      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(42px,5.25vw,59.5px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+      <p style={{ margin: "8px 0 0", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
 
       <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 10, maxWidth: 420, padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg)" }}>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cs-text-2)" strokeWidth="1.9" strokeLinecap="round" style={{ flex: "none" }}>
@@ -56,7 +56,7 @@ export default function HistoryPage() {
           placeholder={t("searchPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          style={{ flex: "1 1 auto", minWidth: 0, border: 0, background: "transparent", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}
+          style={{ flex: "1 1 auto", minWidth: 0, border: 0, background: "transparent", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 24.5, outline: "none" }}
         />
       </div>
 
@@ -71,7 +71,7 @@ export default function HistoryPage() {
                 padding: "8px 13px",
                 borderRadius: 99,
                 fontFamily: "Inter, sans-serif",
-                fontSize: 13,
+                fontSize: 22.75,
                 fontWeight: 500,
                 cursor: "pointer",
                 border: "1px solid",
@@ -95,7 +95,7 @@ export default function HistoryPage() {
                 gridTemplateColumns: "2.2fr 1.2fr 1.2fr .8fr .9fr 1.3fr",
                 padding: "14px 20px",
                 borderBottom: "1px solid var(--cs-line)",
-                fontSize: 11.5,
+                fontSize: 20.12,
                 fontWeight: 600,
                 letterSpacing: ".05em",
                 textTransform: "uppercase",
@@ -114,10 +114,10 @@ export default function HistoryPage() {
               return (
                 <div
                   key={h.name}
-                  style={{ display: "grid", gridTemplateColumns: "2.2fr 1.2fr 1.2fr .8fr .9fr 1.3fr", alignItems: "center", padding: "15px 20px", borderBottom: "1px solid var(--cs-line)", fontSize: 13.5 }}
+                  style={{ display: "grid", gridTemplateColumns: "2.2fr 1.2fr 1.2fr .8fr .9fr 1.3fr", alignItems: "center", padding: "15px 20px", borderBottom: "1px solid var(--cs-line)", fontSize: 23.62 }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 11, minWidth: 0 }}>
-                    <div style={{ flex: "none", width: 24, height: 30, borderRadius: 4, border: "1px solid var(--cs-line)", background: "var(--cs-bg-2)", display: "grid", placeItems: "center", fontSize: 7, fontWeight: 600, color: "var(--cs-bad)" }}>
+                    <div style={{ flex: "none", width: 24, height: 30, borderRadius: 4, border: "1px solid var(--cs-line)", background: "var(--cs-bg-2)", display: "grid", placeItems: "center", fontSize: 12.25, fontWeight: 600, color: "var(--cs-bad)" }}>
                       PDF
                     </div>
                     <span style={{ fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{h.name}</span>
@@ -126,9 +126,9 @@ export default function HistoryPage() {
                   <div style={{ color: "var(--cs-text-2)" }}>{h.when}</div>
                   <div style={{ color: "var(--cs-text-2)" }}>{h.size}</div>
                   <div>
-                    <span style={{ padding: "3px 9px", borderRadius: 6, fontSize: 11, fontWeight: 500, background: s.bg, color: s.fg }}>{s.label}</span>
+                    <span style={{ padding: "3px 9px", borderRadius: 6, fontSize: 19.25, fontWeight: 500, background: s.bg, color: s.fg }}>{s.label}</span>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 12.5, fontWeight: 500 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 21.88, fontWeight: 500 }}>
                     <Link href="/app/files" style={{ cursor: "pointer" }}>
                       {t("download")}
                     </Link>
@@ -146,7 +146,7 @@ export default function HistoryPage() {
                 </div>
               );
             })}
-            <div style={{ padding: "14px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 12.5, color: "var(--cs-text-2)" }}>
+            <div style={{ padding: "14px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 21.88, color: "var(--cs-text-2)" }}>
               <span>{t("showing", { count: rows.length, total: 128 })}</span>
             </div>
           </div>
@@ -171,10 +171,10 @@ export default function HistoryPage() {
             <div style={{ width: 44, height: 58, borderRadius: 6, border: "1.5px solid var(--cs-accent-line)", background: "var(--cs-accent-soft)" }}></div>
             <div style={{ width: 38, height: 48, borderRadius: 6, border: "1.5px solid var(--cs-line)", background: "var(--cs-bg-2)" }}></div>
           </div>
-          <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("emptyTitle")}</div>
-          <div style={{ maxWidth: 320, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("emptyBody")}</div>
+          <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 33.25, fontWeight: 600, letterSpacing: "-.025em" }}>{t("emptyTitle")}</div>
+          <div style={{ maxWidth: 320, fontSize: 24.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("emptyBody")}</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 9, justifyContent: "center" }}>
-            <Link href="/tools/merge" style={{ padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, cursor: "pointer" }}>
+            <Link href="/tools/merge" style={{ padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 24.5, fontWeight: 500, cursor: "pointer" }}>
               {t("tryFirstTool")} &rarr;
             </Link>
             <button
@@ -183,7 +183,7 @@ export default function HistoryPage() {
                 setFilter("filterAll");
               }}
               className="hover-border"
-              style={{ padding: "11px 18px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer", background: "none" }}
+              style={{ padding: "11px 18px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 24.5, fontWeight: 500, cursor: "pointer", background: "none" }}
             >
               {t("clearFilters")}
             </button>

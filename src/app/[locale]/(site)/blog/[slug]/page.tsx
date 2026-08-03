@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <article style={{ maxWidth: 760, margin: "0 auto", padding: "clamp(48px,6vw,88px) 24px 0" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/blog" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>
             {tc("breadcrumb.blog")}
           </Link>
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             margin: "26px 0 0",
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(32px,4.8vw,52px)",
+            fontSize: "clamp(56px,8.4vw,91px)",
             lineHeight: 1.06,
             letterSpacing: "-.04em",
           }}
@@ -133,18 +133,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               border: "1px solid var(--cs-accent-line)",
               display: "grid",
               placeItems: "center",
-              fontSize: 12.5,
+              fontSize: 21.88,
               fontWeight: 600,
               color: "var(--cs-accent)",
             }}
           >
             {author.initials}
           </div>
-          <div style={{ fontSize: 13 }}>
+          <div style={{ fontSize: 22.75 }}>
             <span style={{ fontWeight: 600 }}>{author.name}</span>
             <span style={{ color: "var(--cs-text-2)" }}> &middot; {t(`categories.${post.cat}`)}</span>
           </div>
-          <div style={{ marginLeft: "auto", fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+          <div style={{ marginLeft: "auto", fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
             {post.date} &middot; {t("minRead", { count: minReadCount(post.read) })}
           </div>
         </div>
@@ -152,7 +152,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {body.map((block, i) => {
           if (block.type === "h2") {
             return (
-              <h2 key={i} style={{ margin: "40px 0 0", fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 26, fontWeight: 600, letterSpacing: "-.03em", lineHeight: 1.2 }}>
+              <h2 key={i} style={{ margin: "40px 0 0", fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 45.5, fontWeight: 600, letterSpacing: "-.03em", lineHeight: 1.2 }}>
                 {block.text}
               </h2>
             );
@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   background: "var(--cs-bg-2)",
                   borderRadius: "0 12px 12px 0",
                   fontFamily: "var(--font-geist), Inter, sans-serif",
-                  fontSize: 19,
+                  fontSize: 33.25,
                   lineHeight: 1.5,
                   letterSpacing: "-.02em",
                 }}
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               key={i}
               style={{
                 margin: isLead ? "32px 0 0" : "22px 0 0",
-                fontSize: isLead ? 18 : 17,
+                fontSize: isLead ? 31.5 : 29.75,
                 lineHeight: isLead ? 1.7 : 1.75,
                 color: isLead ? "var(--cs-text)" : "var(--cs-text-2)",
               }}
@@ -194,13 +194,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         })}
 
         <div style={{ marginTop: 44, paddingTop: 28, borderTop: "1px solid var(--cs-line)", display: "flex", flexWrap: "wrap", gap: 10 }}>
-          <Link href="/ai/summarize" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
+          <Link href="/ai/summarize" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}>
             {t("trySummarizing")}
           </Link>
           <Link
             href="/blog"
             className="hover-border hover-text"
-            style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
+            style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}
           >
             {t("backToBlog")}
           </Link>
@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section style={{ padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
         <Reveal
           as="h2"
-          style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
+          style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(42px,5.25vw,56px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
         >
           {t("keepReading")}
         </Reveal>
@@ -232,14 +232,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 minHeight: 180,
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 20.12, fontWeight: 500, color: "var(--cs-text-2)" }}>
                 <span style={{ padding: "3px 9px", borderRadius: 6, background: "var(--cs-bg-2)", fontWeight: 600 }}>{t(`categories.${p.cat}`)}</span>
                 <span>{p.date}</span>
               </div>
-              <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
+              <div style={{ marginTop: 16, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 31.5, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-.025em" }}>
                 {t(`posts.${p.slug}.title`)}
               </div>
-              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
+              <div style={{ marginTop: "auto", paddingTop: 18, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>{t("minRead", { count: minReadCount(p.read) })}</div>
             </Link>
           ))}
         </div>

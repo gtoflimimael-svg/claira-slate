@@ -47,18 +47,18 @@ export function LanguageSwitcher({ direction = "down" }: { direction?: "down" | 
           background: "transparent",
           color: "var(--cs-text)",
           fontFamily: "Inter, sans-serif",
-          fontSize: 13.5,
+          fontSize: 23.62,
           fontWeight: 500,
           cursor: "pointer",
           whiteSpace: "nowrap",
         }}
       >
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" style={{ flex: "none" }}>
+        <svg width="26.25" height="26.25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" style={{ flex: "none" }}>
           <circle cx="12" cy="12" r="9"></circle>
           <path d="M3.6 9h16.8M3.6 15h16.8M12 3c-4 4.5-4 13.5 0 18M12 3c4 4.5 4 13.5 0 18"></path>
         </svg>
         {lang.name}
-        <span style={{ fontSize: 10, color: "var(--cs-text-2)" }}>&#9662;</span>
+        <span style={{ fontSize: 17.5, color: "var(--cs-text-2)" }}>&#9662;</span>
       </button>
       {open && (
         <div
@@ -99,7 +99,7 @@ export function LanguageSwitcher({ direction = "down" }: { direction?: "down" | 
                   borderRadius: 6,
                   background: "transparent",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: 13.5,
+                  fontSize: 23.62,
                   textAlign: "left",
                   cursor: "pointer",
                   color: active ? "var(--cs-accent)" : "var(--cs-text)",
@@ -109,7 +109,7 @@ export function LanguageSwitcher({ direction = "down" }: { direction?: "down" | 
               >
                 <span style={{ flex: "none", width: 14, display: "grid", placeItems: "center" }}>
                   {active && (
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--cs-accent)" strokeWidth="2.6" strokeLinecap="round">
+                    <svg width="22.75" height="22.75" viewBox="0 0 24 24" fill="none" stroke="var(--cs-accent)" strokeWidth="2.6" strokeLinecap="round">
                       <path d="M4 12.5l5 5L20 6.5"></path>
                     </svg>
                   )}
@@ -122,7 +122,7 @@ export function LanguageSwitcher({ direction = "down" }: { direction?: "down" | 
                       padding: "2px 6px",
                       borderRadius: 5,
                       background: "var(--cs-bg-2)",
-                      fontSize: 9.5,
+                      fontSize: 16.62,
                       fontWeight: 600,
                       letterSpacing: ".04em",
                       color: "var(--cs-text-2)",

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
+const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
   padding: "12px 14px",
   border: "1px solid var(--cs-line)",
@@ -13,7 +13,7 @@ const fieldInput: CSSProperties = {
   background: "var(--cs-bg)",
   color: "var(--cs-text)",
   fontFamily: "Inter, sans-serif",
-  fontSize: 14,
+  fontSize: 24.5,
   outline: "none",
 };
 
@@ -60,14 +60,14 @@ export default function ResetPasswordPage() {
           textAlign: "center",
           fontFamily: "var(--font-geist), Inter, sans-serif",
           fontWeight: 600,
-          fontSize: "clamp(26px,3.4vw,32px)",
+          fontSize: "clamp(45.5px,5.95vw,56px)",
           lineHeight: 1.15,
           letterSpacing: "-.032em",
         }}
       >
         {t("setNewPasswordTitle")}
       </h1>
-      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("choosePasswordHint")}</p>
+      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("choosePasswordHint")}</p>
 
       <form
         onSubmit={handleSubmit}
@@ -81,12 +81,12 @@ export default function ResetPasswordPage() {
           {t("confirmPassword")}
           <input className="cs-field" type="password" placeholder="Repeat password" style={fieldInput} value={confirm} onChange={(e) => setConfirm(e.target.value)} />
         </label>
-        {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
+        {error && <div style={{ fontSize: 22.75, color: "var(--cs-bad)" }}>{error}</div>}
         <button
           type="submit"
           className="hover-bg"
           disabled={loading}
-          style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
+          style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
         >
           {loading ? t("saving") : t("updatePassword")}
         </button>

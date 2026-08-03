@@ -29,7 +29,7 @@ const rowStyle: React.CSSProperties = {
   gridTemplateColumns: "1.6fr 1fr 1fr 1fr",
   padding: "15px 20px",
   borderBottom: "1px solid var(--cs-line)",
-  fontSize: 14,
+  fontSize: 24.5,
 };
 
 const COMPARE_ROW_KEYS = ["tools", "aiActions", "maxFileSize", "filesPerBatch", "fileHistory", "ssoAuditLog", "support"] as const;
@@ -56,34 +56,34 @@ export default async function PricingPage() {
             maxWidth: 720,
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(36px,6vw,64px)",
+            fontSize: "clamp(63px,10.5vw,112px)",
             lineHeight: 1.03,
             letterSpacing: "-.042em",
           }}
         >
           {t("headline")}
         </h1>
-        <p style={{ margin: "20px 0 0", maxWidth: 500, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+        <p style={{ margin: "20px 0 0", maxWidth: 500, fontSize: "clamp(26.25px,2.62vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)" }}>
           {t("subheadline")}
         </p>
 
         <div style={{ marginTop: "clamp(36px,5vw,56px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(268px,100%),1fr))", gap: 14, alignItems: "start" }}>
           <Reveal variant="scale" index={0} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
-            <div style={{ fontSize: 14, fontWeight: 600 }}>{t("free.name")}</div>
+            <div style={{ fontSize: 24.5, fontWeight: 600 }}>{t("free.name")}</div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
-              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$0</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{t("free.unit")}</span>
+              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 70, fontWeight: 600, letterSpacing: "-.04em" }}>$0</span>
+              <span style={{ fontSize: 24.5, color: "var(--cs-text-2)" }}>{t("free.unit")}</span>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("free.tagline")}</div>
+            <div style={{ marginTop: 8, fontSize: 23.62, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("free.tagline")}</div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
               {(t.raw("free.features") as string[]).map((f) => (
-                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 24.5, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
               ))}
             </div>
             <Link
               href="/signup"
               className="hover-border hover-text"
-              style={{ marginTop: 26, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
+              style={{ marginTop: 26, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 24.5, fontWeight: 500, cursor: "pointer" }}
             >
               {t("free.cta")}
             </Link>
@@ -103,22 +103,22 @@ export default async function PricingPage() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: "var(--cs-accent)" }}>{t("pro.name")}</div>
-              <div style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-grad)", color: "#fff", fontSize: 11, fontWeight: 600 }}>{t("pro.badge")}</div>
+              <div style={{ fontSize: 24.5, fontWeight: 600, color: "var(--cs-accent)" }}>{t("pro.name")}</div>
+              <div style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-grad)", color: "#fff", fontSize: 19.25, fontWeight: 600 }}>{t("pro.badge")}</div>
             </div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
-              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$5</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{t("pro.unit")}</span>
+              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 70, fontWeight: 600, letterSpacing: "-.04em" }}>$5</span>
+              <span style={{ fontSize: 24.5, color: "var(--cs-text-2)" }}>{t("pro.unit")}</span>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("pro.tagline")}</div>
+            <div style={{ marginTop: 8, fontSize: 23.62, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("pro.tagline")}</div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
               {(t.raw("pro.features") as string[]).map((f) => (
-                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 24.5, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
               ))}
             </div>
             {isPaid ? (
               <ManageSubscriptionButton
-                style={{ marginTop: 26, display: "block", width: "100%", textAlign: "center", padding: 11, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, border: "none" }}
+                style={{ marginTop: 26, display: "block", width: "100%", textAlign: "center", padding: 11, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 24.5, fontWeight: 500, border: "none" }}
               >
                 {t("manageSubscription")}
               </ManageSubscriptionButton>
@@ -127,7 +127,7 @@ export default async function PricingPage() {
                 plan="pro"
                 source="pricing_page"
                 userPlan={plan}
-                style={{ marginTop: 26, display: "block", width: "100%", textAlign: "center", padding: 11, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, border: "none" }}
+                style={{ marginTop: 26, display: "block", width: "100%", textAlign: "center", padding: 11, borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 24.5, fontWeight: 500, border: "none" }}
               >
                 {t("pro.cta")}
               </CheckoutButton>
@@ -135,21 +135,21 @@ export default async function PricingPage() {
           </Reveal>
 
           <Reveal variant="scale" index={2} data-lift style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
-            <div style={{ fontSize: 14, fontWeight: 600 }}>{t("business.name")}</div>
+            <div style={{ fontSize: 24.5, fontWeight: 600 }}>{t("business.name")}</div>
             <div style={{ marginTop: 14, display: "flex", alignItems: "baseline", gap: 6 }}>
-              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 40, fontWeight: 600, letterSpacing: "-.04em" }}>$12</span>
-              <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{t("business.unit")}</span>
+              <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 70, fontWeight: 600, letterSpacing: "-.04em" }}>$12</span>
+              <span style={{ fontSize: 24.5, color: "var(--cs-text-2)" }}>{t("business.unit")}</span>
             </div>
-            <div style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("business.tagline")}</div>
+            <div style={{ marginTop: 8, fontSize: 23.62, lineHeight: 1.55, color: "var(--cs-text-2)" }}>{t("business.tagline")}</div>
             <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 11 }}>
               {(t.raw("business.features") as string[]).map((f) => (
-                <div key={f} style={{ display: "flex", gap: 9, fontSize: 14, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
+                <div key={f} style={{ display: "flex", gap: 9, fontSize: 24.5, color: "var(--cs-text-2)" }}>{CHECK}{f}</div>
               ))}
             </div>
             <Link
               href="/contact"
               className="hover-border hover-text"
-              style={{ marginTop: 26, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
+              style={{ marginTop: 26, display: "block", textAlign: "center", padding: 11, borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 24.5, fontWeight: 500, cursor: "pointer" }}
             >
               {t("business.cta")}
             </Link>
@@ -160,7 +160,7 @@ export default async function PricingPage() {
       <section style={{ padding: "clamp(56px,7vw,88px) 24px 0" }}>
         <Reveal
           as="h2"
-          style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
+          style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(42px,5.25vw,56px)", lineHeight: 1.1, letterSpacing: "-.03em" }}
         >
           {t("compareTitle")}
         </Reveal>
@@ -172,7 +172,7 @@ export default async function PricingPage() {
                 gridTemplateColumns: "1.6fr 1fr 1fr 1fr",
                 padding: "14px 20px",
                 borderBottom: "1px solid var(--cs-line)",
-                fontSize: 12,
+                fontSize: 21,
                 fontWeight: 600,
                 letterSpacing: ".04em",
                 textTransform: "uppercase",
@@ -214,8 +214,8 @@ export default async function PricingPage() {
           }}
         >
           <div style={{ maxWidth: 560 }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("notSureTitle")}</div>
-            <div style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--cs-text-2)" }}>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 33.25, fontWeight: 600, letterSpacing: "-.025em" }}>{t("notSureTitle")}</div>
+            <div style={{ marginTop: 6, fontSize: 25.38, lineHeight: 1.55, color: "var(--cs-text-2)" }}>
               {t("notSureBody")}
             </div>
           </div>
@@ -223,11 +223,11 @@ export default async function PricingPage() {
             <Link
               href="/tools"
               className="hover-border hover-text"
-              style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
+              style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}
             >
               {t("browseTools")}
             </Link>
-            <Link href="/contact" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}>
+            <Link href="/contact" style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}>
               {t("talkToSales")}
             </Link>
           </div>

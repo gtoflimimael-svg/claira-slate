@@ -46,7 +46,7 @@ export default function ChatPage() {
   return (
     <div>
       <section style={{ padding: "clamp(48px,6vw,88px) 24px 0" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
           <Link href="/ai" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.ai")}</Link>
@@ -54,11 +54,11 @@ export default function ChatPage() {
           <span style={{ color: "var(--cs-text)" }}>{t("chat.name")}</span>
         </div>
         <div style={{ marginTop: "clamp(28px,3.5vw,44px)", display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 18 }}>
-          <span style={{ padding: "5px 11px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 11.5, fontWeight: 600 }}>{t("toolBadge")}</span>
-          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(34px,5vw,56px)", lineHeight: 1.04, letterSpacing: "-.04em" }}>
+          <span style={{ padding: "5px 11px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 20.12, fontWeight: 600 }}>{t("toolBadge")}</span>
+          <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(59.5px,8.75vw,98px)", lineHeight: 1.04, letterSpacing: "-.04em" }}>
             {t("chatPage.title")}
           </h1>
-          <p style={{ margin: 0, maxWidth: 520, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
+          <p style={{ margin: 0, maxWidth: 520, fontSize: "clamp(26.25px,2.45vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
             {t("chatPage.subhead")}
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function ChatPage() {
       </section>
 
       <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
-        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,38px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
+        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45.5px,5.95vw,66.5px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("chatPage.howItWorks")}
         </Reveal>
         <div data-steps style={{ marginTop: "clamp(28px,4vw,44px)", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 0 }}>
@@ -90,17 +90,17 @@ export default function ChatPage() {
                     {s.icon}
                   </svg>
                 </div>
-                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-accent)" }}>{s.n}</div>
+                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 22.75, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-accent)" }}>{s.n}</div>
               </div>
-              <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(17px,1.8vw,20px)", fontWeight: 600, letterSpacing: "-.025em" }}>{s.title}</div>
-              <div style={{ marginTop: 8, fontSize: 14, lineHeight: 1.55, color: "var(--cs-text-2)", maxWidth: 260 }}>{s.desc}</div>
+              <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(29.75px,3.15vw,35px)", fontWeight: 600, letterSpacing: "-.025em" }}>{s.title}</div>
+              <div style={{ marginTop: 8, fontSize: 24.5, lineHeight: 1.55, color: "var(--cs-text-2)", maxWidth: 260 }}>{s.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       <section style={{ padding: "clamp(56px,7vw,96px) 24px clamp(56px,7vw,96px)" }}>
-        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,38px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
+        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45.5px,5.95vw,66.5px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("otherAiTools")}
         </Reveal>
         <div style={{ marginTop: 26, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(min(232px,100%),1fr))", gap: 12 }}>
@@ -117,8 +117,8 @@ export default function ChatPage() {
                     {o.icon}
                   </svg>
                 </div>
-                <div data-shine style={{ marginTop: 14, fontSize: 14.5, fontWeight: 600, letterSpacing: "-.015em" }}>{o.slug === "merge" ? tt("merge.name") : t(`${o.slug}.name`)}</div>
-                <div style={{ marginTop: 5, fontSize: 13, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{o.slug === "merge" ? tt("merge.desc") : t(`${o.slug}.desc`)}</div>
+                <div data-shine style={{ marginTop: 14, fontSize: 25.38, fontWeight: 600, letterSpacing: "-.015em" }}>{o.slug === "merge" ? tt("merge.name") : t(`${o.slug}.name`)}</div>
+                <div style={{ marginTop: 5, fontSize: 22.75, lineHeight: 1.45, color: "var(--cs-text-2)" }}>{o.slug === "merge" ? tt("merge.desc") : t(`${o.slug}.desc`)}</div>
               </Link>
             </Reveal>
           ))}

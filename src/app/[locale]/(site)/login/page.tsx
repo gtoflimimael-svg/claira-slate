@@ -8,7 +8,7 @@ import { useRouter } from "@/i18n/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 
-const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
+const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
   padding: "12px 14px",
   border: "1px solid var(--cs-line)",
@@ -16,7 +16,7 @@ const fieldInput: CSSProperties = {
   background: "var(--cs-bg)",
   color: "var(--cs-text)",
   fontFamily: "Inter, sans-serif",
-  fontSize: 14,
+  fontSize: 24.5,
   outline: "none",
 };
 const oauthButton: CSSProperties = {
@@ -29,7 +29,7 @@ const oauthButton: CSSProperties = {
   borderRadius: 10,
   background: "transparent",
   color: "var(--cs-text)",
-  fontSize: 14,
+  fontSize: 24.5,
   fontWeight: 500,
   fontFamily: "Inter, sans-serif",
   cursor: "pointer",
@@ -106,14 +106,14 @@ function LoginForm() {
           textAlign: "center",
           fontFamily: "var(--font-geist), Inter, sans-serif",
           fontWeight: 600,
-          fontSize: "clamp(26px,3.4vw,32px)",
+          fontSize: "clamp(45.5px,5.95vw,56px)",
           lineHeight: 1.15,
           letterSpacing: "-.032em",
         }}
       >
         {t("loginTitle")}
       </h1>
-      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("loginSubtitle")}</p>
+      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("loginSubtitle")}</p>
 
       <form
         onSubmit={handleSubmit}
@@ -137,7 +137,7 @@ function LoginForm() {
           </button>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20.12, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <span style={{ flex: "1 1 auto", height: 1, background: "var(--cs-line)" }}></span>
           {tc("or")}
           <span style={{ flex: "1 1 auto", height: 1, background: "var(--cs-line)" }}></span>
@@ -152,9 +152,9 @@ function LoginForm() {
           <input className="cs-field" type="password" placeholder="••••••••" style={fieldInput} value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
 
-        {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
+        {error && <div style={{ fontSize: 22.75, color: "var(--cs-bad)" }}>{error}</div>}
 
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 13 }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, fontSize: 22.75 }}>
           <label style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--cs-text-2)" }}>
             <input type="checkbox" style={{ width: 15, height: 15, accentColor: "var(--cs-accent)" }} checked={remember} onChange={(e) => setRemember(e.target.checked)} />
             {t("rememberMe")}
@@ -168,13 +168,13 @@ function LoginForm() {
           type="submit"
           className="hover-bg"
           disabled={loading}
-          style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
+          style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
         >
           {loading ? t("loggingIn") : t("logIn")}
         </button>
       </form>
 
-      <p style={{ margin: "22px 0 0", textAlign: "center", fontSize: 13.5, color: "var(--cs-text-2)" }}>
+      <p style={{ margin: "22px 0 0", textAlign: "center", fontSize: 23.62, color: "var(--cs-text-2)" }}>
         {t("newHere")} <Link href="/signup" style={{ fontWeight: 500, cursor: "pointer" }}>{t("createAccount")}</Link>
       </p>
     </section>

@@ -4,7 +4,7 @@ import { useState, type CSSProperties, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
-const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
+const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
   padding: "12px 14px",
   border: "1px solid var(--cs-line)",
@@ -12,7 +12,7 @@ const fieldInput: CSSProperties = {
   background: "var(--cs-bg)",
   color: "var(--cs-text)",
   fontFamily: "Inter, sans-serif",
-  fontSize: 14,
+  fontSize: 24.5,
   outline: "none",
 };
 
@@ -67,20 +67,20 @@ export default function ForgotPasswordPage() {
           textAlign: "center",
           fontFamily: "var(--font-geist), Inter, sans-serif",
           fontWeight: 600,
-          fontSize: "clamp(26px,3.4vw,32px)",
+          fontSize: "clamp(45.5px,5.95vw,56px)",
           lineHeight: 1.15,
           letterSpacing: "-.032em",
         }}
       >
         {t("resetPasswordTitle")}
       </h1>
-      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("resetPasswordSubtitle")}</p>
+      <p style={{ margin: "10px 0 0", textAlign: "center", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("resetPasswordSubtitle")}</p>
 
       <div style={{ marginTop: 30, padding: "clamp(22px,3vw,28px)", border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}>
         {sent ? (
           <div style={{ padding: "8px 0", textAlign: "center" }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "-.025em" }}>{t("checkEmail")}</div>
-            <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 29.75, fontWeight: 600, letterSpacing: "-.025em" }}>{t("checkEmail")}</div>
+            <p style={{ marginTop: 10, fontSize: 24.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
               {t("resetSentEmail", { email })}
             </p>
           </div>
@@ -90,12 +90,12 @@ export default function ForgotPasswordPage() {
               {t("email")}
               <input className="cs-field" type="email" placeholder="you@company.com" style={fieldInput} value={email} onChange={(e) => setEmail(e.target.value)} />
             </label>
-            {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
+            {error && <div style={{ fontSize: 22.75, color: "var(--cs-bad)" }}>{error}</div>}
             <button
               type="submit"
               className="hover-bg"
               disabled={loading}
-              style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
+              style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
             >
               {loading ? t("sending") : t("sendResetLink")}
             </button>
@@ -103,7 +103,7 @@ export default function ForgotPasswordPage() {
         )}
       </div>
 
-      <p style={{ margin: "22px 0 0", textAlign: "center", fontSize: 13.5, color: "var(--cs-text-2)" }}>
+      <p style={{ margin: "22px 0 0", textAlign: "center", fontSize: 23.62, color: "var(--cs-text-2)" }}>
         <Link href="/login" style={{ fontWeight: 500, cursor: "pointer" }}>{t("backToLogin")}</Link>
       </p>
     </section>

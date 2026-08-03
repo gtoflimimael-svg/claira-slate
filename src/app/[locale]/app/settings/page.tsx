@@ -13,12 +13,12 @@ export default function SettingsPage() {
 
   return (
     <div>
-      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
-      <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
+      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(42px,5.25vw,59.5px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+      <p style={{ margin: "8px 0 0", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
 
       <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))", gap: 14, alignItems: "start" }}>
         <div style={{ padding: 24, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-bg)" }}>
-          <div style={{ fontSize: 13, fontWeight: 600 }}>{t("profile")}</div>
+          <div style={{ fontSize: 22.75, fontWeight: 600 }}>{t("profile")}</div>
           <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 14 }}>
             <div
               style={{
@@ -30,37 +30,37 @@ export default function SettingsPage() {
                 border: "1px solid var(--cs-accent-line)",
                 display: "grid",
                 placeItems: "center",
-                fontSize: 16,
+                fontSize: 28,
                 fontWeight: 600,
                 color: "var(--cs-accent)",
               }}
             >
               MR
             </div>
-            <button className="hover-border" style={{ padding: "9px 15px", borderRadius: 9, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 13, fontWeight: 500, cursor: "pointer", background: "none" }}>
+            <button className="hover-border" style={{ padding: "9px 15px", borderRadius: 9, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 22.75, fontWeight: 500, cursor: "pointer", background: "none" }}>
               {t("changePhoto")}
             </button>
           </div>
           <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 14 }}>
-            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" }}>
               {t("fullName")}
               <input
                 type="text"
                 defaultValue="Maya Rendel"
-                style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}
+                style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 24.5, outline: "none" }}
               />
             </label>
-            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" }}>
               {t("email")}
               <input
                 type="email"
                 defaultValue="maya@northwind.co"
-                style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}
+                style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 24.5, outline: "none" }}
               />
             </label>
-            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" }}>
+            <label style={{ display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" }}>
               {t("defaultOcrLanguage")}
-              <select style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 14, outline: "none" }}>
+              <select style={{ padding: "11px 14px", border: "1px solid var(--cs-line)", borderRadius: 10, background: "var(--cs-bg-2)", color: "var(--cs-text)", fontFamily: "Inter, sans-serif", fontSize: 24.5, outline: "none" }}>
                 <option>English</option>
                 <option>Nederlands</option>
                 <option>Français</option>
@@ -68,7 +68,7 @@ export default function SettingsPage() {
               </select>
             </label>
             <button
-              style={{ marginTop: 4, display: "inline-block", padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14, fontWeight: 500, textAlign: "center", cursor: "pointer", border: 0 }}
+              style={{ marginTop: 4, display: "inline-block", padding: "11px 18px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 24.5, fontWeight: 500, textAlign: "center", cursor: "pointer", border: 0 }}
             >
               {t("saveChanges")}
             </button>
@@ -77,12 +77,12 @@ export default function SettingsPage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div style={{ padding: 24, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-bg)" }}>
-            <div style={{ fontSize: 13, fontWeight: 600 }}>{t("preferences")}</div>
+            <div style={{ fontSize: 22.75, fontWeight: 600 }}>{t("preferences")}</div>
             <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
                 <div>
-                  <div style={{ fontSize: 13.5, fontWeight: 500 }}>{t("darkMode")}</div>
-                  <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)" }}>{t("darkModeDesc")}</div>
+                  <div style={{ fontSize: 23.62, fontWeight: 500 }}>{t("darkMode")}</div>
+                  <div style={{ marginTop: 3, fontSize: 21.88, color: "var(--cs-text-2)" }}>{t("darkModeDesc")}</div>
                 </div>
                 <button
                   onClick={toggleTheme}
@@ -96,7 +96,7 @@ export default function SettingsPage() {
                     background: "var(--cs-bg-2)",
                     color: "var(--cs-text)",
                     fontFamily: "Inter, sans-serif",
-                    fontSize: 12,
+                    fontSize: 21,
                     fontWeight: 600,
                     cursor: "pointer",
                   }}
@@ -106,8 +106,8 @@ export default function SettingsPage() {
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
                 <div>
-                  <div style={{ fontSize: 13.5, fontWeight: 500 }}>{t("keepFiles")}</div>
-                  <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)" }}>{t("keepFilesDesc")}</div>
+                  <div style={{ fontSize: 23.62, fontWeight: 500 }}>{t("keepFiles")}</div>
+                  <div style={{ marginTop: 3, fontSize: 21.88, color: "var(--cs-text-2)" }}>{t("keepFilesDesc")}</div>
                 </div>
                 <label style={{ flex: "none" }}>
                   <input type="checkbox" checked={keepFiles} onChange={(e) => setKeepFiles(e.target.checked)} style={{ width: 17, height: 17, accentColor: "var(--cs-accent)" }} />
@@ -115,8 +115,8 @@ export default function SettingsPage() {
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
                 <div>
-                  <div style={{ fontSize: 13.5, fontWeight: 500 }}>{t("emailReceipts")}</div>
-                  <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)" }}>{t("emailReceiptsDesc")}</div>
+                  <div style={{ fontSize: 23.62, fontWeight: 500 }}>{t("emailReceipts")}</div>
+                  <div style={{ marginTop: 3, fontSize: 21.88, color: "var(--cs-text-2)" }}>{t("emailReceiptsDesc")}</div>
                 </div>
                 <label style={{ flex: "none" }}>
                   <input type="checkbox" checked={emailReceipts} onChange={(e) => setEmailReceipts(e.target.checked)} style={{ width: 17, height: 17, accentColor: "var(--cs-accent)" }} />
@@ -124,8 +124,8 @@ export default function SettingsPage() {
               </div>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
                 <div>
-                  <div style={{ fontSize: 13.5, fontWeight: 500 }}>{t("productEmails")}</div>
-                  <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)" }}>{t("productEmailsDesc")}</div>
+                  <div style={{ fontSize: 23.62, fontWeight: 500 }}>{t("productEmails")}</div>
+                  <div style={{ marginTop: 3, fontSize: 21.88, color: "var(--cs-text-2)" }}>{t("productEmailsDesc")}</div>
                 </div>
                 <label style={{ flex: "none" }}>
                   <input type="checkbox" checked={productEmails} onChange={(e) => setProductEmails(e.target.checked)} style={{ width: 17, height: 17, accentColor: "var(--cs-accent)" }} />
@@ -135,8 +135,8 @@ export default function SettingsPage() {
           </div>
 
           <div style={{ padding: 24, border: "1px solid color-mix(in oklab, var(--cs-bad) 32%, var(--cs-bg))", borderRadius: 20, background: "var(--cs-bg)" }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--cs-bad)" }}>{t("dangerZone")}</div>
-            <div style={{ marginTop: 10, fontSize: 13.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+            <div style={{ fontSize: 22.75, fontWeight: 600, color: "var(--cs-bad)" }}>{t("dangerZone")}</div>
+            <div style={{ marginTop: 10, fontSize: 23.62, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
               {t("dangerZoneBody")}
             </div>
             <button
@@ -147,7 +147,7 @@ export default function SettingsPage() {
                 borderRadius: 9,
                 border: "1px solid color-mix(in oklab, var(--cs-bad) 40%, var(--cs-bg))",
                 color: "var(--cs-bad)",
-                fontSize: 13.5,
+                fontSize: 23.62,
                 fontWeight: 500,
                 cursor: "pointer",
                 background: "none",

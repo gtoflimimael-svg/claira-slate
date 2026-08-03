@@ -62,30 +62,30 @@ export default async function BillingPage() {
       <Suspense fallback={null}>
         <CheckoutSuccessTracker plan={plan} amount={plan === "pro" ? 5 : plan === "business" ? 12 : 0} />
       </Suspense>
-      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(24px,3vw,34px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
-      <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
+      <h1 style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(42px,5.25vw,59.5px)", lineHeight: 1.1, letterSpacing: "-.035em" }}>{t("title")}</h1>
+      <p style={{ margin: "8px 0 0", fontSize: 25.38, color: "var(--cs-text-2)" }}>{t("subtitle")}</p>
 
       <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(280px,100%),1fr))", gap: 14, alignItems: "start" }}>
         <div style={{ padding: 24, border: "1.5px solid var(--cs-accent)", borderRadius: 20, background: "var(--cs-bg)" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--cs-accent)" }}>{t("currentPlan")}</div>
-            <span style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 11, fontWeight: 600 }}>{PLAN_LABEL[plan]}</span>
+            <div style={{ fontSize: 22.75, fontWeight: 600, color: "var(--cs-accent)" }}>{t("currentPlan")}</div>
+            <span style={{ padding: "4px 10px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 19.25, fontWeight: 600 }}>{PLAN_LABEL[plan]}</span>
           </div>
           <div style={{ marginTop: 16, display: "flex", alignItems: "baseline", gap: 6 }}>
-            <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 34, fontWeight: 600, letterSpacing: "-.04em" }}>{PLAN_PRICE[plan]}</span>
-            <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>{PLAN_UNIT[plan]}</span>
+            <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 59.5, fontWeight: 600, letterSpacing: "-.04em" }}>{PLAN_PRICE[plan]}</span>
+            <span style={{ fontSize: 24.5, color: "var(--cs-text-2)" }}>{PLAN_UNIT[plan]}</span>
           </div>
-          <div style={{ marginTop: 10, fontSize: 13.5, color: "var(--cs-text-2)" }}>
+          <div style={{ marginTop: 10, fontSize: 23.62, color: "var(--cs-text-2)" }}>
             {isPaid && nextBilling ? t("renews", { date: nextBilling }) + " " : isPaid ? t("renewalPending") + " " : ""}
             {plan === "free" ? t("freeLimits") : t("paidLimits")}
           </div>
           <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 9 }}>
             {isPaid ? (
-              <ManageSubscriptionButton style={{ padding: "10px 16px", borderRadius: 9, background: "var(--cs-accent)", color: "#fff", fontSize: 13.5, fontWeight: 500, border: "none" }}>
+              <ManageSubscriptionButton style={{ padding: "10px 16px", borderRadius: 9, background: "var(--cs-accent)", color: "#fff", fontSize: 23.62, fontWeight: 500, border: "none" }}>
                 {t("manageSubscription")}
               </ManageSubscriptionButton>
             ) : (
-              <Link href="/pricing" style={{ padding: "10px 16px", borderRadius: 9, background: "var(--cs-accent)", color: "#fff", fontSize: 13.5, fontWeight: 500, cursor: "pointer" }}>
+              <Link href="/pricing" style={{ padding: "10px 16px", borderRadius: 9, background: "var(--cs-accent)", color: "#fff", fontSize: 23.62, fontWeight: 500, cursor: "pointer" }}>
                 {t("upgradePlan")}
               </Link>
             )}
@@ -93,10 +93,10 @@ export default async function BillingPage() {
         </div>
 
         <div style={{ padding: 24, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-bg)" }}>
-          <div style={{ fontSize: 13, fontWeight: 600 }}>{t("aiUsageThisMonth")}</div>
+          <div style={{ fontSize: 22.75, fontWeight: 600 }}>{t("aiUsageThisMonth")}</div>
           <div style={{ marginTop: 16, display: "flex", alignItems: "baseline", gap: 6 }}>
-            <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 28, fontWeight: 600, letterSpacing: "-.03em" }}>{aiUsage.used}</span>
-            <span style={{ fontSize: 14, color: "var(--cs-text-2)" }}>/ {Number.isFinite(aiUsage.limit) ? aiUsage.limit : t("unlimited")} {t("actionsSuffix")}</span>
+            <span style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 49, fontWeight: 600, letterSpacing: "-.03em" }}>{aiUsage.used}</span>
+            <span style={{ fontSize: 24.5, color: "var(--cs-text-2)" }}>/ {Number.isFinite(aiUsage.limit) ? aiUsage.limit : t("unlimited")} {t("actionsSuffix")}</span>
           </div>
           {Number.isFinite(aiUsage.limit) && (
             <div style={{ marginTop: 12, height: 6, borderRadius: 99, background: "var(--cs-bg-2)", overflow: "hidden" }}>
@@ -110,8 +110,8 @@ export default async function BillingPage() {
               />
             </div>
           )}
-          <div style={{ marginTop: 14, fontSize: 13, fontWeight: 600 }}>{t("billingDetails")}</div>
-          <div style={{ marginTop: 10, fontSize: 13.5, color: "var(--cs-text-2)" }}>{user.email}</div>
+          <div style={{ marginTop: 14, fontSize: 22.75, fontWeight: 600 }}>{t("billingDetails")}</div>
+          <div style={{ marginTop: 10, fontSize: 23.62, color: "var(--cs-text-2)" }}>{user.email}</div>
         </div>
       </div>
 
@@ -123,7 +123,7 @@ export default async function BillingPage() {
               gridTemplateColumns: "1.2fr 1.6fr .8fr .8fr",
               padding: "14px 20px",
               borderBottom: "1px solid var(--cs-line)",
-              fontSize: 11.5,
+              fontSize: 20.12,
               fontWeight: 600,
               letterSpacing: ".05em",
               textTransform: "uppercase",
@@ -136,28 +136,28 @@ export default async function BillingPage() {
             <div>{t("colInvoice")}</div>
           </div>
           {invoices.length === 0 ? (
-            <div style={{ padding: "20px", fontSize: 13.5, color: "var(--cs-text-2)" }}>
+            <div style={{ padding: "20px", fontSize: 23.62, color: "var(--cs-text-2)" }}>
               {isPaid ? t("noInvoices") : t("freeNothingToBill")}
             </div>
           ) : (
             invoices.map((i) => (
-              <div key={i.id} style={{ display: "grid", gridTemplateColumns: "1.2fr 1.6fr .8fr .8fr", alignItems: "center", padding: "15px 20px", borderBottom: "1px solid var(--cs-line)", fontSize: 13.5 }}>
+              <div key={i.id} style={{ display: "grid", gridTemplateColumns: "1.2fr 1.6fr .8fr .8fr", alignItems: "center", padding: "15px 20px", borderBottom: "1px solid var(--cs-line)", fontSize: 23.62 }}>
                 <div style={{ fontWeight: 500 }}>{i.date}</div>
                 <div style={{ color: "var(--cs-text-2)" }}>{i.description}</div>
                 <div style={{ color: "var(--cs-text-2)" }}>{i.amount}</div>
                 <div>
                   {i.url ? (
-                    <a href={i.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, fontWeight: 500, cursor: "pointer" }}>
+                    <a href={i.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 21.88, fontWeight: 500, cursor: "pointer" }}>
                       PDF &darr;
                     </a>
                   ) : (
-                    <span style={{ fontSize: 12.5, color: "var(--cs-text-2)" }}>—</span>
+                    <span style={{ fontSize: 21.88, color: "var(--cs-text-2)" }}>—</span>
                   )}
                 </div>
               </div>
             ))
           )}
-          {isPaid && <div style={{ padding: "16px 20px", fontSize: 12.5, color: "var(--cs-text-2)" }}>{t("invoicesNote")}</div>}
+          {isPaid && <div style={{ padding: "16px 20px", fontSize: 21.88, color: "var(--cs-text-2)" }}>{t("invoicesNote")}</div>}
         </div>
       </div>
     </div>

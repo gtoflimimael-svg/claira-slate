@@ -8,7 +8,7 @@ import { track } from "@/lib/analytics";
 
 const PERK_KEYS = ["perk1", "perk2", "perk3", "perk4"] as const;
 
-const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 13, fontWeight: 500, color: "var(--cs-text-2)" };
+const fieldLabel: CSSProperties = { display: "flex", flexDirection: "column", gap: 7, fontSize: 22.75, fontWeight: 500, color: "var(--cs-text-2)" };
 const fieldInput: CSSProperties = {
   padding: "12px 14px",
   border: "1px solid var(--cs-line)",
@@ -16,7 +16,7 @@ const fieldInput: CSSProperties = {
   background: "var(--cs-bg)",
   color: "var(--cs-text)",
   fontFamily: "Inter, sans-serif",
-  fontSize: 14,
+  fontSize: 24.5,
   outline: "none",
 };
 
@@ -79,7 +79,7 @@ export default function SignupPage() {
               maxWidth: 420,
               fontFamily: "var(--font-geist), Inter, sans-serif",
               fontWeight: 600,
-              fontSize: "clamp(32px,4.6vw,48px)",
+              fontSize: "clamp(56px,8.05vw,84px)",
               lineHeight: 1.05,
               letterSpacing: "-.04em",
             }}
@@ -88,7 +88,7 @@ export default function SignupPage() {
           </h1>
           <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 14 }}>
             {PERK_KEYS.map((key) => (
-              <div key={key} style={{ display: "flex", gap: 11, fontSize: 15, lineHeight: 1.55, color: "var(--cs-text-2)" }}>
+              <div key={key} style={{ display: "flex", gap: 11, fontSize: 26.25, lineHeight: 1.55, color: "var(--cs-text-2)" }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cs-ok)" strokeWidth="2.4" strokeLinecap="round" style={{ flex: "none", marginTop: 3 }}>
                   <path d="M4 12.5l5 5L20 6.5"></path>
                 </svg>
@@ -96,9 +96,9 @@ export default function SignupPage() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 32, padding: "18px 20px", border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-bg-2)", fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+          <div style={{ marginTop: 32, padding: "18px 20px", border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-bg-2)", fontSize: 24.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
             &ldquo;{t("testimonialQuote")}&rdquo;
-            <div style={{ marginTop: 8, fontSize: 13, fontWeight: 600, color: "var(--cs-text)" }}>{t("testimonialAttribution")}</div>
+            <div style={{ marginTop: 8, fontSize: 22.75, fontWeight: 600, color: "var(--cs-text)" }}>{t("testimonialAttribution")}</div>
           </div>
         </div>
 
@@ -107,8 +107,8 @@ export default function SignupPage() {
         >
           {sent ? (
             <div style={{ padding: "20px 0", textAlign: "center" }}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 19, fontWeight: 600, letterSpacing: "-.025em" }}>{t("checkEmail")}</div>
-              <p style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 33.25, fontWeight: 600, letterSpacing: "-.025em" }}>{t("checkEmail")}</div>
+              <p style={{ marginTop: 10, fontSize: 24.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
                 {t("confirmationSentEmail", { email })}
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function SignupPage() {
                     strokeLinecap="round"
                   ></path>
                 </svg>
-                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 18, fontWeight: 600, letterSpacing: "-.025em" }}>{t("createAccountHeading")}</div>
+                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 31.5, fontWeight: 600, letterSpacing: "-.025em" }}>{t("createAccountHeading")}</div>
               </div>
               <button
                 type="button"
@@ -141,7 +141,7 @@ export default function SignupPage() {
                   borderRadius: 10,
                   background: "transparent",
                   color: "var(--cs-text)",
-                  fontSize: 14,
+                  fontSize: 24.5,
                   fontWeight: 500,
                   fontFamily: "Inter, sans-serif",
                   cursor: "pointer",
@@ -156,7 +156,7 @@ export default function SignupPage() {
                 </svg>
                 {t("continueWithGoogle")}
               </button>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 11.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20.12, fontWeight: 500, color: "var(--cs-text-2)" }}>
                 <span style={{ flex: "1 1 auto", height: 1, background: "var(--cs-line)" }}></span>
                 {tc("or")}
                 <span style={{ flex: "1 1 auto", height: 1, background: "var(--cs-line)" }}></span>
@@ -169,20 +169,20 @@ export default function SignupPage() {
                 {t("password")}
                 <input className="cs-field" type="password" placeholder={t("passwordPlaceholder")} style={fieldInput} value={password} onChange={(e) => setPassword(e.target.value)} />
               </label>
-              {error && <div style={{ fontSize: 13, color: "var(--cs-bad)" }}>{error}</div>}
-              <div style={{ display: "flex", gap: 8, padding: "12px 14px", borderRadius: 10, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 12.5, lineHeight: 1.5, color: "var(--cs-text-2)" }}>
+              {error && <div style={{ fontSize: 22.75, color: "var(--cs-bad)" }}>{error}</div>}
+              <div style={{ display: "flex", gap: 8, padding: "12px 14px", borderRadius: 10, background: "var(--cs-accent-soft)", border: "1px solid var(--cs-accent-line)", fontSize: 21.88, lineHeight: 1.5, color: "var(--cs-text-2)" }}>
                 {t("freePlanSelected")} <Link href="/pricing" style={{ fontWeight: 500, cursor: "pointer" }}>{t("comparePlans")} &rarr;</Link>
               </div>
               <button
                 type="submit"
                 className="hover-bg"
                 disabled={loading}
-                style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
+                style={{ display: "block", textAlign: "center", padding: 13, border: "none", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 600, cursor: loading ? "default" : "pointer", opacity: loading ? 0.7 : 1 }}
               >
                 {loading ? t("creatingAccount") : t("createAccount")}
               </button>
-              <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--cs-text-2)" }}>{t("termsNotice")}</div>
-              <div style={{ textAlign: "center", fontSize: 13.5, color: "var(--cs-text-2)" }}>
+              <div style={{ fontSize: 21, lineHeight: 1.5, color: "var(--cs-text-2)" }}>{t("termsNotice")}</div>
+              <div style={{ textAlign: "center", fontSize: 23.62, color: "var(--cs-text-2)" }}>
                 {t("alreadyHaveAccount")} <Link href="/login" style={{ fontWeight: 500, cursor: "pointer" }}>{t("logIn")}</Link>
               </div>
             </form>

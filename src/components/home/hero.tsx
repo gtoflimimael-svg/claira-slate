@@ -150,8 +150,8 @@ export function Hero() {
             data-heroart
             style={{
               position: "relative",
-              height: "clamp(260px,34vw,500px)",
-              maxHeight: 500,
+              height: "clamp(455px,59.5vw,875px)",
+              maxHeight: 875,
               pointerEvents: "none",
             }}
           >

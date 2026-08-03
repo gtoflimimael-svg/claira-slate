@@ -37,14 +37,14 @@ export default function AboutPage() {
             maxWidth: 800,
             fontFamily: "var(--font-geist), Inter, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(36px,6vw,64px)",
+            fontSize: "clamp(63px,10.5vw,112px)",
             lineHeight: 1.03,
             letterSpacing: "-.042em",
           }}
         >
           {t("heroTitle")}
         </h1>
-        <p style={{ margin: "22px 0 0", maxWidth: 560, fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.65, color: "var(--cs-text-2)" }}>
+        <p style={{ margin: "22px 0 0", maxWidth: 560, fontSize: "clamp(26.25px,2.62vw,31.5px)", lineHeight: 1.65, color: "var(--cs-text-2)" }}>
           {t("heroSubhead")}
         </p>
         <div
@@ -58,17 +58,17 @@ export default function AboutPage() {
         >
           {STAT_KEYS.map((key, i) => (
             <div key={key} style={{ padding: i === 0 ? "24px 24px 24px 0" : "24px", borderLeft: i === 0 ? "none" : "1px solid var(--cs-line)" }}>
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(28px,3.4vw,38px)", fontWeight: 600, letterSpacing: "-.04em", color: "var(--cs-accent)" }}>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(49px,5.95vw,66.5px)", fontWeight: 600, letterSpacing: "-.04em", color: "var(--cs-accent)" }}>
                 {STAT_CONTENT[i]}
               </div>
-              <div style={{ marginTop: 6, fontSize: 13.5, color: "var(--cs-text-2)" }}>{t(key)}</div>
+              <div style={{ marginTop: 6, fontSize: 23.62, color: "var(--cs-text-2)" }}>{t(key)}</div>
             </div>
           ))}
         </div>
       </section>
 
       <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
-        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,40px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
+        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45.5px,5.95vw,70px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("valuesTitle")}
         </Reveal>
         <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(268px,100%),1fr))", gap: 14 }}>
@@ -80,22 +80,22 @@ export default function AboutPage() {
               data-lift
               style={{ padding: 26, border: "1px solid var(--cs-line)", borderRadius: 20, background: "var(--cs-card)" }}
             >
-              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${key}Title`)}</div>
-              <div style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`${key}Body`)}</div>
+              <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 29.75, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${key}Title`)}</div>
+              <div style={{ marginTop: 10, fontSize: 25.38, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`${key}Body`)}</div>
             </Reveal>
           ))}
         </div>
       </section>
 
       <section style={{ padding: "clamp(56px,7vw,96px) 24px 0" }}>
-        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(26px,3.4vw,40px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
+        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(45.5px,5.95vw,70px)", lineHeight: 1.08, letterSpacing: "-.035em" }}>
           {t("trustTitle")}
         </Reveal>
         <div style={{ marginTop: 26, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(240px,100%),1fr))", gap: 14 }}>
           {TRUST_KEYS.map((key) => (
             <div key={key} style={{ padding: 22, border: "1px solid var(--cs-line)", borderRadius: "var(--cs-r)", background: "var(--cs-card)" }}>
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".05em", textTransform: "uppercase", color: "var(--cs-text-2)" }}>{t(`${key}Title`)}</div>
-              <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`${key}Body`)}</div>
+              <div style={{ fontSize: 21, fontWeight: 600, letterSpacing: ".05em", textTransform: "uppercase", color: "var(--cs-text-2)" }}>{t(`${key}Title`)}</div>
+              <div style={{ marginTop: 10, fontSize: 24.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>{t(`${key}Body`)}</div>
             </div>
           ))}
         </div>
@@ -103,14 +103,14 @@ export default function AboutPage() {
           <Link
             href="/contact"
             className="hover-bg"
-            style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
+            style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}
           >
             {t("requestDpa")}
           </Link>
           <Link
             href="/blog"
             className="hover-text"
-            style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 14.5, fontWeight: 500, cursor: "pointer" }}
+            style={{ padding: "12px 20px", borderRadius: 10, border: "1px solid var(--cs-line)", color: "var(--cs-text)", fontSize: 25.38, fontWeight: 500, cursor: "pointer" }}
           >
             {t("readEngineeringNotes")}
           </Link>
@@ -132,17 +132,17 @@ export default function AboutPage() {
           }}
         >
           <div style={{ maxWidth: 520 }}>
-            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 20, fontWeight: 600, letterSpacing: "-.025em" }}>
+            <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 35, fontWeight: 600, letterSpacing: "-.025em" }}>
               {t("hiringTitle")}
             </div>
-            <div style={{ marginTop: 8, fontSize: 14.5, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
+            <div style={{ marginTop: 8, fontSize: 25.38, lineHeight: 1.6, color: "var(--cs-text-2)" }}>
               {t("hiringBody")}
             </div>
           </div>
           <Link
             href="/contact"
             className="hover-bg"
-            style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 14.5, fontWeight: 500, cursor: "pointer", whiteSpace: "nowrap" }}
+            style={{ padding: "12px 20px", borderRadius: 10, background: "var(--cs-accent)", color: "#fff", fontSize: 25.38, fontWeight: 500, cursor: "pointer", whiteSpace: "nowrap" }}
           >
             {t("hiringCta")} &rarr;
           </Link>

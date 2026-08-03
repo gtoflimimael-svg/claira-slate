@@ -129,7 +129,7 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
   return (
     <div style={{ animation: "csFade .28s ease both" }}>
       <div style={{ padding: "clamp(32px,4vw,52px) clamp(20px,3vw,40px) 0" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 500, color: "var(--cs-text-2)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 21.88, fontWeight: 500, color: "var(--cs-text-2)" }}>
           <Link href="/" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.home")}</Link>
           <span style={{ color: "var(--cs-line)" }}>/</span>
           <Link href="/tools" className="hover-text" style={{ cursor: "pointer", color: "var(--cs-text-2)" }}>{tc("breadcrumb.tools")}</Link>
@@ -142,14 +142,14 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
               margin: 0,
               fontFamily: "var(--font-geist), Inter, sans-serif",
               fontWeight: 600,
-              fontSize: "clamp(34px,5vw,56px)",
+              fontSize: "clamp(59.5px,8.75vw,98px)",
               lineHeight: 1.04,
               letterSpacing: "-.04em",
             }}
           >
             {name}
           </h1>
-          <p style={{ margin: 0, maxWidth: 520, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
+          <p style={{ margin: 0, maxWidth: 520, fontSize: "clamp(26.25px,2.45vw,31.5px)", lineHeight: 1.6, color: "var(--cs-text-2)", textWrap: "pretty" }}>
             {desc}
           </p>
         </div>
@@ -224,7 +224,7 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
 
         {relatedWithIcons.length > 0 && (
           <div style={{ marginTop: "clamp(48px,6vw,72px)" }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--cs-text-2)", marginBottom: 16 }}>{tp("continueTo")}</div>
+            <div style={{ fontSize: 22.75, fontWeight: 600, color: "var(--cs-text-2)", marginBottom: 16 }}>{tp("continueTo")}</div>
             <div className="tool-related-grid">
               {relatedWithIcons.map((r) => (
                 <Link key={r.slug} href={`/tools/${r.slug}`} className="tool-related-card">
@@ -234,8 +234,8 @@ export default async function ToolPage({ params }: { params: Promise<{ tool: str
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 14, fontWeight: 600 }}>{r.name}</div>
-                    <div style={{ marginTop: 3, fontSize: 12.5, color: "var(--cs-text-2)", lineHeight: 1.4 }}>{r.desc}</div>
+                    <div style={{ fontSize: 24.5, fontWeight: 600 }}>{r.name}</div>
+                    <div style={{ marginTop: 3, fontSize: 21.88, color: "var(--cs-text-2)", lineHeight: 1.4 }}>{r.desc}</div>
                   </div>
                 </Link>
               ))}
