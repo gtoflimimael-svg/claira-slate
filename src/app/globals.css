@@ -54,7 +54,7 @@ html {
   scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  font-size: 105%;
+  zoom: 1.25;
 }
 
 body {
