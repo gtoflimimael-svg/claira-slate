@@ -53,7 +53,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
-  zoom: 1.75 !important;
   overflow-x: hidden;
 }
 
