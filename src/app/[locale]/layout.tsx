@@ -65,12 +65,10 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html
-      lang={locale}
-      dir={RTL_LOCALES.has(locale) ? "rtl" : "ltr"}
-      className={`${geist.variable} ${inter.variable}`}
-      style={{ zoom: "1.75" }}
-    >
+    <html lang={locale} dir={RTL_LOCALES.has(locale) ? "rtl" : "ltr"} className={`${geist.variable} ${inter.variable}`}>
+      <head>
+        <style>{`html { zoom: 1.75 !important; }`}</style>
+      </head>
       <body>
         <AnalyticsProvider />
         <NextIntlClientProvider>
