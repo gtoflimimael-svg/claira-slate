@@ -43,7 +43,7 @@ export function HowItWorks() {
   return (
     <section style={{ background: "var(--cs-bg)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(64px,8vw,104px) 24px" }}>
-        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
+        <Reveal as="h2" style={{ margin: 0, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(37.5px,5.5vw,60px)", lineHeight: 1.06, letterSpacing: "-.035em" }}>
           {t("title")}
         </Reveal>
         <div data-steps style={{ marginTop: "clamp(36px,5vw,56px)", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 0 }}>
@@ -63,10 +63,10 @@ export function HowItWorks() {
                     {s.icon}
                   </svg>
                 </div>
-                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-accent)" }}>{s.num}</div>
+                <div style={{ fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 16.25, fontWeight: 600, letterSpacing: ".02em", color: "var(--cs-accent)" }}>{s.num}</div>
               </div>
-              <div style={{ marginTop: 20, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(19px,2vw,23px)", fontWeight: 600, letterSpacing: "-.025em" }}>{t(s.titleKey)}</div>
-              <div style={{ marginTop: 9, fontSize: 14.5, lineHeight: 1.55, color: "var(--cs-text-2)", maxWidth: 280 }}>{t(s.descKey)}</div>
+              <div style={{ marginTop: 20, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: "clamp(23.75px,2.5vw,28.75px)", fontWeight: 600, letterSpacing: "-.025em" }}>{t(s.titleKey)}</div>
+              <div style={{ marginTop: 9, fontSize: 18.12, lineHeight: 1.55, color: "var(--cs-text-2)", maxWidth: 280 }}>{t(s.descKey)}</div>
             </Reveal>
           ))}
         </div>

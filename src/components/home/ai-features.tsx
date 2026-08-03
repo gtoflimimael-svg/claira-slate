@@ -21,14 +21,14 @@ export function AiFeatures() {
           as="span"
           variant="fade"
           data-spinborder
-          style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 12, fontWeight: 600, letterSpacing: ".01em" }}
+          style={{ display: "inline-block", padding: "6px 13px", borderRadius: 99, background: "var(--cs-accent)", color: "#fff", fontSize: 15, fontWeight: 600, letterSpacing: ".01em" }}
         >
           {th("badge")}
         </Reveal>
-        <Reveal as="h2" style={{ margin: "22px 0 0", maxWidth: 760, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(32px,5vw,56px)", lineHeight: 1.04, letterSpacing: "-.038em", color: "#fff" }}>
+        <Reveal as="h2" style={{ margin: "22px 0 0", maxWidth: 760, fontFamily: "var(--font-geist), Inter, sans-serif", fontWeight: 600, fontSize: "clamp(40px,6.25vw,70px)", lineHeight: 1.04, letterSpacing: "-.038em", color: "#fff" }}>
           {th("headline")}
         </Reveal>
-        <p style={{ margin: "18px 0 0", maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "rgba(255,255,255,.62)" }}>
+        <p style={{ margin: "18px 0 0", maxWidth: 520, fontSize: 21.25, lineHeight: 1.6, color: "rgba(255,255,255,.62)" }}>
           {th("subhead")}
         </p>
 
@@ -48,8 +48,8 @@ export function AiFeatures() {
                   {f.icon}
                 </svg>
               </div>
-              <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${f.key}.name`)}</div>
-              <div style={{ marginTop: 7, fontSize: 14, lineHeight: 1.5, color: "rgba(255,255,255,.58)" }}>{t(`${f.key}.desc`)}</div>
+              <div style={{ marginTop: 18, fontFamily: "var(--font-geist), Inter, sans-serif", fontSize: 21.25, fontWeight: 600, letterSpacing: "-.02em" }}>{t(`${f.key}.name`)}</div>
+              <div style={{ marginTop: 7, fontSize: 17.5, lineHeight: 1.5, color: "rgba(255,255,255,.58)" }}>{t(`${f.key}.desc`)}</div>
             </Reveal>
           ))}
         </div>
@@ -58,7 +58,7 @@ export function AiFeatures() {
             data-press
             data-arrow
             href="/ai"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px", borderRadius: 10, background: "var(--cs-grad)", color: "#fff", fontSize: 15, fontWeight: 500, cursor: "pointer" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px", borderRadius: 10, background: "var(--cs-grad)", color: "#fff", fontSize: 18.75, fontWeight: 500, cursor: "pointer" }}
           >
             {th("cta")} <span data-tip>&rarr;</span>
           </Link>
