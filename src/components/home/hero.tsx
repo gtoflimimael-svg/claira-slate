@@ -17,12 +17,11 @@ export function Hero() {
       dir={isRTL ? "rtl" : "ltr"}
       style={{
         position: "relative",
-        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
         marginTop: -68,
-        padding: "clamp(90px,11vw,140px) 24px 48px",
+        padding: "clamp(84px,6vw,108px) 24px 48px",
         background:
           "radial-gradient(58% 50% at 40% 16%, color-mix(in oklab, var(--cs-accent) 7%, transparent), transparent 70%), radial-gradient(48% 42% at 86% 6%, color-mix(in oklab, var(--cs-cyan) 7%, transparent), transparent 72%)",
       }}
